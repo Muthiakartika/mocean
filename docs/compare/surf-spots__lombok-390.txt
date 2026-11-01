@@ -1,0 +1,10 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /surf-spots/lombok/ 390
+MISSING  img:Why-Choose-Lombok-for-Diving-600x524.jpg  (orig 10,1249 370x520)
+MISSING  img:General-Info-600x300.jpg  (orig 10,2911 370x560)
+MISSING  img:Top-Surf-Spots-600x300.jpg  (orig 10,4251 370x561)
+EXTRA    img:Why-Choose-Lombok-for-Diving.jpg  (local 10,1249 370x520)
+EXTRA    img:General-Info.jpg  (local 10,2911 370x560)
+EXTRA    img:Top-Surf-Spots.jpg  (local 10,4251 370x561)
+
+/surf-spots/lombok/ @390px: 92 elements, 0 differ > 2px, 3 missing, 3 extra

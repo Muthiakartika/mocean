@@ -1,0 +1,88 @@
+/*
+ * Header — port of Elementor header template 10288 (see docs/design-audit.md).
+ * It sits on top of the hero (position: absolute) and is NOT sticky, like the original.
+ */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Dark-to-transparent gradient bar (container c9a3b11) */
+.bar {
+  padding: 0 10px;
+  background-image: linear-gradient(180deg, var(--color-secondary) 0%, #ffffff00 100%);
+}
+
+/* Row with logo / menu / button (container 19d46e6) */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.logoCol {
+  width: 10%;
+}
+
+.logoLink {
+  display: block;
+  padding-top: 10px;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.menuCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+
+.buttonCol {
+  display: flex;
+  justify-content: flex-end;
+  width: 15%;
+  padding: 10px;
+}
+
+/* Tablet (Elementor: 768–1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .menuCol {
+    width: 44%;
+    align-items: flex-end;
+  }
+  .buttonCol {
+    width: 31%;
+  }
+}
+
+/* Mobile (Elementor: <=767px) */
+@media (max-width: 767px) {
+  .bar {
+    padding: 20px 10px 10px;
+  }
+  .logoCol {
+    width: 50%;
+    padding: 10px 0;
+  }
+  .logo {
+    width: 50%;
+  }
+  .menuCol {
+    width: 50%;
+    align-items: flex-end;
+  }
+  /* "Book Now" is hidden on mobile in the original */
+  .buttonCol {
+    display: none;
+  }
+}

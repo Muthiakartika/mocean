@@ -1,0 +1,464 @@
+{
+ "path": "/restaurant/",
+ "elementorId": "9159",
+ "content": [
+  {
+   "type": "container",
+   "id": "7d70b09",
+   "classes": "elementor-element elementor-element-7d70b09 jarallax e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "28cbe2c",
+     "classes": "elementor-element elementor-element-28cbe2c e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "heading",
+       "id": "705d664",
+       "classes": "elementor-element elementor-element-705d664 elementor-widget elementor-widget-heading",
+       "wrapped": true,
+       "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Mutiara by Mocean: Beachfront Restaurant and Menu</h1>"
+      },
+      {
+       "type": "text-editor",
+       "id": "b42505d",
+       "classes": "elementor-element elementor-element-b42505d elementor-widget elementor-widget-text-editor",
+       "wrapped": true,
+       "html": "<div>Enjoy a relaxed breakfast, a productive business lunch, or a memorable dinner in a warm and inviting setting</div>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "2db4e42",
+   "classes": "elementor-element elementor-element-2db4e42 e-con-full e-flex rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "6256ffc",
+     "classes": "elementor-element elementor-element-6256ffc e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "c13ce71",
+       "classes": "elementor-element elementor-element-c13ce71 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "container",
+         "id": "1f2f77b",
+         "classes": "elementor-element elementor-element-1f2f77b e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "image",
+           "id": "a3fbee0",
+           "classes": "elementor-element elementor-element-a3fbee0 rtimg-cover has-jarallax-img elementor-widget elementor-widget-image",
+           "wrapped": true,
+           "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-11606\" decoding=\"async\" height=\"1296\" src=\"/images/uploads/2025/06/restaurant_4.jpg\" width=\"856\"/>"
+          }
+         ]
+        },
+        {
+         "type": "container",
+         "id": "dffce4d",
+         "classes": "elementor-element elementor-element-dffce4d e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "image",
+           "id": "433e6e8",
+           "classes": "elementor-element elementor-element-433e6e8 has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+           "wrapped": true,
+           "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-10733\" decoding=\"async\" height=\"1296\" src=\"/images/uploads/2025/05/restaurant_2.jpg\" width=\"856\"/>"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "70056c2",
+       "classes": "elementor-element elementor-element-70056c2 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "9cec449",
+         "classes": "elementor-element elementor-element-9cec449 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Mutiara by Mocean </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Naturally Sourced, Lovingly Served     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "4264d75",
+         "classes": "elementor-element elementor-element-4264d75 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "Mutiara by Mocean crafts every meal with local ingredients and culinary traditions from around the world, bringing fresh flavors to each dish. Whether you’re enjoying a peaceful breakfast, a leisurely lunch, or an intimate dinner, the carefully designed dining space ensures a balance of comfort and flavor, making every experience satisfying and memorable.<p><strong>Open daily, 7am to 10pm.</strong> Message us on WhatsApp at +62 821 4419 1647 to book a table, or to set up a private dinner on the sand.</p>"
+        },
+        {
+         "type": "container",
+         "id": "8dc3de7",
+         "classes": "elementor-element elementor-element-8dc3de7 e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "container",
+           "id": "ca0280e",
+           "classes": "elementor-element elementor-element-ca0280e e-con-full e-flex rt-default-class e-con e-child",
+           "children": [
+            {
+             "type": "heading",
+             "id": "c673c27",
+             "classes": "elementor-element elementor-element-c673c27 elementor-widget elementor-widget-heading",
+             "wrapped": true,
+             "html": "<div class=\"elementor-heading-title elementor-size-default\">Reservation Phone</div>"
+            },
+            {
+             "type": "icon-list",
+             "id": "43af249",
+             "classes": "elementor-element elementor-element-43af249 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list",
+             "wrapped": true,
+             "html": "<ul class=\"elementor-icon-list-items\">\n<li class=\"elementor-icon-list-item\">\n<a href=\"tel:+6282144191647\">\n<span class=\"elementor-icon-list-icon\">\n<i aria-hidden=\"true\" class=\"rt rt-phone-flip\"></i> </span>\n<span class=\"elementor-icon-list-text\">+62 82144191647</span>\n</a>\n</li>\n</ul>"
+            }
+           ]
+          },
+          {
+           "type": "container",
+           "id": "2b1d5ab",
+           "classes": "elementor-element elementor-element-2b1d5ab e-con-full e-flex rt-default-class e-con e-child",
+           "children": [
+            {
+             "type": "heading",
+             "id": "68a8a2c",
+             "classes": "elementor-element elementor-element-68a8a2c elementor-widget elementor-widget-heading",
+             "wrapped": true,
+             "html": "<div class=\"elementor-heading-title elementor-size-default\">Opening Hours</div>"
+            },
+            {
+             "type": "icon-list",
+             "id": "f6916b6",
+             "classes": "elementor-element elementor-element-f6916b6 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list",
+             "wrapped": true,
+             "html": "<ul class=\"elementor-icon-list-items\">\n<li class=\"elementor-icon-list-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-clock\" viewbox=\"0 0 512 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z\"></path></svg> </span>\n<span class=\"elementor-icon-list-text\">7am - 10pm (Open Daily)</span>\n</li>\n</ul>"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "type": "rt-button",
+         "id": "e68b1c5",
+         "classes": "elementor-element elementor-element-e68b1c5 elementor-widget-mobile_extra__width-auto elementor-widget-mobile__width-auto elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"https://wa.me/6282144191647\" target=\"_blank\">\n<span>Book a Table on WhatsApp</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "3ec10f3",
+   "classes": "elementor-element elementor-element-3ec10f3 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "addef0e",
+     "classes": "elementor-element elementor-element-addef0e e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "icon-box",
+       "id": "785c9dd",
+       "classes": "elementor-element elementor-element-785c9dd elementor-view-default elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box",
+       "wrapped": true,
+       "html": "<div class=\"elementor-icon-box-wrapper\">\n<div class=\"elementor-icon-box-icon\">\n<span class=\"elementor-icon\">\n<svg id=\"Layer_1\" style=\"enable-background:new 0 0 70 72;\" viewbox=\"0 0 70 72\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><style type=\"text/css\">\t.st0{fill:#111F90;}</style><g> <path class=\"st0\" d=\"M70.6,5.7c0-2.6-2.1-4.6-4.8-4.5c-1.5,0-3,0.1-4.5,0.4c-3.7,0.7-6.8,2.4-9.5,4.9c-1.2,1.1-2.5,2.2-3.7,3.3  c-2.3,1.9-3.5,4.4-3.6,7.4c-0.1,1.9,0.2,3.7,0.2,5.6c0,0.8-0.2,1.4-0.5,2.1c-0.7,1.6-2,2.5-3.1,3.8c-1.6,1.8-3.5,3.5-5.1,5.3  c-1.6,1.8-3.4,3.3-5,5.1c-1.7,1.8-3.5,3.5-5.2,5.3c-1.6,1.8-3.4,3.4-5,5.1c-3,3.1-6,6.1-9,9.2c-1.1,1.1-2.2,2.3-3.3,3.4  c-0.3,0.3-0.5,0.7-0.7,1.1c-1.7,3.2,0.1,7.5,4,8.3c2,0.4,3.8,0,5.3-1.5c1-1.1,1.9-2.3,2.9-3.5c1-1.3,2-2.5,3-3.8  c1.3-1.6,2.6-3.2,3.9-4.8c1.3-1.6,2.5-3.2,3.8-4.8c1.1-1.3,2.1-2.7,3.2-4c1-1.3,2-2.5,3.1-3.8c1.3-1.6,2.6-3.2,3.9-4.8  c1-1.3,2-2.5,3.1-3.8c1.3-1.6,2.6-3.2,3.9-4.9c1-1.3,2.2-2.3,3.8-2.7c1.2-0.3,2.4-0.2,3.6-0.3c1.6-0.1,3.1-0.3,4.5-0.9  c1.5-0.6,2.8-1.5,3.7-2.7c1.2-1.6,2.3-3.3,3.4-4.9c1.4-2.1,2.6-4.3,3.3-6.8c0.2-0.9,0.4-1.8,0.6-2.8V6.1C70.6,6,70.6,5.9,70.6,5.7z   M68.5,8.1c0,4.2-1.3,7.7-3.6,10.9c-1,1.4-2,2.9-3,4.3c-1.4,1.9-3.2,2.9-5.5,3.1c-1.9,0.2-3.8,0.1-5.7,0.5  c-1.9,0.5-3.4,1.6-4.6,3.1c-1.2,1.6-2.5,3.1-3.7,4.6c-1.5,1.8-2.9,3.7-4.4,5.5c-1.4,1.8-2.9,3.5-4.3,5.3c-1.3,1.6-2.5,3.2-3.8,4.8  c-1.3,1.6-2.6,3.2-3.9,4.7c-1.5,1.8-2.9,3.6-4.4,5.5c-1.2,1.5-2.5,3-3.7,4.6c-0.9,1.1-1.8,2.3-2.7,3.4c-0.8,0.9-2.1,1.3-3.4,0.8  c-1.6-0.5-2.5-2-2.5-3.6c0-0.9,0.6-1.6,1.1-2.2c0,0,0.1-0.1,0.1-0.1c3.2-3.2,6.4-6.4,9.5-9.6c1.7-1.8,3.5-3.4,5.1-5.2  c1.6-1.8,3.5-3.4,5.1-5.2c1.7-1.9,3.6-3.5,5.2-5.4c1.6-1.8,3.4-3.3,5-5.1c1.4-1.5,2.9-2.9,4.3-4.4c1.8-1.9,2.6-4.2,2.4-6.8  c-0.1-1.3-0.2-2.6-0.2-3.9c0-2.7,1.2-4.8,3.4-6.4c0.9-0.7,1.8-1.5,2.6-2.3c2.7-2.6,5.9-4.4,9.7-5.1c1.3-0.2,2.6-0.2,3.8-0.2  c1.4,0,2,1.1,2.2,2.2C68.5,6.6,68.7,7.4,68.5,8.1z\"></path> <path class=\"st0\" d=\"M18.4,18.9c-1.9-1.9-3.7-3.7-5.6-5.6C10.6,11,8.4,8.8,6.1,6.6C5.5,6,5.7,4.9,6.5,4.6C7.1,4.5,7.4,4.7,7.8,5  c1.3,1.3,2.5,2.5,3.8,3.8c2.7,2.7,5.4,5.4,8.1,8c0.1,0.1,0.3,0.6,0.5,0.2c0.2-0.3,0.7-0.6,0.3-1.1c-0.1-0.1-0.2-0.2-0.3-0.4  C16.6,12.1,13.1,8.6,9.6,5C8.6,4,8.3,2.7,9,1.6c0.9-1.5,2.7-1.7,4.1-0.5c2.2,1.9,4.5,3.8,6.7,5.6c1.9,1.6,3.8,3.3,5.7,4.9  c1.3,1.1,2.6,2.1,3.4,3.7c0.6,1.3,1.1,2.6,1.2,4c0,1.4,0,2.7,0,4.1c0,2,0.7,3.8,2.2,5.1c0.6,0.5,1.1,1,1.7,1.6  c0.5,0.5,0.6,1,0.2,1.5c-0.4,0.5-1.1,0.7-1.6,0.2c-1.9-1.5-3.7-3.1-4.4-5.6c-0.2-0.8-0.4-1.6-0.3-2.4c0-1.3,0-2.7,0-4  c-0.1-1.9-0.7-3.6-2-4.9c-1.5-1.5-3.2-2.7-4.8-4c-1-0.8-1.9-1.6-2.9-2.5c-1.4-1.1-2.8-2.3-4.1-3.4c-0.7-0.6-1.4-1.2-2.1-1.8  C11.9,3.2,11.8,3,11.7,3c-0.2-0.1-0.5-0.4-0.7-0.1c-0.2,0.2,0.1,0.4,0.3,0.6c2.2,2.2,4.4,4.4,6.7,6.7c1.3,1.3,2.6,2.6,4,3.9  c1.3,1.2,1.3,3.3,0,4.5c-1.5,1.4-3,2.9-4.4,4.5c-1.3,1.4-3.3,1.5-4.8,0c-3.4-3.5-6.9-6.9-10.4-10.4c-0.1-0.1-0.2-0.2-0.3-0.3  c-0.1-0.1-0.2-0.2-0.4-0.1c-0.2,0.1-0.2,0.3,0,0.4c0.3,0.4,0.6,0.8,0.9,1.2c1.9,2.2,3.8,4.4,5.7,6.7c1.8,2.2,3.5,4.4,5.4,6.5  c0.9,1,2.2,1.7,3.6,2c1.9,0.4,3.7,0.3,5.6,0.3c2.3,0,4.3,0.7,5.9,2.4c0.7,0.7,1.3,1.4,1.9,2.1c0.4,0.5,0.4,1.3,0.1,1.7  c-0.4,0.4-1.1,0.5-1.7-0.1c-0.9-0.8-1.5-1.8-2.5-2.6c-1.1-0.8-2.2-1.2-3.5-1.3c-1.4,0-2.7,0-4.1,0c-3-0.1-5.6-1.2-7.6-3.6  c-1.3-1.7-2.8-3.2-4.1-4.9c-1.8-2.2-3.7-4.4-5.5-6.6c-0.6-0.7-1.1-1.4-1.8-2C-1,13.2-1,11.5,0,10.5c1-1,2.7-1,3.7,0.1  c3.6,3.6,7.2,7.2,10.8,10.8c0.4,0.4,0.8,0.6,1.3,0.2c0.3-0.2,0.3-0.4,0-0.7c-0.9-0.8-1.7-1.7-2.5-2.5C10.2,15.2,7,12.1,3.9,9  C3.3,8.4,3.3,7.8,3.7,7.3c0.5-0.5,1.2-0.5,1.8,0.1c3.8,3.8,7.7,7.7,11.5,11.5C17.7,19.6,17.7,19.6,18.4,18.9z\"></path> <path class=\"st0\" d=\"M64.6,71.6c-1.7,0-3.1-0.7-4.3-2c-0.9-1.1-2-2.2-3-3.3c-2.2-2.4-4.4-4.8-6.6-7.2c-1.4-1.5-2.8-3.1-4.2-4.6  c-2-2.1-3.9-4.3-5.9-6.5c-0.3-0.4-0.7-0.7-0.9-1.2c-0.2-0.6,0-1,0.4-1.3c0.5-0.4,1-0.4,1.4,0.1c1.5,1.5,2.9,3.1,4.3,4.7  c0.5,0.6,1,1.1,1.6,1.7c1.2,1.4,2.6,2.7,3.8,4.1c1.9,2.1,3.9,4.3,5.8,6.4c1.4,1.5,2.8,3.1,4.2,4.7c0.4,0.4,0.7,0.8,1.1,1.2  c0.9,0.9,2,1.2,3.3,0.8c1.2-0.4,2-1.2,2.4-2.4c0.5-1.7-0.2-3-1.5-3.9c-0.8-0.6-1.4-1.3-2.2-1.9c-1.4-1.2-2.6-2.4-4-3.7  c-2.1-1.9-4.2-3.9-6.3-5.8c-1.6-1.4-3.2-2.8-4.7-4.3c-1.7-1.6-3.4-3-5.1-4.6c-0.5-0.5-0.7-1.3-0.3-1.7c0.6-0.7,1.2-0.6,1.8-0.1  c1.3,1.1,2.4,2.2,3.7,3.4c2.2,2,4.3,4,6.5,5.9c1.5,1.3,2.9,2.7,4.4,4c2.2,2,4.3,4,6.5,5.9c0.9,0.8,1.8,1.6,2.6,2.5  c0.5,0.6,0.8,1.3,0.9,2c0.2,1.3,0.1,2.7-0.5,3.9c-0.8,1.7-2.2,2.6-4,3C65.4,71.6,65,71.7,64.6,71.6z\"></path></g></svg> </span>\n</div>\n<div class=\"elementor-icon-box-content\">\n<h3 class=\"elementor-icon-box-title\">\n<span>\n\t\t\t\t\t\t\tSignature Menu\t\t\t\t\t\t</span>\n</h3>\n<p class=\"elementor-icon-box-description\">\n\t\t\t\t\t\tFresh, flavorful dishes for every taste\n\t\t\t\t\t</p>\n</div>\n</div>"
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "9dc1929",
+     "classes": "elementor-element elementor-element-9dc1929 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "icon-box",
+       "id": "8ac79ad",
+       "classes": "elementor-element elementor-element-8ac79ad elementor-view-default elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box",
+       "wrapped": true,
+       "html": "<div class=\"elementor-icon-box-wrapper\">\n<div class=\"elementor-icon-box-icon\">\n<span class=\"elementor-icon\">\n<svg id=\"Layer_1\" style=\"enable-background:new 0 0 74 74;\" viewbox=\"0 0 74 74\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><style type=\"text/css\">\t.st0{fill:#111F90;}</style><g> <path class=\"st0\" d=\"M18.9,22c-0.4-0.3-0.8-0.7-1.2-1c-0.2-0.1-0.3-0.3-0.5,0c-0.6,0.8-1.3,1.6-1.9,2.5c-0.1,0.1-0.3,0.3-0.1,0.4  c0.5,0.5,1.2,0.9,1.8,1.3c0.2,0,0.3-0.2,0.4-0.3c0.5-0.7,1-1.4,1.6-2C19.2,22.5,19.2,22.3,18.9,22z M36.1,12c-0.1,0-0.1,0-0.2,0  c-1.9-0.1-3.8,0.4-5.6,0.8c-2.3,0.6-4.5,1.5-6.5,2.7c-1.6,0.9-3,2.1-4.5,3.3c-0.3,0.2-0.4,0.4,0,0.7c0.5,0.5,1,1,1.4,1.5  c0.6-0.5,1.1-1,1.7-1.4c1.7-1.4,3.5-2.5,5.6-3.3c2.4-1,4.9-1.7,7.5-1.7c1.6,0,1.6,0,1.6-1.6C37,11.9,37,11.9,36.1,12z M36.1,12  c-0.1,0-0.1,0-0.2,0c-1.9-0.1-3.8,0.4-5.6,0.8c-2.3,0.6-4.5,1.5-6.5,2.7c-1.6,0.9-3,2.1-4.5,3.3c-0.3,0.2-0.4,0.4,0,0.7  c0.5,0.5,1,1,1.4,1.5c0.6-0.5,1.1-1,1.7-1.4c1.7-1.4,3.5-2.5,5.6-3.3c2.4-1,4.9-1.7,7.5-1.7c1.6,0,1.6,0,1.6-1.6  C37,11.9,37,11.9,36.1,12z M17.7,20.9c-0.2-0.1-0.3-0.3-0.5,0c-0.6,0.8-1.3,1.6-1.9,2.5c-0.1,0.1-0.3,0.3-0.1,0.4  c0.5,0.5,1.2,0.9,1.8,1.3c0.2,0,0.3-0.2,0.4-0.3c0.5-0.7,1-1.4,1.6-2c0.3-0.3,0.2-0.5-0.1-0.8C18.5,21.6,18.1,21.3,17.7,20.9z   M71.3,38.1c-1,0-1.9,0-2.9,0c-0.4,0-0.5-0.1-0.5-0.5c0-0.9,0-1.8-0.1-2.6c-0.2-1.7-0.4-3.3-0.9-4.9c-0.7-2.6-1.7-5-3-7.3  c-1.1-1.8-2.3-3.6-3.7-5.2c-1.3-1.4-2.6-2.7-4.1-3.8c-2.5-2-5.3-3.6-8.4-4.7C45,8,42.1,7.3,39,7.2c-0.5,0-0.8-0.1-0.8-0.8  c0.1-0.7,0-1.4,0-2.2c0-0.5,0.1-0.5,0.6-0.5c0.6,0,1.4,0.3,1.7-0.1c0.3-0.4,0.1-1.1,0.1-1.8c0-0.1,0-0.1,0-0.2  c0-0.4-0.1-0.4-0.4-0.4c-2.1,0-4.3,0-6.4,0c-0.3,0-0.4,0.1-0.4,0.4c0,0.6,0,1.1,0,1.7c0,0.4,0.1,0.5,0.5,0.5c0.5,0,1,0,1.5,0  c0.3,0,0.5,0.1,0.4,0.4c0,0.7-0.1,1.5,0,2.2c0,0.6-0.2,0.8-0.8,0.8c-1.2,0-2.4,0.2-3.5,0.4c-2.5,0.4-4.9,1.2-7.3,2.2  c-2.3,1.1-4.5,2.4-6.5,4c-1.8,1.5-3.5,3.1-4.9,4.9C11,21,9.5,23.4,8.4,26c-0.6,1.5-1.2,3-1.5,4.6c-0.5,2.3-1,4.7-0.9,7.1  c0,0.3-0.1,0.4-0.4,0.4c-1,0-1.9,0-2.9,0c-0.6,0-1.1,0.2-1.5,0.7v2.1c0.4,1.2,0.8,2.5,1.6,3.5c1.3,1.7,2.9,2.7,5,3.2  c1,0.2,2,0.1,3,0.1c2.4,0,4.7,0,7.2,0c-0.9,0.7-1.7,1.4-2.4,2.1c-0.3,0.3-0.6,0.5-1.1,0.2C14.3,49.9,14,50,13.8,50  c-4.2,0-8.4,0-12.6,0v2.5c0.3,0.3,0.8,0.2,1.1,0.2c3.2,0,6.3,0,9.5,0c1,0,1,0,1,1V69c0,1,0,1-1,1H2.4c-0.4,0-0.8-0.1-1.1,0.2  c0,0.7,0,1.3,0,1.9c0,0.5,0.1,0.6,0.6,0.6c4.4,0,8.8,0,13.1,0c0.6-0.6,0.8-1.3,0.7-2c0-0.7,0-1.3,0-2c-0.1-0.6,0.2-0.8,0.8-0.8  c9.4,0,18.8,0,28.1,0c1,0,1.8-0.3,2.7-0.6c2-0.9,3.5-2.4,5.1-3.8c1.2-1,2.4-2,3.6-3c1.5-1.2,3-2.5,4.5-3.7c1.2-1,2.4-2,3.6-3  c0.9-0.8,1.5-1.8,1.6-3c0.1-1.1-0.1-2.1-0.6-3.1c0.4-0.1,0.7-0.1,0.9-0.2c3.8-0.6,6.9-4.2,6.8-8.1C72.8,38.6,72.1,38.1,71.3,38.1z   M10.5,27.6c1-2.5,2.3-4.8,3.9-6.8c3-3.9,6.8-6.8,11.2-8.8c2.2-1,4.5-1.7,6.9-2c1.6-0.2,3.3-0.5,4.9-0.4c3.4,0.2,6.6,0.7,9.8,2  c2.7,1.1,5.2,2.5,7.5,4.4c2,1.6,3.8,3.5,5.3,5.6c2.3,3.2,3.8,6.7,4.7,10.6c0.4,1.7,0.6,3.4,0.6,5.2c0,0.6-0.1,0.8-0.8,0.8  c-9.3,0-18.5,0-27.8,0c-9.2,0-18.5,0-27.7,0c-0.6,0-0.8-0.2-0.8-0.8C8.5,34,9.3,30.8,10.5,27.6z M62.2,52.2c-1.6,1.1-3,2.5-4.5,3.7  c-1.4,1.2-2.9,2.3-4.3,3.5c-1.2,1-2.4,2-3.6,3c-0.9,0.8-1.9,1.6-2.9,2.3c-0.8,0.5-1.6,0.8-2.6,0.8h-14c-4.7,0-9.3,0-14,0  c-0.5,0-0.7-0.1-0.7-0.7c0-3.7,0-7.5,0-11.2c0-0.5,0.2-0.7,0.5-1c1.3-1,2.6-2,3.8-3.1c1.3-1.1,2.6-1.8,4.4-1.8  c4.6,0.1,9.3,0,13.9,0c0.7,0,1.4,0.1,1.9,0.7c0.4,0.5,0.6,1.1,0.3,1.8c-0.4,0.7-1,1-1.7,1c-2.5,0-5.1,0-7.6,0  c-2.1,0-3.6,1.6-3.6,3.6c0,2,1.5,3.6,3.6,3.6c4.4,0,8.7,0,13.1,0c1.3,0,2.2-0.4,3.2-1.1c2.5-1.8,5.1-3.7,7.7-5.5  c1.6-1.1,3.1-2.2,4.7-3.3c1.1-0.8,2.4-0.4,3.1,0.4C63.4,49.8,63.2,51.4,62.2,52.2z M42.8,48.2c-0.1-0.5,0-0.5,0.4-0.5h13.3  c-3.3,2.3-6.4,4.5-9.5,6.7c-0.5,0.3-0.9,0.7-1.3,1c-0.5,0.4-1,0.5-1.6,0.5c-4.3,0-8.6,0-12.8,0c-0.7,0-1.3-0.4-1.3-1  c0-0.6,0.3-0.9,0.8-1.2c0.2-0.1,0.4-0.1,0.6-0.1c2.4,0,4.8,0,7.2,0C41.5,53.8,43.7,51.2,42.8,48.2z M69.9,41.4  c-0.9,2.3-3,3.8-5.7,3.8c-18.3,0-36.6,0-55,0c-2.5,0-4.5-1.8-5.3-4.2c-0.1-0.3,0-0.4,0.3-0.4c0.2,0,0.3,0,0.5,0h64.6  C70.2,40.6,70.2,40.7,69.9,41.4z M20.7,20.9c0.6-0.5,1.1-1,1.7-1.4c1.7-1.4,3.5-2.5,5.6-3.3c2.4-1,4.9-1.7,7.5-1.7  c1.6,0,1.6,0,1.6-1.6c0-1,0-1-0.9-0.9c-0.1,0-0.1,0-0.2,0c-1.9-0.1-3.8,0.4-5.6,0.8c-2.3,0.6-4.5,1.5-6.5,2.7  c-1.6,0.9-3,2.1-4.5,3.3c-0.3,0.2-0.4,0.4,0,0.7C19.7,19.9,20.2,20.4,20.7,20.9z M17,25.1c0.2,0,0.3-0.2,0.4-0.3  c0.5-0.7,1-1.4,1.6-2c0.3-0.3,0.2-0.5-0.1-0.8c-0.4-0.3-0.8-0.7-1.2-1c-0.2-0.1-0.3-0.3-0.5,0c-0.6,0.8-1.3,1.6-1.9,2.5  c-0.1,0.1-0.3,0.3-0.1,0.4C15.7,24.4,16.3,24.7,17,25.1z M18.9,22c-0.4-0.3-0.8-0.7-1.2-1c-0.2-0.1-0.3-0.3-0.5,0  c-0.6,0.8-1.3,1.6-1.9,2.5c-0.1,0.1-0.3,0.3-0.1,0.4c0.5,0.5,1.2,0.9,1.8,1.3c0.2,0,0.3-0.2,0.4-0.3c0.5-0.7,1-1.4,1.6-2  C19.2,22.5,19.2,22.3,18.9,22z M36.1,12c-0.1,0-0.1,0-0.2,0c-1.9-0.1-3.8,0.4-5.6,0.8c-2.3,0.6-4.5,1.5-6.5,2.7  c-1.6,0.9-3,2.1-4.5,3.3c-0.3,0.2-0.4,0.4,0,0.7c0.5,0.5,1,1,1.4,1.5c0.6-0.5,1.1-1,1.7-1.4c1.7-1.4,3.5-2.5,5.6-3.3  c2.4-1,4.9-1.7,7.5-1.7c1.6,0,1.6,0,1.6-1.6C37,11.9,37,11.9,36.1,12z M36.1,12c-0.1,0-0.1,0-0.2,0c-1.9-0.1-3.8,0.4-5.6,0.8  c-2.3,0.6-4.5,1.5-6.5,2.7c-1.6,0.9-3,2.1-4.5,3.3c-0.3,0.2-0.4,0.4,0,0.7c0.5,0.5,1,1,1.4,1.5c0.6-0.5,1.1-1,1.7-1.4  c1.7-1.4,3.5-2.5,5.6-3.3c2.4-1,4.9-1.7,7.5-1.7c1.6,0,1.6,0,1.6-1.6C37,11.9,37,11.9,36.1,12z M18.9,22c-0.4-0.3-0.8-0.7-1.2-1  c-0.2-0.1-0.3-0.3-0.5,0c-0.6,0.8-1.3,1.6-1.9,2.5c-0.1,0.1-0.3,0.3-0.1,0.4c0.5,0.5,1.2,0.9,1.8,1.3c0.2,0,0.3-0.2,0.4-0.3  c0.5-0.7,1-1.4,1.6-2C19.2,22.5,19.2,22.3,18.9,22z\"></path> <path class=\"st0\" d=\"M7,68c-1.7,0-3.6-1.6-3.4-3.7c-0.2-2,1.7-3.6,3.6-3.6c2.2,0,3.6,1.5,3.7,3.6C10.9,66.4,9.2,68.1,7,68z\"></path> <path class=\"st0\" d=\"M18.9,22c0.3,0.3,0.4,0.5,0.1,0.8c-0.6,0.6-1.1,1.3-1.6,2c-0.1,0.1-0.2,0.3-0.4,0.3c-0.6-0.4-1.3-0.8-1.8-1.3  c-0.2-0.2,0-0.3,0.1-0.4c0.6-0.8,1.3-1.7,1.9-2.5c0.2-0.2,0.3-0.1,0.5,0C18.1,21.3,18.5,21.6,18.9,22z\"></path> <path class=\"st0\" d=\"M37,12.9c0,1.6,0,1.5-1.6,1.6c-2.6,0.1-5.1,0.8-7.5,1.7c-2,0.8-3.9,1.9-5.6,3.3c-0.6,0.5-1.1,0.9-1.7,1.4  c-0.5-0.5-0.9-1-1.4-1.5c-0.3-0.3-0.2-0.5,0-0.7c1.4-1.2,2.9-2.3,4.5-3.3c2-1.2,4.2-2.1,6.5-2.7c1.8-0.5,3.7-0.9,5.6-0.8  c0.1,0,0.1,0,0.2,0C37,11.9,37,11.9,37,12.9z\"></path> <path class=\"st0\" d=\"M10.8,64.4c0.1,2-1.6,3.7-3.8,3.7c-1.7,0-3.6-1.6-3.4-3.7c-0.2-2,1.7-3.6,3.6-3.6  C9.4,60.8,10.8,62.3,10.8,64.4z\"></path> <path class=\"st0\" d=\"M37,12.9c0,1.6,0,1.5-1.6,1.6c-2.6,0.1-5.1,0.8-7.5,1.7c-2,0.8-3.9,1.9-5.6,3.3c-0.6,0.5-1.1,0.9-1.7,1.4  c-0.5-0.5-0.9-1-1.4-1.5c-0.3-0.3-0.2-0.5,0-0.7c1.4-1.2,2.9-2.3,4.5-3.3c2-1.2,4.2-2.1,6.5-2.7c1.8-0.5,3.7-0.9,5.6-0.8  c0.1,0,0.1,0,0.2,0C37,11.9,37,11.9,37,12.9z\"></path> <path class=\"st0\" d=\"M19,22.8c-0.6,0.6-1.1,1.3-1.6,2c-0.1,0.1-0.2,0.3-0.4,0.3c-0.6-0.4-1.3-0.8-1.8-1.3c-0.2-0.2,0-0.3,0.1-0.4  c0.6-0.8,1.3-1.7,1.9-2.5c0.2-0.2,0.3-0.1,0.5,0c0.4,0.3,0.8,0.7,1.2,1C19.2,22.3,19.2,22.5,19,22.8z\"></path></g></svg> </span>\n</div>\n<div class=\"elementor-icon-box-content\">\n<h3 class=\"elementor-icon-box-title\">\n<span>\n\t\t\t\t\t\t\tFriendly Team\t\t\t\t\t\t</span>\n</h3>\n<p class=\"elementor-icon-box-description\">\n\t\t\t\t\t\tGenuine, welcoming service\t\t\t\t\t</p>\n</div>\n</div>"
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "be80395",
+     "classes": "elementor-element elementor-element-be80395 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "icon-box",
+       "id": "bfc1031",
+       "classes": "elementor-element elementor-element-bfc1031 elementor-view-default elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box",
+       "wrapped": true,
+       "html": "<div class=\"elementor-icon-box-wrapper\">\n<div class=\"elementor-icon-box-icon\">\n<span class=\"elementor-icon\">\n<svg id=\"Layer_1\" style=\"enable-background:new 0 0 75 70;\" viewbox=\"0 0 75 70\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><style type=\"text/css\">\t.st0{fill:#111F90;}</style><g> <path class=\"st0\" d=\"M55.4,32.3c-7.2,0-12.4,5.5-12.8,12c-0.4,8,5.9,13.6,12.7,13.6c7.2,0,13-5.7,12.9-12.9  C68.3,37.8,62.4,32.3,55.4,32.3z M55.4,55.3c-5.5,0-10.4-4.6-10.1-10.7c0.3-5.2,4.4-9.5,10.1-9.6c5.4,0,10.1,4.2,10.1,10.1  C65.6,50.8,61,55.3,55.4,55.3z\"></path> <path class=\"st0\" d=\"M9.5,69.3L9.5,69.3c0,1.5,0,1.5-1.4,1.5c-1.3,0-1.3,0-1.3-1.3c0-1.4,0-1.4,1.5-1.4C9.5,68,9.5,68,9.5,69.3z\"></path> <path class=\"st0\" d=\"M17.1,66.9c0,1.3,0,1.3-1.3,1.3c-1.4,0-1.4,0-1.4-1.3s0-1.3,1.4-1.3C17.1,65.5,17.1,65.5,17.1,66.9z\"></path> <path class=\"st0\" d=\"M62.7,73.1c-0.4,0.4-1.2,0.1-1.9,0.1c-1.8,0-3.6,0-5.5,0c-2.2,0-4.5,0-6.8,0c-0.5,0-0.7-0.2-0.6-0.7  c0.1-0.7-0.3-1.5,0.2-1.9c0.4-0.3,1.2-0.1,1.9-0.1c4,0,8.1,0,12.1,0c0.6,0,0.8,0.2,0.7,0.7C62.8,71.9,63.1,72.7,62.7,73.1z\"></path> <path class=\"st0\" d=\"M68.1,68.1c-0.4,0.3-1.2,0.1-1.8,0.1c-7.6,0-15.3,0-22.9,0c-0.6,0-0.8-0.2-0.8-0.8c0.1-0.6-0.3-1.4,0.1-1.8  s1.2-0.1,1.8-0.1c3.7,0,7.3,0,10.9,0c4,0,8,0,12.1,0c0.6,0,0.8,0.2,0.7,0.8C68.2,66.8,68.5,67.7,68.1,68.1z\"></path> <path class=\"st0\" d=\"M55.4,32.3c-7.2,0-12.4,5.5-12.8,12c-0.4,8,5.9,13.6,12.7,13.6c7.2,0,13-5.7,12.9-12.9  C68.3,37.8,62.4,32.3,55.4,32.3z M55.4,55.3c-5.5,0-10.4-4.6-10.1-10.7c0.3-5.2,4.4-9.5,10.1-9.6c5.4,0,10.1,4.2,10.1,10.1  C65.6,50.8,61,55.3,55.4,55.3z\"></path> <path class=\"st0\" d=\"M68.1,68.1c-0.4,0.3-1.2,0.1-1.8,0.1c-7.6,0-15.3,0-22.9,0c-0.6,0-0.8-0.2-0.8-0.8c0.1-0.6-0.3-1.4,0.1-1.8  s1.2-0.1,1.8-0.1c3.7,0,7.3,0,10.9,0c4,0,8,0,12.1,0c0.6,0,0.8,0.2,0.7,0.8C68.2,66.8,68.5,67.7,68.1,68.1z\"></path> <path class=\"st0\" d=\"M62.7,73.1c-0.4,0.4-1.2,0.1-1.9,0.1c-1.8,0-3.6,0-5.5,0c-2.2,0-4.5,0-6.8,0c-0.5,0-0.7-0.2-0.6-0.7  c0.1-0.7-0.3-1.5,0.2-1.9c0.4-0.3,1.2-0.1,1.9-0.1c4,0,8.1,0,12.1,0c0.6,0,0.8,0.2,0.7,0.7C62.8,71.9,63.1,72.7,62.7,73.1z\"></path> <path class=\"st0\" d=\"M17.1,66.9c0,1.3,0,1.3-1.3,1.3c-1.4,0-1.4,0-1.4-1.3s0-1.3,1.4-1.3C17.1,65.5,17.1,65.5,17.1,66.9z\"></path> <path class=\"st0\" d=\"M9.5,69.3L9.5,69.3c0,1.5,0,1.5-1.4,1.5c-1.3,0-1.3,0-1.3-1.3c0-1.4,0-1.4,1.5-1.4C9.5,68,9.5,68,9.5,69.3z\"></path> <path class=\"st0\" d=\"M75.9,63.1v-2.7c-18.9,0-37.7,0-56.6,0c-0.5,0-1-0.1-1.4-0.4c-0.8-0.5-1.6-1-2.5-1.4c-0.5-0.2-0.6-0.5-0.3-1  c1.3-2.2,2.4-4.5,3.5-6.8c0.9-2,1.8-4.1,2.6-6.1c1.1-2.8,2-5.7,2.8-8.6c0.7-2.6,1.4-5.2,1.8-7.8c0.3-1.6,0.7-3.2,0.8-4.8  c0.1-0.9,0.3-1.8,0.4-2.7l0,0c0,0,0.1-0.1,0.2-0.1c0,0,0,0.1,0.1,0.1c0.1,0.2,0.2,0.4,0.3,0.5c3.5,3.5,7.1,7.1,10.6,10.6  c1.4,1.4,2.5,0.8,3-0.6c0.7-2,1.2-4,0.9-6.1c-0.2-1.9-0.7-3.7-1.8-5.4c-0.7-1.1-1.6-2.1-2.6-3.2l-0.1-0.1h0.9c2.6,0,5.2,0,7.8,0  c1,0,1.6-0.8,1.3-1.8c-0.5-1.7-1.5-3.2-2.7-4.5c-2.7-2.8-5.9-4.1-9.7-4c-0.3,0-0.6,0-1,0h-0.1l0.1-0.1c2.1-2.1,4-4.1,6.1-6  c0.8-0.8,0.7-2.2-0.6-2.6c-1.1-0.4-2.2-0.7-3.2-1h-3.9c-1.2,0.2-2.3,0.4-3.4,0.9c-2.2,1-3.8,2.6-5.3,4.2c-0.5,0.5-0.5,0.5-1,0  c-2.3-2.8-5-4.9-8.8-5.2h-3.8C9.2-3.2,8-3,6.9-2.4C5.6-1.8,5.4-0.8,6.4,0.4C8,2.2,9.8,3.8,11.5,5.6c0.2,0.2,0.4,0.3,0.4,0.5  C5.8,6.3,1.2,8.7-0.9,14.8v1.1c0.4,0.7,1,0.9,1.8,0.9c2.6,0,5.1,0,7.7,0c0.2,0,0.4-0.1,0.5,0.1c-0.9,0.9-1.8,1.8-2.5,3  c-1.2,1.9-1.8,4-1.9,6.2c-0.1,2.1,0.4,4,1.2,5.9c0.4,1,1.6,1.2,2.4,0.4c3.4-3.4,6.7-6.8,10.2-10c0.2-0.2,0.3-0.4,0.6-0.5  c-0.1,0.8-0.1,1.5-0.2,2.3c-0.5,2.5-1,5-1.6,7.4c-1.1,4.2-2.6,8.2-4.4,12c-0.8,1.6-1.6,3.2-2.5,4.8c-1.3,2.2-2.7,4.4-4.2,6.4  C5.8,55,5.6,55.1,5.4,55c-1.5-0.5-3.1-0.7-4.7-1c-0.6-0.1-1,0-1.1,0.7c-0.3,1.8-0.3,1.9,1.5,2.1C2,57,3,57.1,3.9,57.5  c-0.1,0.1-0.2,0.2-0.2,0.3c-0.5,0.4-0.5,0.7,0,1c0.4,0.2,0.7,0.5,1,0.9c0.4,0.5,0.8,0.3,1.1-0.1C6.4,58.7,7,57.9,7.7,57  c2.5-3.2,4.6-6.6,6.4-10.1c2.2-4.2,3.9-8.6,5.3-13.1c0.7-2.5,1.3-5,1.8-7.6c0.3-1.8,0.6-3.7,0.7-5.5c0.1-1.3,0.4-2.4,1.5-3.2  c0.1,0,0.1-0.1,0.2-0.2c0.5,0.5,1.1,0.8,1,1.7c-0.2,1.2-0.3,2.3-0.5,3.5c-0.2,1.5-0.3,3-0.6,4.4c-0.7,3.6-1.5,7.2-2.6,10.7  c-1.3,4.2-2.8,8.2-4.6,12.2c-2.1,4.7-4.7,9.1-7.6,13.4c-0.2,0.3-0.3,0.4,0.1,0.6c0.5,0.4,1,0.7,1.5,1c0.3,0.3,0.5,0.2,0.7-0.1  c0.7-1.2,1.5-2.3,2.2-3.5c0.3-0.5,0.5-0.5,0.9-0.3c1.2,0.6,2.4,1.3,3.6,2c2,1.3,3.9,2.6,5.7,4.2c1.7,1.4,3.2,3,4.6,4.7  c0.8,0.9,0.9,0.9,1.8,0.2c1.2-0.8,1.2-0.8,0.2-2c0,0-0.1-0.1-0.2-0.2c-1.8-2.2-3.9-4-6-5.8c-0.3-0.3-0.8-0.4-1.1-0.9l0,0H75.9z   M39.3,28.9c-4.4-4.4-8.7-8.7-13.1-13c2.8-1,6.9,0,9.9,3C38.8,21.7,40.2,24.9,39.3,28.9z M44.3,14c-3.4,0-6.8,0-10.1,0  c-0.8,0-1.5-0.6-2.3-0.8c-1.7-0.4-3.3-0.6-5-0.3c-0.1,0-0.2,0-0.4,0c0.6-1.7,4.5-3.7,7-3.9C40.1,8.6,42.9,11.5,44.3,14z M36.7-0.5  c0.2,0,0.5,0.1,0.2,0.4c-0.1,0-0.1,0.1-0.2,0.2c-2.2,2.2-4.4,4.3-6.5,6.6c-0.3,0.3-0.7,0.6-1.1,0.7c-2,0.8-3.6,2-4.8,3.7  c-0.1,0.2-0.2,0.4-0.5,0.7c-0.4-3,0.2-5.4,1.9-7.5c1.8-2.2,3.8-4.1,6.7-4.8C33.8-0.8,35.2-0.8,36.7-0.5z M18,1.1  c1.4,1,2.6,2.2,3.6,3.7c0.3,0.4,0.2,0.7,0.1,1.1C21.3,7,21,8.1,21,9.3c-1.1-0.8-2.1-1.5-3.3-2c-0.3-0.1-0.6-0.3-0.9-0.5  c-2.2-2.2-4.5-4.5-6.7-6.7C10,0,9.9-0.2,9.8-0.3c0.2-0.1,0.3-0.2,0.5-0.2C13.1-0.9,15.7-0.6,18,1.1z M7.7,29  C5.5,22.5,13.3,13.4,21,15.9C16.7,20.4,12.1,24.5,7.7,29z M13.6,9.1c2.7,0.2,5.8,1.9,7,4c-0.9-0.3-1.8-0.2-2.6-0.2  c-1.4,0-2.8,0.3-4.2,0.8C13.2,13.9,12.6,14,12,14c-3.1,0-6.2,0-9.5,0C5.2,9.8,9.1,8.7,13.6,9.1z\"></path></g></svg> </span>\n</div>\n<div class=\"elementor-icon-box-content\">\n<h3 class=\"elementor-icon-box-title\">\n<span>\n\t\t\t\t\t\t\tOcean View Dining\t\t\t\t\t\t</span>\n</h3>\n<p class=\"elementor-icon-box-description\">\n\t\t\t\t\t\tScenic views with every meal\n\t\t\t\t\t</p>\n</div>\n</div>"
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "2d20285",
+     "classes": "elementor-element elementor-element-2d20285 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "icon-box",
+       "id": "890d423",
+       "classes": "elementor-element elementor-element-890d423 elementor-view-default elementor-position-block-start elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box",
+       "wrapped": true,
+       "html": "<div class=\"elementor-icon-box-wrapper\">\n<div class=\"elementor-icon-box-icon\">\n<span class=\"elementor-icon\">\n<svg id=\"Layer_1\" style=\"enable-background:new 0 0 70 70;\" viewbox=\"0 0 70 70\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><style type=\"text/css\">\t.st0{fill:#111F90;}</style><g> <path class=\"st0\" d=\"M-0.8,25.4c0.4-1,1-1.8,2.1-2.1c2.3-0.7,4.3,0.8,4.4,3.1c0,5.3,0,10.7,0,16c0,0.6,0.1,0.7,0.7,0.7  c4,0,8,0,11.9,0c1,0,1.9,0.2,2.7,0.8c1.6,1.1,2,3.9,0.8,5.4c-1,1.3-2.4,1.7-3.9,1.7c-0.9,0-0.8,0-0.7,0.8c0.2,1.5,0.4,3,0.6,4.5  c0.2,1.5,0.5,2.9,0.7,4.4c0.2,1.2,0.3,2.4,0.5,3.5c0.1,0.7,0.3,1.4,0.3,2.2c0,0.7-0.4,1.2-1.1,1.2c-0.6,0-1.1-0.5-1.2-1.1  c-0.3-1.9-0.6-3.8-0.8-5.7c-0.3-1.8-0.5-3.7-0.7-5.5c-0.2-1.3-0.4-2.7-0.6-4c0-0.3-0.2-0.3-0.4-0.3c-2.8,0-5.6,0-8.4,0  c-0.2,0-0.4,0-0.4,0.3c-0.2,1.3-0.4,2.6-0.6,3.9c-0.2,1.5-0.4,3-0.7,4.5C4.3,60.9,4.2,62,4,63.2c-0.2,1.2-0.4,2.5-0.6,3.7  c-0.1,0.6-0.6,0.9-1.3,0.7c-0.6-0.1-0.9-0.6-0.8-1.2c0.3-1.9,0.5-3.8,0.7-5.6c0.3-2.2,0.7-4.3,1-6.5c0.1-0.9,0.2-1.9,0.4-2.8  c0.1-0.4-0.2-0.3-0.4-0.3c-0.6,0-1.2-0.1-1.7-0.3c-1-0.4-1.6-1.2-2-2.2C-0.8,40.9-0.8,33.2-0.8,25.4z M10.6,48.9c2.5,0,5.1,0,7.6,0  c0.9,0,1.6-0.4,2-1.1c0.5-1.1-0.4-2.3-1.8-2.3c-4.8,0-9.7,0-14.5,0c-0.7,0-1.4,0.3-1.9,0.8c-0.4,0.5-0.7,1.5-0.5,1.9  c0.4,0.6,0.9,0.8,1.6,0.8C5.6,48.9,8.1,48.9,10.6,48.9z M1.4,43.7c0.4-0.1,0.8-0.4,1.2-0.4c0.7,0,0.8-0.3,0.8-0.9  c0-5.2,0-10.4,0-15.6c0-0.2,0-0.3,0-0.5c-0.2-0.5-0.3-0.9-1-0.9c-0.6,0-0.9,0.2-1,0.8c-0.1,0.3-0.1,0.7-0.1,1c0,5.2,0,10.5,0,15.7  C1.3,43.2,1.3,43.5,1.4,43.7z\"></path> <path class=\"st0\" d=\"M35,33.8c-7.8,0-15.7,0-23.5,0c-0.3,0-0.6,0-0.9,0.1c-0.4,0.2-0.6,0.5-0.5,0.9c0.1,0.5,0.3,0.7,0.8,0.8  c0.8,0.1,1.6-0.1,2.4,0.1c0.6,0.2,0.9,0.6,0.8,1.2c0,0.5-0.5,0.9-1.2,0.9c-1,0-2.1,0.2-3.1-0.1c-1.2-0.4-2.3-2-2.1-3.1  c0.3-2.2,1.8-3,3.1-3c1.8,0,3.5,0,5.3,0c0.5,0,0.6-0.1,0.7-0.6c0.2-1.1-0.7-1.4-1.3-1.9c-1-0.9-1.6-1.9-1.8-3.2  c-0.2-1.1-0.1-2.3-0.1-3.4c0-1.3,0.7-2,1.9-2c1.5,0,3.1,0.1,4.6,0c1.5-0.1,2.1,0.4,2.2,1.9c0.1,1.5,0.1,3.1-0.5,4.6  c-0.4,1.1-1.3,1.9-2.1,2.6c-0.3,0.2-0.6,0.4-0.7,0.8c-0.2,1-0.1,1.1,1,1.1c10,0,20,0,30,0c0.3,0,0.7,0.2,0.8-0.1  c0.1-0.5,0.3-1-0.2-1.4c-0.6-0.5-1.2-1-1.8-1.6c-0.7-0.9-1.1-1.8-1.2-3c-0.1-1.2-0.2-2.3,0-3.5c0.2-0.8,0.7-1.4,1.5-1.4  c1.7,0,3.5,0.1,5.2,0c0.9,0,1.8,0.5,1.8,1.6c0.1,1.5,0.2,3-0.3,4.5c-0.4,1.4-1.4,2.3-2.5,3.2c-0.3,0.2-0.6,1.4-0.4,1.7  c0.1,0.2,0.3,0.1,0.5,0.1c1.7,0,3.5,0,5.2,0c1.4,0,2.4,0.6,3,1.9c0.9,2-0.5,4.4-2.8,4.4c-6.1,0-12.1,0-18.2,0  c-0.6,0-0.8,0.1-0.7,0.7c0.1,1.3,0,2.5-0.7,3.7c-0.2,0.4-0.5,0.8-0.8,1.1c-0.3,0.3-0.4,0.6-0.4,1c0.2,1.5,0.4,3,0.5,4.5  c0.1,1.1,0.2,2.1,0.3,3.2c0.2,1.6,0.4,3.2,0.5,4.8c0.1,1,0.2,2,0.3,2.9c0.2,1.6,0.4,3.3,0.5,4.9c0.2,1.9-0.6,3.1-2.7,3.2  c-2,0.1-4.1,0.1-6.1,0c-2-0.1-3-1.4-2.6-3.4c0.2-1,0.2-2,0.3-3.1c0.2-1.6,0.3-3.2,0.5-4.8c0.1-1,0.2-2.1,0.3-3.1  c0.2-1.6,0.4-3.2,0.5-4.8c0.1-1,0.2-2,0.3-3c0-0.3,0-0.6,0.1-0.9c0.1-0.5,0-0.9-0.4-1.4c-1.1-1.2-1.5-2.8-1.4-4.4  c0.1-0.9,0-0.9-0.9-0.9c-3.6,0-7.1,0-10.7,0c-0.8,0-1.2-0.4-1.2-1c0-0.8,0.4-1.2,1.2-1.3c0.2,0,0.3,0,0.5,0c13.4,0,26.9,0,40.3,0  c0.8,0,1.3-0.6,1-1.2c-0.2-0.4-0.5-0.6-1-0.6c-1.2,0-2.4,0-3.6,0C48.5,33.8,41.8,33.8,35,33.8z M34.9,65.5c0.9,0,1.9,0,2.8,0  c0.7,0,0.9-0.2,0.7-0.9c-0.2-0.6-0.2-1.2-0.2-1.8c-0.1-1.6-0.3-3.1-0.5-4.7c-0.2-2.4-0.5-4.7-0.8-7.1c-0.2-1.9-0.4-3.9-0.6-5.8  c0-0.4-0.2-0.5-0.5-0.4c-0.6,0-1.2,0.1-1.7,0c-0.4,0-0.5,0.1-0.5,0.4c0,0.9-0.2,1.8-0.3,2.7c-0.1,1.6-0.3,3.1-0.5,4.7  c-0.2,2.4-0.5,4.8-0.8,7.2c-0.2,1.7-0.3,3.3-0.6,5c-0.1,0.5,0,0.8,0.6,0.8C33.1,65.5,34,65.5,34.9,65.5z M35,37.9  c-0.6,0-1.1,0-1.7,0c-1.4,0-1.4,0-1.4,1.4c0,1.2,0.4,2.1,1.4,2.8c1.6,1.2,3.9,0.3,4.5-1.4c0.3-0.8,0.2-1.6,0.3-2.4  c0-0.4-0.1-0.5-0.5-0.5C36.7,37.9,35.8,37.9,35,37.9z M52,22.8c-0.6,0-1.2,0-1.7,0c-0.2,0-0.4,0-0.4,0.3c-0.1,1.8,0.1,3.5,1.7,4.7  c0.2,0.1,0.4,0.4,0.6,0.2c0.7-0.6,1.5-1.2,1.8-2.2c0.3-1,0.2-2,0.1-2.9C53.4,22.7,52.7,22.8,52,22.8z M15.9,24.2  c-0.1,1.4,0.5,2.7,1.8,3.6c0.2,0.2,0.4,0.3,0.7,0.1c0.8-0.7,1.6-1.4,1.8-2.5c0.2-0.7,0.1-1.5,0.1-2.2c0-0.4-0.1-0.5-0.5-0.5  c-0.9,0-1.7,0-2.6,0C15.9,22.8,15.9,22.8,15.9,24.2z\"></path> <path class=\"st0\" d=\"M70.8,37c0,3.6,0,7.3,0,10.9c0,1.5-1.2,2.8-2.6,3.1c-0.2,0-0.3,0.1-0.5,0.1c-0.3,0.1-0.8-0.2-1,0.1  c-0.1,0.2,0.1,0.6,0.1,0.9c0.2,1.8,0.6,3.6,0.8,5.3c0.2,1.5,0.4,3,0.6,4.5c0.2,1.5,0.4,2.9,0.6,4.4c0.1,0.6-0.2,1.1-0.8,1.2  c-0.7,0.1-1.2-0.1-1.3-0.7c-0.3-1.6-0.5-3.2-0.7-4.9c-0.2-1.5-0.5-2.9-0.7-4.4c-0.2-1.4-0.4-2.9-0.6-4.3c-0.1-0.6-0.2-1.3-0.3-1.9  c0-0.3-0.2-0.3-0.4-0.3c-2.8,0-5.6,0-8.5,0c-0.2,0-0.4,0-0.4,0.3c-0.2,1.4-0.4,2.8-0.6,4.2c-0.2,1.5-0.4,3-0.7,4.5  c-0.2,1.4-0.4,2.9-0.6,4.3c-0.1,0.8-0.1,1.6-0.3,2.3c-0.1,0.5-0.5,0.9-1.1,0.9c-0.8-0.1-1.1-0.3-1.1-1.1c0.1-1.3,0.3-2.5,0.4-3.7  c0.2-1.1,0.3-2.3,0.5-3.4c0.2-1.5,0.5-3.1,0.7-4.6c0.1-1.1,0.3-2.2,0.5-3.3c0.1-0.3-0.1-0.4-0.4-0.4c-0.8,0.1-1.7,0-2.4-0.3  c-1.7-0.6-2.7-2.3-2.5-4c0.2-1.8,1.2-3.1,3.2-3.5c0.6-0.1,1.1-0.1,1.7-0.1c3.8,0,7.5,0,11.3,0c0.6,0,0.7-0.2,0.7-0.7  c0-5.4,0-10.8,0-16.1c0-1.7,1.3-2.9,2.5-3.1c1.9-0.4,3.3,0.5,3.9,2.2c0.1,0.3,0.1,0.5,0.1,0.7C70.8,29.8,70.8,33.4,70.8,37z   M59.4,48.9c2.5,0,5.1,0,7.6,0c1,0,1.5-0.5,1.5-1.4c0-1.1-1.1-2-2.3-2.1c-1.6,0-3.3,0-4.9,0c-3.2,0-6.5,0-9.7,0  c-1.4,0-2.3,1.2-1.8,2.3c0.4,0.8,1.1,1.1,2,1.1C54.3,48.9,56.9,48.9,59.4,48.9z M68.6,43.7c0-0.2,0-0.3,0-0.4c0-5.5,0-11,0-16.5  c0-0.2-0.1-0.4-0.1-0.6c-0.1-0.7-0.5-0.9-1.1-0.9c-0.6,0.1-0.8,0.5-0.9,1c0,0.3,0,0.7,0,1c0,5,0,10.1,0,15.1c0,0.4,0,0.8,0.5,0.8  C67.6,43.3,68.1,43.5,68.6,43.7z\"></path> <path class=\"st0\" d=\"M25.6,9.1c0,1.9,0.7,3.3,1.7,4.6c1.9,2.5,4.5,4.2,7.3,5.5c0.3,0.1,0.6,0.1,0.9,0c2.6-1.2,4.8-2.7,6.7-4.8  c0.3-0.4,0.6-0.9,0.9-1.3c0.4-0.5,0.8-1,1.5-0.7c0.7,0.2,1,1.2,0.5,1.9c-0.8,1.3-1.8,2.4-3,3.4c-1.5,1.3-3.2,2.3-4.9,3.3  c-1.8,1-3.4,0.7-5.1-0.3c-1.4-0.8-2.8-1.6-4-2.7c-2.1-1.8-3.9-3.9-4.6-6.7C23,8.5,23.5,6,25.6,4c1.2-1.1,2.5-1.7,4.2-1.8  c1.6-0.1,3.1,0.1,4.3,1.2c0.7,0.6,1,0.6,1.7-0.1c0.9-0.8,2-1.1,3.2-1.1c1.7-0.1,3.3,0.3,4.7,1.3c1.6,1.2,2.6,2.8,2.8,4.8  c0.1,0.9-0.3,1.4-1,1.5c-0.8,0.1-1.1-0.3-1.3-1.3c-0.4-2-1.8-3.8-4.1-4c-1.9-0.2-3.3,0.5-4.2,2.2c-0.2,0.4-0.6,0.6-1,0.6  c-0.4,0-0.8-0.1-1-0.6c-0.7-1.5-2.1-2.3-3.6-2.2c-1.4,0-2.7,0.6-3.6,1.8C26,7.1,25.5,8.1,25.6,9.1z\"></path></g></svg> </span>\n</div>\n<div class=\"elementor-icon-box-content\">\n<h3 class=\"elementor-icon-box-title\">\n<span>\n\t\t\t\t\t\t\tIntimate Dinner\t\t\t\t\t\t</span>\n</h3>\n<p class=\"elementor-icon-box-description\">\n\t\t\t\t\t\tA cozy setting for special moments\t\t\t\t\t</p>\n</div>\n</div>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "787c2b8",
+   "classes": "elementor-element elementor-element-787c2b8 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "af61f5c",
+     "classes": "elementor-element elementor-element-af61f5c e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "0713086",
+       "classes": "elementor-element elementor-element-0713086 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "e3e78a2",
+         "classes": "elementor-element elementor-element-e3e78a2 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Taste Sumbawa’s Fresh Flavors </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Mutiara Photos     </h2>\n</div>",
+         "animation": "fadeInUp"
+        },
+        {
+         "type": "text-editor",
+         "id": "d07aab5",
+         "classes": "elementor-element elementor-element-d07aab5 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p> A Culinary Journey Through Sumbawa</p>"
+        }
+       ]
+      },
+      {
+       "type": "image-gallery",
+       "id": "9ecdf89",
+       "classes": "elementor-element elementor-element-9ecdf89 gallery-spacing-custom rt-equ-hei elementor-widget elementor-widget-image-gallery",
+       "wrapped": true,
+       "html": "<div class=\"elementor-image-gallery\">\n<div class=\"gallery galleryid-9159 gallery-columns-3 gallery-size-full\" id=\"gallery-1\"><figure class=\"gallery-item\">\n<div class=\"gallery-icon landscape\">\n<a data-e-action-hash=\"#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTUzMTAsInVybCI6Imh0dHBzOlwvXC9tb2NlYW5iZWFjaHJlc29ydC5jb21cL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjVcLzA5XC9HcmlsbGVkLWNoZWVzZS1zYW5kd2ljaC5qcGciLCJzbGlkZXNob3ciOiI5ZWNkZjg5In0%3D\" data-elementor-lightbox-slideshow=\"9ecdf89\" data-elementor-lightbox-title=\"Grilled cheese sandwich\" data-elementor-open-lightbox=\"yes\" href=\"/images/uploads/2025/09/Grilled-cheese-sandwich.jpg\"><img alt=\"\" class=\"attachment-full size-full\" decoding=\"async\" height=\"1000\" src=\"/images/uploads/2025/09/Grilled-cheese-sandwich.jpg\" width=\"1500\"/></a>\n</div></figure><figure class=\"gallery-item\">\n<div class=\"gallery-icon landscape\">\n<a data-e-action-hash=\"#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTA0NzIsInVybCI6Imh0dHBzOlwvXC9tb2NlYW5iZWFjaHJlc29ydC5jb21cL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjVcLzA1XC9EaW5lXzIuanBnIiwic2xpZGVzaG93IjoiOWVjZGY4OSJ9\" data-elementor-lightbox-slideshow=\"9ecdf89\" data-elementor-lightbox-title=\"2\" data-elementor-open-lightbox=\"yes\" href=\"/images/uploads/2025/05/Dine_2.jpg\"><img alt=\"\" class=\"attachment-full size-full\" decoding=\"async\" height=\"1486\" loading=\"lazy\" src=\"/images/uploads/2025/05/Dine_2.jpg\" width=\"1700\"/></a>\n</div></figure><figure class=\"gallery-item\">\n<div class=\"gallery-icon landscape\">\n<a data-e-action-hash=\"#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTA0NzUsInVybCI6Imh0dHBzOlwvXC9tb2NlYW5iZWFjaHJlc29ydC5jb21cL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjVcLzA1XC9EaW5lXzUuanBnIiwic2xpZGVzaG93IjoiOWVjZGY4OSJ9\" data-elementor-lightbox-slideshow=\"9ecdf89\" data-elementor-lightbox-title=\"5\" data-elementor-open-lightbox=\"yes\" href=\"/images/uploads/2025/05/Dine_5.jpg\"><img alt=\"\" class=\"attachment-full size-full\" decoding=\"async\" height=\"1486\" loading=\"lazy\" src=\"/images/uploads/2025/05/Dine_5.jpg\" width=\"1700\"/></a>\n</div></figure><figure class=\"gallery-item\">\n<div class=\"gallery-icon landscape\">\n<a data-e-action-hash=\"#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTA0NzMsInVybCI6Imh0dHBzOlwvXC9tb2NlYW5iZWFjaHJlc29ydC5jb21cL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjVcLzA1XC9EaW5lXzMuanBnIiwic2xpZGVzaG93IjoiOWVjZGY4OSJ9\" data-elementor-lightbox-slideshow=\"9ecdf89\" data-elementor-lightbox-title=\"3\" data-elementor-open-lightbox=\"yes\" href=\"/images/uploads/2025/05/Dine_3.jpg\"><img alt=\"\" class=\"attachment-full size-full\" decoding=\"async\" height=\"1486\" loading=\"lazy\" src=\"/images/uploads/2025/05/Dine_3.jpg\" width=\"1700\"/></a>\n</div></figure><figure class=\"gallery-item\">\n<div class=\"gallery-icon landscape\">\n<a data-e-action-hash=\"#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTA0NzQsInVybCI6Imh0dHBzOlwvXC9tb2NlYW5iZWFjaHJlc29ydC5jb21cL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjVcLzA1XC9EaW5lXzQuanBnIiwic2xpZGVzaG93IjoiOWVjZGY4OSJ9\" data-elementor-lightbox-slideshow=\"9ecdf89\" data-elementor-lightbox-title=\"4\" data-elementor-open-lightbox=\"yes\" href=\"/images/uploads/2025/05/Dine_4.jpg\"><img alt=\"\" class=\"attachment-full size-full\" decoding=\"async\" height=\"1486\" loading=\"lazy\" src=\"/images/uploads/2025/05/Dine_4.jpg\" width=\"1700\"/></a>\n</div></figure><figure class=\"gallery-item\">\n<div class=\"gallery-icon landscape\">\n<a data-e-action-hash=\"#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MTA0NzEsInVybCI6Imh0dHBzOlwvXC9tb2NlYW5iZWFjaHJlc29ydC5jb21cL3dwLWNvbnRlbnRcL3VwbG9hZHNcLzIwMjVcLzA1XC9EaW5lXzEuanBnIiwic2xpZGVzaG93IjoiOWVjZGY4OSJ9\" data-elementor-lightbox-slideshow=\"9ecdf89\" data-elementor-lightbox-title=\"1\" data-elementor-open-lightbox=\"yes\" href=\"/images/uploads/2025/05/Dine_1.jpg\"><img alt=\"\" class=\"attachment-full size-full\" decoding=\"async\" height=\"1486\" loading=\"lazy\" src=\"/images/uploads/2025/05/Dine_1.jpg\" width=\"1700\"/></a>\n</div></figure>\n</div>\n</div>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "44cd93a",
+   "classes": "elementor-element elementor-element-44cd93a e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "b39b522",
+     "classes": "elementor-element elementor-element-b39b522 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "37f67ba",
+       "classes": "elementor-element elementor-element-37f67ba e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "3f37c3a",
+         "classes": "elementor-element elementor-element-3f37c3a elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Menu </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Mutiara by Mocean Menu     </h2>\n</div>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "e156c2e",
+       "classes": "elementor-element elementor-element-e156c2e e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "text-editor",
+         "id": "7701734",
+         "classes": "elementor-element elementor-element-7701734 elementor-widget__width-inherit elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "Our dishes are made with fresh ingredients, rich flavors, and vibrant colors to create a dining experience that reflects our passion for quality.<br/>\n<small>*Please note that all prices on this menu are in thousand idr, subject to 11% local tax and 10% service tax</small>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "6c01973",
+     "classes": "elementor-element elementor-element-6c01973 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "restaurant_menu",
+       "id": "d7e39cc",
+       "classes": "elementor-element elementor-element-d7e39cc elementor-widget elementor-widget-restaurant_menu",
+       "wrapped": true,
+       "html": "<div class=\"resturant__menu__list\">\n<div class=\"nav nav-tabs\" id=\"nav-tab\" role=\"tablist\">\n<button class=\"menu-tab-btn active\" data-tab=\"tab-d7e39cc-0\">\n                        Breakfast                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-1\">\n                        Smoothies and Bowls                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-2\">\n                        Breakfast Add ons                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-3\">\n                        Lunch                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-4\">\n                        Sides Lunch                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-5\">\n                        Local                     </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-6\">\n                        Salads                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-7\">\n                        Soups                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-8\">\n                        Appetizers                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-9\">\n                        Sushi                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-10\">\n                        Surf  and Turf                     </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-11\">\n                        Signature Dishes                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-12\">\n                        Dinner Sides                    </button>\n<button class=\"menu-tab-btn\" data-tab=\"tab-d7e39cc-13\">\n                        Dessert                    </button>\n</div>\n</div>\n<div class=\"menu-tab-panel active\" id=\"tab-d7e39cc-0\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Eggs your way\" decoding=\"async\" src=\"/images/uploads/2025/09/Eggs-your-way.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Eggs your way</h4>\n<span>IDR 55K</span>\n</div>\n<span>Two eggs fried, scrambled or omelet style\nwith homemade toast and butter</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Full Breakfast\" decoding=\"async\" src=\"/images/uploads/2025/09/Big-Breakfast.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Full Breakfast</h4>\n<span>IDR 85K</span>\n</div>\n<span>Three eggs your way, with homemade toast, mushrooms, tomatoes and beef bacon.</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Eggs Benedict\" decoding=\"async\" src=\"/images/uploads/2025/09/Eggs-Benedict.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Eggs Benedict</h4>\n<span>IDR 85K</span>\n</div>\n<span>Poached egg on homemade sourdough with\nbeef bacon and sauce hollandaise</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"French Toast\" decoding=\"async\" src=\"/images/uploads/2025/09/French-toast.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>French Toast</h4>\n<span>IDR 60K</span>\n</div>\n<span>One thick slice of our homemade bread, served with a choice of honey or maple syrup</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Avocado Toast\" decoding=\"async\" src=\"/images/uploads/2025/09/Avocado-toast-with-tomato.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Avocado Toast</h4>\n<span>IDR 65K</span>\n</div>\n<span>Home made sourdough bread covered in smashed avocado and cherry tomatoes</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Breakfast Burrito\" decoding=\"async\" src=\"/images/uploads/2025/09/Breakfast-Burito.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Breakfast Burrito</h4>\n<span>IDR 65K</span>\n</div>\n<span>Home made wrap filled with egg, chives, cheese, tomato and a side of smashed avocado</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Fruit Platter\" decoding=\"async\" src=\"/images/uploads/2025/09/Fruit-Plater.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Fruit Platter</h4>\n<span>IDR 55K</span>\n</div>\n<span>The freshest seasonal fruit straight from the market</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-1\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Mango Fusion\" decoding=\"async\" src=\"/images/uploads/2025/09/Mango-Fusion-Bowl.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Mango Fusion</h4>\n<span>IDR 65k</span>\n</div>\n<span>Fruit bowl with mango puree,\nyogurt seasonal fruits, oats, mixed\nnuts and chia seeds</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Pink Dragon\" decoding=\"async\" src=\"/images/uploads/2025/05/menu_3.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Pink Dragon</h4>\n<span>IDR 85K</span>\n</div>\n<span>Dragonfruit, coconut cream,\npeanut butter, yogurt, sliced\nalmonds granola, and fresh fruits.</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Strawberry Swirl\" decoding=\"async\" src=\"/images/uploads/2025/09/Strawberry-Swirl-breakfast-bowl.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Strawberry Swirl</h4>\n<span>IDR 65K</span>\n</div>\n<span>Fruit bowl with strawberry puree,\nyogurt seasonal fruits, oats, mixed\nnuts and chia seeds</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Strawberry Breeze\" decoding=\"async\" src=\"/images/uploads/2025/09/Strawberry-breeze-smoothie.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Strawberry Breeze</h4>\n<span>IDR 60K</span>\n</div>\n<span>Smoothie with strawberry, honey,\nyogurt and milk</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Banana Bliss\" decoding=\"async\" src=\"/images/uploads/2025/09/Banana-Bliss.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Banana Bliss</h4>\n<span>IDR 60K</span>\n</div>\n<span>Smoothie with banana, honey,\nyogurt and milk</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Mango Magic\" decoding=\"async\" src=\"/images/uploads/2025/09/Mango-Magic-Smoothie.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Mango Magic</h4>\n<span>IDR 60K</span>\n</div>\n<span>Smoothie with mango, honey,\nyogurt and milk</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-2\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"One Egg \" decoding=\"async\" src=\"/images/uploads/2025/09/One-Egg.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>One Egg </h4>\n<span>IDR 15K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Cheese\" decoding=\"async\" src=\"/images/uploads/2025/09/Cheddar-cheese.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Cheese</h4>\n<span>IDR 15K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Toast Slice \" decoding=\"async\" src=\"/images/uploads/2025/09/Toast-with-butter-and-jam.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Toast Slice </h4>\n<span>IDR 15K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Beef Bacon\" decoding=\"async\" src=\"/images/uploads/2025/09/Beef-bacon.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Beef Bacon</h4>\n<span>IDR 20K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Smashed Avo\" decoding=\"async\" src=\"/images/uploads/2025/09/Sides-smashed-avocado.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Smashed Avo</h4>\n<span>IDR 20K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Plain Yogurt \" decoding=\"async\" src=\"/images/uploads/2025/09/Plain-yogurt.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Plain Yogurt </h4>\n<span>IDR 20K</span>\n</div>\n<span></span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-3\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"BBQ Bacon CheeseBurger\" decoding=\"async\" src=\"/images/uploads/2025/09/Barbeque-burger-with-onion-rings.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>BBQ Bacon CheeseBurger</h4>\n<span>IDR 115K</span>\n</div>\n<span>Imported beef patty with a sweet and tangy bbq sauce, beef bacon and onion rings between homemade brioche buns</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Classic Smashburger\" decoding=\"async\" src=\"/images/uploads/2025/09/smash-burger.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Classic Smashburger</h4>\n<span>IDR 100K</span>\n</div>\n<span>Grilled beef patty on brioche bun with\ncheese, lettuce, tomato and pickle\nextra beef bacon: 15k\nextra jalapenos: 15k</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Sumbawan Cheesesteak\" decoding=\"async\" src=\"/images/uploads/2025/09/Cheesecake-Sandwich.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Sumbawan Cheesesteak</h4>\n<span>IDR 115K</span>\n</div>\n<span>Tender marinated steak bits covered in mozzarella cheese and sauteed onions on house made hoagie roll.</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Tuna Poke Bowl\" decoding=\"async\" src=\"/images/uploads/2025/09/Tuna-Poke-bowl.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Tuna Poke Bowl</h4>\n<span>IDR 110K</span>\n</div>\n<span>Hawaiian style sushi rice bowl with fresh tuna, edamame, carrots, cucumber, mango and a zesty sauce</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Grilled Cheese (v)\" decoding=\"async\" src=\"/images/uploads/2025/09/Grilled-cheese-sandwich.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Grilled Cheese (v)</h4>\n<span>IDR 70K</span>\n</div>\n<span>A gooey mozzarella and cheddar classic</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Tempe Goreng (v)\" decoding=\"async\" src=\"/images/uploads/2025/09/Tempeh-goreng.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Tempe Goreng (v)</h4>\n<span>IDR 60K</span>\n</div>\n<span>Crispy fried tempe with homemade\nsambal sauce</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Falafel Wrap (v)\" decoding=\"async\" src=\"/images/uploads/2025/09/Falafel-wrap.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Falafel Wrap (v)</h4>\n<span>IDR 85K</span>\n</div>\n<span>Soft wrap with falafel, tomatoes,\ncucumbers, hummus, couscous,\nlettuce and fresh herbs</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Chicken Caesar Wrap\" decoding=\"async\" src=\"/images/uploads/2025/09/Chicken-Caesar-Warp.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Chicken Caesar Wrap</h4>\n<span>IDR 85K</span>\n</div>\n<span>Soft wrap with grilled chicken, cheese,\ntomatoes, cucumbers, paprika, lettuce\nand caesar dressing</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Bakwan (v)\" decoding=\"async\" src=\"/images/uploads/2025/09/Bakwan.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Bakwan (v)</h4>\n<span>IDR 60K</span>\n</div>\n<span>Fried vegetables in batter with\nsweet chilli soy sauce.</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Chicken Fingers\" decoding=\"async\" src=\"/images/uploads/2025/09/Chicken-fingers.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Chicken Fingers</h4>\n<span>IDR 65K</span>\n</div>\n<span>Panko crusted fried chicken breast\nwith dipping sauce</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-4\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Glazed Carrots\" decoding=\"async\" src=\"/images/uploads/2025/09/Glazed-carrots.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Glazed Carrots</h4>\n<span>IDR 30K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Wedges\" decoding=\"async\" src=\"/images/uploads/2025/09/Potato-wedges.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Wedges</h4>\n<span>IDR 30K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Onion Rings\" decoding=\"async\" src=\"/images/uploads/2025/09/Onion-rings.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Onion Rings</h4>\n<span>IDR 35K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Baked Potato \" decoding=\"async\" src=\"/images/uploads/2025/09/Baked-potato.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Baked Potato </h4>\n<span>IDR 25K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Potato Puree\" decoding=\"async\" src=\"/images/uploads/2025/09/Potato-Pure.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Potato Puree</h4>\n<span>IDR 30K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Green Beans\" decoding=\"async\" src=\"/images/uploads/2025/09/Green-Beans.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Green Beans</h4>\n<span>IDR 25K</span>\n</div>\n<span></span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-5\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Nasi Goreng\" decoding=\"async\" src=\"/images/uploads/2025/09/Nasi-Goreng.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Nasi Goreng</h4>\n<span>IDR 60K</span>\n</div>\n<span>Indonesian fried rice with egg\nand a choice of:\n+chicken: 15K\n+ shrimp: 20K</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Mie Goreng\" decoding=\"async\" src=\"/images/uploads/2025/09/Mie-Goreng.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Mie Goreng</h4>\n<span>IDR 60K</span>\n</div>\n<span>Indonesian fried noodles with egg\nand a choice of:\n+chicken: 15K\n+shrimp: 20K</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Sate Ayam\" decoding=\"async\" src=\"/images/uploads/2025/05/menu_1.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Sate Ayam</h4>\n<span>IDR 80K</span>\n</div>\n<span>Five grilled chicken skewers with rice and peanut sauce</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Nasi Campur\" decoding=\"async\" src=\"/images/uploads/2025/09/Nasi-Campur.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Nasi Campur</h4>\n<span>IDR 80K</span>\n</div>\n<span>Rice with sauteed vegetables,\nsate lilit, tempe goreng, and Sambal matah</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-6\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Felafel Bowl (v)\" decoding=\"async\" src=\"/images/uploads/2025/05/menu_2.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Felafel Bowl (v)</h4>\n<span>IDR 85K</span>\n</div>\n<span>Oriental couscous salad with falafel,\nhummus, fresh herbs and\nyogurt mint sauce</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Caesar Salad\" decoding=\"async\" src=\"/images/uploads/2025/09/Caesar-salad-with-chicken.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Caesar Salad</h4>\n<span>IDR 90K</span>\n</div>\n<span>Cherry tomatoes, parmesan flakes,\ncroutons, beef bacon bits and house\nmade caesar dressing\n+chicken: 15K\n+shrimp: 20K</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Thai Beef Salad\" decoding=\"async\" src=\"/images/uploads/2025/09/Thai-Salad.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Thai Beef Salad</h4>\n<span>IDR 90K</span>\n</div>\n<span>Mixed salad with striploin,\ncherry tomatoes, cilantro and spicy\nThai dressing</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-7\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Tom Kah\" decoding=\"async\" src=\"/images/uploads/2025/09/Tom-Kha-with-chicken.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Tom Kah</h4>\n<span>IDR 60k</span>\n</div>\n<span>Coconut, lemongrass soup with mushrooms and a choice of: \n+Chicken: 15K\n+Shrimp: 20K</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Tom Yum\" decoding=\"async\" src=\"/images/uploads/2025/09/Tom-Yam-New.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Tom Yum</h4>\n<span>IDR 55K</span>\n</div>\n<span>traditional Thai hot and sour soup with coriander, fish sauce lemongrass and other spices:\n+Chicken: 15K\n+Shrimps: 20K</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-8\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Oriental Hummus\" decoding=\"async\" src=\"/images/uploads/2025/09/Oriental-hummus.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Oriental Hummus</h4>\n<span>IDR 55K</span>\n</div>\n<span>Lightly spiced hummus with buttered naan bread</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Grilled Corn Ribs\" decoding=\"async\" src=\"/images/uploads/2025/09/Corn-ribs.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Grilled Corn Ribs</h4>\n<span>IDR 40K</span>\n</div>\n<span>Slathered with spices and grilled until caramelized and lightly charred</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Lemon Salmon Skewers\" decoding=\"async\" src=\"/images/uploads/2025/09/Salmon-skewer.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Lemon Salmon Skewers</h4>\n<span>IDR 60K</span>\n</div>\n<span>Two skewers of flaky grilled salmon and lemon rounds</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Lumpia Rice Noodles\" decoding=\"async\" src=\"/images/uploads/2025/09/Lumpia.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Lumpia Rice Noodles</h4>\n<span>IDR 25K</span>\n</div>\n<span>Lumpia with rice noodles and vegetables</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Lumpia Chicken\" decoding=\"async\" src=\"/images/uploads/2025/09/Lumpia.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Lumpia Chicken</h4>\n<span>IDR 30K</span>\n</div>\n<span>Lumpia with chicken and vegetables</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Tempura Prawns\" decoding=\"async\" src=\"/images/uploads/2025/09/Tempura-prawns.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Tempura Prawns</h4>\n<span>IDR 80K</span>\n</div>\n<span>Crispy breaded prawns with spicy teriyaki mayo dip</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-9\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Salmon Mentai Uramaki \" decoding=\"async\" src=\"/images/uploads/2025/09/Salmon-mentai.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Salmon Mentai Uramaki </h4>\n<span>IDR 85k</span>\n</div>\n<span>Salmon sushi roll with cream cheese, mentai sauce and tobiko</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Paprika Futomaki\" decoding=\"async\" src=\"/images/uploads/2025/09/Paprika-Futomaki.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Paprika Futomaki</h4>\n<span>IDR 80K</span>\n</div>\n<span>Bell pepper sushi roll with carrots\nand black sesame</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Dragon Roll\" decoding=\"async\" src=\"/images/uploads/2025/09/Dragon-roll.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Dragon Roll</h4>\n<span>IDR 90K</span>\n</div>\n<span>Shrimp tempura roll with cucumber, avocado and sesame seeds</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"California Roll\" decoding=\"async\" src=\"/images/uploads/2025/09/California-Roll.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>California Roll</h4>\n<span>IDR 90K</span>\n</div>\n<span>Classic Urumaki style sushi with crab, cucumber and avocado.</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-10\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Tomahawk (24 hr. pre-order only) \" decoding=\"async\" src=\"/images/uploads/2025/09/Tomahawk.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Tomahawk (24 hr. pre-order only) </h4>\n<span>IDR 150k per 100g</span>\n</div>\n<span>Frenched cut ribeye seared to your taste with Chimichurri sauce, and 2 sides of your choice</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Filet Mignon \" decoding=\"async\" src=\"/images/uploads/2025/09/Filet-Mignon.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Filet Mignon </h4>\n<span>IDR 230K</span>\n</div>\n<span>200g Aussie Filet Mignon seared to your taste with chimichurri and a side of your choice</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Ribeye\" decoding=\"async\" src=\"/images/uploads/2025/09/RIbeye.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Ribeye</h4>\n<span>IDR 200K</span>\n</div>\n<span>200gr Brazilian Ribeye seared to your taste with Chimichurri sauce,, and a side of your choice</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Grilled Mahi\" decoding=\"async\" src=\"/images/uploads/2025/09/Mahi-Mahi.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Grilled Mahi</h4>\n<span>IDR 145K</span>\n</div>\n<span>Grilled Mahi Mahi seared to perfection, in a bed of potato puree.</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Tempura Prawns\" decoding=\"async\" src=\"/images/uploads/2025/09/Tempura-prawns.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Tempura Prawns</h4>\n<span>IDR 80K</span>\n</div>\n<span>Crispy breaded prawns with spicy teriyaki mayo dip</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-11\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Salmon Fettucine Alfredo\" decoding=\"async\" src=\"/images/uploads/2025/09/Salmon-Fettuccine-Alfredo.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Salmon Fettucine Alfredo</h4>\n<span>IDR 150k</span>\n</div>\n<span>Chreamy alfredo sauce made with real parmesan in house and\nfettucine with Imported salmon.</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Butter Chicken\" decoding=\"async\" src=\"/images/uploads/2025/09/Chicken-Butter.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Butter Chicken</h4>\n<span>IDR 130K</span>\n</div>\n<span>Marinated chicken in spiced butter and tomato sauce with aromatic basmati rice or naan bread</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Thai Green Curry\" decoding=\"async\" src=\"/images/uploads/2025/09/Thai-Green-Curry.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Thai Green Curry</h4>\n<span>IDR 100K</span>\n</div>\n<span>Authentic curry with vegetables in rich coconut sauce with aromatic Basmati rice,\n+Chicken: 15K\n+Shrimp: 20K</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Honey Lemon Chicken\" decoding=\"async\" src=\"/images/uploads/2025/09/Honey-lemon-chicken.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Honey Lemon Chicken</h4>\n<span>IDR 130K</span>\n</div>\n<span>Flavorful breaded chicken breast on red and yellow peppers on aromatic basmati rice</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Tempura Prawns\" decoding=\"async\" src=\"/images/uploads/2025/09/Tempura-prawns.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Tempura Prawns</h4>\n<span>IDR 80K</span>\n</div>\n<span>Crispy breaded prawns with spicy teriyaki mayo dip</span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-12\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Onion Rings \" decoding=\"async\" src=\"/images/uploads/2025/09/Onion-rings.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Onion Rings </h4>\n<span>IDR 30k</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Baked Potato\" decoding=\"async\" src=\"/images/uploads/2025/09/Baked-potato.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Baked Potato</h4>\n<span>IDR 25K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Green Beans\" decoding=\"async\" src=\"/images/uploads/2025/09/Green-Beans.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Green Beans</h4>\n<span>IDR 25K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Wedges \" decoding=\"async\" src=\"/images/uploads/2025/09/Potato-wedges.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Wedges </h4>\n<span>IDR 30K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Potato Puree \" decoding=\"async\" src=\"/images/uploads/2025/09/Potato-Pure.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Potato Puree </h4>\n<span>IDR 30K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Glazed Carrots\" decoding=\"async\" src=\"/images/uploads/2025/09/Glazed-carrots.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Glazed Carrots</h4>\n<span>IDR 30K</span>\n</div>\n<span></span>\n</div>\n</div>\n</div>\n</div>\n<div class=\"menu-tab-panel\" id=\"tab-d7e39cc-13\">\n<div class=\"single__menu__item__list\">\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Lemon Pound Cake (Two Pieces)\" decoding=\"async\" src=\"/images/uploads/2025/09/Lemon-pound-cake.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Lemon Pound Cake (Two Pieces)</h4>\n<span>IDR 35K</span>\n</div>\n<span>Add Ice Cream: IDR 25K</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Lemon Pound Cake (Three Pieces)\" decoding=\"async\" src=\"/images/uploads/2025/09/Lemon-pound-cake.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Lemon Pound Cake (Three Pieces)</h4>\n<span>IDR 50K</span>\n</div>\n<span>Add Ice Cream: IDR 25K</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Homestyle Brownie\" decoding=\"async\" src=\"/images/uploads/2025/09/Home-style-brownie.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Homestyle Brownie</h4>\n<span>IDR 35K</span>\n</div>\n<span>Add Ice Cream: IDR 25K</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Skillte Chocolate Chip Cookie\" decoding=\"async\" src=\"/images/uploads/2025/09/Skillet-chocolate-chip-cookie.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Skillte Chocolate Chip Cookie</h4>\n<span>IDR 35K</span>\n</div>\n<span>Add Ice Cream: IDR 25K</span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Cream Brule\" decoding=\"async\" src=\"/images/uploads/2025/09/Creme-brule.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Cream Brule</h4>\n<span>IDR 35K</span>\n</div>\n<span></span>\n</div>\n</div>\n<div class=\"single__menu__item\">\n<div class=\"menu__thumb\">\n<img alt=\"Homemade Ice Cream \" decoding=\"async\" src=\"/images/uploads/2025/09/Tom-Kha-with-chicken.jpg\"/>\n</div>\n<div class=\"menu__meta\">\n<div class=\"menu__link__price\">\n<h4>Homemade Ice Cream </h4>\n<span>IDR 25K</span>\n</div>\n<span>Per scoop</span>\n</div>\n</div>\n</div>\n</div>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "4b5c4fe",
+   "classes": "elementor-element elementor-element-4b5c4fe e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "react-heading",
+     "id": "46b93be",
+     "classes": "elementor-element elementor-element-46b93be elementor-widget elementor-widget-react-heading",
+     "wrapped": true,
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Testimonial </em>\n</span>\n<h2 class=\"rt-title-here\">\n          What Our Guests Say     </h2>\n</div>",
+     "animation": "fadeInUp"
+    },
+    {
+     "type": "rt-testimonial-slider",
+     "id": "9c6e7d2",
+     "classes": "elementor-element elementor-element-9c6e7d2 elementor-widget elementor-widget-rt-testimonial-slider",
+     "wrapped": true,
+     "html": "<div class=\"rts-testimonials-area-one-style3\">\n<div class=\"nav-icon swiper-button-prev\"></div>\n<div class=\"nav-icon swiper-button-next\"></div>\n</div>\n<div class=\"testimonial__slider rt--testimonial--style3\">\n<div class=\"swiper rt_slider-9527\">\n<div class=\"swiper-wrapper\">\n<div class=\"swiper-slide\">\n<div class=\"testimonial__item__content\">\n<div class=\"author__icon\">\n<img alt=\"\" decoding=\"async\" src=\"/images/uploads/2025/06/review-img.jpg\"/>\n</div>\n<div class=\"testimonial__content\">\n<div class=\"single__slider__item\">\n<div class=\"slider__rating mb-20\">\n<div class=\"star-rating\"><span class=\"screen-reader-text\">5.0 rating based on 1,234 ratings</span><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div></div> </div>\n<span class=\"slider__text d-block\">Fantastic place secluded but absolutely worth it.\nIf you are ever in the neighbourhood treat yourself and drop by. Saturday nights is live music which I’m very sad I’ve missed attending.</span>\n<div class=\"slider__author__info\">\n<div class=\"slider__author__info__content\">\n<h6 class=\"mb-0\">Justbuzzik </h6>\n<span>Google Review</span>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<div class=\"swiper-slide\">\n<div class=\"testimonial__item__content\">\n<div class=\"author__icon\">\n<img alt=\"\" decoding=\"async\" src=\"/images/uploads/2025/06/review-img.jpg\"/>\n</div>\n<div class=\"testimonial__content\">\n<div class=\"single__slider__item\">\n<div class=\"slider__rating mb-20\">\n<div class=\"star-rating\"><span class=\"screen-reader-text\">5.0 rating based on 1,234 ratings</span><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div></div> </div>\n<span class=\"slider__text d-block\">Excellent food with a beautiful and peaceful view.\nAs for the dishes: satisfying portions and well-seasoned. I especially enjoyed the sushi.</span>\n<div class=\"slider__author__info\">\n<div class=\"slider__author__info__content\">\n<h6 class=\"mb-0\">Leo Ker </h6>\n<span>Google Review</span>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<div class=\"swiper-slide\">\n<div class=\"testimonial__item__content\">\n<div class=\"author__icon\">\n<img alt=\"\" decoding=\"async\" src=\"/images/uploads/2025/06/review-img.jpg\"/>\n</div>\n<div class=\"testimonial__content\">\n<div class=\"single__slider__item\">\n<div class=\"slider__rating mb-20\">\n<div class=\"star-rating\"><span class=\"screen-reader-text\">5.0 rating based on 1,234 ratings</span><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div><div aria-hidden=\"true\" class=\"star star-full\"></div></div> </div>\n<span class=\"slider__text d-block\">After 1.5 weeks of eating at the restaurant while staying at Mocean , I didn’t get bored at all- and I’m a vegetarian. Hummus, falafel, veg sushi, avocado toast, summer rolls, tofu curry, etc.</span>\n<div class=\"slider__author__info\">\n<div class=\"slider__author__info__content\">\n<h6 class=\"mb-0\">Susan Moran </h6>\n<span>Google Review</span>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<div class=\"rts-testimonials-area-one swiper-nav-btn\">\n<div class=\"button-pagination-area text-center\">\n</div>\n</div>"
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "c5ace0f",
+   "classes": "elementor-element elementor-element-c5ace0f e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "ff138f5",
+     "classes": "elementor-element elementor-element-ff138f5 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "a4cac39",
+       "classes": "elementor-element elementor-element-a4cac39 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "27c455e",
+         "classes": "elementor-element elementor-element-27c455e has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-11336\" decoding=\"async\" height=\"1296\" loading=\"lazy\" src=\"/images/uploads/2025/06/restaurant_3.jpg\" width=\"856\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "73c035c",
+       "classes": "elementor-element elementor-element-73c035c e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "78d702b",
+         "classes": "elementor-element elementor-element-78d702b elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Special Occasions </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Private Beachfront Dinners     </h2>\n</div>",
+         "animation": "fadeInUp"
+        },
+        {
+         "type": "text-editor",
+         "id": "eae37db",
+         "classes": "elementor-element elementor-element-eae37db elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>For a birthday, anniversary or just a good night, we can set a private table on the beach with the waves a few metres away. Tell us the date and any dietary needs and the kitchen will plan a menu with you.</p>"
+        },
+        {
+         "type": "container",
+         "id": "4789356",
+         "classes": "elementor-element elementor-element-4789356 e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "rt-button",
+           "id": "004dd1d",
+           "classes": "elementor-element elementor-element-004dd1d elementor-widget elementor-widget-rt-button",
+           "wrapped": true,
+           "html": "<a class=\"theme-btn btn-style fill\" href=\"https://wa.me/6282144191647\" target=\"_blank\">\n<span>Plan a Private Dinner</span>\n</a>"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "0755fa7",
+   "classes": "elementor-element elementor-element-0755fa7 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "react-heading",
+     "id": "32099cb",
+     "classes": "elementor-element elementor-element-32099cb elementor-widget elementor-widget-react-heading",
+     "wrapped": true,
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> FAQ </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Restaurant FAQ     </h2>\n</div>"
+    },
+    {
+     "type": "container",
+     "id": "41ca66b",
+     "classes": "elementor-element elementor-element-41ca66b e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "43a6c5a",
+       "classes": "elementor-element elementor-element-43a6c5a e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "c6736df",
+         "classes": "elementor-element elementor-element-c6736df has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-10734\" decoding=\"async\" height=\"1296\" loading=\"lazy\" src=\"/images/uploads/2025/05/restaurant_1.jpg\" width=\"856\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "7361c73",
+       "classes": "elementor-element elementor-element-7361c73 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "nested-accordion",
+         "id": "a760daa",
+         "classes": "elementor-element elementor-element-a760daa elementor-widget elementor-widget-n-accordion",
+         "wrapped": true,
+         "html": "<div aria-label=\"Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys\" class=\"e-n-accordion\">\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-1750\">\n<summary aria-controls=\"e-n-accordion-item-1750\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"1\" tabindex=\"0\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> What are Mutiara by Mocean's opening hours? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-1750\" class=\"elementor-element elementor-element-3bd8c56 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"3bd8c56\" role=\"region\">\n<div class=\"elementor-element elementor-element-945270c elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"945270c\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Mutiara is open every day from 7am to 10pm.</p> </div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-1751\">\n<summary aria-controls=\"e-n-accordion-item-1751\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"2\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> Are there vegetarian and vegan options? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-1751\" class=\"elementor-element elementor-element-8e8d3fe e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"8e8d3fe\" role=\"region\">\n<div class=\"elementor-element elementor-element-9cd3179 elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"9cd3179\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Yes. The menu has vegetarian dishes such as tempe goreng, falafel wraps and bakwan, and the kitchen can adapt others for vegans.</p> </div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-1752\">\n<summary aria-controls=\"e-n-accordion-item-1752\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"3\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> Are menu prices inclusive of tax? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-1752\" class=\"elementor-element elementor-element-fe4bbfd e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"fe4bbfd\" role=\"region\">\n<div class=\"elementor-element elementor-element-95b3a6c elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"95b3a6c\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Menu prices are in thousand rupiah and exclude 11% local tax and 10% service.</p> </div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-1753\">\n<summary aria-controls=\"e-n-accordion-item-1753\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"4\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> How do I book a table? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-1753\" class=\"elementor-element elementor-element-6a7fd8a e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"6a7fd8a\" role=\"region\">\n<div class=\"elementor-element elementor-element-780a21c elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"780a21c\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Message us on WhatsApp at +62 821 4419 1647. Booking ahead is a good idea for dinner and for private beachfront tables.</p> </div>\n</div>\n</div>\n</details>\n</div>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "html",
+     "id": "39b1ec4",
+     "classes": "elementor-element elementor-element-39b1ec4 elementor-widget elementor-widget-html",
+     "wrapped": true,
+     "html": ""
+    }
+   ]
+  }
+ ]
+}

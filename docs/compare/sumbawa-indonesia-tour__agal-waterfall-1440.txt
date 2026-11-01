@@ -1,0 +1,12 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /sumbawa-indonesia-tour/agal-waterfall/ 1440
+MISSING  img:agal-waterfall-1-1536x1343.jpg  (orig 70,691 598x520)
+MISSING  img:agal-banner-under-new-1536x768.jpg  (orig 70,1716 1300x560)
+MISSING  img:agal-waterfall-2-1536x1343.jpg  (orig 772,2743 598x520)
+MISSING  img:agal-waterfall-1-1536x1343.jpg #2  (orig 70,3572 598x520)
+EXTRA    img:agal-waterfall-1.jpg  (local 70,691 598x520)
+EXTRA    img:agal-banner-under-new.jpg  (local 70,1716 1300x560)
+EXTRA    img:agal-waterfall-2.jpg  (local 772,2743 598x520)
+EXTRA    img:agal-waterfall-1.jpg #2  (local 70,3572 598x520)
+
+/sumbawa-indonesia-tour/agal-waterfall/ @1440px: 72 elements, 0 differ > 2px, 4 missing, 4 extra

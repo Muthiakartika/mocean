@@ -1,0 +1,47 @@
+/*
+ * Design tokens copied from the original WordPress site.
+ * Source: Elementor kit 12054 + computed CSS (see docs/design-audit.md).
+ * Do not change these values without approval — they are the brand.
+ */
+:root {
+  /* Elementor global colors */
+  --color-primary: #111f90; /* --e-global-color-primary / accent */
+  --color-secondary: #121212; /* --e-global-color-secondary (headings) */
+  --color-text: #65676b; /* --e-global-color-text (body text) */
+  --color-white: #ffffff; /* --e-global-color-c9ffc55 */
+  --color-teal: #00a8be; /* --e-global-color-4ea027e */
+
+  /* Other colors used by the theme / templates */
+  --color-title: #0a0a0a; /* RT Mega Menu --titleColor (mobile menu links) */
+  --color-section-grey: #f1f1f1;
+  --color-footer-top: #57d1d9;
+  --color-whatsapp: #25d366;
+  --color-menu-divider: #f3f3f3; /* mobile menu item border */
+  --color-submenu-divider: #c4c4c436; /* desktop dropdown item border */
+
+  --shadow-dropdown: 0 36px 35px rgba(0, 0, 0, 0.08);
+  --shadow-mobile-menu: 0 0 30px rgba(0, 0, 0, 0.2);
+
+  /* Theme transition (Moonlit: --transition) */
+  --transition: all 0.4s ease;
+
+  /* Layout */
+  --container-max: 1320px; /* Elementor .e-con max width */
+  --widget-gap: 20px; /* Elementor --widgets-spacing */
+
+  /* Fonts (filled by next/font in src/app/fonts.ts) */
+  --font-body: var(--font-quicksand), sans-serif;
+  --font-menu: var(--font-jost), sans-serif;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --container-max: 1024px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --container-max: 767px;
+  }
+}

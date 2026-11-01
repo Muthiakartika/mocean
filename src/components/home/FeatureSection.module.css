@@ -1,0 +1,195 @@
+/*
+ * Sections 3–5: photo + text side by side (Rooms 43480cc, Diving 34f4009, Restaurant 1d760cc).
+ * Shared layout below; each section's own spacing is in its modifier class.
+ */
+.section {
+  --row-gap: 20px;
+  --column-gap: 20px;
+}
+
+.row {
+  --flex-direction: row-reverse;
+  --flex-wrap: wrap;
+  --align-items: center;
+  --row-gap: 0px;
+  --column-gap: 0px;
+}
+
+.imageColumn {
+  --width: 46%;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --overflow: hidden;
+  --border-radius: 10px;
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+}
+
+.image {
+  height: 700px;
+}
+
+.textColumn {
+  --width: 54%;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+}
+
+.heading {
+  --sub-size: 40px;
+  --title-size: 35px;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  padding: 20px 80px 10px 0;
+}
+
+.buttonWrap {
+  padding-top: 10px;
+}
+
+/* ----- Rooms (43480cc) ----- */
+.rooms {
+  --padding-top: 123px;
+  --padding-bottom: 0px;
+  --padding-left: 10px;
+  --padding-right: 0px;
+}
+.rooms .heading {
+  --sub-line-height: 29px;
+}
+
+/* ----- Diving (34f4009): photo on the left, more space before the text ----- */
+.diving {
+  --margin-top: 100px;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 10px;
+}
+.diving .row {
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+}
+.diving .textColumn {
+  --width: 52%;
+  --padding-left: 80px;
+}
+.diving .heading {
+  --sub-line-height: 30px;
+  --title-color: #121212;
+}
+.diving .text {
+  padding: 20px 0 10px 0;
+}
+
+/* ----- Restaurant (1d760cc) ----- */
+.restaurant {
+  --margin-top: 100px;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+}
+.restaurant .heading {
+  --sub-line-height: 30px;
+}
+
+@media (max-width: 1024px) {
+  .textColumn,
+  .diving .textColumn {
+    --padding-left: 20px;
+  }
+}
+
+@media (max-width: 880px) {
+  .rooms,
+  .diving,
+  .restaurant {
+    --padding-top: 50px;
+    --padding-bottom: 50px;
+    --padding-left: 10px;
+    --padding-right: 10px;
+  }
+  .textColumn,
+  .diving .textColumn {
+    --padding-top: 40px;
+    --padding-left: 0px;
+  }
+  .buttonWrap {
+    align-self: center;
+  }
+}
+
+/* Elementor tablet range 768–880: columns go full width */
+@media (max-width: 880px) and (min-width: 768px) {
+  .imageColumn,
+  .textColumn,
+  .diving .textColumn {
+    --width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .imageColumn,
+  .textColumn,
+  .diving .textColumn {
+    --width: 100%;
+  }
+  .textColumn,
+  .diving .textColumn {
+    --padding-top: 35px;
+  }
+  .heading {
+    --sub-size: 35px;
+    --title-size: 25px;
+  }
+  .headingWrap {
+    padding-bottom: 16px;
+  }
+  .text,
+  .diving .text {
+    padding: 0;
+  }
+  .buttonWrap {
+    padding-top: 12px;
+  }
+
+  .rooms {
+    --padding-top: 31px;
+    --padding-bottom: 0px;
+    --padding-left: 0px;
+    --padding-right: 0px;
+  }
+  .diving {
+    --margin-top: 0px;
+    --padding-top: 21px;
+    --padding-bottom: 0px;
+    --padding-left: 10px;
+    --padding-right: 10px;
+  }
+  .diving .row {
+    --flex-direction: column-reverse;
+  }
+  .restaurant {
+    --margin-top: 0px;
+    --padding-top: 21px;
+    --padding-bottom: 0px;
+    --padding-left: 0px;
+    --padding-right: 0px;
+  }
+  .restaurant .buttonWrap {
+    padding-top: 11px;
+  }
+}

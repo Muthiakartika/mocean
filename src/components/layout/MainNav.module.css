@@ -1,0 +1,263 @@
+/*
+ * Main menu — port of RT Mega Menu 1.5.3 (rtmega.min.css) with the overrides
+ * from header template 10288.
+ */
+
+/* ---------- Desktop (>1024px) ---------- */
+.desktop {
+  display: block;
+}
+
+.desktopList {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topItem {
+  position: relative;
+  padding: 0 15px;
+}
+
+.topLink {
+  display: block;
+  padding: 32px 0;
+  color: #fff;
+  font-family: var(--font-menu);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* The original custom CSS forces top-level links to white (`!important`),
+   so the plugin's "current item" color (#FFFFFFC4) never shows. */
+
+.arrow {
+  display: inline-block;
+  height: 12px;
+  width: auto;
+  margin-left: 5px;
+  fill: currentColor;
+  vertical-align: baseline;
+}
+
+/* Dropdown panel */
+.subMenu {
+  position: absolute;
+  top: 100%;
+  left: 15px;
+  z-index: 99999;
+  width: 220px;
+  min-width: 220px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  background: #fff;
+  box-shadow: var(--shadow-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: 0.3s ease-in-out;
+}
+
+/* Third level opens to the right of its parent */
+.subMenu .subMenu {
+  top: 0;
+  left: 220px;
+}
+
+/* Open on hover and on keyboard focus */
+.topItem:hover > .subMenu,
+.topItem:focus-within > .subMenu,
+.subItem:hover > .subMenu,
+.subItem:focus-within > .subMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
+}
+
+.subItem {
+  position: relative;
+}
+
+.subItem:not(:last-child) {
+  border-bottom: 1px solid var(--color-submenu-divider);
+}
+
+.subLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 35px 12px 25px;
+  color: var(--color-secondary);
+  font-family: var(--font-menu);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  transition: all 0.3s;
+}
+
+.subItem:hover > .subLink,
+.subLink.current {
+  color: var(--color-primary);
+}
+
+/* ---------- Mobile / tablet (<=1024px) ---------- */
+.hamburger {
+  display: none;
+  width: 20px;
+  height: 19px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.hamburger svg {
+  width: 20px;
+  height: 16px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  background: #000;
+  opacity: 0.5;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+  width: 80%;
+  max-width: 460px;
+  height: 100vh;
+  padding: 46px 10px 50px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: var(--shadow-mobile-menu);
+  transform: translate3d(520px, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.sidebar.open {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.8s cubic-bezier(0.9, 0, 0.3, 1);
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  border: none;
+  border-radius: 0;
+  background: var(--color-primary);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.close svg {
+  width: 100%;
+  height: 100%;
+  fill: #fff;
+}
+
+.mobileList {
+  margin: 0;
+  padding: 0 15px 30px;
+  list-style: none;
+}
+
+.mobileItem {
+  position: relative;
+  overflow: hidden;
+}
+
+.mobileRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-menu-divider);
+}
+
+.mobileItem:last-child > .mobileRow {
+  border-bottom: none;
+}
+
+.mobileLink {
+  flex: 1;
+  display: block;
+  padding: 15px 0;
+  color: var(--color-title);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  cursor: pointer;
+}
+
+.mobileItem:hover > .mobileRow > .mobileLink,
+.mobileLink.current {
+  color: var(--color-primary);
+}
+
+/* Row with a sub-menu is 66px tall in the original (icon box makes it taller). */
+.toggle {
+  padding: 27px 10px;
+  border: none;
+  background: none;
+  line-height: 1;
+  color: var(--color-title);
+  cursor: pointer;
+}
+
+.toggle svg {
+  display: block;
+  height: 12px;
+  width: auto;
+  fill: currentColor;
+}
+
+/* Sub-menus slide open (the original uses jQuery slideToggle) */
+.mobileSub {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.mobileSub.expanded {
+  grid-template-rows: 1fr;
+}
+
+.mobileSubInner {
+  overflow: hidden;
+}
+
+.mobileSubInner > ul {
+  margin: 0;
+  padding: 10px 0 0;
+  list-style: none;
+}
+
+@media (max-width: 1024px) {
+  .desktop {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}

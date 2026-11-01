@@ -1,0 +1,160 @@
+/* Sections 6 + 7 — "Surf, Waterfalls and Island Tours" (a553bb9) and the three image boxes (740918d) */
+
+/* ----- Heading row (a553bb9 > 09ba837) ----- */
+.intro {
+  --padding-top: 95px;
+  --padding-bottom: 50px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+}
+
+.introRow {
+  --flex-direction: row;
+  --align-items: flex-end;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+  --content-width: 1300px;
+}
+
+.introColumn {
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+}
+
+.heading {
+  --sub-size: 40px;
+  --title-size: 35px;
+  --title-line-height: 30px;
+  --title-margin: 0 0 30px 0;
+}
+
+.introText {
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 10px;
+}
+
+/* ----- Image boxes (740918d > 1a9e4f2) ----- */
+.boxes {
+  --padding-top: 0px;
+  --padding-bottom: 108px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+}
+
+.boxesRow {
+  --flex-direction: row;
+}
+
+.boxColumn {
+  --row-gap: 5px;
+  --column-gap: 5px;
+}
+
+/* Elementor image box, image on top */
+.imageBox {
+  text-align: center;
+}
+
+/* The middle box starts 40px lower */
+.imageBoxOffset {
+  margin-top: 40px;
+}
+
+.imageBoxImg {
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto 24px;
+}
+
+/* Block image inside an inline-block figure: the line box adds 8px below, as on the original. */
+.imageBoxImg img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  transition-duration: 0.3s;
+}
+
+.imageBoxTitle {
+  margin: 0 0 10px;
+  color: var(--color-secondary);
+  font-family: var(--font-body);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.imageBoxDescription {
+  margin: 0;
+}
+
+.boxText {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.boxText span {
+  color: var(--color-secondary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+@media (max-width: 1200px) {
+  .intro,
+  .boxes {
+    --padding-top: 60px;
+    --padding-bottom: 65px;
+    --padding-left: 0px;
+    --padding-right: 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  .intro {
+    --padding-top: 9px;
+    --padding-bottom: 0px;
+    --padding-left: 0px;
+    --padding-right: 0px;
+  }
+  .introRow,
+  .boxesRow {
+    --flex-wrap: wrap;
+  }
+  .introColumn,
+  .boxColumn {
+    --width: 100%;
+    --flex-wrap: wrap;
+  }
+  .heading {
+    --sub-size: 35px;
+    --title-size: 25px;
+  }
+  .headingWrap {
+    padding-bottom: 10px;
+  }
+  .introText {
+    padding-bottom: 0;
+  }
+  .boxes {
+    --margin-top: -22px;
+    --padding-top: 0px;
+    --padding-bottom: 20px;
+    --padding-left: 0px;
+    --padding-right: 0px;
+    --flex-wrap: wrap;
+  }
+  .imageBoxOffset {
+    margin-top: 0;
+  }
+}

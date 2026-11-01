@@ -1,0 +1,47 @@
+/*
+ * Hand-written styles that replace what the original site's JavaScript added at runtime
+ * (jarallax inline styles). Everything else for inner pages comes from the original CSS.
+ */
+
+/* jarallax: frame + clipped layer that moves (see src/components/elementor/parallax.ts) */
+.jarallax {
+  position: relative;
+  z-index: 0;
+}
+
+.jarallax-clip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -100;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.jarallax-clip > img.jarallax-img,
+.jarallax-clip > .jarallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  overflow: hidden;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.jarallax-clip > img.jarallax-img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.jarallax-bg {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}

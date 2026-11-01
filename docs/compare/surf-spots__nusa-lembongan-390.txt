@@ -1,0 +1,18 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /surf-spots/nusa-lembongan/ 390
+DIFF     span:Explore More Surf Spots At Mocean Beach     dx=0 dy=0 dw=0 dh=31   (orig 70,21014 250x92)
+DIFF     h2:discover uncrowded waves in West Sumbawa      dx=0 dy=30 dw=0 dh=0   (orig 70,21113 250x48)
+DIFF     p:Are you prepared for your next wave? It’       dx=0 dy=31 dw=0 dh=0   (orig 20,21255 350x337)
+DIFF     a:Mocean Beach Resort                            dx=0 dy=30 dw=0 dh=0   (orig 92,21642 207x45)
+MISSING  img:Nusa-Lembongan-Surfing-Travel-Guide-600x524.jpg  (orig 10,1255 370x520)
+MISSING  img:Best-Time-2-600x300.jpg  (orig 10,2818 370x560)
+MISSING  img:Warnings-2-600x300.jpg  (orig 10,3943 370x560)
+MISSING  img:Top-Surf-Spots-in-Nusa-Lembongan-600x300.jpg  (orig 10,5226 370x560)
+MISSING  img:Ceningan-Lembongan-600x300.jpg  (orig 10,6401 370x560)
+EXTRA    img:Nusa-Lembongan-Surfing-Travel-Guide.jpg  (local 10,1255 370x520)
+EXTRA    img:Best-Time-2.jpg  (local 10,2818 370x560)
+EXTRA    img:Warnings-2.jpg  (local 10,3943 370x560)
+EXTRA    img:Top-Surf-Spots-in-Nusa-Lembongan.jpg  (local 10,5226 370x560)
+EXTRA    img:Ceningan-Lembongan.jpg  (local 10,6401 370x560)
+
+/surf-spots/nusa-lembongan/ @390px: 103 elements, 4 differ > 2px, 5 missing, 5 extra

@@ -1,0 +1,10 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /sumbawa-indonesia-tour/danau-lebo/ 1440
+MISSING  img:danau-lebo-sq1-1536x1343.jpg  (orig 70,711 598x520)
+MISSING  img:Danau-Lebo-Taliwang-Banner-Under-1-1536x768.jpg  (orig 70,2566 1300x560)
+MISSING  img:danau-lebo-sq2-1536x1343.jpg  (orig 772,3531 598x520)
+EXTRA    img:danau-lebo-sq1.jpg  (local 70,711 598x520)
+EXTRA    img:Danau-Lebo-Taliwang-Banner-Under-1.jpg  (local 70,2566 1300x560)
+EXTRA    img:danau-lebo-sq2.jpg  (local 772,3531 598x520)
+
+/sumbawa-indonesia-tour/danau-lebo/ @1440px: 69 elements, 0 differ > 2px, 3 missing, 3 extra

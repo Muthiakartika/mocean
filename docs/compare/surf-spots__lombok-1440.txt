@@ -1,0 +1,20 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /surf-spots/lombok/ 1440
+DIFF     span:Why Choose Lombok for Surfing               dx=0 dy=-13 dw=0 dh=25   (orig 748,720 622x25)
+DIFF     h2:Quiet breaks and reliable surf in a rela      dx=0 dy=12 dw=0 dh=0   (orig 748,751 622x70)
+DIFF     p:Lombok is a hidden gem with uncrowded su       dx=0 dy=12 dw=0 dh=0   (orig 748,857 542x180)
+DIFF     h3:Top places to surf in Lombok                  dx=0 dy=12 dw=0 dh=0   (orig 748,1057 622x25)
+DIFF     li:.st0{fill:#111F90;} Gerupuk Bay               dx=0 dy=12 dw=0 dh=0   (orig 748,1104 121x27)
+DIFF     li:.st0{fill:#111F90;} Mawi Desert Point         dx=0 dy=12 dw=0 dh=0   (orig 908,1104 160x27)
+DIFF     li:.st0{fill:#111F90;} Are Guling                dx=0 dy=12 dw=0 dh=0   (orig 1107,1104 101x27)
+DIFF     li:.st0{fill:#111F90;} Ocean Diving              dx=0 dy=13 dw=0 dh=0   (orig 748,1138 123x27)
+DIFF     li:.st0{fill:#111F90;} Ekas Beach                dx=0 dy=13 dw=0 dh=0   (orig 907,1138 110x27)
+DIFF     li:.st0{fill:#111F90;} Belongas                  dx=0 dy=13 dw=0 dh=0   (orig 1053,1138 93x27)
+MISSING  img:Why-Choose-Lombok-for-Diving-1536x1343.jpg  (orig 70,685 598x520)
+MISSING  img:General-Info-1536x768.jpg  (orig 70,1957 1300x560)
+MISSING  img:Top-Surf-Spots-1536x768.jpg  (orig 70,3142 1300x561)
+EXTRA    img:Why-Choose-Lombok-for-Diving.jpg  (local 70,685 598x520)
+EXTRA    img:General-Info.jpg  (local 70,1957 1300x560)
+EXTRA    img:Top-Surf-Spots.jpg  (local 70,3142 1300x561)
+
+/surf-spots/lombok/ @1440px: 92 elements, 10 differ > 2px, 3 missing, 3 extra

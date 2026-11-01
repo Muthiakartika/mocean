@@ -1,0 +1,137 @@
+/* Section 2 — "A Beachfront Dive and Surf Resort" (Elementor container 9462e42) */
+.section {
+  --flex-direction: row;
+  --flex-wrap: wrap;
+  --align-items: center;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 185px;
+  --padding-bottom: 0px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+  --content-width: 1180px;
+}
+
+/* Left column: big photo with a small framed photo overlapping it (7b26403) */
+.imageColumn {
+  --width: 36%;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --margin-top: -50px;
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+}
+
+.mainImage {
+  height: 574px;
+  --radius: 10px;
+}
+
+/* Zero-height anchor under the big photo; the small photo is positioned from it (ea6137e) */
+.smallImageAnchor {
+  --width: 86%;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --border-radius: 10px;
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+}
+
+.smallImageBox {
+  position: absolute;
+  z-index: 1;
+  right: -132px;
+  bottom: 382px;
+  width: 80%;
+  max-width: 80%;
+  padding: 8px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+}
+
+/* object-fit: fill — the original stretches this photo to the box */
+.smallImage {
+  display: inline-block;
+  vertical-align: middle;
+  width: min(274px, 100%);
+  height: 207px;
+  object-fit: fill;
+  border-radius: 10px;
+}
+
+/* Right column: text (cceaedd) */
+.textColumn {
+  --width: 64%;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 160px;
+}
+
+.heading {
+  --sub-size: 40px;
+  --title-size: 25px;
+  --title-line-height: 35px;
+}
+
+.text {
+  padding: 10px 0;
+  line-height: 30px;
+}
+
+.buttonWrap {
+  padding-top: 10px;
+}
+
+@media (max-width: 880px) {
+  .buttonWrap {
+    align-self: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    --min-height: 1120px;
+    --padding-top: 100px;
+    --padding-bottom: 0px;
+  }
+  .imageColumn,
+  .smallImageAnchor,
+  .textColumn {
+    --width: 100%;
+  }
+  .imageColumn {
+    --flex-wrap: wrap;
+  }
+  .smallImageBox {
+    right: -8px;
+    bottom: 432px;
+    width: 235px;
+    max-width: 235px;
+  }
+  .smallImage {
+    height: 160px;
+  }
+  .textColumn {
+    --padding-top: 30px;
+    --padding-left: 0px;
+  }
+  .heading {
+    --sub-size: 35px;
+    --sub-line-height: 1.2em;
+    --title-line-height: 1.4em;
+  }
+  .text {
+    padding: 0 10px 0 0;
+  }
+  .buttonWrap {
+    padding-top: 12px;
+  }
+}

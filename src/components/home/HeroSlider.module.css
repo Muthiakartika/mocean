@@ -1,0 +1,225 @@
+/*
+ * Home hero — rebuild of Slider Revolution module "mocean-dive-banner"
+ * (docs/audit/hero-slider-sr7.json, measurements in docs/audit/styles/hero-layers.json).
+ *
+ * Slider Revolution designs each breakpoint on a fixed grid and scales everything
+ * with the screen width. --u is "one design pixel" at the current width:
+ *   > 1024px : grid 1240 (never scaled up)       → height 870
+ *   778–1024 : grid 1240 for layers, 1024 for height → height 718
+ *   480–777  : grid 778                           → height 960
+ *   < 480    : grid 480                           → height 720
+ */
+.hero {
+  --u: min(1px, calc(100vw / 1240));
+  --height: calc(870 * var(--u));
+  --enter-y: calc(50 * var(--u));
+
+  position: relative;
+  width: 100%;
+  height: var(--height);
+  overflow: hidden;
+  background: #000;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    --u: calc(100vw / 1240);
+    --height: calc(718 * 100vw / 1024);
+  }
+}
+
+@media (max-width: 777px) {
+  .hero {
+    --u: calc(100vw / 778);
+    --height: calc(960 * var(--u));
+    --enter-y: calc(31 * var(--u));
+  }
+}
+
+@media (max-width: 479px) {
+  .hero {
+    --u: calc(100vw / 480);
+    --height: calc(720 * var(--u));
+    --enter-y: calc(19 * var(--u));
+  }
+}
+
+/* ---------- Slides (500ms cross-fade) ---------- */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s linear, visibility 0s linear 0.5s;
+}
+
+.slide.active {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s linear;
+}
+
+/* Background image with a slow zoom (100% → 110% over 10s, starting after 300ms). */
+.bg {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.active .bg {
+  animation: kenBurns 10s linear 0.3s both;
+}
+
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* 40% black overlay, fades in over 300ms */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.active .overlay {
+  opacity: 1;
+}
+
+/* ---------- Text layers ---------- */
+/* Each layer is centred, then moved by its own x/y offset (design pixels). */
+.layer {
+  --x: 0;
+  --y: 0;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+  transform: translate(calc(-50% + var(--x) * var(--u)), calc(-50% + var(--y) * var(--u)));
+}
+
+/* Layers slide up 50 design px and fade in (500ms, power3.inOut) */
+.layerInner {
+  display: block;
+  opacity: 0;
+  transform: translateY(var(--enter-y));
+  transition: opacity 0.15s, transform 0s 0.15s;
+}
+
+.active .layerInner {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* "Mocean Beach Resort" — one line (desktop/tablet) */
+.titleDesktop {
+  --x: 14;
+  --y: -65;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: calc(80 * var(--u));
+  font-weight: 400;
+  line-height: calc(80 * var(--u));
+}
+
+/* "Mocean Beach / Resort" — two lines (phones) */
+.titleMobile {
+  display: none;
+  color: #fff;
+  font-family: var(--font-body);
+}
+
+.subtitle {
+  --x: 5;
+  --y: 21;
+  color: #f1f1f1;
+  font-family: var(--font-body);
+  font-size: calc(24 * var(--u));
+  font-weight: 500;
+  line-height: calc(25 * var(--u));
+}
+
+.button {
+  --y: 105;
+  min-width: calc(200 * var(--u));
+  min-height: calc(50 * var(--u));
+  padding: calc(2 * var(--u)) calc(25 * var(--u)) 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-family: var(--font-roboto), sans-serif;
+  font-size: calc(20 * var(--u));
+  font-weight: 500;
+  line-height: calc(40 * var(--u));
+  transition: border-color 0.3s;
+}
+
+.button:hover {
+  border-color: rgba(255, 255, 255, 0.75);
+  color: #fff;
+}
+
+@media (max-width: 777px) {
+  .titleDesktop {
+    display: none;
+  }
+  .titleMobile {
+    --x: 0;
+    --y: 50;
+    display: block;
+    font-size: calc(69 * var(--u));
+    font-weight: 600;
+    line-height: calc(65 * var(--u));
+  }
+  .subtitle {
+    --x: 0;
+    --y: -65;
+    font-size: calc(20 * var(--u));
+    line-height: calc(15.7 * var(--u));
+  }
+  .button {
+    --y: 180;
+    min-width: 0;
+    min-height: 0;
+    padding: calc(10 * var(--u)) calc(25 * var(--u));
+    font-size: calc(15 * var(--u));
+    line-height: calc(25 * var(--u));
+  }
+}
+
+@media (max-width: 479px) {
+  .titleMobile {
+    --x: -2;
+    --y: 3;
+    font-size: calc(50 * var(--u));
+    font-weight: 400;
+    line-height: calc(45 * var(--u));
+  }
+  .subtitle {
+    --y: 71;
+    line-height: calc(21 * var(--u));
+  }
+  /* On phones the button's top edge sits at the given offset (its design height is 0). */
+  .button {
+    --y: 135;
+    width: calc(175 * var(--u));
+    height: calc(47.4 * var(--u));
+    padding: calc(15.4 * var(--u)) 0 0;
+    font-size: calc(18 * var(--u));
+    line-height: calc(15.4 * var(--u));
+    transform: translate(-50%, calc(var(--y) * var(--u)));
+  }
+}

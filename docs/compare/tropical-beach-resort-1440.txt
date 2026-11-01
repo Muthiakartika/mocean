@@ -1,0 +1,10 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /tropical-beach-resort/ 1440
+MISSING  img:Sumbawa-Tropical-Beach-Resort-1536x1343.jpg  (orig 70,689 598x617)
+MISSING  img:beach-resort-under-1-1536x768.jpg  (orig 70,1809 1300x560)
+MISSING  img:Right-Beside-The-Sea-new-1536x1343.jpg  (orig 772,2793 598x520)
+EXTRA    img:Sumbawa-Tropical-Beach-Resort.jpg  (local 70,689 598x617)
+EXTRA    img:beach-resort-under-1.jpg  (local 70,1809 1300x560)
+EXTRA    img:Right-Beside-The-Sea-new.jpg  (local 772,2793 598x520)
+
+/tropical-beach-resort/ @1440px: 53 elements, 0 differ > 2px, 3 missing, 3 extra

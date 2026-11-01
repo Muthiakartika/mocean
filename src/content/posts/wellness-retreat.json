@@ -1,0 +1,36 @@
+{
+ "path": "/wellness-retreat/",
+ "bannerId": "12031",
+ "banner": [
+  {
+   "type": "container",
+   "id": "303d8f9",
+   "classes": "elementor-element elementor-element-303d8f9 jarallax e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "0628603",
+     "classes": "elementor-element elementor-element-0628603 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "current_page_title",
+       "id": "4df948f",
+       "classes": "elementor-element elementor-element-4df948f elementor-widget elementor-widget-current_page_title",
+       "wrapped": true,
+       "html": "<div class=\"rt-single-post-category\">Uncategorized </div><h1 class=\"current-page-title m-0\" style=\"text-align: center;\">Wellness Retreat at Mocean</h1><ul class=\"rt-user-meta-info rt-user-meta-infos\"><li class=\"rt-blog-author\"><img alt=\"\" class=\"avatar avatar-40 photo\" decoding=\"async\" height=\"40\" src=\"https://secure.gravatar.com/avatar/ca9449415b598a5c9397f5e7501b18e0a948bae7da0fbe337aca3a86050e0b80?s=40&amp;d=mm&amp;r=g\" width=\"40\"/> admin</li><li class=\"reading-time\"><svg class=\"feather feather-clock\" fill=\"none\" height=\"24\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline></svg> 3 Min Read</li></ul>"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "articleClasses": "post-15637 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized",
+ "featuredImage": {
+  "src": "/images/uploads/2025/06/74.jpg",
+  "alt": "",
+  "width": 1650,
+  "height": 1100
+ },
+ "html": "<p class=\"wp-block-paragraph\">As you arrive at Mocean in Indonesia, a sense of calm washes over you, with sunsets painting the sky and the sea sharing its tranquility. More than a break, Mocean offers a healing journey, blending the peace of nature with mindful experiences. It is where very moment nourishes body and mind, guiding you toward self-discovery and deep relaxation in a serene, transformative setting.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Luxury Wellness Retreat</h2>\n<p class=\"wp-block-paragraph\">Mocean offers the ultimate serene wellness experience, where sunlit decks and the calming ocean waves set the tone for complete relaxation. Every detail prioritizes your well-being, from comfortable bungalows to quiet corners for reflection. Combining peace with comfort, Mocean ensures a tranquil, exclusive stay where simplicity and serenity meet, creating a wellness journey that rejuvenates both body and mind.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Nourish Your Body and Mind</h2>\n<p class=\"wp-block-paragraph\">At Mocean, the retreat journey focuses on nurturing both mind and body through mindful practices designed to center your energy and attention. Guests can practice yoga by the beach, syncing breath with the waves, or meditate among the natural surroundings, with each activity supporting mental clarity and inner calm.</p>\n<p class=\"wp-block-paragraph\">Meals complement the serene experience, with fresh, local and international inspired cuisine supporting both enjoyment and well-being. Mocean’s programs integrate mindfulness and nature, offering a deeply nourishing experience that calms the mind, restores balance, and allows you to reconnect with yourself.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Personalized Retreat Experiences</h2>\n<p class=\"wp-block-paragraph\">Mocean understands that everyone’s wellness journey is different. So, we offer flexible experiences that align with your pace and preferences.</p>\n<p class=\"wp-block-paragraph\">Mocean lets you choose the rhythms and activities that suit your relaxation goals. The retreat adapts to your preferences, creating moments of stillness and clarity that align with your wellness aims.</p>\n<p class=\"wp-block-paragraph\"></p>",
+ "embeddedElementorIds": []
+}

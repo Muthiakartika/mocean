@@ -1,0 +1,36 @@
+{
+ "path": "/couples-retreat/",
+ "bannerId": "12031",
+ "banner": [
+  {
+   "type": "container",
+   "id": "303d8f9",
+   "classes": "elementor-element elementor-element-303d8f9 jarallax e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "0628603",
+     "classes": "elementor-element elementor-element-0628603 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "current_page_title",
+       "id": "4df948f",
+       "classes": "elementor-element elementor-element-4df948f elementor-widget elementor-widget-current_page_title",
+       "wrapped": true,
+       "html": "<div class=\"rt-single-post-category\">Uncategorized </div><h1 class=\"current-page-title m-0\" style=\"text-align: center;\">Couples Retreat at Mocean</h1><ul class=\"rt-user-meta-info rt-user-meta-infos\"><li class=\"rt-blog-author\"><img alt=\"\" class=\"avatar avatar-40 photo\" decoding=\"async\" height=\"40\" src=\"https://secure.gravatar.com/avatar/ca9449415b598a5c9397f5e7501b18e0a948bae7da0fbe337aca3a86050e0b80?s=40&amp;d=mm&amp;r=g\" width=\"40\"/> admin</li><li class=\"reading-time\"><svg class=\"feather feather-clock\" fill=\"none\" height=\"24\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline></svg> 4 Min Read</li></ul>"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "articleClasses": "post-15635 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized",
+ "featuredImage": {
+  "src": "/images/uploads/2025/09/Couples-retreat-1.jpg",
+  "alt": "",
+  "width": 1650,
+  "height": 1100
+ },
+ "html": "<p class=\"wp-block-paragraph\">Picture walking hand-in-hand on a pristine white-sand beach as blue waves kiss the shore under a golden sunset. At Mocean Beach Resort, couples can reconnect in a peaceful, romantic setting, staying in luxury bungalows. From serene beach walks to catered starlit dinners, every detail celebrates your love, creating unforgettable memories and a magical retreat where romance and Indonesia’s natural beauty come together.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Tailored Experiences for Couples</h2>\n<p class=\"wp-block-paragraph\">Mocean crafts each journey to be one-of-a-kind. Imagine activities that thrill both heart and senses, diving in coral reefs or exploring river treks and forests. These experiences are designed to strengthen bonds and create unforgettable memories. Couples can enjoy private excursions to natural wonders like Agal Waterfall, immersing themselves in Sumbawa’s hidden beauty.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Wellness and Rejuvenation</h2>\n<p class=\"wp-block-paragraph\">Entering Mocean Beach Resort feels like stepping into a sanctuary where wellness and connection flourish. While the resort does not offer in-house spa services, the resort is able to provide outcall therapeutic massage services to your bungalow when booking in advance. Couples can unwind by the 105-square-meter pool, take leisurely walks along the beach, or enjoy the open-air lounge with panoramic views. The resort’s emphasis on natural beauty offers a perfect backdrop for couples seeking to reconnect and rejuvenate.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Adventure Awaits</h2>\n<p class=\"wp-block-paragraph\">Mocean offers thrilling adventures for couples. You can snorkel in the ocean, seeing colorful reefs and sea life. It’s a beautiful experience that feels like a connection to the ocean. Your adventure isn’t just in the water. Hiking in Indonesia’s jungles, you’ll hear exotic birds and feel leaves crunching. It brings you closer, exploring these wild places together.<br/></p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Why Choose Mocean Beach Resort for Your Couples Retreat</h2>\n<p class=\"wp-block-paragraph\">Looking for a couples retreat? Mocean is a magical choice, set amid one of Indonesia’s most  serene islands, Mocean Beach Resort is designed to nurture romance and cherished alone time. Every aspect of your stay is thoughtfully planned to deepen love, closeness, and mutual respect, ensuring a rich and meaningful experience for both of you.</p>",
+ "embeddedElementorIds": []
+}

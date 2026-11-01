@@ -1,0 +1,36 @@
+{
+ "path": "/host-a-retreat-venue-for-rent-hire/",
+ "bannerId": "12031",
+ "banner": [
+  {
+   "type": "container",
+   "id": "303d8f9",
+   "classes": "elementor-element elementor-element-303d8f9 jarallax e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "0628603",
+     "classes": "elementor-element elementor-element-0628603 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "current_page_title",
+       "id": "4df948f",
+       "classes": "elementor-element elementor-element-4df948f elementor-widget elementor-widget-current_page_title",
+       "wrapped": true,
+       "html": "<div class=\"rt-single-post-category\">Uncategorized </div><h1 class=\"current-page-title m-0\" style=\"text-align: center;\">Host a Retreat at Mocean</h1><ul class=\"rt-user-meta-info rt-user-meta-infos\"><li class=\"rt-blog-author\"><img alt=\"\" class=\"avatar avatar-40 photo\" decoding=\"async\" height=\"40\" src=\"https://secure.gravatar.com/avatar/ca9449415b598a5c9397f5e7501b18e0a948bae7da0fbe337aca3a86050e0b80?s=40&amp;d=mm&amp;r=g\" width=\"40\"/> admin</li><li class=\"reading-time\"><svg class=\"feather feather-clock\" fill=\"none\" height=\"24\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline></svg> 5 Min Read</li></ul>"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "articleClasses": "post-15627 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized",
+ "featuredImage": {
+  "src": "/images/uploads/2025/09/Host-a-Retreat-2.jpg",
+  "alt": "",
+  "width": 1650,
+  "height": 1100
+ },
+ "html": "<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Why Mocean Is the Perfect Place to Host a Retreat</h2>\n<p class=\"wp-block-paragraph\">Mocean stands out as a peaceful, nature-rich retreat destination on Sumbawa’s west coast. Nestled quietly by the sea, it offers a luxury beach setting ideal for small and large group gatherings, wellness escapes, and creative workshops. Guests enjoy panoramic ocean views, calm mornings, and inspiring sunsets that nurture mindfulness and connection.</p>\n<p class=\"wp-block-paragraph\">Whether you’re hosting a yoga retreat, a wellness getaway, or a nature-based gathering, Mocean provides more than just a venue, it offers an atmosphere where nature’s calm enhances every experience. Every space encourages stillness and balance, making Mocean the perfect choice for retreats that blend tranquility, community, and purposeful rest.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Creating the Perfect Atmosphere for Your Retreat Guests</h2>\n<p class=\"wp-block-paragraph\">Mocean’s charm lies in its natural flow, the garden view bungalows, open spaces, and shaded gardens create a soothing environment for any retreat. Days may begin with gentle sunrise yoga or quiet reflection on the deck, followed by shared meals overlooking the water or mindful walks through nearby rice fields and waterfalls.</p>\n<p class=\"wp-block-paragraph\">Each experience is shaped by simplicity and connection. Mocean provides a backdrop that allows retreat leaders and guests to slow down, breathe deeply, and find inspiration in nature’s rhythm. It’s a place that feels both grounding and uplifting, ideal for genuine renewal.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Venue Highlights: Oceanfront Spaces, Villas, and Private Corners</h2>\n<p class=\"wp-block-paragraph\">Mocean offers luxury accommodations designed with peace and privacy in mind. Each bungalow surrounded by tropical gardens that encourages rest and reflection. Whether you’re gathering for group activities or seeking quiet space for journaling or meditation, there’s room to breathe and move freely.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Planning Tips for a Seamless Retreat at Mocean</h2>\n<p class=\"wp-block-paragraph\">Hosting a retreat at Mocean is about keeping things simple and meaningful. It’s best to plan around the dry season (May–October) when the weather is sunny and ideal for outdoor sessions. </p>\n<p class=\"wp-block-paragraph\">Adding touches of local culture and nature, like sunset gatherings, local meals, or gentle surf sessions, makes each retreat unique. Mocean’s team can help coordinate key details such as airport transfers from West Sumbawa or activity timing, allowing you to focus on creating an experience that flows effortlessly.</p>\n<h2 class=\"wp-block-heading\" style=\"font-size:35px\">Start Your Journey: Host a Retreat at Mocean Today</h2>\n<p class=\"wp-block-paragraph\">Begin your next retreat at Mocean, where ocean, land, and calm energy come together in harmony. From the moment your group arrives, you’ll feel the tranquility that defines this special place. Whether you’re guiding guests toward mindfulness, creativity, or simply rest, Mocean provides the setting and support you need to bring it all to life.</p>",
+ "embeddedElementorIds": []
+}

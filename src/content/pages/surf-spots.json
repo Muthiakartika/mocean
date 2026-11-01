@@ -1,0 +1,161 @@
+{
+ "path": "/surf-spots/",
+ "elementorId": "14634",
+ "content": [
+  {
+   "type": "container",
+   "id": "6a4be1e7",
+   "classes": "elementor-element elementor-element-6a4be1e7 jarallax e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "61609aa3",
+     "classes": "elementor-element elementor-element-61609aa3 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "heading",
+       "id": "7cf4c3d9",
+       "classes": "elementor-element elementor-element-7cf4c3d9 elementor-widget elementor-widget-heading",
+       "wrapped": true,
+       "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Indonesia Surf Spots</h1>"
+      },
+      {
+       "type": "text-editor",
+       "id": "e0ad45d",
+       "classes": "elementor-element elementor-element-e0ad45d elementor-widget elementor-widget-text-editor",
+       "wrapped": true,
+       "html": "<p>Where rolling waves carry endless adventure</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "444ec3f0",
+   "classes": "elementor-element elementor-element-444ec3f0 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "2003e85",
+     "classes": "elementor-element elementor-element-2003e85 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "f3302a8",
+       "classes": "elementor-element elementor-element-f3302a8 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "9944a3c",
+         "classes": "elementor-element elementor-element-9944a3c elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> The Ocean’s Pulse </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Best Surf Spots in Indonesia     </h2>\n</div>",
+         "animation": "fadeInUp"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "38ebecbc",
+       "classes": "elementor-element elementor-element-38ebecbc e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "container",
+         "id": "60d906fc",
+         "classes": "elementor-element elementor-element-60d906fc e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "image-box",
+           "id": "4a545311",
+           "classes": "elementor-element elementor-element-4a545311 elementor-position-top elementor-widget elementor-widget-image-box",
+           "wrapped": true,
+           "html": "<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"/surf-spots/lombok/\" tabindex=\"-1\"><img alt=\"\" class=\"attachment-full size-full wp-image-13648\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Surf-in-Lombok.jpg\" width=\"1650\"/></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"/surf-spots/lombok/\">Surfing in Lombok</a></h3></div></div>"
+          }
+         ]
+        },
+        {
+         "type": "container",
+         "id": "6153a852",
+         "classes": "elementor-element elementor-element-6153a852 e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "image-box",
+           "id": "33ce6b4b",
+           "classes": "elementor-element elementor-element-33ce6b4b elementor-position-top elementor-widget elementor-widget-image-box",
+           "wrapped": true,
+           "html": "<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"/surf-spots/bali/\" tabindex=\"-1\"><img alt=\"\" class=\"attachment-full size-full wp-image-14340\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Surfing-in-Bali.jpg\" width=\"1650\"/></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"/surf-spots/bali/\">Surfing in Bali</a></h3></div></div>"
+          }
+         ]
+        },
+        {
+         "type": "container",
+         "id": "4920dfed",
+         "classes": "elementor-element elementor-element-4920dfed e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "image-box",
+           "id": "2c69157c",
+           "classes": "elementor-element elementor-element-2c69157c elementor-position-top elementor-widget elementor-widget-image-box",
+           "wrapped": true,
+           "html": "<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"/surf-spots/canggu/\" tabindex=\"-1\"><img alt=\"\" class=\"attachment-full size-full wp-image-14224\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Surfing-in-Canggu.jpg\" width=\"1650\"/></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"/surf-spots/canggu/\">surfing in canggu</a></h3></div></div>"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "90ca275",
+       "classes": "elementor-element elementor-element-90ca275 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "container",
+         "id": "286a552",
+         "classes": "elementor-element elementor-element-286a552 e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "image-box",
+           "id": "2397d52",
+           "classes": "elementor-element elementor-element-2397d52 elementor-position-top elementor-widget elementor-widget-image-box",
+           "wrapped": true,
+           "html": "<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"/surf-spots/nusa-lembongan/\" tabindex=\"-1\"><img alt=\"\" class=\"attachment-full size-full wp-image-14401\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Surfing-in-Nusa-Lembongan.jpg\" width=\"1650\"/></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"/surf-spots/nusa-lembongan/\">surfing in nusa lembongan</a></h3></div></div>"
+          }
+         ]
+        },
+        {
+         "type": "container",
+         "id": "aa018b0",
+         "classes": "elementor-element elementor-element-aa018b0 e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "image-box",
+           "id": "16245ef",
+           "classes": "elementor-element elementor-element-16245ef elementor-position-top elementor-widget elementor-widget-image-box",
+           "wrapped": true,
+           "html": "<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"/surf-spots/uluwatu/\" tabindex=\"-1\"><img alt=\"\" class=\"attachment-full size-full wp-image-14280\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Surfing-in-Uluwatu.jpg\" width=\"1650\"/></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"/surf-spots/uluwatu/\">surfing in uluwatu</a></h3></div></div>"
+          }
+         ]
+        },
+        {
+         "type": "container",
+         "id": "8072e82",
+         "classes": "elementor-element elementor-element-8072e82 e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "image-box",
+           "id": "d9dd957",
+           "classes": "elementor-element elementor-element-d9dd957 elementor-position-top elementor-widget elementor-widget-image-box",
+           "wrapped": true,
+           "html": "<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\"><a href=\"/surf-spots/sumbawa/\" tabindex=\"-1\"><img alt=\"\" class=\"attachment-full size-full wp-image-17795\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2026/07/surfing-in-sumbawa-banner.jpg\" width=\"1650\"/></a></figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\"><a href=\"/surf-spots/sumbawa/\">surfing in sumbawa</a></h3></div></div>"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+/*
+ * Blog post layout (single post template of the Moonlit theme).
+ * Values measured on the live site (scripts/audit-selectors.ts) and taken from
+ * bootstrap-grid.min.css, theme.css, style.css and the site's custom CSS.
+ */
+
+/* Bootstrap .container (max widths per breakpoint; style.css raises 1140 to 1320) */
+.post-page .theme-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+@media (min-width: 576px) {
+  .post-page .theme-container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+  .post-page .theme-container { max-width: 720px; }
+}
+@media (min-width: 992px) {
+  .post-page .theme-container { max-width: 960px; }
+}
+@media (min-width: 1200px) {
+  .post-page .theme-container { max-width: 1320px; }
+}
+
+/* theme.css: .main-contain #content */
+.post-page .main-contain #content {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Bootstrap .row / .col-lg-12 (gutter 1.5rem) */
+.post-page .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+.post-page .row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+@media (min-width: 992px) {
+  .post-page .col-lg-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+/* Site custom CSS: .single-post .rt-add-full-single — after the grid rules so it wins, like on the original */
+.post-page .rt-add-full-single {
+  max-width: 1251px;
+  margin: 0 auto;
+}
+
+/* theme.css: blog details */
+.reactheme-blog-details .news-details-inner .bs-img img {
+  border-radius: 6px;
+}
+.reactheme-blog-details .type-post {
+  margin-bottom: 0;
+}
+.reactheme-blog-details .type-post .single-content-full {
+  overflow: hidden;
+}
+.reactheme-blog-details .type-post .single-content-full .bs-desc {
+  padding: 20px 0;
+}
+.reactheme-blog-details h3.wp-block-heading {
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: 36px;
+}
+.reactheme-blog-details .wp-block-image img {
+  border-radius: 6px;
+  margin: 15px 0 8px;
+}
+
+/* Site custom CSS: hide category and author/date line in the post banner */
+.post-page .rt-user-meta-info.rt-user-meta-infos,
+.post-page .rt-single-post-category {
+  display: none;
+}
+
+/* theme.css: banner category style (kept for completeness, hidden above) */
+.rt-single-post-category {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  margin: 0 0 10px;
+}

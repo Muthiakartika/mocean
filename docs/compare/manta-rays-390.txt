@@ -1,0 +1,17 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /manta-rays/ 390
+DIFF     span:Ready to Meet Polong?                       dx=0 dy=0 dw=0 dh=31   (orig 30,6952 330x31)
+DIFF     h2:Book a Manta Dive                             dx=0 dy=31 dw=0 dh=0   (orig 30,6988 330x26)
+DIFF     p:Tell us your dates, certification level        dx=0 dy=31 dw=0 dh=0   (orig 10,7124 370x92)
+DIFF     a:Book a Manta Dive on WhatsApp                  dx=0 dy=31 dw=0 dh=0   (orig 50,7254 290x45)
+DIFF     a:See Dive Prices                                dx=0 dy=30 dw=0 dh=0   (orig 117,7320 156x45)
+MISSING  img:The_diving_5-600x524.jpg  (orig 10,405 370x520)
+MISSING  img:manta-banner-under-600x300.jpg  (orig 10,2486 370x560)
+MISSING  img:manta_ray-2-600x400.jpg  (orig 10,5598 370x247)
+MISSING  img:manta_ray-2-600x400.jpg #2  (orig 20,6336 350x260)
+EXTRA    img:The_diving_5.jpg  (local 10,405 370x520)
+EXTRA    img:manta-banner-under.jpg  (local 10,2486 370x560)
+EXTRA    img:manta_ray-2.jpg  (local 10,5598 370x247)
+EXTRA    img:manta_ray-2.jpg #2  (local 20,6336 350x260)
+
+/manta-rays/ @390px: 41 elements, 5 differ > 2px, 4 missing, 4 extra

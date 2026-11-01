@@ -1,0 +1,105 @@
+/* Section 12 — "Book Your Stay at Mocean" (bb559c8) */
+.section {
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 120px;
+  --padding-bottom: 120px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+  --content-width: 1300px;
+}
+
+/* Photo banner with the title (d3660ee) */
+.banner {
+  --justify-content: center;
+  --border-radius: 10px;
+  --margin-bottom: 45px;
+  --padding-top: 150px;
+  --padding-bottom: 150px;
+  --padding-left: 20px;
+  --padding-right: 20px;
+  --overlay-color: #000;
+  --overlay-opacity: 0.4;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heading {
+  --align: center;
+  --title-color: #fff;
+  --title-size: 42px;
+  --title-line-height: 1.3em;
+}
+
+.headingWrap {
+  padding-bottom: 5px;
+}
+
+.text {
+  align-self: center;
+  width: initial;
+  max-width: initial;
+  padding: 0 10px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.buttons {
+  --flex-direction: row;
+  --flex-wrap: wrap;
+  --justify-content: center;
+  --row-gap: 15px;
+  --column-gap: 15px;
+  --padding-top: 20px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    --padding-top: 80px;
+    --padding-bottom: 80px;
+  }
+  .banner {
+    --padding-top: 110px;
+    --padding-bottom: 110px;
+  }
+}
+
+@media (max-width: 880px) {
+  .section {
+    --padding-top: 50px;
+    --padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    --margin-bottom: 32px;
+    --padding-top: 60px;
+    --padding-bottom: 60px;
+  }
+  .heading {
+    --title-size: 28px;
+  }
+  .headingWrap {
+    padding-bottom: 0;
+  }
+  .text {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  .buttons {
+    --row-gap: 12px;
+    --column-gap: 12px;
+    --padding-left: 10px;
+    --padding-right: 10px;
+  }
+}

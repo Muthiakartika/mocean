@@ -1,0 +1,10 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /scuba-diving/padi-open-water/ 1440
+MISSING  img:Diving-Courses-1-1536x1343.jpg  (orig 70,925 598x682)
+MISSING  img:Diving-Courses-2-1536x1343.jpg  (orig 772,1911 598x553)
+MISSING  img:Diving-Courses-3-1536x1343.jpg  (orig 70,2722 598x553)
+EXTRA    img:Diving-Courses-1.jpg  (local 70,925 598x682)
+EXTRA    img:Diving-Courses-2.jpg  (local 772,1911 598x553)
+EXTRA    img:Diving-Courses-3.jpg  (local 70,2722 598x553)
+
+/scuba-diving/padi-open-water/ @1440px: 81 elements, 0 differ > 2px, 3 missing, 3 extra

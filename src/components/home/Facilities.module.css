@@ -1,0 +1,185 @@
+/* Section 9 — "Resort Facilities" (6b5c5dc) */
+.section {
+  --padding-top: 125px;
+  --padding-bottom: 124px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+  background-color: var(--color-section-grey);
+}
+
+.row {
+  --flex-direction: row-reverse;
+  --flex-wrap: wrap;
+  --align-items: center;
+  --row-gap: 0px;
+  --column-gap: 0px;
+}
+
+/* Photo + button (0e1eb19) */
+.photoColumn {
+  --width: 46%;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --overflow: hidden;
+  --border-radius: 10px;
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --align-self: flex-start;
+}
+
+.topImage {
+  height: 629px;
+}
+
+.buttonWrap {
+  padding-top: 50px;
+}
+
+/* Text column (1ddf86f) */
+.textColumn {
+  --width: 54%;
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 0px;
+  --padding-right: 80px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+}
+
+.heading {
+  --sub-size: 40px;
+  --title-size: 35px;
+  --title-line-height: 35px;
+}
+
+.text {
+  padding: 20px 0 10px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+/* Icon rows (5f91f46) */
+.list {
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 30px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+}
+
+.listRow {
+  padding: 2px 0 5px;
+  overflow: hidden;
+}
+
+/* Elementor inline icon list; --gap is the space between the two items */
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--gap) / -2);
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin: 0 calc(var(--gap) / 2);
+  word-break: break-word;
+}
+
+.icon {
+  display: flex;
+  position: relative;
+}
+
+.icon img {
+  width: 14px;
+  height: 14px;
+  margin: 0 3.5px 0 0;
+}
+
+.label {
+  align-self: center;
+  padding-inline-start: 5px;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.bottomImageWrap {
+  padding-top: 30px;
+}
+
+.bottomImage {
+  height: 383px;
+  --radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  .textColumn {
+    --padding-right: 0px;
+    --padding-left: 30px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .list {
+    --width: 100%;
+  }
+}
+
+@media (max-width: 880px) {
+  .section {
+    --padding-top: 50px;
+    --padding-bottom: 50px;
+  }
+  .buttonWrap {
+    align-self: center;
+  }
+  .heading {
+    --title-size: 40px;
+    --title-line-height: 45px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    --padding-top: 0px;
+    --padding-bottom: 32px;
+    --padding-left: 0px;
+    --padding-right: 0px;
+  }
+  .row {
+    --flex-direction: column-reverse;
+  }
+  .photoColumn,
+  .textColumn,
+  .list {
+    --width: 100%;
+    --flex-wrap: wrap;
+  }
+  .photoColumn {
+    --margin-top: 50px;
+  }
+  .buttonWrap {
+    padding-top: 45px;
+  }
+  .textColumn {
+    --padding-top: 3px;
+    --padding-left: 0px;
+  }
+  .heading {
+    --sub-size: 35px;
+    --title-size: 25px;
+  }
+  .list {
+    --padding-top: 0px;
+  }
+  .listRow {
+    padding: 0 0 2px;
+  }
+}

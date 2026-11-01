@@ -1,0 +1,6 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /pricing/ 1440
+MISSING  img:beach-resort-under-1-1536x768.jpg  (orig 740,2699 598x520)
+EXTRA    img:beach-resort-under-1.jpg  (local 740,2699 598x520)
+
+/pricing/ @1440px: 55 elements, 0 differ > 2px, 1 missing, 1 extra

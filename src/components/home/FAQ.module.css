@@ -1,0 +1,79 @@
+/* Section 11 — "Mocean Beach Resort FAQ" (3dfb32a) */
+.section {
+  --row-gap: 0px;
+  --column-gap: 0px;
+  --padding-top: 120px;
+  --padding-bottom: 120px;
+  --padding-left: 10px;
+  --padding-right: 10px;
+  background-color: var(--color-section-grey);
+}
+
+.heading {
+  --align: center;
+}
+
+.headingWrap {
+  padding-bottom: 45px;
+}
+
+.row {
+  --flex-direction: row;
+}
+
+/* Photo (6b3ae37) — after the accordion visually ("order end") */
+.imageColumn {
+  --width: 46%;
+  --overflow: hidden;
+  --border-radius: 10px;
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --order: 99999;
+}
+
+.image {
+  height: 520px;
+}
+
+.accordionColumn {
+  --width: 50%;
+  --justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    --padding-top: 80px;
+    --padding-bottom: 80px;
+  }
+  .image {
+    height: 420px;
+  }
+}
+
+@media (max-width: 880px) {
+  .section {
+    --padding-top: 50px;
+    --padding-bottom: 50px;
+  }
+  .row {
+    --flex-direction: column-reverse;
+  }
+  .imageColumn,
+  .accordionColumn {
+    --width: 100%;
+  }
+  .image {
+    height: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  .headingWrap {
+    padding-bottom: 23px;
+  }
+  .image {
+    height: 260px;
+  }
+}

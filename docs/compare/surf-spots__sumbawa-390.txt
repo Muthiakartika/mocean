@@ -1,0 +1,22 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /surf-spots/sumbawa/ 390
+DIFF     span:Sumbawa rewards the surfers who make the    dx=0 dy=-83 dw=0 dh=0   (orig 10,674 370x83)
+DIFF     h2:Why Choose Sumbawa for Surfing                dx=0 dy=83 dw=0 dh=0   (orig 10,597 370x77)
+DIFF     span:We'll walk you through the simple prep,     dx=0 dy=-76 dw=0 dh=0   (orig 10,2012 370x66)
+DIFF     h2:Feel the Challenge of Sumbawa's Waves         dx=0 dy=66 dw=0 dh=0   (orig 10,1936 370x66)
+DIFF     span:Here's the practical stuff that makes a     dx=0 dy=-69 dw=0 dh=0   (orig 10,2959 370x75)
+DIFF     h2:Simple Tips                                   dx=0 dy=75 dw=0 dh=0   (orig 10,2890 370x49)
+DIFF     span:Here are the breaks that put Sumbawa on     dx=0 dy=-59 dw=0 dh=0   (orig 10,4896 370x55)
+DIFF     h2:Top Surf Spots                                dx=0 dy=55 dw=0 dh=0   (orig 10,4837 370x49)
+DIFF     span:There's no better feeling than waking up    dx=0 dy=-158 dw=0 dh=0   (orig 70,14991 250x56)
+DIFF     h2:Surf West Sumbawa from Mocean                 dx=0 dy=56 dw=0 dh=0   (orig 70,14853 250x118)
+MISSING  img:Why-Choose-Sumbawa-for-Surfing-768x671.jpg  (orig 10,1381 370x520)
+MISSING  img:Simple-Tips-768x384.jpg  (orig 10,3074 370x560)
+MISSING  img:Whats-need-to-Bring-768x671.jpg  (orig 20,4224 350x500)
+MISSING  img:Top-Surf-Spots-768x384.jpg  (orig 10,4961 370x560)
+EXTRA    img:Why-Choose-Sumbawa-for-Surfing.jpg  (local 10,1381 370x520)
+EXTRA    img:Simple-Tips.jpg  (local 10,3074 370x560)
+EXTRA    img:Whats-need-to-Bring-1024x895.jpg  (local 20,4224 350x500)
+EXTRA    img:Top-Surf-Spots.jpg  (local 10,4961 370x560)
+
+/surf-spots/sumbawa/ @390px: 81 elements, 10 differ > 2px, 4 missing, 4 extra

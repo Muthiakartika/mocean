@@ -1,0 +1,77 @@
+{
+ "path": "/news/",
+ "elementorId": "16625",
+ "content": [
+  {
+   "type": "container",
+   "id": "5062777b",
+   "classes": "elementor-element elementor-element-5062777b jarallax e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "65a3fa5d",
+     "classes": "elementor-element elementor-element-65a3fa5d e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "heading",
+       "id": "66be87c8",
+       "classes": "elementor-element elementor-element-66be87c8 elementor-widget elementor-widget-heading",
+       "wrapped": true,
+       "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Mocean News</h1>"
+      },
+      {
+       "type": "text-editor",
+       "id": "622e5ad3",
+       "classes": "elementor-element elementor-element-622e5ad3 elementor-widget elementor-widget-text-editor",
+       "wrapped": true,
+       "html": "<p>Explore articles on courses, sites, and sea life.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "4cf3d51e",
+   "classes": "elementor-element elementor-element-4cf3d51e e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "15f245a9",
+     "classes": "elementor-element elementor-element-15f245a9 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "7f0f5ff8",
+       "classes": "elementor-element elementor-element-7f0f5ff8 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "556a8bd8",
+         "classes": "elementor-element elementor-element-556a8bd8 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> From Reef to Read </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Short takes on dives, destinations, and training     </h2>\n</div>",
+         "animation": "fadeInUp"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "6066201",
+       "classes": "elementor-element elementor-element-6066201 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "eael-post-grid",
+         "id": "3b925e2",
+         "classes": "elementor-element elementor-element-3b925e2 elementor-grid-eael-col-2 elementor-grid-tablet-eael-col-2 elementor-grid-mobile-eael-col-1 elementor-widget elementor-widget-eael-post-grid",
+         "wrapped": true,
+         "html": "<div class=\"eael-post-grid-container\" id=\"eael-post-grid-3b925e2\">\n<div class=\"eael-post-grid eael-post-appender eael-post-appender-3b925e2 eael-post-grid-style-two\" data-layout-mode=\"grid\"><article class=\"eael-grid-post eael-post-grid-column eael-pg-post-17778 category-uncategorized\" data-id=\"17778\">\n<div class=\"eael-grid-post-holder\">\n<div class=\"eael-grid-post-holder-inner\"><div class=\"eael-entry-media\"><div class=\"eael-entry-overlay fade-in\"><i aria-hidden=\"true\" class=\"fas fa-spinner\"></i><a href=\"/how-to-get-to-sumbawa/\" rel=\"nofollow\" target=\"_blank\"></a></div><div class=\"eael-entry-thumbnail\">\n<img alt=\"\" class=\"attachment-large size-large wp-image-17793\" decoding=\"async\" height=\"427\" src=\"/images/uploads/2026/07/How-to-Get-to-Sumbawa-Travel-Guide-1024x683.jpg\" width=\"640\"/>\n</div>\n</div><div class=\"eael-entry-wrapper\"><header class=\"eael-entry-header\"><h2 class=\"eael-entry-title\"><a class=\"eael-grid-post-link\" href=\"/how-to-get-to-sumbawa/\" rel=\"nofollow\" target=\"_blank\" title=\"How to Get to Sumbawa from Bali and Lombok\">How to Get to Sumbawa from Bali and Lombok</a></h2></header><div class=\"eael-entry-content\">\n<div class=\"eael-grid-post-excerpt\"><p>So you’ve set your heart on a Sumbawa trip that has uncrowded waves, hidden waterfalls, and that rare “islands as...</p><a class=\"eael-post-elements-readmore-btn\" href=\"/how-to-get-to-sumbawa/\" rel=\"nofollow\" target=\"_blank\">Read More</a></div>\n</div><div class=\"eael-entry-header-after style-two\"><div class=\"eael-entry-meta\"><span class=\"eael-meta-posted-on\"><i class=\"far fa-clock\"></i><time datetime=\"July 22, 2026\">July 22, 2026</time></span></div></div></div></div>\n</div>\n</article><article class=\"eael-grid-post eael-post-grid-column eael-pg-post-15637 category-uncategorized\" data-id=\"15637\">\n<div class=\"eael-grid-post-holder\">\n<div class=\"eael-grid-post-holder-inner\"><div class=\"eael-entry-media\"><div class=\"eael-entry-overlay fade-in\"><i aria-hidden=\"true\" class=\"fas fa-spinner\"></i><a href=\"/wellness-retreat/\" rel=\"nofollow\" target=\"_blank\"></a></div><div class=\"eael-entry-thumbnail\">\n<img alt=\"\" class=\"attachment-large size-large wp-image-11620\" decoding=\"async\" height=\"427\" src=\"/images/uploads/2025/06/74-1024x683.jpg\" width=\"640\"/>\n</div>\n</div><div class=\"eael-entry-wrapper\"><header class=\"eael-entry-header\"><h2 class=\"eael-entry-title\"><a class=\"eael-grid-post-link\" href=\"/wellness-retreat/\" rel=\"nofollow\" target=\"_blank\" title=\"Wellness Retreat at Mocean\">Wellness Retreat at Mocean</a></h2></header><div class=\"eael-entry-content\">\n<div class=\"eael-grid-post-excerpt\"><p>As you arrive at Mocean in Indonesia, a sense of calm washes over you, with sunsets painting the sky and...</p><a class=\"eael-post-elements-readmore-btn\" href=\"/wellness-retreat/\" rel=\"nofollow\" target=\"_blank\">Read More</a></div>\n</div><div class=\"eael-entry-header-after style-two\"><div class=\"eael-entry-meta\"><span class=\"eael-meta-posted-on\"><i class=\"far fa-clock\"></i><time datetime=\"September 23, 2025\">September 23, 2025</time></span></div></div></div></div>\n</div>\n</article><article class=\"eael-grid-post eael-post-grid-column eael-pg-post-15635 category-uncategorized\" data-id=\"15635\">\n<div class=\"eael-grid-post-holder\">\n<div class=\"eael-grid-post-holder-inner\"><div class=\"eael-entry-media\"><div class=\"eael-entry-overlay fade-in\"><i aria-hidden=\"true\" class=\"fas fa-spinner\"></i><a href=\"/couples-retreat/\" rel=\"nofollow\" target=\"_blank\"></a></div><div class=\"eael-entry-thumbnail\">\n<img alt=\"\" class=\"attachment-large size-large wp-image-16415\" decoding=\"async\" height=\"427\" src=\"/images/uploads/2025/09/Couples-retreat-1-1024x683.jpg\" width=\"640\"/>\n</div>\n</div><div class=\"eael-entry-wrapper\"><header class=\"eael-entry-header\"><h2 class=\"eael-entry-title\"><a class=\"eael-grid-post-link\" href=\"/couples-retreat/\" rel=\"nofollow\" target=\"_blank\" title=\"Couples Retreat at Mocean\">Couples Retreat at Mocean</a></h2></header><div class=\"eael-entry-content\">\n<div class=\"eael-grid-post-excerpt\"><p>Picture walking hand-in-hand on a pristine white-sand beach as blue waves kiss the shore under a golden sunset. At Mocean...</p><a class=\"eael-post-elements-readmore-btn\" href=\"/couples-retreat/\" rel=\"nofollow\" target=\"_blank\">Read More</a></div>\n</div><div class=\"eael-entry-header-after style-two\"><div class=\"eael-entry-meta\"><span class=\"eael-meta-posted-on\"><i class=\"far fa-clock\"></i><time datetime=\"September 23, 2025\">September 23, 2025</time></span></div></div></div></div>\n</div>\n</article><article class=\"eael-grid-post eael-post-grid-column eael-pg-post-15633 category-uncategorized\" data-id=\"15633\">\n<div class=\"eael-grid-post-holder\">\n<div class=\"eael-grid-post-holder-inner\"><div class=\"eael-entry-media\"><div class=\"eael-entry-overlay fade-in\"><i aria-hidden=\"true\" class=\"fas fa-spinner\"></i><a href=\"/things-to-do-in-sumbawa-indonesia/\" rel=\"nofollow\" target=\"_blank\"></a></div><div class=\"eael-entry-thumbnail\">\n<img alt=\"\" class=\"attachment-large size-large wp-image-16418\" decoding=\"async\" height=\"427\" loading=\"lazy\" src=\"/images/uploads/2025/09/Exploring-Sumbawa-1-1024x683.jpg\" width=\"640\"/>\n</div>\n</div><div class=\"eael-entry-wrapper\"><header class=\"eael-entry-header\"><h2 class=\"eael-entry-title\"><a class=\"eael-grid-post-link\" href=\"/things-to-do-in-sumbawa-indonesia/\" rel=\"nofollow\" target=\"_blank\" title=\"Things to Do in Sumbawa, Indonesia\">Things to Do in Sumbawa, Indonesia</a></h2></header><div class=\"eael-entry-content\">\n<div class=\"eael-grid-post-excerpt\"><p>West Sumbawa, stretched between Lombok and Flores, feels wild yet welcoming, larger than Bali but quieter and more grounded. Life...</p><a class=\"eael-post-elements-readmore-btn\" href=\"/things-to-do-in-sumbawa-indonesia/\" rel=\"nofollow\" target=\"_blank\">Read More</a></div>\n</div><div class=\"eael-entry-header-after style-two\"><div class=\"eael-entry-meta\"><span class=\"eael-meta-posted-on\"><i class=\"far fa-clock\"></i><time datetime=\"September 23, 2025\">September 23, 2025</time></span></div></div></div></div>\n</div>\n</article></div>\n<div class=\"clearfix\"></div>\n</div> <div class=\"eael-load-more-button-wrap\">\n<button class=\"eael-load-more-button\" data-args=\"orderby=date&amp;order=desc&amp;ignore_sticky_posts=1&amp;post_status=publish&amp;posts_per_page=4&amp;offset=0&amp;post_type=post&amp;eael_args_sig=5dd1ba086660ed3d4439464e468dc18f4b756be5a4618b28a84b6e8522d99d60\" data-class=\"Essential_Addons_Elementor\\Elements\\Post_Grid\" data-layout=\"grid\" data-max-page=\"2\" data-page=\"1\" data-page-id=\"16625\" data-template='{\"dir\":\"lite\",\"file_name\":\"two.php\",\"name\":\"Post-Grid\"}' data-widget=\"3b925e2\" data-widget-id=\"3b925e2\" id=\"eael-load-more-btn-3b925e2\">\n<span class=\"eael-btn-loader button__loader\"></span>\n<span class=\"eael_load_more_text\">Load More</span>\n</button>\n</div>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

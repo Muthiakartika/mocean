@@ -1,0 +1,10 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /scuba-diving/drift-diving/ 390
+MISSING  img:Drift-Diving-1-768x671.jpg  (orig 10,1043 370x682)
+MISSING  img:Drift-Diving-2-768x671.jpg  (orig 10,2703 370x553)
+MISSING  img:Drift-Diving-3-768x671.jpg  (orig 10,3938 370x553)
+EXTRA    img:Drift-Diving-1.jpg  (local 10,1043 370x682)
+EXTRA    img:Drift-Diving-2.jpg  (local 10,2703 370x553)
+EXTRA    img:Drift-Diving-3.jpg  (local 10,3938 370x553)
+
+/scuba-diving/drift-diving/ @390px: 56 elements, 0 differ > 2px, 3 missing, 3 extra

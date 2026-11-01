@@ -1,0 +1,825 @@
+{
+ "path": "/dive-resort/",
+ "elementorId": "15677",
+ "content": [
+  {
+   "type": "container",
+   "id": "7470bc4",
+   "classes": "elementor-element elementor-element-7470bc4 jarallax e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "3a0137d",
+     "classes": "elementor-element elementor-element-3a0137d e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "heading",
+       "id": "2dc01f3b",
+       "classes": "elementor-element elementor-element-2dc01f3b elementor-widget elementor-widget-heading",
+       "wrapped": true,
+       "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Dive Resort</h1>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "3e3efea9",
+   "classes": "elementor-element elementor-element-3e3efea9 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "1f0bcaf",
+     "classes": "elementor-element elementor-element-1f0bcaf e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "55dab0ab",
+       "classes": "elementor-element elementor-element-55dab0ab e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "735c6b9a",
+         "classes": "elementor-element elementor-element-735c6b9a elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Where Adventure Meets Tranquility </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Mocean Beach  Resort     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "c0c2708",
+         "classes": "elementor-element elementor-element-c0c2708 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Mocean Beach Resort offers unforgettable diving in pristine, unexplored waters and is the perfect launch point for divers exploring Indonesia. With expert guides and just four certified divers per group, each dive trip becomes a chance to uncover hidden underwater gems. Encounter manta rays, reef sharks, and eagle rays on the dive sites while enjoying the comfort of a boutique dive trip (Indonesia) experience. Whether you’re planning short dive trips or extended Indonesia dive trips, our diver-designed center is equipped with private lockers, a spacious wet area, and an air-conditioned camera room to support comfort and gear care.</p>"
+        },
+        {
+         "type": "icon-list",
+         "id": "33886d9",
+         "classes": "elementor-element elementor-element-33886d9 elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list",
+         "wrapped": true,
+         "html": "<ul class=\"elementor-icon-list-items elementor-inline-items\">\n<li class=\"elementor-icon-list-item elementor-inline-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg id=\"Layer_1\" style=\"enable-background:new 0 0 75 75;\" viewbox=\"0 0 75 75\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><style type=\"text/css\">\t.st0{fill:#111F90;}</style><path class=\"st0\" d=\"M45.1,33.6c-0.2,0.6-0.4,1.4-0.9,1.4c-0.5,0-0.5-0.8-0.7-1.2c-0.4-0.8-1-1.5-0.5-2.5c0.1-0.2,0-0.5,0-0.9 c-0.2,0.6-0.3,1-0.5,1.4c-0.8-1.1-1.7-2.2-1.7-3.6c0,0.3,0,0.5-0.1,0.9c-0.6-0.5-1.1-1-1.6-1.6c-0.1-0.1-0.2-0.2-0.3-0.3 c-0.6-0.7-1.3-0.6-2-0.2c-0.4,0.3-0.9,0.6-1.4,0.7c-1.1,0.3-1.6,1.4-2.7,1.8c-0.3-0.3,0.2-0.5-0.1-0.9c0,1.5-1.2,2.1-2,3 c-0.1-0.4-0.2-0.8-0.3-1.1c-0.1,0.4-0.2,0.9,0,1.3c0,0.1,0.1,0.2,0,0.3c-0.9,1.1-1.7,2.2-2.4,3.4c-0.2-4,0.8-7.5,4.4-9.9 c-0.8-0.3-1.5,0.2-2.2,0c0-0.6,0.6-0.8,0.8-1.3c-0.6,0-0.9,0.4-1.1,0.8c-0.5,0.6-1.2,0.9-2,1c-0.8,0.1-1.6,0.4-2.5,0.6 c0.2-0.7,0.6-1.2,0.9-1.9c-0.7,0.3-0.9,0.7-1.2,1.2c-0.4,0.7-0.9,1.2-1.6,1.4c-1.1,0.4-2.1,0.8-3.2,1.3c-0.1-0.9,0.3-1.7,0.6-2.7 c-1,0.8-1.3,1.8-1.5,2.8c-0.1,0.4-0.3,0.5-0.5,0.7c-2.1,1.1-4.1,2.3-5.9,3.8c-0.1,0.1-0.3,0.1-0.5,0.3c1.6-4.1,3.6-7.7,7-10.4 c3.4-2.7,7.4-3.9,11.7-3.7c-0.9-0.4-1.9-0.7-3-1c0.6-0.4,1.1-0.7,1.7-1.1c-0.7,0.1-1.3,0.3-1.8,0.7c-0.3,0.2-0.6,0.3-1,0.2 c-1-0.2-1.9-0.4-2.9-0.4c-0.1,0-0.3,0-0.4-0.1c-0.1-0.2,0.1-0.3,0.2-0.4c0.2-0.5,0.9-0.7,1.2-1.3c-0.8,0.2-1.4,0.7-1.9,1.2 c-0.3,0.3-0.6,0.4-1,0.4c-0.8,0-1.5,0-2.3,0c-1.3,0-2.6,0.1-3.9,0.2c2.5-2.1,5.3-3.7,8.6-4.4c3.3-0.7,6.5-0.3,9.5,1.2 c0-0.1,0.1-0.1,0.1-0.2c-0.5-0.4-1-0.8-1.6-1.2c0.6-0.1,0.9-0.2,1.2-0.3c-0.4,0-0.8-0.3-1.3-0.1c-0.6,0.1-0.9-0.5-1.4-0.8 c-0.5-0.3-1-0.7-1.6-1.1c0.5-0.5,1.2-0.4,1.9-0.8c-0.7,0.1-1.1,0-1.6,0.1c-0.6,0.3-1.2,0.2-1.9-0.2c-1.3-0.8-2.7-1.4-4.3-1.9 c2.5-0.8,6.7-0.9,9.9,0.5c3.3,1.5,5.3,4.1,6.6,7.4c0.8-2.4,2.1-4.2,4.3-5.4c2.1-1.1,4.4-1.2,6.8-1c-0.7,0.6-1.5,0.8-2.1,1.3 c-0.7,0.6-1.5,1.2-2.6,0.8c-0.2-0.1-0.4,0-0.8,0c0.6,0.2,1.3-0.1,1.4,0.4c0.1,0.4-0.6,0.5-0.8,0.8c-0.4,0.7-1.2,0.7-2.1,0.9 c0.4,0,0.6,0.1,0.8,0.1c0,0.4-0.4,0.5-0.5,0.9c8.1-2.8,14.3,0.4,19.7,6.1c-1.4-0.4-2.8-0.7-4.3-0.9c-0.6-0.1-1.2-0.2-1.8-0.2 c-0.8,0-1.5-0.2-1.9-1c-0.3-0.6-1-0.9-1.6-1.2c0.4,0.5,0.7,1,1.1,1.5c0.1,0.2,0.2,0.3,0.1,0.5c-0.1,0.2-0.3-0.1-0.4,0 c-1,0-2-0.2-3,0.1c-0.7,0.2-1.2-0.2-1.6-0.6c-0.3-0.3-0.7-0.5-1.2-0.6c0.1,0.5,0.7,0.5,0.9,0.9c0.1,0.1,0.3,0.2,0.2,0.4 c-0.1,0.1-0.2,0.1-0.3,0.1c-0.9,0-1.8,0.2-2.7,0.4c-0.3,0.1-0.6,0-0.8-0.2c-0.5-0.3-1.1-0.5-1.9-0.6c1.1,0.7,2.2,1,3.3,1.4 c2,0.7,3.7,1.8,5.4,3.1c2,1.6,3.4,3.7,4.5,5.9c1.3,2.5,2,5.2,2.5,7.9c0,0.1,0,0.2-0.1,0.4c-1.1-1.4-2.3-2.6-3.5-3.7 c-0.6-0.6-1.3-1.1-2-1.7c-0.6-0.5-0.5-1.2-0.6-1.9c-0.1-0.8-0.4-1.5-0.9-2.2c0.2,0.9,0.1,1.8,0.1,2.8c-1.3-0.9-2.6-1.7-3.8-2.5 c-0.2-0.1-0.3-0.4-0.4-0.7c-0.2-0.7-0.4-1.5-1.1-2c0.1,0.7,0.6,1.2,0.4,2c-1.2-0.5-2.3-1.1-3.5-1.6c-0.4-0.2-0.6-0.8-0.8-1.2 c-0.2-0.3-0.4-0.5-0.8-0.8c0.5,1,0.6,1.9,1.3,2.7c1.6,2,2.3,4.2,2.4,6.8c0,2.2-0.4,4.2-1.1,6.2c-0.1,0.2-0.2,0.5-0.4,0.8 c-0.3-1.8-0.7-3.5-1.3-5.1c-0.1-0.3,0-0.5,0.1-0.8C44.9,34.8,45.2,34.3,45.1,33.6z\"></path><path class=\"st0\" d=\"M34.4,50.8c-0.3-2.2-0.2-4.7-0.2-7.1c0-2.3,0.1-4.7,0.3-7c0.2-2.7,0.6-5.3,0.9-8c0-0.3,0.1-0.4,0.4-0.5 c0.4-0.2,0.8-0.4,1.2-0.6c0.4-0.2,0.7-0.6,1.2-0.3c0.6,0.4,0.8,0.9,0.7,1.7c-0.3,2-0.5,4-0.6,6.1c-0.1,2.3-0.3,4.7-0.3,7 c0,2.1,0.1,4.1,0.3,6.2c0.2,2.7,0.6,5.4,1,8.1c0.5,2.5,1,5,1.7,7.4c0.1,0.2,0.2,0.4,0,0.6c-0.2,0.2-0.4,0-0.5-0.1 c-1.4-0.5-2.9-0.4-4.3,0c-0.3,0.1-0.5,0.2-0.5-0.3c-0.3-2.1-0.6-4.2-0.9-6.3c-0.1-1.1-0.3-2.3-0.3-3.5 C34.5,53.2,34.2,52.1,34.4,50.8z\"></path><path class=\"st0\" d=\"M32.4,69.3c0.7-2.4,2.3-3.8,4.5-4.3c2.8-0.7,6,0.8,7.1,3.7c0.2,0.6,0.1,0.7-0.4,0.7 C40,69.3,36.2,69.3,32.4,69.3z\"></path><path class=\"st0\" d=\"M33.4,19c-0.6,0-1.1,0.8-2,0.4C32.1,19.1,32.7,18.8,33.4,19z\"></path><path class=\"st0\" d=\"M35.9,15.4c-0.3,0.2-0.5,0-0.8-0.1C35.5,15,35.7,15.4,35.9,15.4z\"></path></svg> </span>\n<span class=\"elementor-icon-list-text\">Personalized dive experiences</span>\n</li>\n<li class=\"elementor-icon-list-item elementor-inline-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg id=\"Layer_1\" style=\"enable-background:new 0 0 75 75;\" viewbox=\"0 0 75 75\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><style type=\"text/css\">\t.st0{fill:#111F90;}</style><path class=\"st0\" d=\"M45.1,33.6c-0.2,0.6-0.4,1.4-0.9,1.4c-0.5,0-0.5-0.8-0.7-1.2c-0.4-0.8-1-1.5-0.5-2.5c0.1-0.2,0-0.5,0-0.9 c-0.2,0.6-0.3,1-0.5,1.4c-0.8-1.1-1.7-2.2-1.7-3.6c0,0.3,0,0.5-0.1,0.9c-0.6-0.5-1.1-1-1.6-1.6c-0.1-0.1-0.2-0.2-0.3-0.3 c-0.6-0.7-1.3-0.6-2-0.2c-0.4,0.3-0.9,0.6-1.4,0.7c-1.1,0.3-1.6,1.4-2.7,1.8c-0.3-0.3,0.2-0.5-0.1-0.9c0,1.5-1.2,2.1-2,3 c-0.1-0.4-0.2-0.8-0.3-1.1c-0.1,0.4-0.2,0.9,0,1.3c0,0.1,0.1,0.2,0,0.3c-0.9,1.1-1.7,2.2-2.4,3.4c-0.2-4,0.8-7.5,4.4-9.9 c-0.8-0.3-1.5,0.2-2.2,0c0-0.6,0.6-0.8,0.8-1.3c-0.6,0-0.9,0.4-1.1,0.8c-0.5,0.6-1.2,0.9-2,1c-0.8,0.1-1.6,0.4-2.5,0.6 c0.2-0.7,0.6-1.2,0.9-1.9c-0.7,0.3-0.9,0.7-1.2,1.2c-0.4,0.7-0.9,1.2-1.6,1.4c-1.1,0.4-2.1,0.8-3.2,1.3c-0.1-0.9,0.3-1.7,0.6-2.7 c-1,0.8-1.3,1.8-1.5,2.8c-0.1,0.4-0.3,0.5-0.5,0.7c-2.1,1.1-4.1,2.3-5.9,3.8c-0.1,0.1-0.3,0.1-0.5,0.3c1.6-4.1,3.6-7.7,7-10.4 c3.4-2.7,7.4-3.9,11.7-3.7c-0.9-0.4-1.9-0.7-3-1c0.6-0.4,1.1-0.7,1.7-1.1c-0.7,0.1-1.3,0.3-1.8,0.7c-0.3,0.2-0.6,0.3-1,0.2 c-1-0.2-1.9-0.4-2.9-0.4c-0.1,0-0.3,0-0.4-0.1c-0.1-0.2,0.1-0.3,0.2-0.4c0.2-0.5,0.9-0.7,1.2-1.3c-0.8,0.2-1.4,0.7-1.9,1.2 c-0.3,0.3-0.6,0.4-1,0.4c-0.8,0-1.5,0-2.3,0c-1.3,0-2.6,0.1-3.9,0.2c2.5-2.1,5.3-3.7,8.6-4.4c3.3-0.7,6.5-0.3,9.5,1.2 c0-0.1,0.1-0.1,0.1-0.2c-0.5-0.4-1-0.8-1.6-1.2c0.6-0.1,0.9-0.2,1.2-0.3c-0.4,0-0.8-0.3-1.3-0.1c-0.6,0.1-0.9-0.5-1.4-0.8 c-0.5-0.3-1-0.7-1.6-1.1c0.5-0.5,1.2-0.4,1.9-0.8c-0.7,0.1-1.1,0-1.6,0.1c-0.6,0.3-1.2,0.2-1.9-0.2c-1.3-0.8-2.7-1.4-4.3-1.9 c2.5-0.8,6.7-0.9,9.9,0.5c3.3,1.5,5.3,4.1,6.6,7.4c0.8-2.4,2.1-4.2,4.3-5.4c2.1-1.1,4.4-1.2,6.8-1c-0.7,0.6-1.5,0.8-2.1,1.3 c-0.7,0.6-1.5,1.2-2.6,0.8c-0.2-0.1-0.4,0-0.8,0c0.6,0.2,1.3-0.1,1.4,0.4c0.1,0.4-0.6,0.5-0.8,0.8c-0.4,0.7-1.2,0.7-2.1,0.9 c0.4,0,0.6,0.1,0.8,0.1c0,0.4-0.4,0.5-0.5,0.9c8.1-2.8,14.3,0.4,19.7,6.1c-1.4-0.4-2.8-0.7-4.3-0.9c-0.6-0.1-1.2-0.2-1.8-0.2 c-0.8,0-1.5-0.2-1.9-1c-0.3-0.6-1-0.9-1.6-1.2c0.4,0.5,0.7,1,1.1,1.5c0.1,0.2,0.2,0.3,0.1,0.5c-0.1,0.2-0.3-0.1-0.4,0 c-1,0-2-0.2-3,0.1c-0.7,0.2-1.2-0.2-1.6-0.6c-0.3-0.3-0.7-0.5-1.2-0.6c0.1,0.5,0.7,0.5,0.9,0.9c0.1,0.1,0.3,0.2,0.2,0.4 c-0.1,0.1-0.2,0.1-0.3,0.1c-0.9,0-1.8,0.2-2.7,0.4c-0.3,0.1-0.6,0-0.8-0.2c-0.5-0.3-1.1-0.5-1.9-0.6c1.1,0.7,2.2,1,3.3,1.4 c2,0.7,3.7,1.8,5.4,3.1c2,1.6,3.4,3.7,4.5,5.9c1.3,2.5,2,5.2,2.5,7.9c0,0.1,0,0.2-0.1,0.4c-1.1-1.4-2.3-2.6-3.5-3.7 c-0.6-0.6-1.3-1.1-2-1.7c-0.6-0.5-0.5-1.2-0.6-1.9c-0.1-0.8-0.4-1.5-0.9-2.2c0.2,0.9,0.1,1.8,0.1,2.8c-1.3-0.9-2.6-1.7-3.8-2.5 c-0.2-0.1-0.3-0.4-0.4-0.7c-0.2-0.7-0.4-1.5-1.1-2c0.1,0.7,0.6,1.2,0.4,2c-1.2-0.5-2.3-1.1-3.5-1.6c-0.4-0.2-0.6-0.8-0.8-1.2 c-0.2-0.3-0.4-0.5-0.8-0.8c0.5,1,0.6,1.9,1.3,2.7c1.6,2,2.3,4.2,2.4,6.8c0,2.2-0.4,4.2-1.1,6.2c-0.1,0.2-0.2,0.5-0.4,0.8 c-0.3-1.8-0.7-3.5-1.3-5.1c-0.1-0.3,0-0.5,0.1-0.8C44.9,34.8,45.2,34.3,45.1,33.6z\"></path><path class=\"st0\" d=\"M34.4,50.8c-0.3-2.2-0.2-4.7-0.2-7.1c0-2.3,0.1-4.7,0.3-7c0.2-2.7,0.6-5.3,0.9-8c0-0.3,0.1-0.4,0.4-0.5 c0.4-0.2,0.8-0.4,1.2-0.6c0.4-0.2,0.7-0.6,1.2-0.3c0.6,0.4,0.8,0.9,0.7,1.7c-0.3,2-0.5,4-0.6,6.1c-0.1,2.3-0.3,4.7-0.3,7 c0,2.1,0.1,4.1,0.3,6.2c0.2,2.7,0.6,5.4,1,8.1c0.5,2.5,1,5,1.7,7.4c0.1,0.2,0.2,0.4,0,0.6c-0.2,0.2-0.4,0-0.5-0.1 c-1.4-0.5-2.9-0.4-4.3,0c-0.3,0.1-0.5,0.2-0.5-0.3c-0.3-2.1-0.6-4.2-0.9-6.3c-0.1-1.1-0.3-2.3-0.3-3.5 C34.5,53.2,34.2,52.1,34.4,50.8z\"></path><path class=\"st0\" d=\"M32.4,69.3c0.7-2.4,2.3-3.8,4.5-4.3c2.8-0.7,6,0.8,7.1,3.7c0.2,0.6,0.1,0.7-0.4,0.7 C40,69.3,36.2,69.3,32.4,69.3z\"></path><path class=\"st0\" d=\"M33.4,19c-0.6,0-1.1,0.8-2,0.4C32.1,19.1,32.7,18.8,33.4,19z\"></path><path class=\"st0\" d=\"M35.9,15.4c-0.3,0.2-0.5,0-0.8-0.1C35.5,15,35.7,15.4,35.9,15.4z\"></path></svg> </span>\n<span class=\"elementor-icon-list-text\">Maximum 4 divers per guide</span>\n</li>\n</ul>"
+        },
+        {
+         "type": "icon-list",
+         "id": "591f13a",
+         "classes": "elementor-element elementor-element-591f13a elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list",
+         "wrapped": true,
+         "html": "<ul class=\"elementor-icon-list-items elementor-inline-items\">\n<li class=\"elementor-icon-list-item elementor-inline-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg id=\"Layer_1\" style=\"enable-background:new 0 0 75 75;\" viewbox=\"0 0 75 75\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><style type=\"text/css\">\t.st0{fill:#111F90;}</style><path class=\"st0\" d=\"M45.1,33.6c-0.2,0.6-0.4,1.4-0.9,1.4c-0.5,0-0.5-0.8-0.7-1.2c-0.4-0.8-1-1.5-0.5-2.5c0.1-0.2,0-0.5,0-0.9 c-0.2,0.6-0.3,1-0.5,1.4c-0.8-1.1-1.7-2.2-1.7-3.6c0,0.3,0,0.5-0.1,0.9c-0.6-0.5-1.1-1-1.6-1.6c-0.1-0.1-0.2-0.2-0.3-0.3 c-0.6-0.7-1.3-0.6-2-0.2c-0.4,0.3-0.9,0.6-1.4,0.7c-1.1,0.3-1.6,1.4-2.7,1.8c-0.3-0.3,0.2-0.5-0.1-0.9c0,1.5-1.2,2.1-2,3 c-0.1-0.4-0.2-0.8-0.3-1.1c-0.1,0.4-0.2,0.9,0,1.3c0,0.1,0.1,0.2,0,0.3c-0.9,1.1-1.7,2.2-2.4,3.4c-0.2-4,0.8-7.5,4.4-9.9 c-0.8-0.3-1.5,0.2-2.2,0c0-0.6,0.6-0.8,0.8-1.3c-0.6,0-0.9,0.4-1.1,0.8c-0.5,0.6-1.2,0.9-2,1c-0.8,0.1-1.6,0.4-2.5,0.6 c0.2-0.7,0.6-1.2,0.9-1.9c-0.7,0.3-0.9,0.7-1.2,1.2c-0.4,0.7-0.9,1.2-1.6,1.4c-1.1,0.4-2.1,0.8-3.2,1.3c-0.1-0.9,0.3-1.7,0.6-2.7 c-1,0.8-1.3,1.8-1.5,2.8c-0.1,0.4-0.3,0.5-0.5,0.7c-2.1,1.1-4.1,2.3-5.9,3.8c-0.1,0.1-0.3,0.1-0.5,0.3c1.6-4.1,3.6-7.7,7-10.4 c3.4-2.7,7.4-3.9,11.7-3.7c-0.9-0.4-1.9-0.7-3-1c0.6-0.4,1.1-0.7,1.7-1.1c-0.7,0.1-1.3,0.3-1.8,0.7c-0.3,0.2-0.6,0.3-1,0.2 c-1-0.2-1.9-0.4-2.9-0.4c-0.1,0-0.3,0-0.4-0.1c-0.1-0.2,0.1-0.3,0.2-0.4c0.2-0.5,0.9-0.7,1.2-1.3c-0.8,0.2-1.4,0.7-1.9,1.2 c-0.3,0.3-0.6,0.4-1,0.4c-0.8,0-1.5,0-2.3,0c-1.3,0-2.6,0.1-3.9,0.2c2.5-2.1,5.3-3.7,8.6-4.4c3.3-0.7,6.5-0.3,9.5,1.2 c0-0.1,0.1-0.1,0.1-0.2c-0.5-0.4-1-0.8-1.6-1.2c0.6-0.1,0.9-0.2,1.2-0.3c-0.4,0-0.8-0.3-1.3-0.1c-0.6,0.1-0.9-0.5-1.4-0.8 c-0.5-0.3-1-0.7-1.6-1.1c0.5-0.5,1.2-0.4,1.9-0.8c-0.7,0.1-1.1,0-1.6,0.1c-0.6,0.3-1.2,0.2-1.9-0.2c-1.3-0.8-2.7-1.4-4.3-1.9 c2.5-0.8,6.7-0.9,9.9,0.5c3.3,1.5,5.3,4.1,6.6,7.4c0.8-2.4,2.1-4.2,4.3-5.4c2.1-1.1,4.4-1.2,6.8-1c-0.7,0.6-1.5,0.8-2.1,1.3 c-0.7,0.6-1.5,1.2-2.6,0.8c-0.2-0.1-0.4,0-0.8,0c0.6,0.2,1.3-0.1,1.4,0.4c0.1,0.4-0.6,0.5-0.8,0.8c-0.4,0.7-1.2,0.7-2.1,0.9 c0.4,0,0.6,0.1,0.8,0.1c0,0.4-0.4,0.5-0.5,0.9c8.1-2.8,14.3,0.4,19.7,6.1c-1.4-0.4-2.8-0.7-4.3-0.9c-0.6-0.1-1.2-0.2-1.8-0.2 c-0.8,0-1.5-0.2-1.9-1c-0.3-0.6-1-0.9-1.6-1.2c0.4,0.5,0.7,1,1.1,1.5c0.1,0.2,0.2,0.3,0.1,0.5c-0.1,0.2-0.3-0.1-0.4,0 c-1,0-2-0.2-3,0.1c-0.7,0.2-1.2-0.2-1.6-0.6c-0.3-0.3-0.7-0.5-1.2-0.6c0.1,0.5,0.7,0.5,0.9,0.9c0.1,0.1,0.3,0.2,0.2,0.4 c-0.1,0.1-0.2,0.1-0.3,0.1c-0.9,0-1.8,0.2-2.7,0.4c-0.3,0.1-0.6,0-0.8-0.2c-0.5-0.3-1.1-0.5-1.9-0.6c1.1,0.7,2.2,1,3.3,1.4 c2,0.7,3.7,1.8,5.4,3.1c2,1.6,3.4,3.7,4.5,5.9c1.3,2.5,2,5.2,2.5,7.9c0,0.1,0,0.2-0.1,0.4c-1.1-1.4-2.3-2.6-3.5-3.7 c-0.6-0.6-1.3-1.1-2-1.7c-0.6-0.5-0.5-1.2-0.6-1.9c-0.1-0.8-0.4-1.5-0.9-2.2c0.2,0.9,0.1,1.8,0.1,2.8c-1.3-0.9-2.6-1.7-3.8-2.5 c-0.2-0.1-0.3-0.4-0.4-0.7c-0.2-0.7-0.4-1.5-1.1-2c0.1,0.7,0.6,1.2,0.4,2c-1.2-0.5-2.3-1.1-3.5-1.6c-0.4-0.2-0.6-0.8-0.8-1.2 c-0.2-0.3-0.4-0.5-0.8-0.8c0.5,1,0.6,1.9,1.3,2.7c1.6,2,2.3,4.2,2.4,6.8c0,2.2-0.4,4.2-1.1,6.2c-0.1,0.2-0.2,0.5-0.4,0.8 c-0.3-1.8-0.7-3.5-1.3-5.1c-0.1-0.3,0-0.5,0.1-0.8C44.9,34.8,45.2,34.3,45.1,33.6z\"></path><path class=\"st0\" d=\"M34.4,50.8c-0.3-2.2-0.2-4.7-0.2-7.1c0-2.3,0.1-4.7,0.3-7c0.2-2.7,0.6-5.3,0.9-8c0-0.3,0.1-0.4,0.4-0.5 c0.4-0.2,0.8-0.4,1.2-0.6c0.4-0.2,0.7-0.6,1.2-0.3c0.6,0.4,0.8,0.9,0.7,1.7c-0.3,2-0.5,4-0.6,6.1c-0.1,2.3-0.3,4.7-0.3,7 c0,2.1,0.1,4.1,0.3,6.2c0.2,2.7,0.6,5.4,1,8.1c0.5,2.5,1,5,1.7,7.4c0.1,0.2,0.2,0.4,0,0.6c-0.2,0.2-0.4,0-0.5-0.1 c-1.4-0.5-2.9-0.4-4.3,0c-0.3,0.1-0.5,0.2-0.5-0.3c-0.3-2.1-0.6-4.2-0.9-6.3c-0.1-1.1-0.3-2.3-0.3-3.5 C34.5,53.2,34.2,52.1,34.4,50.8z\"></path><path class=\"st0\" d=\"M32.4,69.3c0.7-2.4,2.3-3.8,4.5-4.3c2.8-0.7,6,0.8,7.1,3.7c0.2,0.6,0.1,0.7-0.4,0.7 C40,69.3,36.2,69.3,32.4,69.3z\"></path><path class=\"st0\" d=\"M33.4,19c-0.6,0-1.1,0.8-2,0.4C32.1,19.1,32.7,18.8,33.4,19z\"></path><path class=\"st0\" d=\"M35.9,15.4c-0.3,0.2-0.5,0-0.8-0.1C35.5,15,35.7,15.4,35.9,15.4z\"></path></svg> </span>\n<span class=\"elementor-icon-list-text\">Air-conditioned camera room</span>\n</li>\n<li class=\"elementor-icon-list-item elementor-inline-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg id=\"Layer_1\" style=\"enable-background:new 0 0 75 75;\" viewbox=\"0 0 75 75\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><style type=\"text/css\">\t.st0{fill:#111F90;}</style><path class=\"st0\" d=\"M45.1,33.6c-0.2,0.6-0.4,1.4-0.9,1.4c-0.5,0-0.5-0.8-0.7-1.2c-0.4-0.8-1-1.5-0.5-2.5c0.1-0.2,0-0.5,0-0.9 c-0.2,0.6-0.3,1-0.5,1.4c-0.8-1.1-1.7-2.2-1.7-3.6c0,0.3,0,0.5-0.1,0.9c-0.6-0.5-1.1-1-1.6-1.6c-0.1-0.1-0.2-0.2-0.3-0.3 c-0.6-0.7-1.3-0.6-2-0.2c-0.4,0.3-0.9,0.6-1.4,0.7c-1.1,0.3-1.6,1.4-2.7,1.8c-0.3-0.3,0.2-0.5-0.1-0.9c0,1.5-1.2,2.1-2,3 c-0.1-0.4-0.2-0.8-0.3-1.1c-0.1,0.4-0.2,0.9,0,1.3c0,0.1,0.1,0.2,0,0.3c-0.9,1.1-1.7,2.2-2.4,3.4c-0.2-4,0.8-7.5,4.4-9.9 c-0.8-0.3-1.5,0.2-2.2,0c0-0.6,0.6-0.8,0.8-1.3c-0.6,0-0.9,0.4-1.1,0.8c-0.5,0.6-1.2,0.9-2,1c-0.8,0.1-1.6,0.4-2.5,0.6 c0.2-0.7,0.6-1.2,0.9-1.9c-0.7,0.3-0.9,0.7-1.2,1.2c-0.4,0.7-0.9,1.2-1.6,1.4c-1.1,0.4-2.1,0.8-3.2,1.3c-0.1-0.9,0.3-1.7,0.6-2.7 c-1,0.8-1.3,1.8-1.5,2.8c-0.1,0.4-0.3,0.5-0.5,0.7c-2.1,1.1-4.1,2.3-5.9,3.8c-0.1,0.1-0.3,0.1-0.5,0.3c1.6-4.1,3.6-7.7,7-10.4 c3.4-2.7,7.4-3.9,11.7-3.7c-0.9-0.4-1.9-0.7-3-1c0.6-0.4,1.1-0.7,1.7-1.1c-0.7,0.1-1.3,0.3-1.8,0.7c-0.3,0.2-0.6,0.3-1,0.2 c-1-0.2-1.9-0.4-2.9-0.4c-0.1,0-0.3,0-0.4-0.1c-0.1-0.2,0.1-0.3,0.2-0.4c0.2-0.5,0.9-0.7,1.2-1.3c-0.8,0.2-1.4,0.7-1.9,1.2 c-0.3,0.3-0.6,0.4-1,0.4c-0.8,0-1.5,0-2.3,0c-1.3,0-2.6,0.1-3.9,0.2c2.5-2.1,5.3-3.7,8.6-4.4c3.3-0.7,6.5-0.3,9.5,1.2 c0-0.1,0.1-0.1,0.1-0.2c-0.5-0.4-1-0.8-1.6-1.2c0.6-0.1,0.9-0.2,1.2-0.3c-0.4,0-0.8-0.3-1.3-0.1c-0.6,0.1-0.9-0.5-1.4-0.8 c-0.5-0.3-1-0.7-1.6-1.1c0.5-0.5,1.2-0.4,1.9-0.8c-0.7,0.1-1.1,0-1.6,0.1c-0.6,0.3-1.2,0.2-1.9-0.2c-1.3-0.8-2.7-1.4-4.3-1.9 c2.5-0.8,6.7-0.9,9.9,0.5c3.3,1.5,5.3,4.1,6.6,7.4c0.8-2.4,2.1-4.2,4.3-5.4c2.1-1.1,4.4-1.2,6.8-1c-0.7,0.6-1.5,0.8-2.1,1.3 c-0.7,0.6-1.5,1.2-2.6,0.8c-0.2-0.1-0.4,0-0.8,0c0.6,0.2,1.3-0.1,1.4,0.4c0.1,0.4-0.6,0.5-0.8,0.8c-0.4,0.7-1.2,0.7-2.1,0.9 c0.4,0,0.6,0.1,0.8,0.1c0,0.4-0.4,0.5-0.5,0.9c8.1-2.8,14.3,0.4,19.7,6.1c-1.4-0.4-2.8-0.7-4.3-0.9c-0.6-0.1-1.2-0.2-1.8-0.2 c-0.8,0-1.5-0.2-1.9-1c-0.3-0.6-1-0.9-1.6-1.2c0.4,0.5,0.7,1,1.1,1.5c0.1,0.2,0.2,0.3,0.1,0.5c-0.1,0.2-0.3-0.1-0.4,0 c-1,0-2-0.2-3,0.1c-0.7,0.2-1.2-0.2-1.6-0.6c-0.3-0.3-0.7-0.5-1.2-0.6c0.1,0.5,0.7,0.5,0.9,0.9c0.1,0.1,0.3,0.2,0.2,0.4 c-0.1,0.1-0.2,0.1-0.3,0.1c-0.9,0-1.8,0.2-2.7,0.4c-0.3,0.1-0.6,0-0.8-0.2c-0.5-0.3-1.1-0.5-1.9-0.6c1.1,0.7,2.2,1,3.3,1.4 c2,0.7,3.7,1.8,5.4,3.1c2,1.6,3.4,3.7,4.5,5.9c1.3,2.5,2,5.2,2.5,7.9c0,0.1,0,0.2-0.1,0.4c-1.1-1.4-2.3-2.6-3.5-3.7 c-0.6-0.6-1.3-1.1-2-1.7c-0.6-0.5-0.5-1.2-0.6-1.9c-0.1-0.8-0.4-1.5-0.9-2.2c0.2,0.9,0.1,1.8,0.1,2.8c-1.3-0.9-2.6-1.7-3.8-2.5 c-0.2-0.1-0.3-0.4-0.4-0.7c-0.2-0.7-0.4-1.5-1.1-2c0.1,0.7,0.6,1.2,0.4,2c-1.2-0.5-2.3-1.1-3.5-1.6c-0.4-0.2-0.6-0.8-0.8-1.2 c-0.2-0.3-0.4-0.5-0.8-0.8c0.5,1,0.6,1.9,1.3,2.7c1.6,2,2.3,4.2,2.4,6.8c0,2.2-0.4,4.2-1.1,6.2c-0.1,0.2-0.2,0.5-0.4,0.8 c-0.3-1.8-0.7-3.5-1.3-5.1c-0.1-0.3,0-0.5,0.1-0.8C44.9,34.8,45.2,34.3,45.1,33.6z\"></path><path class=\"st0\" d=\"M34.4,50.8c-0.3-2.2-0.2-4.7-0.2-7.1c0-2.3,0.1-4.7,0.3-7c0.2-2.7,0.6-5.3,0.9-8c0-0.3,0.1-0.4,0.4-0.5 c0.4-0.2,0.8-0.4,1.2-0.6c0.4-0.2,0.7-0.6,1.2-0.3c0.6,0.4,0.8,0.9,0.7,1.7c-0.3,2-0.5,4-0.6,6.1c-0.1,2.3-0.3,4.7-0.3,7 c0,2.1,0.1,4.1,0.3,6.2c0.2,2.7,0.6,5.4,1,8.1c0.5,2.5,1,5,1.7,7.4c0.1,0.2,0.2,0.4,0,0.6c-0.2,0.2-0.4,0-0.5-0.1 c-1.4-0.5-2.9-0.4-4.3,0c-0.3,0.1-0.5,0.2-0.5-0.3c-0.3-2.1-0.6-4.2-0.9-6.3c-0.1-1.1-0.3-2.3-0.3-3.5 C34.5,53.2,34.2,52.1,34.4,50.8z\"></path><path class=\"st0\" d=\"M32.4,69.3c0.7-2.4,2.3-3.8,4.5-4.3c2.8-0.7,6,0.8,7.1,3.7c0.2,0.6,0.1,0.7-0.4,0.7 C40,69.3,36.2,69.3,32.4,69.3z\"></path><path class=\"st0\" d=\"M33.4,19c-0.6,0-1.1,0.8-2,0.4C32.1,19.1,32.7,18.8,33.4,19z\"></path><path class=\"st0\" d=\"M35.9,15.4c-0.3,0.2-0.5,0-0.8-0.1C35.5,15,35.7,15.4,35.9,15.4z\"></path></svg> </span>\n<span class=\"elementor-icon-list-text\">Custom-built dive boat with sun deck</span>\n</li>\n</ul>"
+        },
+        {
+         "type": "icon-list",
+         "id": "3f9b3c2",
+         "classes": "elementor-element elementor-element-3f9b3c2 elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list",
+         "wrapped": true,
+         "html": "<ul class=\"elementor-icon-list-items elementor-inline-items\">\n<li class=\"elementor-icon-list-item elementor-inline-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg id=\"Layer_1\" style=\"enable-background:new 0 0 75 75;\" viewbox=\"0 0 75 75\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><style type=\"text/css\">\t.st0{fill:#111F90;}</style><path class=\"st0\" d=\"M45.1,33.6c-0.2,0.6-0.4,1.4-0.9,1.4c-0.5,0-0.5-0.8-0.7-1.2c-0.4-0.8-1-1.5-0.5-2.5c0.1-0.2,0-0.5,0-0.9 c-0.2,0.6-0.3,1-0.5,1.4c-0.8-1.1-1.7-2.2-1.7-3.6c0,0.3,0,0.5-0.1,0.9c-0.6-0.5-1.1-1-1.6-1.6c-0.1-0.1-0.2-0.2-0.3-0.3 c-0.6-0.7-1.3-0.6-2-0.2c-0.4,0.3-0.9,0.6-1.4,0.7c-1.1,0.3-1.6,1.4-2.7,1.8c-0.3-0.3,0.2-0.5-0.1-0.9c0,1.5-1.2,2.1-2,3 c-0.1-0.4-0.2-0.8-0.3-1.1c-0.1,0.4-0.2,0.9,0,1.3c0,0.1,0.1,0.2,0,0.3c-0.9,1.1-1.7,2.2-2.4,3.4c-0.2-4,0.8-7.5,4.4-9.9 c-0.8-0.3-1.5,0.2-2.2,0c0-0.6,0.6-0.8,0.8-1.3c-0.6,0-0.9,0.4-1.1,0.8c-0.5,0.6-1.2,0.9-2,1c-0.8,0.1-1.6,0.4-2.5,0.6 c0.2-0.7,0.6-1.2,0.9-1.9c-0.7,0.3-0.9,0.7-1.2,1.2c-0.4,0.7-0.9,1.2-1.6,1.4c-1.1,0.4-2.1,0.8-3.2,1.3c-0.1-0.9,0.3-1.7,0.6-2.7 c-1,0.8-1.3,1.8-1.5,2.8c-0.1,0.4-0.3,0.5-0.5,0.7c-2.1,1.1-4.1,2.3-5.9,3.8c-0.1,0.1-0.3,0.1-0.5,0.3c1.6-4.1,3.6-7.7,7-10.4 c3.4-2.7,7.4-3.9,11.7-3.7c-0.9-0.4-1.9-0.7-3-1c0.6-0.4,1.1-0.7,1.7-1.1c-0.7,0.1-1.3,0.3-1.8,0.7c-0.3,0.2-0.6,0.3-1,0.2 c-1-0.2-1.9-0.4-2.9-0.4c-0.1,0-0.3,0-0.4-0.1c-0.1-0.2,0.1-0.3,0.2-0.4c0.2-0.5,0.9-0.7,1.2-1.3c-0.8,0.2-1.4,0.7-1.9,1.2 c-0.3,0.3-0.6,0.4-1,0.4c-0.8,0-1.5,0-2.3,0c-1.3,0-2.6,0.1-3.9,0.2c2.5-2.1,5.3-3.7,8.6-4.4c3.3-0.7,6.5-0.3,9.5,1.2 c0-0.1,0.1-0.1,0.1-0.2c-0.5-0.4-1-0.8-1.6-1.2c0.6-0.1,0.9-0.2,1.2-0.3c-0.4,0-0.8-0.3-1.3-0.1c-0.6,0.1-0.9-0.5-1.4-0.8 c-0.5-0.3-1-0.7-1.6-1.1c0.5-0.5,1.2-0.4,1.9-0.8c-0.7,0.1-1.1,0-1.6,0.1c-0.6,0.3-1.2,0.2-1.9-0.2c-1.3-0.8-2.7-1.4-4.3-1.9 c2.5-0.8,6.7-0.9,9.9,0.5c3.3,1.5,5.3,4.1,6.6,7.4c0.8-2.4,2.1-4.2,4.3-5.4c2.1-1.1,4.4-1.2,6.8-1c-0.7,0.6-1.5,0.8-2.1,1.3 c-0.7,0.6-1.5,1.2-2.6,0.8c-0.2-0.1-0.4,0-0.8,0c0.6,0.2,1.3-0.1,1.4,0.4c0.1,0.4-0.6,0.5-0.8,0.8c-0.4,0.7-1.2,0.7-2.1,0.9 c0.4,0,0.6,0.1,0.8,0.1c0,0.4-0.4,0.5-0.5,0.9c8.1-2.8,14.3,0.4,19.7,6.1c-1.4-0.4-2.8-0.7-4.3-0.9c-0.6-0.1-1.2-0.2-1.8-0.2 c-0.8,0-1.5-0.2-1.9-1c-0.3-0.6-1-0.9-1.6-1.2c0.4,0.5,0.7,1,1.1,1.5c0.1,0.2,0.2,0.3,0.1,0.5c-0.1,0.2-0.3-0.1-0.4,0 c-1,0-2-0.2-3,0.1c-0.7,0.2-1.2-0.2-1.6-0.6c-0.3-0.3-0.7-0.5-1.2-0.6c0.1,0.5,0.7,0.5,0.9,0.9c0.1,0.1,0.3,0.2,0.2,0.4 c-0.1,0.1-0.2,0.1-0.3,0.1c-0.9,0-1.8,0.2-2.7,0.4c-0.3,0.1-0.6,0-0.8-0.2c-0.5-0.3-1.1-0.5-1.9-0.6c1.1,0.7,2.2,1,3.3,1.4 c2,0.7,3.7,1.8,5.4,3.1c2,1.6,3.4,3.7,4.5,5.9c1.3,2.5,2,5.2,2.5,7.9c0,0.1,0,0.2-0.1,0.4c-1.1-1.4-2.3-2.6-3.5-3.7 c-0.6-0.6-1.3-1.1-2-1.7c-0.6-0.5-0.5-1.2-0.6-1.9c-0.1-0.8-0.4-1.5-0.9-2.2c0.2,0.9,0.1,1.8,0.1,2.8c-1.3-0.9-2.6-1.7-3.8-2.5 c-0.2-0.1-0.3-0.4-0.4-0.7c-0.2-0.7-0.4-1.5-1.1-2c0.1,0.7,0.6,1.2,0.4,2c-1.2-0.5-2.3-1.1-3.5-1.6c-0.4-0.2-0.6-0.8-0.8-1.2 c-0.2-0.3-0.4-0.5-0.8-0.8c0.5,1,0.6,1.9,1.3,2.7c1.6,2,2.3,4.2,2.4,6.8c0,2.2-0.4,4.2-1.1,6.2c-0.1,0.2-0.2,0.5-0.4,0.8 c-0.3-1.8-0.7-3.5-1.3-5.1c-0.1-0.3,0-0.5,0.1-0.8C44.9,34.8,45.2,34.3,45.1,33.6z\"></path><path class=\"st0\" d=\"M34.4,50.8c-0.3-2.2-0.2-4.7-0.2-7.1c0-2.3,0.1-4.7,0.3-7c0.2-2.7,0.6-5.3,0.9-8c0-0.3,0.1-0.4,0.4-0.5 c0.4-0.2,0.8-0.4,1.2-0.6c0.4-0.2,0.7-0.6,1.2-0.3c0.6,0.4,0.8,0.9,0.7,1.7c-0.3,2-0.5,4-0.6,6.1c-0.1,2.3-0.3,4.7-0.3,7 c0,2.1,0.1,4.1,0.3,6.2c0.2,2.7,0.6,5.4,1,8.1c0.5,2.5,1,5,1.7,7.4c0.1,0.2,0.2,0.4,0,0.6c-0.2,0.2-0.4,0-0.5-0.1 c-1.4-0.5-2.9-0.4-4.3,0c-0.3,0.1-0.5,0.2-0.5-0.3c-0.3-2.1-0.6-4.2-0.9-6.3c-0.1-1.1-0.3-2.3-0.3-3.5 C34.5,53.2,34.2,52.1,34.4,50.8z\"></path><path class=\"st0\" d=\"M32.4,69.3c0.7-2.4,2.3-3.8,4.5-4.3c2.8-0.7,6,0.8,7.1,3.7c0.2,0.6,0.1,0.7-0.4,0.7 C40,69.3,36.2,69.3,32.4,69.3z\"></path><path class=\"st0\" d=\"M33.4,19c-0.6,0-1.1,0.8-2,0.4C32.1,19.1,32.7,18.8,33.4,19z\"></path><path class=\"st0\" d=\"M35.9,15.4c-0.3,0.2-0.5,0-0.8-0.1C35.5,15,35.7,15.4,35.9,15.4z\"></path></svg> </span>\n<span class=\"elementor-icon-list-text\">Encounters with manta rays, reef sharks, eagle rays</span>\n</li>\n</ul>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "dac996c",
+   "classes": "elementor-element elementor-element-dac996c e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "78cbe357",
+     "classes": "elementor-element elementor-element-78cbe357 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "4414bedd",
+       "classes": "elementor-element elementor-element-4414bedd e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "5ca4a762",
+         "classes": "elementor-element elementor-element-5ca4a762 has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-10496\" decoding=\"async\" height=\"1486\" src=\"/images/uploads/2025/05/dive_1.jpg\" width=\"1700\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "54cb398a",
+       "classes": "elementor-element elementor-element-54cb398a e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "1eba9ee0",
+         "classes": "elementor-element elementor-element-1eba9ee0 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Tailored Dive Packages </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Your Dive, Your Way     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "54c4918f",
+         "classes": "elementor-element elementor-element-54c4918f elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>A typical dive trip includes two boat dives, departing from the resort in the morning between 7 a.m. and 9 a.m., depending on the tides. We offer special packages for Indonesia dive trips, ranging from a three-day plan with six boat dives to a ten-day plan with twenty boat dives for those seeking longer dive trips. Our certified instructors provide courses from open water through rescue diver, ensuring every dive trip is safe, structured, and enriching.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "7aa742f6",
+         "classes": "elementor-element elementor-element-7aa742f6 elementor-widget-mobile_extra__width-auto elementor-widget-mobile__width-auto elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/pricing/\" rel=\"nofollow\">\n<span>Prices</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "19ae6a27",
+   "classes": "elementor-element elementor-element-19ae6a27 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "23536d88",
+     "classes": "elementor-element elementor-element-23536d88 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "350c8e5b",
+       "classes": "elementor-element elementor-element-350c8e5b e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "3f3e3de4",
+         "classes": "elementor-element elementor-element-3f3e3de4 has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-10495\" decoding=\"async\" height=\"1486\" src=\"/images/uploads/2025/05/dive_3.jpg\" width=\"1700\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "30f54e92",
+       "classes": "elementor-element elementor-element-30f54e92 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "308100f7",
+         "classes": "elementor-element elementor-element-308100f7 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Built for Divers </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Dive Center Excellence     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "4cdf44aa",
+         "classes": "elementor-element elementor-element-4cdf44aa elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Our dive center is designed with divers in mind, supporting everything from single-day outings to extended dive trips. With a spacious wet area, private lockers, and an air-conditioned camera room, every detail is considered to ensure comfort, organization, and proper equipment care throughout your Indonesia dive trips.</p>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "3d411d23",
+   "classes": "elementor-element elementor-element-3d411d23 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "react-heading",
+     "id": "21998dd6",
+     "classes": "elementor-element elementor-element-21998dd6 elementor-widget elementor-widget-react-heading",
+     "wrapped": true,
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Explore the Depths     </h2>\n</div>"
+    },
+    {
+     "type": "rt-button",
+     "id": "361ed97",
+     "classes": "elementor-element elementor-element-361ed97 elementor-widget elementor-widget-rt-button",
+     "wrapped": true,
+     "html": "<a class=\"theme-btn btn-style fill\" href=\"/contact/\" rel=\"nofollow\">\n<span>Book Now</span>\n</a>"
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "30755b0f",
+   "classes": "elementor-element elementor-element-30755b0f e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "55f15511",
+     "classes": "elementor-element elementor-element-55f15511 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "756bfda0",
+       "classes": "elementor-element elementor-element-756bfda0 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "58e580a1",
+         "classes": "elementor-element elementor-element-58e580a1 has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-10470\" decoding=\"async\" height=\"1100\" src=\"/images/uploads/2025/05/resort_galery_13.jpg\" width=\"1650\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "6d07b41e",
+       "classes": "elementor-element elementor-element-6d07b41e e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "3f100be5",
+         "classes": "elementor-element elementor-element-3f100be5 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Surface. Breathe. Relax. </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Relax, Recharge, and Discover Sumbawa     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "605d1e5d",
+         "classes": "elementor-element elementor-element-605d1e5d elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Your dive adventure doesn’t end when you surface. Mocean Beach Resort offers quiet beaches, breathtaking sunsets, and easy access to Sumbawa’s hidden gems. Spend an afternoon exploring nearby villages, trek to cascading waterfalls, or simply unwind with massage after a day of diving. Whether you crave exploration or pure relaxation, our boutique setting lets you enjoy Indonesia’s natural beauty at your own pace. Every stay is designed to refresh your body and inspire your next dive.</p>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "652a64b6",
+   "classes": "elementor-element elementor-element-652a64b6 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "16e6ad25",
+     "classes": "elementor-element elementor-element-16e6ad25 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "4936ebb4",
+       "classes": "elementor-element elementor-element-4936ebb4 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "5c2096b1",
+         "classes": "elementor-element elementor-element-5c2096b1 has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-10469\" decoding=\"async\" height=\"1100\" loading=\"lazy\" src=\"/images/uploads/2025/05/resort_galery_11.jpg\" width=\"1650\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "f25023b",
+       "classes": "elementor-element elementor-element-f25023b e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "65cd1154",
+         "classes": "elementor-element elementor-element-65cd1154 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Explore Hidden Shores </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Experience More Than Diving     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "b240dfc",
+         "classes": "elementor-element elementor-element-b240dfc elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Beyond the crystal-clear waters, Sumbawa invites you to explore its wild side. Hike scenic coastal trails, visit traditional fishing villages, or take a day trip to secluded beaches where you can swim, snorkel, and soak in untouched beauty. For those seeking culture, local markets and ceremonies reveal the island’s rich heritage. Whether you’re chasing adrenaline or peaceful escapes, every moment here adds a new layer to your Indonesian journey.</p>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "6b2a8772",
+   "classes": "elementor-element elementor-element-6b2a8772 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "react-heading",
+     "id": "38414ac1",
+     "classes": "elementor-element elementor-element-38414ac1 elementor-widget elementor-widget-react-heading",
+     "wrapped": true,
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Your Gateway to Underwater Adventure     </h2>\n</div>"
+    },
+    {
+     "type": "rt-button",
+     "id": "b1f7ebb",
+     "classes": "elementor-element elementor-element-b1f7ebb elementor-widget elementor-widget-rt-button",
+     "wrapped": true,
+     "html": "<a class=\"theme-btn btn-style fill\" href=\"/contact/\" rel=\"nofollow\">\n<span>Book Now</span>\n</a>"
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "6ad8eb89",
+   "classes": "elementor-element elementor-element-6ad8eb89 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "b8bd9",
+     "classes": "elementor-element elementor-element-b8bd9 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "233f503f",
+       "classes": "elementor-element elementor-element-233f503f e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "3ed8c63",
+         "classes": "elementor-element elementor-element-3ed8c63 rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16187\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/Daily-Fun-Diving.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "34733d9b",
+       "classes": "elementor-element elementor-element-34733d9b e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "1ebc73e0",
+         "classes": "elementor-element elementor-element-1ebc73e0 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Daily Fun Dives     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "139be497",
+         "classes": "elementor-element elementor-element-139be497 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Join our morning and afternoon boat trips for easy, guided fun dives designed to reveal the best of Sumbawa’s colorful reefs.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "74d94d11",
+         "classes": "elementor-element elementor-element-74d94d11 elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/fun-diving/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "71d3121",
+     "classes": "elementor-element elementor-element-71d3121 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "3c31b555",
+       "classes": "elementor-element elementor-element-3c31b555 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "523cbb4b",
+         "classes": "elementor-element elementor-element-523cbb4b rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16193\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/Snorkeling.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "142676fe",
+       "classes": "elementor-element elementor-element-142676fe e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "1b162ab0",
+         "classes": "elementor-element elementor-element-1b162ab0 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Snorkeling     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "4db6443",
+         "classes": "elementor-element elementor-element-4db6443 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Glide over shallow coral gardens alive with tropical fish, rays, and turtles—no dive certification required.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "7d6a02d4",
+         "classes": "elementor-element elementor-element-7d6a02d4 elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/snorkeling/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "26193ee9",
+     "classes": "elementor-element elementor-element-26193ee9 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "517afe01",
+       "classes": "elementor-element elementor-element-517afe01 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "3b2340e9",
+         "classes": "elementor-element elementor-element-3b2340e9 rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16204\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/PADI-Course.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "6591750e",
+       "classes": "elementor-element elementor-element-6591750e e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "378e1ef0",
+         "classes": "elementor-element elementor-element-378e1ef0 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Scuba Diving     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "3ee47e8d",
+         "classes": "elementor-element elementor-element-3ee47e8d elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Discover the thrill of weightlessness as you dive among vibrant reefs and curious marine creatures at your own pace.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "4aedce5",
+         "classes": "elementor-element elementor-element-4aedce5 elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/scuba-diving/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "4d187bbc",
+     "classes": "elementor-element elementor-element-4d187bbc e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "08f42fd",
+       "classes": "elementor-element elementor-element-08f42fd e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "8f6068e",
+         "classes": "elementor-element elementor-element-8f6068e rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16208\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/Diving-Courses.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "235c32b3",
+       "classes": "elementor-element elementor-element-235c32b3 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "c0dac09",
+         "classes": "elementor-element elementor-element-c0dac09 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          PADI Open Water     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "4b05ae0f",
+         "classes": "elementor-element elementor-element-4b05ae0f elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Earn your first certification with patient instructors and calm, clear waters—the perfect place to become a certified diver.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "e4bbbde",
+         "classes": "elementor-element elementor-element-e4bbbde elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/scuba-diving/padi-open-water/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "660ef49",
+     "classes": "elementor-element elementor-element-660ef49 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "8949165",
+       "classes": "elementor-element elementor-element-8949165 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "07e373d",
+         "classes": "elementor-element elementor-element-07e373d rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16758\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/10/Advance-Open-Water-8.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "d6d13ab",
+       "classes": "elementor-element elementor-element-d6d13ab e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "42f88b2",
+         "classes": "elementor-element elementor-element-42f88b2 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Advanced Open Water      </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "cb47fcb",
+         "classes": "elementor-element elementor-element-cb47fcb elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p data-pm-slice=\"0 0 []\">Take your diving further with an Advanced Open Water certification, exploring deeper sites and marine life around Sumbawa.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "9bc8fc2",
+         "classes": "elementor-element elementor-element-9bc8fc2 elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/scuba-diving/padi-advanced-open-water/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "6ebfb42",
+     "classes": "elementor-element elementor-element-6ebfb42 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "58563c1",
+       "classes": "elementor-element elementor-element-58563c1 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "897ba77",
+         "classes": "elementor-element elementor-element-897ba77 rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16206\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/Rescue-Divers.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "86898aa",
+       "classes": "elementor-element elementor-element-86898aa e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "10a3143",
+         "classes": "elementor-element elementor-element-10a3143 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Rescue Dive     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "a73f906",
+         "classes": "elementor-element elementor-element-a73f906 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Learn to prevent and manage dive emergencies, gaining skills that make you a safer, more capable diver and buddy.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "e34e38a",
+         "classes": "elementor-element elementor-element-e34e38a elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/scuba-diving/rescue-diver/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "e6c6918",
+     "classes": "elementor-element elementor-element-e6c6918 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "4593afb",
+       "classes": "elementor-element elementor-element-4593afb e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "44a431c",
+         "classes": "elementor-element elementor-element-44a431c rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-17381\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/12/DSD-8.jpg\" width=\"1650\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "e98511d",
+       "classes": "elementor-element elementor-element-e98511d e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "d70d28f",
+         "classes": "elementor-element elementor-element-d70d28f elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Discover Scuba Diving     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "b511071",
+         "classes": "elementor-element elementor-element-b511071 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Experience your first real ocean dive in Sumbawa, designed for beginners seeking an unforgettable underwater adventure.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "f6a9712",
+         "classes": "elementor-element elementor-element-f6a9712 elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/discover-scuba-diving/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "7d58969",
+     "classes": "elementor-element elementor-element-7d58969 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "24ce932",
+       "classes": "elementor-element elementor-element-24ce932 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "a6683df",
+         "classes": "elementor-element elementor-element-a6683df rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16210\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/Night-Diving.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "1c40b33",
+       "classes": "elementor-element elementor-element-1c40b33 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "407ff9f",
+         "classes": "elementor-element elementor-element-407ff9f elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Night Diving     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "253b5cf",
+         "classes": "elementor-element elementor-element-253b5cf elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Slip beneath the surface after sunset to witness glowing corals, bioluminescence, and the mysterious nocturnal reef life.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "c041054",
+         "classes": "elementor-element elementor-element-c041054 elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/scuba-diving/night-diving/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "477212c6",
+   "classes": "elementor-element elementor-element-477212c6 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "react-heading",
+     "id": "e17c7cd",
+     "classes": "elementor-element elementor-element-e17c7cd elementor-widget elementor-widget-react-heading",
+     "wrapped": true,
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> FAQ </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Dive Resort FAQ     </h2>\n</div>"
+    },
+    {
+     "type": "container",
+     "id": "475e2864",
+     "classes": "elementor-element elementor-element-475e2864 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "355b5424",
+       "classes": "elementor-element elementor-element-355b5424 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "1c1028de",
+         "classes": "elementor-element elementor-element-1c1028de has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-12531\" decoding=\"async\" height=\"1100\" loading=\"lazy\" src=\"/images/uploads/2025/07/Gili-Rengit-Lombok.jpg\" width=\"1650\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "4258757b",
+       "classes": "elementor-element elementor-element-4258757b e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "nested-accordion",
+         "id": "271d47e5",
+         "classes": "elementor-element elementor-element-271d47e5 elementor-widget elementor-widget-n-accordion",
+         "wrapped": true,
+         "html": "<div aria-label=\"Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys\" class=\"e-n-accordion\">\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-6560\">\n<summary aria-controls=\"e-n-accordion-item-6560\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"1\" tabindex=\"0\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> Do I need certification to dive here? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-6560\" class=\"elementor-element elementor-element-577beaa6 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"577beaa6\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-6560\" class=\"elementor-element elementor-element-7b26fc25 e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"7b26fc25\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-65c434a elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"65c434a\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>No. Beginners can join guided intro dives or take PADI courses, while certified divers enjoy full access to all sites.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-6561\">\n<summary aria-controls=\"e-n-accordion-item-6561\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"2\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> When’s the best time to visit? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-6561\" class=\"elementor-element elementor-element-3bf9fd30 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"3bf9fd30\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-6561\" class=\"elementor-element elementor-element-20e58fdd e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"20e58fdd\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-35fff548 elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"35fff548\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>April–October offers the clearest water and calm seas, but we dive year-round with site options for any season.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-6562\">\n<summary aria-controls=\"e-n-accordion-item-6562\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"3\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> Are PADI courses available? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-6562\" class=\"elementor-element elementor-element-614c3f26 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"614c3f26\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-6562\" class=\"elementor-element elementor-element-659c4bee e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"659c4bee\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-1921a25f elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"1921a25f\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Yes. Tanks, weights, and full rental gear are provided, plus private lockers and a camera room for safe storage.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-6563\">\n<summary aria-controls=\"e-n-accordion-item-6563\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"4\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> How many dives can I book? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-6563\" class=\"elementor-element elementor-element-13aaf754 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"13aaf754\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-6563\" class=\"elementor-element elementor-element-6524dd12 e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"6524dd12\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-28e0b320 elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"28e0b320\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Packages range from 6 dives over 3 days to 20 dives over 10 days, with custom plans available.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-6564\">\n<summary aria-controls=\"e-n-accordion-item-6564\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"5\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> Are the dive sites beginner-friendly? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-6564\" class=\"elementor-element elementor-element-59165141 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"59165141\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-6564\" class=\"elementor-element elementor-element-175c9ca4 e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"175c9ca4\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-7bb89179 elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"7bb89179\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Absolutely. Calm reefs suit newcomers, while wrecks, walls, and manta spots challenge experienced divers.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n</div>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "4efa091",
+   "classes": "elementor-element elementor-element-4efa091 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "ce25889",
+     "classes": "elementor-element elementor-element-ce25889 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "5f1da5b",
+       "classes": "elementor-element elementor-element-5f1da5b e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "container",
+         "id": "d04d3a8",
+         "classes": "elementor-element elementor-element-d04d3a8 e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "react-heading",
+           "id": "f1c56cf",
+           "classes": "elementor-element elementor-element-f1c56cf elementor-widget elementor-widget-react-heading",
+           "wrapped": true,
+           "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Begin Your Next Dive Adventure at Mocean Beach Resort </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Your Ocean Journey Awaits     </h2>\n</div>"
+          }
+         ]
+        },
+        {
+         "type": "text-editor",
+         "id": "e3d1e18",
+         "classes": "elementor-element elementor-element-e3d1e18 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>West Sumbawa’s vibrant reefs are calling. At Mocean Beach Resort, we offer boutique accommodations, expert dive instructors, small-group guided dives, and effortless access to pristine coral gardens. Whether you’re earning your first PADI certification, refining buoyancy, or exploring secret dive sites, every underwater adventure is tailored to your experience and goals. Discover Indonesia’s hidden dive paradise with comfort, safety, and unforgettable marine encounters.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "e58ab9e",
+         "classes": "elementor-element elementor-element-e58ab9e elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/\" rel=\"nofollow\">\n<span>Mocean Beach Resort</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

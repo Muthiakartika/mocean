@@ -1,0 +1,10 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /scuba-diving/rescue-diver/ 1440
+MISSING  img:Rescue-Divers-1-1536x1343.jpg  (orig 70,981 598x682)
+MISSING  img:Rescue-Divers-2-1536x1343.jpg  (orig 772,1923 598x553)
+MISSING  img:Rescue-Divers-3-1536x1343.jpg  (orig 70,2734 598x553)
+EXTRA    img:Rescue-Divers-1.jpg  (local 70,981 598x682)
+EXTRA    img:Rescue-Divers-2.jpg  (local 772,1923 598x553)
+EXTRA    img:Rescue-Divers-3.jpg  (local 70,2734 598x553)
+
+/scuba-diving/rescue-diver/ @1440px: 80 elements, 0 differ > 2px, 3 missing, 3 extra

@@ -1,0 +1,16 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /surf-spots/ 390
+MISSING  img:Surf-in-Lombok-600x300.jpg  (orig 32,811 326x163)
+MISSING  img:Surfing-in-Bali-600x300.jpg  (orig 32,1066 326x163)
+MISSING  img:Surfing-in-Canggu-600x300.jpg  (orig 32,1321 326x163)
+MISSING  img:Surfing-in-Nusa-Lembongan-600x300.jpg  (orig 32,1576 326x163)
+MISSING  img:Surfing-in-Uluwatu-600x300.jpg  (orig 32,1856 326x163)
+MISSING  img:surfing-in-sumbawa-banner-768x384.jpg  (orig 32,2111 326x163)
+EXTRA    img:Surf-in-Lombok.jpg  (local 32,811 326x163)
+EXTRA    img:Surfing-in-Bali.jpg  (local 32,1066 326x163)
+EXTRA    img:Surfing-in-Canggu.jpg  (local 32,1321 326x163)
+EXTRA    img:Surfing-in-Nusa-Lembongan.jpg  (local 32,1576 326x163)
+EXTRA    img:Surfing-in-Uluwatu.jpg  (local 32,1856 326x163)
+EXTRA    img:surfing-in-sumbawa-banner.jpg  (local 32,2111 326x163)
+
+/surf-spots/ @390px: 16 elements, 0 differ > 2px, 6 missing, 6 extra

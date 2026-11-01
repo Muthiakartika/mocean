@@ -1,0 +1,10 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /scuba-diving/night-diving/ 390
+MISSING  img:Night-Diving-1-768x671.jpg  (orig 10,1135 370x682)
+MISSING  img:Night-Diving-2-768x671.jpg  (orig 10,2691 370x553)
+MISSING  img:Night-Diving-3-768x671.jpg  (orig 10,3897 370x553)
+EXTRA    img:Night-Diving-1.jpg  (local 10,1135 370x682)
+EXTRA    img:Night-Diving-2.jpg  (local 10,2691 370x553)
+EXTRA    img:Night-Diving-3.jpg  (local 10,3897 370x553)
+
+/scuba-diving/night-diving/ @390px: 76 elements, 0 differ > 2px, 3 missing, 3 extra

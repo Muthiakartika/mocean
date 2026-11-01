@@ -1,0 +1,26 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /scuba-diving/ 1440
+MISSING  img:PADI-Course-1-1536x1343.jpg  (orig 70,1120 598x553)
+MISSING  img:PADI-Course-2-1536x1343.jpg  (orig 772,1990 598x553)
+MISSING  img:PADI-Course-3-1536x1343.jpg  (orig 70,3241 598x553)
+MISSING  img:PADI-Course-4-1536x1343.jpg  (orig 772,4054 598x553)
+MISSING  img:Advance-Open-Water-8-1536x420.jpg  (orig 88,5307 405x256)
+MISSING  img:Snorkeling-1536x420.jpg  (orig 517,5307 405x256)
+MISSING  img:Rescue-Divers-1536x420.jpg  (orig 947,5307 405x256)
+MISSING  img:Dive-Resort-1536x420.jpg  (orig 88,5857 405x256)
+MISSING  img:Diving-Courses-1536x420.jpg  (orig 517,5857 405x256)
+MISSING  img:Night-Diving-1536x420.jpg  (orig 947,5857 405x256)
+MISSING  img:Gili-Rengit-Lombok-1536x1024.jpg  (orig 740,6809 598x520)
+EXTRA    img:PADI-Course-1.jpg  (local 70,1120 598x553)
+EXTRA    img:PADI-Course-2.jpg  (local 772,1990 598x553)
+EXTRA    img:PADI-Course-3.jpg  (local 70,3241 598x553)
+EXTRA    img:PADI-Course-4.jpg  (local 772,4054 598x553)
+EXTRA    img:Advance-Open-Water-8.jpg  (local 88,5307 405x256)
+EXTRA    img:Snorkeling.jpg  (local 517,5307 405x256)
+EXTRA    img:Rescue-Divers.jpg  (local 947,5307 405x256)
+EXTRA    img:Dive-Resort.jpg  (local 88,5857 405x256)
+EXTRA    img:Diving-Courses.jpg  (local 517,5857 405x256)
+EXTRA    img:Night-Diving.jpg  (local 947,5857 405x256)
+EXTRA    img:Gili-Rengit-Lombok.jpg  (local 740,6809 598x520)
+
+/scuba-diving/ @1440px: 68 elements, 0 differ > 2px, 11 missing, 11 extra

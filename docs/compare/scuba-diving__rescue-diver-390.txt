@@ -1,0 +1,13 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /scuba-diving/rescue-diver/ 390
+DIFF     span:Dive Into Advanced Rescue Skills            dx=0 dy=0 dw=0 dh=39   (orig 30,277 330x77)
+DIFF     h2:PADI Rescue Diver                             dx=0 dy=39 dw=0 dh=0   (orig 30,360 330x31)
+DIFF     p:At Mocean Beach Resort, our PADI Rescue        dx=0 dy=39 dw=0 dh=0   (orig 30,415 330x570)
+MISSING  img:Rescue-Divers-1-768x671.jpg  (orig 10,1195 370x682)
+MISSING  img:Rescue-Divers-2-768x671.jpg  (orig 10,2759 370x553)
+MISSING  img:Rescue-Divers-3-768x671.jpg  (orig 10,3953 370x553)
+EXTRA    img:Rescue-Divers-1.jpg  (local 10,1195 370x682)
+EXTRA    img:Rescue-Divers-2.jpg  (local 10,2759 370x553)
+EXTRA    img:Rescue-Divers-3.jpg  (local 10,3953 370x553)
+
+/scuba-diving/rescue-diver/ @390px: 80 elements, 3 differ > 2px, 3 missing, 3 extra

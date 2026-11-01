@@ -1,0 +1,25 @@
+/* Elementor: .elementor-invisible + .animated.fadeInUp (animations/styles/fadeInUp.min.css) */
+.hidden {
+  visibility: hidden;
+}
+
+.animated {
+  animation: fadeInUp 1.25s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated {
+    animation: none !important;
+  }
+}

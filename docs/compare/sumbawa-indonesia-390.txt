@@ -1,0 +1,10 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /sumbawa-indonesia/ 390
+MISSING  img:Sumbawa-1-600x524.jpg  (orig 10,606 370x520)
+MISSING  img:Day-Adventures-768x384.jpg  (orig 10,2839 370x560)
+MISSING  img:agal-waterfall-1-600x524.jpg  (orig 10,4459 370x520)
+EXTRA    img:Sumbawa-1.jpg  (local 10,606 370x520)
+EXTRA    img:Day-Adventures.jpg  (local 10,2839 370x560)
+EXTRA    img:agal-waterfall-1.jpg  (local 10,4459 370x520)
+
+/sumbawa-indonesia/ @390px: 69 elements, 0 differ > 2px, 3 missing, 3 extra

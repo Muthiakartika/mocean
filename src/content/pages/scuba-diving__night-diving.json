@@ -1,0 +1,839 @@
+{
+ "path": "/scuba-diving/night-diving/",
+ "elementorId": "11515",
+ "content": [
+  {
+   "type": "container",
+   "id": "283b92ed",
+   "classes": "elementor-element elementor-element-283b92ed jarallax e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "338ea692",
+     "classes": "elementor-element elementor-element-338ea692 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "heading",
+       "id": "3c4fbd56",
+       "classes": "elementor-element elementor-element-3c4fbd56 elementor-widget elementor-widget-heading",
+       "wrapped": true,
+       "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Night Diving</h1>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "4400a169",
+   "classes": "elementor-element elementor-element-4400a169 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "6776463e",
+     "classes": "elementor-element elementor-element-6776463e e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "11b3c68d",
+       "classes": "elementor-element elementor-element-11b3c68d e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "2d1b0893",
+         "classes": "elementor-element elementor-element-2d1b0893 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Adventures Under the Moonlight </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Night Diving at Mocean     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "1c0adbbe",
+         "classes": "elementor-element elementor-element-1c0adbbe elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Experience the magic of night diving at Mocean Beach Resort, where the reef transforms into a luminous world after dusk. As an enthusiastic night diver, you’ll venture out under the stars for guided dives with a torch, exploring vibrant coral, nocturnal fishes, crustaceans, and creatures that only emerge in darkness. With just four divers per guide, night time scuba diving sessions are intimate, safe, and unforgettable. Our dive center provides the gear you need for night dives and prioritizes your safety with well-lit briefing zones, secure rinse points, and specialized lighting equipment.</p>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "6c726cb8",
+   "classes": "elementor-element elementor-element-6c726cb8 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "168425b",
+     "classes": "elementor-element elementor-element-168425b e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "546a2b1c",
+       "classes": "elementor-element elementor-element-546a2b1c e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "64f1b451",
+         "classes": "elementor-element elementor-element-64f1b451 has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16319\" decoding=\"async\" height=\"1486\" src=\"/images/uploads/2025/09/Night-Diving-1.jpg\" width=\"1700\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "7a4de37",
+       "classes": "elementor-element elementor-element-7a4de37 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "d540c12",
+         "classes": "elementor-element elementor-element-d540c12 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Night Diving </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Price     </h2>\n</div>"
+        },
+        {
+         "type": "container",
+         "id": "5664fb87",
+         "classes": "elementor-element elementor-element-5664fb87 e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "container",
+           "id": "3417a403",
+           "classes": "elementor-element elementor-element-3417a403 e-con-full e-flex rt-default-class e-con e-child",
+           "children": [
+            {
+             "type": "heading",
+             "id": "3e1d56a8",
+             "classes": "elementor-element elementor-element-3e1d56a8 elementor-widget elementor-widget-heading",
+             "wrapped": true,
+             "html": "<h3 class=\"elementor-heading-title elementor-size-default\">IDR 1,540,000</h3>"
+            }
+           ]
+          },
+          {
+           "type": "container",
+           "id": "3c525567",
+           "classes": "elementor-element elementor-element-3c525567 e-con-full e-flex rt-default-class e-con e-child",
+           "children": [
+            {
+             "type": "rt-button",
+             "id": "80c0bc7",
+             "classes": "elementor-element elementor-element-80c0bc7 elementor-widget-mobile_extra__width-auto elementor-widget-mobile__width-auto elementor-widget elementor-widget-rt-button",
+             "wrapped": true,
+             "html": "<a class=\"theme-btn btn-style fill\" href=\"/contact/\" rel=\"nofollow\">\n<span>Contact Us</span>\n</a>"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "type": "text-editor",
+         "id": "41cfa333",
+         "classes": "elementor-element elementor-element-41cfa333 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Contact us for more information</p>"
+        },
+        {
+         "type": "icon-list",
+         "id": "4981dec0",
+         "classes": "elementor-element elementor-element-4981dec0 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list",
+         "wrapped": true,
+         "html": "<ul class=\"elementor-icon-list-items\">\n<li class=\"elementor-icon-list-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg height=\"595.281px\" id=\"Layer_1\" viewbox=\"0 0 595.279 595.281\" width=\"595.279px\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><g> <path d=\"M587.605,552.781c0,19.23-15.59,34.822-34.824,34.822H42.033c-19.234,0-34.824-15.592-34.824-34.822V42.033  c0-19.233,15.589-34.824,34.824-34.824h510.747c19.234,0,34.824,15.591,34.824,34.824V552.781z\" fill=\"#2C3685\"></path> <g> <path d=\"M552.781,594.812H42.033C18.856,594.812,0,575.958,0,552.781V42.033C0,18.856,18.856,0,42.033,0h510.747   c23.179,0,42.033,18.856,42.033,42.033v510.748C594.814,575.958,575.959,594.812,552.781,594.812z M42.033,14.419   c-15.227,0-27.614,12.387-27.614,27.614v510.748c0,15.227,12.388,27.613,27.614,27.613h510.747   c15.228,0,27.615-12.389,27.615-27.613V42.033c0-15.227-12.389-27.614-27.615-27.614H42.033z\" fill=\"#FFFFFF\"></path> </g></g><g> <path clip-rule=\"evenodd\" d=\"M268.705,413.902c-10.845,8.67-20.551,16.308-30.115,24.121  c-5.709,4.667-11.608,6.236-19.112,4.445c-25.053-5.971-50.213-11.512-75.398-16.901c-15.838-3.39-18.755-21.179-9.24-31.7  c3.12-3.45,9.982-6.154,14.415-5.329c21.546,4.005,42.957,8.908,64.178,14.41c7.004,1.815,11.755-0.166,16.488-4.28  c26.173-22.761,52.055-45.869,78.618-68.17c7.14-5.991,15.795-11.4,24.649-13.88c18.078-5.065,35.707,7.237,38.987,25.868  c1.709,9.719,2.628,19.612,3.312,29.47c0.493,7.109,3.673,10.475,10.753,10.698c11.282,0.358,22.563,0.879,33.835,1.47  c9.259,0.484,14.364,5.354,15.043,14.048c0.672,8.594-5.063,18.529-12.702,18.668c-19.76,0.357-39.603,0.187-59.293-1.324  c-10.192-0.783-13.535-6.732-14.04-17.11c-0.387-7.921-1.113-15.823-1.807-25.372c-3.272,2.312-5.717,3.776-7.86,5.597  c-7.767,6.585-15.148,13.663-23.224,19.839c-6.737,5.153-9.306,11.541-9.976,19.74c-1.277,15.607-3.289,31.156-5.093,46.717  c-0.859,7.409-4.963,12.774-11.41,16.184c-22.088,11.677-44.137,23.439-66.43,34.715c-11.504,5.818-19.083,4.37-26.043-3.496  c-7.868-8.892-6.849-20.904,3.438-26.791c17.144-9.811,34.53-19.322,52.437-27.619c9.048-4.192,12.917-9.928,13.387-19.294  C266.896,430.733,267.88,422.874,268.705,413.902z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M427.031,268.422c-0.141,24.457-19.094,43.327-43.51,43.324  c-22.224-0.002-42.626-21.479-42.17-44.385c0.479-24.043,20.251-43.947,43.63-43.923  C408.11,223.466,427.173,243.859,427.031,268.422z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M319.576,181.462c-25.427,13.469-52.271,9.193-72.583-10.947  c-18.618-18.461-22.739-45.219-10.496-68.14c12.931-24.208,39.763-38.333,65.318-33.552c-19.01,16.704-30.89,36.352-26.962,62.03  C278.781,156.542,295.645,171.696,319.576,181.462z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M210.101,339.693c3.248-5.395,5.329-12.247,9.939-15.936  c21.012-16.823,42.475-33.117,64.302-48.875c12.911-9.318,30.312-4.141,36.941,9.867c3.044,6.429,2.637,12.096-3.376,16.846  c-23.505,18.57-46.908,37.271-70.422,55.831c-7.294,5.757-15.405,7.068-23.837,2.747  C215.895,356.203,212.006,349.621,210.101,339.693z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M328.685,168.416c14.457-3.491,23.54-10.696,24.579-26.816  c4.96,13.697,12.298,22.561,26.944,23.069c-0.106,0.711-0.215,1.421-0.32,2.132c-5.397,2.492-12.043,3.793-15.852,7.796  c-4.049,4.251-5.411,11.063-8.93,18.97C351.263,179.125,343.992,169.864,328.685,168.416z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M208.46,190.341c2.83,12.464,11.361,17.25,22.271,20.873  c-4.647,2.418-10.332,3.886-13.655,7.516c-3.471,3.789-4.668,9.663-7.542,16.167c-2.718-5.813-3.876-11.569-7.363-14.851  c-3.717-3.498-9.637-4.654-17.116-7.941C198.565,209.623,205.979,202.888,208.46,190.341z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path></g></svg> </span>\n<span class=\"elementor-icon-list-text\">Guided night scuba diving with professional instructors</span>\n</li>\n<li class=\"elementor-icon-list-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg height=\"595.281px\" id=\"Layer_1\" viewbox=\"0 0 595.279 595.281\" width=\"595.279px\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><g> <path d=\"M587.605,552.781c0,19.23-15.59,34.822-34.824,34.822H42.033c-19.234,0-34.824-15.592-34.824-34.822V42.033  c0-19.233,15.589-34.824,34.824-34.824h510.747c19.234,0,34.824,15.591,34.824,34.824V552.781z\" fill=\"#2C3685\"></path> <g> <path d=\"M552.781,594.812H42.033C18.856,594.812,0,575.958,0,552.781V42.033C0,18.856,18.856,0,42.033,0h510.747   c23.179,0,42.033,18.856,42.033,42.033v510.748C594.814,575.958,575.959,594.812,552.781,594.812z M42.033,14.419   c-15.227,0-27.614,12.387-27.614,27.614v510.748c0,15.227,12.388,27.613,27.614,27.613h510.747   c15.228,0,27.615-12.389,27.615-27.613V42.033c0-15.227-12.389-27.614-27.615-27.614H42.033z\" fill=\"#FFFFFF\"></path> </g></g><g> <path clip-rule=\"evenodd\" d=\"M106.288,254.588c0,22.25,0.027,44.499-0.031,66.748  c-0.008,3.103,0.079,6.356-0.771,9.278c-2.566,8.819-10.32,14.179-18.215,13.093c-7.449-1.026-16.094-10.102-16.031-18.611  c0.262-35.741-0.217-71.554,2.002-107.19c1.708-27.42,25.43-46.839,53.144-47.02c23.233-0.15,46.468-0.064,69.702-0.018  c34.443,0.069,58.644,25.685,57.049,60.975c-22.981,2.682-43.91,9.985-56.462,31.391c-12.577,21.45-7.915,43.366-0.12,64.881  c-6.653,5.38-13.318,10.084-19.178,15.642c-14.598,13.844-21.699,31.309-21.95,51.22c-0.407,32.331-0.709,64.685,0.024,97.007  c0.287,12.731-6.619,23.587-22.398,24.72c-12.297,0.884-22.282-10.819-22.289-25.223c-0.043-75.353-0.004-150.705-0.078-226.059  c-0.004-3.718-0.815-7.437-1.25-11.155C108.386,254.375,107.338,254.481,106.288,254.588z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M294.953,421.521c0,3.25-0.006,6.5,0,9.749  c0.042,27.015-0.064,54.032,0.237,81.042c0.071,6.499-1.94,8.668-8.626,8.558c-22.925-0.387-45.864-0.392-68.788-0.004  c-7.115,0.122-9.252-2.288-9.153-9.213c0.389-26.697,0.308-53.398,0.397-80.099c0.012-3.373,0.002-6.746-2.126-10.204  c-0.204,2.35-0.547,4.695-0.593,7.048c-0.379,19.156-0.659,38.312-1.057,57.467c-0.229,11.059-5.143,17.507-13.568,18.088  c-8.464,0.59-18.426-7.375-18.414-16.644c0.047-33.245-0.57-66.596,1.908-99.693c1.747-23.331,22.816-39.262,46.475-39.493  c17.591-0.174,35.228,0.758,52.766-0.232c29.482-1.666,55.025,14.719,56.047,52.719c0.752,27.938,0.335,55.911,0.187,83.868  c-0.05,9.241-7.328,16.354-15.902,16.423c-8.952,0.072-15.272-6.416-15.459-16.45c-0.333-17.902-0.352-35.808-0.613-53.71  c-0.048-3.155-0.646-6.304-0.99-9.456C296.771,421.363,295.861,421.442,294.953,421.521z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M407.847,420.891c0,17.509,0.006,35.018-0.003,52.524  c-0.002,3.771,0.576,7.678-0.214,11.282c-1.568,7.155-5.411,12.87-13.486,13.555c-6.646,0.563-15.538-6.676-15.507-13.775  c0.142-33.248-0.597-66.61,1.97-99.702c1.676-21.599,20.27-36.078,42.248-36.82c20.993-0.709,42.071-0.882,63.039,0.175  c21.293,1.072,39.789,19.375,40.872,40.923c1.48,29.468,1.506,59.019,1.694,88.539c0.061,9.802-8.031,17.756-16.157,17.392  c-8.358-0.376-13.249-7.012-13.284-18.225c-0.049-16.025-0.02-32.049-0.023-48.073c0-2.982,0-5.965,0-8.948  c-1.05-0.011-2.099-0.021-3.15-0.029c0,16.181-0.077,32.364,0.024,48.547c0.086,13.821,0.103,27.652,0.693,41.456  c0.304,7.135-2.498,9.304-9.331,9.219c-22.306-0.28-44.621-0.331-66.923,0.022c-7.503,0.117-9.805-2.685-9.72-9.952  c0.304-26.076,0.11-52.159,0.103-78.237c0-3.354,0-6.713,0-10.067C409.743,420.761,408.795,420.827,407.847,420.891z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M406.665,328.055c-31.959,13.45-44.151,40.021-50.067,71.48  c-5.584-31.426-21.339-55.046-48.903-69.983c2.294-9.096,4.636-17.449,6.484-25.909c3.8-17.411,0.815-34.03-5.474-50.52  c-10.233-26.831,2.281-51.761,29.289-58.475c6.238-1.55,13.032-1.076,19.575-1.139c15.065-0.144,30.132-0.033,45.198-0.047  c26.172-0.024,41.284,12.852,45.709,39.813c-18.487,7.57-37.588,15.007-46.466,35.658  C393.377,289.02,397.948,308.056,406.665,328.055z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M116.206,110.517c0.06-27.318,20.25-47.701,47.195-47.643  c27.015,0.059,48.508,21.512,48.305,48.209c-0.199,25.753-22.697,47.957-48.313,47.681  C137.173,158.484,116.15,136.989,116.206,110.517z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M208.294,292.239c-0.002-24.383,18.314-42.918,42.538-43.046  c24.334-0.128,43.878,18.975,44.021,43.028c0.144,23.979-19.334,43.693-43.347,43.874  C227.82,336.273,208.298,316.461,208.294,292.239z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M453.753,334.7c-24.2-0.11-42.113-18.062-41.956-42.049  c0.15-23.215,18.6-41.967,41.45-42.128c23.617-0.166,43.358,19.323,43.231,42.681C496.348,317.017,478.028,334.81,453.753,334.7z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M419.537,139.695c0.029,22.999-18.674,41.816-41.649,41.903  c-23.305,0.086-41.154-18.044-41.285-41.935c-0.127-22.885,18.614-41.926,41.489-42.153  C400.341,97.288,419.509,116.799,419.537,139.695z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path></g></svg> </span>\n<span class=\"elementor-icon-list-text\">Maximum 4 divers per guide for personalized safety</span>\n</li>\n<li class=\"elementor-icon-list-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg height=\"595.281px\" id=\"Layer_1\" viewbox=\"0 0 595.279 595.281\" width=\"595.279px\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><g> <path d=\"M587.605,552.781c0,19.23-15.59,34.822-34.824,34.822H42.033c-19.234,0-34.824-15.592-34.824-34.822V42.033  c0-19.233,15.589-34.824,34.824-34.824h510.747c19.234,0,34.824,15.591,34.824,34.824V552.781z\" fill=\"#2C3685\"></path> <g> <path d=\"M552.781,594.812H42.033C18.856,594.812,0,575.958,0,552.781V42.033C0,18.856,18.856,0,42.033,0h510.747   c23.179,0,42.033,18.856,42.033,42.033v510.748C594.814,575.958,575.959,594.812,552.781,594.812z M42.033,14.419   c-15.227,0-27.614,12.387-27.614,27.614v510.748c0,15.227,12.388,27.613,27.614,27.613h510.747   c15.228,0,27.615-12.389,27.615-27.613V42.033c0-15.227-12.389-27.614-27.615-27.614H42.033z\" fill=\"#FFFFFF\"></path> </g></g><path clip-rule=\"evenodd\" d=\"M309.892,522.532c-9.81,0-19.619,0-29.427,0 c-5.25-0.662-10.514-1.236-15.75-2.001c-43.709-6.378-82.449-23.812-115.535-53.097c-40.161-35.553-64.635-79.923-73.004-133.014 c-0.981-6.228-1.717-12.494-2.567-18.742c0-9.81,0-19.618,0-29.428c0.663-5.261,1.236-10.532,2.002-15.774 c6.36-43.553,23.689-82.186,52.825-115.202c35.594-40.337,80.054-64.923,133.308-73.314c6.22-0.979,12.479-1.717,18.721-2.563 c9.808,0,19.618,0,29.427,0c1.244,0.278,2.475,0.65,3.733,0.825c7.829,1.073,15.739,1.711,23.484,3.207 c43.877,8.485,81.833,28.485,113.566,59.883c34.739,34.371,55.994,75.818,63.505,124.193c0.969,6.23,1.717,12.496,2.566,18.745 c0,9.81,0,19.618,0,29.428c-0.351,2.832-0.723,5.662-1.049,8.497c-4.129,35.749-15.451,68.998-35.708,98.815 c-36.571,53.841-86.988,86.407-151.375,96.972C322.401,520.984,316.134,521.683,309.892,522.532z M181.129,295.773 c0.795,7.164,1.176,14.972,2.584,22.587c9.454,51.141,55.055,92.032,107.232,95.792c38.326,2.76,71.358-9.501,97.602-37.768 c7.546-8.126,13.061-18.174,19.15-27.575c0.955-1.476,0.805-4.906-0.292-6.121c-1.063-1.183-4.104-1.194-6.086-0.792 c-2.482,0.502-4.741,2.022-7.147,2.98c-20.779,8.256-42.17,10.348-64.005,5.502c-32.127-7.125-56.535-25.163-72.943-53.615 c-12.348-21.414-16.358-44.627-13.181-69.13c1.457-11.236,4.917-21.829,9.387-32.196c0.801-1.857,0.667-5.318-0.542-6.5 c-1.178-1.152-4.749-1.188-6.477-0.251C204.182,211.573,183.115,247.46,181.129,295.773z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path></svg> </span>\n<span class=\"elementor-icon-list-text\">See nocturnal marine life in action</span>\n</li>\n<li class=\"elementor-icon-list-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg height=\"595.281px\" id=\"Layer_1\" viewbox=\"0 0 595.279 595.281\" width=\"595.279px\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><g> <path d=\"M587.605,552.781c0,19.23-15.59,34.822-34.824,34.822H42.033c-19.234,0-34.824-15.592-34.824-34.822V42.033  c0-19.233,15.589-34.824,34.824-34.824h510.747c19.234,0,34.824,15.591,34.824,34.824V552.781z\" fill=\"#2C3685\"></path> <g> <path d=\"M552.781,594.812H42.033C18.856,594.812,0,575.958,0,552.781V42.033C0,18.856,18.856,0,42.033,0h510.747   c23.179,0,42.033,18.856,42.033,42.033v510.748C594.814,575.958,575.959,594.812,552.781,594.812z M42.033,14.419   c-15.227,0-27.614,12.387-27.614,27.614v510.748c0,15.227,12.388,27.613,27.614,27.613h510.747   c15.228,0,27.615-12.389,27.615-27.613V42.033c0-15.227-12.389-27.614-27.615-27.614H42.033z\" fill=\"#FFFFFF\"></path> </g></g><g> <path clip-rule=\"evenodd\" d=\"M411.556,290.597c0.768-8.442-1.062-15.992-8.66-21.243  c-3.229-2.23-6.073-5.019-9.044-7.612c-8.98-7.834-17.89-15.747-26.918-23.522c-6.593-5.684-13.383-11.135-19.991-16.797  c-12.666-10.847-25.253-21.787-37.897-32.66c-5.974-5.136-12.057-10.145-18.006-15.31c-8.795-7.636-17.392-15.506-26.344-22.954  c-2.567-2.135-3.747-4.046-3.714-7.449c0.179-19.083,0.112-38.172,0.067-57.258c-0.013-5.886-2.963-8.773-8.711-8.784  c-4.669-0.011-9.337-0.006-14.006-0.003c-7.034,0.003-9.322,2.246-9.333,9.262c-0.021,14.693-0.002,29.383-0.015,44.074  c-0.001,1.296-0.114,2.589-0.183,4.069c-4.458-2.837-8.621-5.345-12.635-8.074c-9.182-6.235-18.283-12.59-27.436-18.868  c-2.98-2.043-6.01-1.906-8.714,0.423c-5.135,4.426-10.286,8.849-15.184,13.531c-5.604,5.356-10.961,10.973-16.378,16.521  c-1.259,1.289-2.331,2.76-3.488,4.147c-0.285-0.123-0.57-0.249-0.856-0.373c0-1.447-0.014-2.896,0.002-4.343  c0.137-12.965-8.697-25.493-24.269-24.213c-7.677,0.633-10.894-3.34-11.335-11.034c-0.318-5.536-1.074-11.138-2.495-16.48  c-0.752-2.832-2.931-5.683-5.252-7.539c-1.351-1.082-4.653-0.967-6.379-0.064c-3.218,1.687-4.838,7.021-2.769,9.732  c3.871,5.067,3.798,10.716,3.677,16.447c-0.252,11.974,9.799,25.538,24.71,23.992c7.884-0.817,10.674,2.753,11.015,10.76  c0.214,5.028,1.094,10.022,1.463,15.051c0.085,1.162-0.418,2.588-1.122,3.55c-6.507,8.899-13.167,17.688-19.68,26.581  c-3.715,5.075-6.856,10.218-2.861,16.804c3.251,5.361,6.058,10.994,9.009,16.539c6.348,11.92,12.655,23.862,18.996,35.785  c1.17,2.202,1.178,4.125-0.154,6.45c-1.857,3.241-3.022,6.895-0.677,10.477c4.853,7.41,9.815,14.749,14.729,22.121  c4.913,7.372,9.847,14.728,14.723,22.124c6.821,10.345,13.57,20.737,20.4,31.075c6.385,9.665,12.873,19.262,19.249,28.932  c8.172,12.397,16.271,24.839,24.412,37.256c7.02,10.705,13.976,21.454,21.111,32.083c4.007,5.968,9.148,9.739,17.018,9.263  c9.813-0.597,18.131-5.154,26.167-9.779c8.153-4.691,15.548-10.787,22.943-16.684c6.576-5.249,12.997-10.768,18.944-16.709  c7.575-7.566,14.789-15.521,21.815-23.606c6.52-7.5,13.16-15.003,18.726-23.199c8.407-12.383,16.299-25.156,23.704-38.166  C405.958,314.326,410.435,302.927,411.556,290.597z M146.263,241.817c-3.728-6.923-7.405-13.627-10.964-20.398  c-4.123-7.84-7.994-15.815-12.294-23.559c-1.284-2.31-1.231-4.093,0.158-5.955c5.619-7.52,11.016-15.234,17.051-22.409  c9.005-10.708,18.297-21.187,27.827-31.429c5.164-5.549,11.072-10.407,16.808-15.727c13.96,9.554,27.469,18.795,41.479,28.383  C194.396,176.54,167.992,206.877,146.263,241.817z M361.373,310.402c-9.966,16.457-21.552,31.778-34.246,46.187  c-7.455,8.464-15.512,16.455-23.808,24.108c-8.542,7.88-17.662,15.136-26.625,22.55c-1.763,1.461-3.962,2.393-5.959,3.565  c-0.34-0.354-0.681-0.712-1.021-1.068c24.752-45.961,58.039-84.45,100.713-114.718c0.42,0.276,0.841,0.549,1.263,0.826  C368.263,298.043,365.036,304.354,361.373,310.402z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M335.991,442.673c-1.207-0.691-4.448,0.643-5.811,2.014  c-5.745,5.789-11.174,11.896-16.63,17.966c-3.168,3.526-6.187,7.188-9.239,10.816c-2.848,3.387-2.423,8.397,0.93,11.488  c2.692,2.483,5.983,1.687,9.348-2.076c7.251-8.105,14.646-16.083,21.803-24.27c2.146-2.456,3.699-5.429,6.067-8.98  C340.016,446.847,338.408,444.052,335.991,442.673z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M405.57,371.474c3.455,2.563,7.45,1.505,10.478-2.744  c0.626-0.879,1.345-1.698,2.066-2.5c6.986-7.785,14.064-15.488,20.905-23.398c1.429-1.647,1.997-4.041,3.316-6.848  c-1.556-1.984-2.706-4.788-4.671-5.585c-1.966-0.798-5.17-0.265-7.059,0.92c-2.429,1.521-4.09,4.271-6.079,6.499  c-6.601,7.391-13.26,14.732-19.774,22.204C401.866,363.331,402.421,369.135,405.57,371.474z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M416.645,393.756c0.599,3.785,2.717,5.819,6.654,6.201  c0.67-0.149,1.479-0.286,2.262-0.513c10.688-3.084,21.406-6.084,32.038-9.357c1.936-0.598,3.889-2.019,5.188-3.591  c2.352-2.851,2.211-6.167-0.106-9.052c-2.282-2.837-4.992-4.429-8.684-1.957c-1.189,0.797-2.785,1.009-4.212,1.43  c-9.37,2.756-18.756,5.446-28.106,8.268C417.583,386.418,415.968,389.468,416.645,393.756z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M458.732,426.689c-8.43-2.556-16.85-5.147-25.283-7.695  c-2.22-0.671-4.882-0.678-6.629-1.962c-3.987-2.927-6.59-0.959-8.947,1.892c-2.375,2.875-2.412,6.188,0.033,9.011  c1.322,1.527,3.2,2.927,5.099,3.538c10.338,3.319,20.729,6.477,31.162,9.481c5.827,1.681,9.625-0.962,9.731-7.35  C463.686,430.981,462.69,427.89,458.732,426.689z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M359.815,458.642c-3.954-1.011-6.993,1.11-8.211,5.822  c-1.504,5.816-2.991,11.639-4.402,17.479c-1.795,7.43-3.507,14.879-5.177,21.986c-0.239,4.215,2.454,8.202,5.671,8.779  c3.194,0.574,5.96-1.401,7.256-5.71c1.257-4.181,2.142-8.471,3.149-12.724c2.112-8.913,4.268-17.814,6.266-26.753  C365.331,463.216,363.308,459.538,359.815,458.642z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M391.99,464.601c-1.009-4.304-3.761-6.497-7.455-6.003  c-3.646,0.484-5.95,3.453-5.533,7.804c0.299,3.118,1.124,6.192,1.827,9.258c2.382,10.407,4.68,20.836,7.28,31.188  c1.242,4.947,3.904,6.7,7.783,5.994c3.1-0.562,5.312-3.853,5.261-8.263c-0.06-0.388-0.127-1.209-0.312-2.007  C397.901,489.913,394.952,477.257,391.99,464.601z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M429.689,463.006c-5.197-5.917-10.324-11.911-15.816-17.547  c-1.31-1.346-4.181-2.339-5.916-1.887c-5.578,1.454-7.222,6.929-3.671,11.575c3.037,3.974,6.378,7.719,9.681,11.482  c4.928,5.61,10.213,10.934,14.796,16.807c2.207,2.831,4.682,4.386,7.521,2.912c2.283-1.185,3.698-4.045,5.654-6.341  c-1.507-2.849-2.306-5.009-3.643-6.753C435.584,469.717,432.634,466.357,429.689,463.006z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path></g></svg> </span>\n<span class=\"elementor-icon-list-text\">Professional torches and lighting equipment provided</span>\n</li>\n<li class=\"elementor-icon-list-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg height=\"595.281px\" id=\"Layer_1\" viewbox=\"0 0 595.279 595.281\" width=\"595.279px\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><g> <path d=\"M587.605,552.781c0,19.23-15.59,34.822-34.824,34.822H42.033c-19.234,0-34.824-15.592-34.824-34.822V42.033  c0-19.233,15.589-34.824,34.824-34.824h510.747c19.234,0,34.824,15.591,34.824,34.824V552.781z\" fill=\"#2C3685\"></path> <g> <path d=\"M552.781,594.812H42.033C18.856,594.812,0,575.958,0,552.781V42.033C0,18.856,18.856,0,42.033,0h510.747   c23.179,0,42.033,18.856,42.033,42.033v510.748C594.814,575.958,575.959,594.812,552.781,594.812z M42.033,14.419   c-15.227,0-27.614,12.387-27.614,27.614v510.748c0,15.227,12.388,27.613,27.614,27.613h510.747   c15.228,0,27.615-12.389,27.615-27.613V42.033c0-15.227-12.389-27.614-27.615-27.614H42.033z\" fill=\"#FFFFFF\"></path> </g></g><g> <path clip-rule=\"evenodd\" d=\"M397.405,477.55c-64.455-0.023-116.598-52.206-116.599-116.691  c0-64.683,52.215-116.762,117.007-116.7c64.402,0.062,116.426,52.31,116.382,116.892  C514.154,425.483,461.936,477.57,397.405,477.55z M387.038,370.194c-1.569-1.48-2.615-2.42-3.612-3.414  c-7.288-7.259-14.478-14.624-21.877-21.769c-5.651-5.458-13.955-5.338-19.256-0.033c-5.361,5.367-5.608,13.656-0.128,19.253  c11.396,11.638,22.907,23.165,34.552,34.554c6.048,5.914,13.893,5.859,19.871-0.12c18.79-18.793,37.461-37.708,56.121-56.631  c3.172-3.213,4.686-7.196,3.751-11.751c-1.082-5.276-4.095-9.026-9.33-10.756c-5.491-1.814-10.173-0.194-14.081,3.718  c-12.32,12.334-24.576,24.729-36.815,37.142C393.142,363.522,390.204,366.806,387.038,370.194z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M431.784,219.685c-15.916-1.221-31.623-2.426-47.964-3.68  c0-6.235-0.191-13.633,0.054-21.018c0.256-7.687-3.099-12.594-10.059-15.729c-33.168-14.951-66.276-30.039-99.377-45.139  c-4.864-2.219-9.464-2.313-14.395-0.062c-33.469,15.294-66.98,30.495-100.506,45.66c-6.164,2.788-9.198,7.446-9.199,14.122  c-0.002,25.883-1.006,51.813,0.239,77.639c3.682,76.4,40.272,131.615,108.988,165.431c5.097,2.507,10.118,2.814,14.322,0.34  c11.222,12.612,22.169,24.917,33.338,37.472c-8.302,3.773-17.487,7.958-26.681,12.124c-1.818,0.825-3.72,1.477-5.493,2.384  c-5.37,2.74-10.491,2.261-16.031-0.017c-25.612-10.521-50.088-22.929-71.508-40.795c-42.712-35.629-69.667-80.67-80.839-135.127  c-3.167-15.438-4.466-31.068-4.409-46.849c0.125-34.32,0.116-68.645-0.023-102.964c-0.03-7.372,3.121-12.036,9.72-15.032  c49.248-22.333,98.468-44.734,147.661-67.189c4.884-2.232,9.474-2.413,14.393-0.172c49.582,22.585,99.192,45.109,148.803,67.63  c5.548,2.517,9.048,6.487,9.07,12.798c0.067,19.019,0.044,38.038,0.039,57.058C431.927,219.263,431.746,219.954,431.784,219.685z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M261.029,406.986c-13.782-7.366-25.455-15.969-35.826-26.288  c-27.119-26.98-43.249-59.426-46.445-97.616c-1.402-16.759-0.734-33.695-0.917-50.551c-0.1-9.289,0.067-18.586-0.077-27.875  c-0.037-2.352,0.698-3.488,2.854-4.46c28.085-12.667,56.111-25.465,84.208-38.106c1.315-0.59,3.378-0.521,4.714,0.078  c28.085,12.638,56.129,25.367,84.106,38.238c1.238,0.57,2.435,2.611,2.527,4.043c0.313,4.839-0.105,9.727,0.201,14.568  c0.192,3.049-1.018,4.121-3.718,5.066c-46.491,16.302-77.73,47.833-92.878,94.694c-8.937,27.646-8.486,55.649-0.21,83.505  C259.93,403.5,260.322,404.708,261.029,406.986z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path></g></svg> </span>\n<span class=\"elementor-icon-list-text\">Pre-dive briefings and safety checks included</span>\n</li>\n<li class=\"elementor-icon-list-item\">\n<span class=\"elementor-icon-list-icon\">\n<svg height=\"595.281px\" id=\"Layer_1\" viewbox=\"0 0 595.279 595.281\" width=\"595.279px\" x=\"0px\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" y=\"0px\"><g> <path d=\"M587.605,552.781c0,19.23-15.59,34.822-34.824,34.822H42.033c-19.234,0-34.824-15.592-34.824-34.822V42.033  c0-19.233,15.589-34.824,34.824-34.824h510.747c19.234,0,34.824,15.591,34.824,34.824V552.781z\" fill=\"#2C3685\"></path> <g> <path d=\"M552.781,594.812H42.033C18.856,594.812,0,575.958,0,552.781V42.033C0,18.856,18.856,0,42.033,0h510.747   c23.179,0,42.033,18.856,42.033,42.033v510.748C594.814,575.958,575.959,594.812,552.781,594.812z M42.033,14.419   c-15.227,0-27.614,12.387-27.614,27.614v510.748c0,15.227,12.388,27.613,27.614,27.613h510.747   c15.228,0,27.615-12.389,27.615-27.613V42.033c0-15.227-12.389-27.614-27.615-27.614H42.033z\" fill=\"#FFFFFF\"></path> </g></g><g> <path clip-rule=\"evenodd\" d=\"M268.295,372.444c-29.794,19.358-42.561,49.632-33.895,78.964  c8.431,28.528,32.38,47.375,61.141,48.114c26.818,0.689,54.024-19.096,61.966-45.849c7.9-26.604,2.148-58.996-33.172-80.709  c14.67-23.901,29.191-47.901,44.254-71.56c1.515-2.377,6.299-3.75,9.572-3.765c40.854-0.176,82.428,36.172,88.279,78.883  c2.673,19.512,1.839,39.531,2.176,59.326c0.312,18.449,0.026,36.911,0.077,55.367c0.057,20.589-8.376,29.442-28.931,29.471  c-66.861,0.092-133.723,0.012-200.584,0c-29.252-0.004-58.503,0.009-87.754-0.007c-17.06-0.009-25.363-7.859-25.401-24.526  c-0.086-36.566-0.476-73.139,0.194-109.693c0.811-44.124,45.495-88.577,88.191-89.147c6.058-0.08,9.38,1.875,12.408,6.955  C240.322,326.935,254.212,349.377,268.295,372.444z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M387.533,169.25c2.565,47.412-37.853,92.149-88.702,92.743  c-52.38,0.612-93.059-39.783-93.067-91.844c-0.006-51.568,40.656-92.457,91.451-92.805  C352.113,76.969,389.891,124.893,387.533,169.25z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M341.081,422.593c-18.723,13.389-25.279,28.766-18.088,49.499  c-17.488-9.103-33.645-13.656-51.835,2.583c0-12.865,2.662-23.129-0.74-30.649c-3.468-7.666-12.897-12.631-21.729-20.596  c12.541-2.739,23.914-2.367,31.205-7.641c6.962-5.033,9.673-15.943,15.122-25.854c5.601,9.969,8.458,20.633,15.404,25.816  C317.081,420.721,327.987,420.01,341.081,422.593z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path> <path clip-rule=\"evenodd\" d=\"M296.64,368.057c-15.032-24.502-28.617-46.646-42.798-69.765  c28.662,0,56.47,0,85.619,0C325.256,321.437,311.369,344.06,296.64,368.057z\" fill=\"#FFFFFF\" fill-rule=\"evenodd\"></path></g></svg> </span>\n<span class=\"elementor-icon-list-text\">Perfect for certified divers seeking a unique adventure</span>\n</li>\n</ul>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "12365902",
+   "classes": "elementor-element elementor-element-12365902 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "5a75eb4c",
+     "classes": "elementor-element elementor-element-5a75eb4c e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "19fd4c54",
+       "classes": "elementor-element elementor-element-19fd4c54 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "67ea64e7",
+         "classes": "elementor-element elementor-element-67ea64e7 has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16320\" decoding=\"async\" height=\"1486\" src=\"/images/uploads/2025/09/Night-Diving-2.jpg\" width=\"1700\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "1afc47a4",
+       "classes": "elementor-element elementor-element-1afc47a4 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "5cf0abf9",
+         "classes": "elementor-element elementor-element-5cf0abf9 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Preparing for the Night Dive </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Night Dive Safety &amp; Essentials     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "683c5f09",
+         "classes": "elementor-element elementor-element-683c5f09 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Before the reef lights up under your dive torch, every night dive begins with a thorough safety briefing. Instructors review dive plans, currents, and tide conditions while checking your lighting and equipment. With these preparations, you’ll confidently descend into Sumbawa’s reefs after sunset. Typical dives last 45–65 minutes, giving you plenty of time to navigate the reef safely while discovering nocturnal marine life like sleeping parrotfish, crabs, and octopus.</p>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "55cb5ca0",
+   "classes": "elementor-element elementor-element-55cb5ca0 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "3465a4fe",
+     "classes": "elementor-element elementor-element-3465a4fe e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "4fe60a0b",
+       "classes": "elementor-element elementor-element-4fe60a0b e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "50ef2dfd",
+         "classes": "elementor-element elementor-element-50ef2dfd has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16321\" decoding=\"async\" height=\"1486\" src=\"/images/uploads/2025/09/Night-Diving-3.jpg\" width=\"1700\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "22b9f8ce",
+       "classes": "elementor-element elementor-element-22b9f8ce e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "47ab257",
+         "classes": "elementor-element elementor-element-47ab257 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Exploring the Reef After Dark </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Your Night Dive Adventure     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "71ba0577",
+         "classes": "elementor-element elementor-element-71ba0577 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>As the sun disappears, the underwater world transforms. Guided by Mocean’s experienced instructors, you’ll glide along coral walls illuminated by dive lights, revealing hidden reef activity and glowing bioluminescence when in season. Night diving brings a unique rhythm and perspective to Sumbawa’s waters, letting divers see behaviors and creatures not visible during the day. Each dive lasts around 45–65 minutes, offering both excitement and a calm, immersive experience under the stars.</p>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "5a9062f3",
+   "classes": "elementor-element elementor-element-5a9062f3 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "react-heading",
+     "id": "513a1069",
+     "classes": "elementor-element elementor-element-513a1069 elementor-widget elementor-widget-react-heading",
+     "wrapped": true,
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Explore the Ocean After Sunset     </h2>\n</div>"
+    },
+    {
+     "type": "rt-button",
+     "id": "f555da4",
+     "classes": "elementor-element elementor-element-f555da4 elementor-widget elementor-widget-rt-button",
+     "wrapped": true,
+     "html": "<a class=\"theme-btn btn-style fill\" href=\"/contact/\" rel=\"nofollow\">\n<span>Book Now</span>\n</a>"
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "680b4f9b",
+   "classes": "elementor-element elementor-element-680b4f9b e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "2f212630",
+     "classes": "elementor-element elementor-element-2f212630 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "dd5a94f",
+       "classes": "elementor-element elementor-element-dd5a94f e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "a64c951",
+         "classes": "elementor-element elementor-element-a64c951 has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16322\" decoding=\"async\" height=\"1486\" loading=\"lazy\" src=\"/images/uploads/2025/09/Night-Diving-4.jpg\" width=\"1700\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "3403aa0d",
+       "classes": "elementor-element elementor-element-3403aa0d e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "6b1eb354",
+         "classes": "elementor-element elementor-element-6b1eb354 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Dive Day Done </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Relax, Recharge, and Discover Sumbawa     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "646b4d0d",
+         "classes": "elementor-element elementor-element-646b4d0d elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Your dive adventure doesn’t end when you surface. Mocean Beach Resort offers quiet beaches, breathtaking sunsets, and easy access to Sumbawa’s hidden gems. Spend an afternoon exploring nearby villages, trek to cascading waterfalls, or simply unwind with a massage after a day of diving. Whether you crave exploration or pure relaxation, our boutique setting lets you enjoy Indonesia’s natural beauty at your own pace. Every stay is designed to refresh your body and inspire your next dive.</p>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "7b344cb8",
+   "classes": "elementor-element elementor-element-7b344cb8 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "778c8e83",
+     "classes": "elementor-element elementor-element-778c8e83 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "1560303b",
+       "classes": "elementor-element elementor-element-1560303b e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "2b969fb5",
+         "classes": "elementor-element elementor-element-2b969fb5 has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16318\" decoding=\"async\" height=\"1486\" loading=\"lazy\" src=\"/images/uploads/2025/09/Night-Diving-5.jpg\" width=\"1700\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "15d80fef",
+       "classes": "elementor-element elementor-element-15d80fef e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "1251b3a5",
+         "classes": "elementor-element elementor-element-1251b3a5 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Island Adventures Await </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Experience More Than Diving     </h2>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "782ebb71",
+         "classes": "elementor-element elementor-element-782ebb71 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Beyond the crystal-clear waters, Sumbawa invites you to explore its wild side. Hike scenic coastal trails, visit traditional fishing villages, or take a day trip to secluded beaches where you can swim, snorkel, and soak in untouched beauty. For those seeking culture, local markets and ceremonies reveal the island’s rich heritage. Whether you’re chasing adrenaline or peaceful escapes, every moment here adds a new layer to your Indonesian journey.</p>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "10df3b93",
+   "classes": "elementor-element elementor-element-10df3b93 e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "react-heading",
+     "id": "5c1069e1",
+     "classes": "elementor-element elementor-element-5c1069e1 elementor-widget elementor-widget-react-heading",
+     "wrapped": true,
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Enter a World of After-Dark Magic     </h2>\n</div>"
+    },
+    {
+     "type": "rt-button",
+     "id": "b1989f7",
+     "classes": "elementor-element elementor-element-b1989f7 elementor-widget elementor-widget-rt-button",
+     "wrapped": true,
+     "html": "<a class=\"theme-btn btn-style fill\" href=\"/contact/\" rel=\"nofollow\">\n<span>Book Now</span>\n</a>"
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "4a4a9fd",
+   "classes": "elementor-element elementor-element-4a4a9fd e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "0c7c09e",
+     "classes": "elementor-element elementor-element-0c7c09e e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "c624d9a",
+       "classes": "elementor-element elementor-element-c624d9a e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "e0051a5",
+         "classes": "elementor-element elementor-element-e0051a5 rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16758\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/10/Advance-Open-Water-8.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "b15da12",
+       "classes": "elementor-element elementor-element-b15da12 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "895187b",
+         "classes": "elementor-element elementor-element-895187b elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Advanced Open Water      </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "8a0257f",
+         "classes": "elementor-element elementor-element-8a0257f elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p data-pm-slice=\"0 0 []\">Take your diving further with an Advanced Open Water certification, exploring deeper sites and marine life around Sumbawa.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "3cf514d",
+         "classes": "elementor-element elementor-element-3cf514d elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/scuba-diving/padi-advanced-open-water/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "4d5dac3",
+     "classes": "elementor-element elementor-element-4d5dac3 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "8b95e51",
+       "classes": "elementor-element elementor-element-8b95e51 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "82c5c88",
+         "classes": "elementor-element elementor-element-82c5c88 rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16193\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/Snorkeling.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "f94121e",
+       "classes": "elementor-element elementor-element-f94121e e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "a5697fb",
+         "classes": "elementor-element elementor-element-a5697fb elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Snorkeling     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "6cfde46",
+         "classes": "elementor-element elementor-element-6cfde46 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Glide over shallow coral gardens alive with tropical fish, rays, and turtles—no dive certification required.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "3b727fe",
+         "classes": "elementor-element elementor-element-3b727fe elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/snorkeling/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "57d6f80",
+     "classes": "elementor-element elementor-element-57d6f80 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "350fceb",
+       "classes": "elementor-element elementor-element-350fceb e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "8a5afdd",
+         "classes": "elementor-element elementor-element-8a5afdd rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16204\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/PADI-Course.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "d0160cd",
+       "classes": "elementor-element elementor-element-d0160cd e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "3fec80c",
+         "classes": "elementor-element elementor-element-3fec80c elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Scuba Diving     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "89d56ec",
+         "classes": "elementor-element elementor-element-89d56ec elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Discover the thrill of weightlessness as you dive among vibrant reefs and curious marine creatures at your own pace.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "0ef41f7",
+         "classes": "elementor-element elementor-element-0ef41f7 elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/scuba-diving/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "0adf051",
+     "classes": "elementor-element elementor-element-0adf051 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "7e39baf",
+       "classes": "elementor-element elementor-element-7e39baf e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "a6ac47a",
+         "classes": "elementor-element elementor-element-a6ac47a rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16206\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/Rescue-Divers.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "1620b59",
+       "classes": "elementor-element elementor-element-1620b59 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "d48c44c",
+         "classes": "elementor-element elementor-element-d48c44c elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Rescue Dive     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "5b721f3",
+         "classes": "elementor-element elementor-element-5b721f3 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Learn to prevent and manage dive emergencies, gaining skills that make you a safer, more capable diver and buddy.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "e3f43ad",
+         "classes": "elementor-element elementor-element-e3f43ad elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/scuba-diving/rescue-diver/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "aba070b",
+     "classes": "elementor-element elementor-element-aba070b e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "922ae69",
+       "classes": "elementor-element elementor-element-922ae69 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "01be3c7",
+         "classes": "elementor-element elementor-element-01be3c7 rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16183\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/Dive-Resort.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "9cb7b21",
+       "classes": "elementor-element elementor-element-9cb7b21 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "a771127",
+         "classes": "elementor-element elementor-element-a771127 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Dive Resort     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "0f7dc46",
+         "classes": "elementor-element elementor-element-0f7dc46 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Stay steps from the sea at a boutique dive resort in Sumbawa, built for comfort and easy access to vibrant reefs.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "599a57e",
+         "classes": "elementor-element elementor-element-599a57e elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/dive-resort/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "ba2965d",
+     "classes": "elementor-element elementor-element-ba2965d e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "8d36d4d",
+       "classes": "elementor-element elementor-element-8d36d4d e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "3c70d01",
+         "classes": "elementor-element elementor-element-3c70d01 rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-16208\" decoding=\"async\" height=\"525\" loading=\"lazy\" src=\"/images/uploads/2025/09/Diving-Courses.jpg\" width=\"1920\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "a803f23",
+       "classes": "elementor-element elementor-element-a803f23 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "255c8f6",
+         "classes": "elementor-element elementor-element-255c8f6 elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          PADI Open Water     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "c3d59e9",
+         "classes": "elementor-element elementor-element-c3d59e9 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Earn your first certification with patient instructors and calm, clear waters—the perfect place to become a certified diver.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "345171a",
+         "classes": "elementor-element elementor-element-345171a elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/scuba-diving/padi-open-water/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "container",
+     "id": "31b0628",
+     "classes": "elementor-element elementor-element-31b0628 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "7ecb68b",
+       "classes": "elementor-element elementor-element-7ecb68b e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "ac32edc",
+         "classes": "elementor-element elementor-element-ac32edc rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-17381\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/12/DSD-8.jpg\" width=\"1650\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "618cdb6",
+       "classes": "elementor-element elementor-element-618cdb6 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "react-heading",
+         "id": "2047a5d",
+         "classes": "elementor-element elementor-element-2047a5d elementor-widget elementor-widget-react-heading",
+         "wrapped": true,
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          Discover Scuba Diving     </h3>\n</div>"
+        },
+        {
+         "type": "text-editor",
+         "id": "5836fc3",
+         "classes": "elementor-element elementor-element-5836fc3 elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>Experience your first real ocean dive in Sumbawa, designed for beginners seeking an unforgettable underwater adventure.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "6125dc3",
+         "classes": "elementor-element elementor-element-6125dc3 elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/discover-scuba-diving/\" rel=\"nofollow\">\n<span>Discover More</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "375e219d",
+   "classes": "elementor-element elementor-element-375e219d e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "react-heading",
+     "id": "9286772",
+     "classes": "elementor-element elementor-element-9286772 elementor-widget elementor-widget-react-heading",
+     "wrapped": true,
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> FAQ </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Night Diving FAQ     </h2>\n</div>"
+    },
+    {
+     "type": "container",
+     "id": "87cb943",
+     "classes": "elementor-element elementor-element-87cb943 e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "5b9a1ed8",
+       "classes": "elementor-element elementor-element-5b9a1ed8 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "image",
+         "id": "3d1906cd",
+         "classes": "elementor-element elementor-element-3d1906cd has-jarallax-img rtimg-cover elementor-widget elementor-widget-image",
+         "wrapped": true,
+         "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-12531\" decoding=\"async\" height=\"1100\" loading=\"lazy\" src=\"/images/uploads/2025/07/Gili-Rengit-Lombok.jpg\" width=\"1650\"/>"
+        }
+       ]
+      },
+      {
+       "type": "container",
+       "id": "478a107b",
+       "classes": "elementor-element elementor-element-478a107b e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "nested-accordion",
+         "id": "62e566ef",
+         "classes": "elementor-element elementor-element-62e566ef elementor-widget elementor-widget-n-accordion",
+         "wrapped": true,
+         "html": "<div aria-label=\"Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys\" class=\"e-n-accordion\">\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-1650\">\n<summary aria-controls=\"e-n-accordion-item-1650\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"1\" tabindex=\"0\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> Who can join night dives? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-1650\" class=\"elementor-element elementor-element-1f1c7a55 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"1f1c7a55\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-1650\" class=\"elementor-element elementor-element-52dda86b e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"52dda86b\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-6f419c5f elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"6f419c5f\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Certified divers with some open water experience are ideal for night diving adventures.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-1651\">\n<summary aria-controls=\"e-n-accordion-item-1651\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"2\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> What time do night dives start? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-1651\" class=\"elementor-element elementor-element-1a37e450 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"1a37e450\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-1651\" class=\"elementor-element elementor-element-6491e540 e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"6491e540\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-7ec13bff elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"7ec13bff\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Night dives begin at dusk, shortly after sunset, with departure times adjusted to local conditions.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-1652\">\n<summary aria-controls=\"e-n-accordion-item-1652\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"3\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> What marine life will I see? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-1652\" class=\"elementor-element elementor-element-424850aa e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"424850aa\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-1652\" class=\"elementor-element elementor-element-6319c363 e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"6319c363\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-59ab16f7 elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"59ab16f7\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Expect nocturnal reef creatures like shrimp, crabs, octopus, sleeping parrotfish, and seasonal bioluminescence.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-1653\">\n<summary aria-controls=\"e-n-accordion-item-1653\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"4\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> How large are the dive groups? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-1653\" class=\"elementor-element elementor-element-49b65bd4 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"49b65bd4\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-1653\" class=\"elementor-element elementor-element-675bbe81 e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"675bbe81\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-107435b elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"107435b\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Groups are limited to two divers per instructor for safety, comfort, and personalized guidance.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n<details class=\"e-n-accordion-item\" id=\"e-n-accordion-item-1654\">\n<summary aria-controls=\"e-n-accordion-item-1654\" aria-expanded=\"false\" class=\"e-n-accordion-item-title\" data-accordion-index=\"5\" tabindex=\"-1\">\n<span class=\"e-n-accordion-item-title-header\"><h3 class=\"e-n-accordion-item-title-text\"> Is special equipment needed? </h3></span>\n<span class=\"e-n-accordion-item-title-icon\">\n<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewbox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n</span>\n</summary>\n<div aria-labelledby=\"e-n-accordion-item-1654\" class=\"elementor-element elementor-element-43b22f7 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"43b22f7\" role=\"region\">\n<div aria-labelledby=\"e-n-accordion-item-1654\" class=\"elementor-element elementor-element-3cc38de5 e-flex e-con-boxed rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"3cc38de5\" role=\"region\">\n<div class=\"e-con-inner\">\n<div class=\"elementor-element elementor-element-266e44c3 elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"266e44c3\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p>Yes. Professional torches, lighting gear, and pre-dive safety checks are provided for every night dive.</p> </div>\n</div>\n</div>\n</div>\n</div>\n</details>\n</div>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "container",
+   "id": "b65618b",
+   "classes": "elementor-element elementor-element-b65618b e-flex e-con-boxed rt-default-class e-con e-parent",
+   "children": [
+    {
+     "type": "container",
+     "id": "5e092fe",
+     "classes": "elementor-element elementor-element-5e092fe e-con-full e-flex rt-default-class e-con e-child",
+     "children": [
+      {
+       "type": "container",
+       "id": "2b36c18",
+       "classes": "elementor-element elementor-element-2b36c18 e-con-full e-flex rt-default-class e-con e-child",
+       "children": [
+        {
+         "type": "container",
+         "id": "03d7219",
+         "classes": "elementor-element elementor-element-03d7219 e-con-full e-flex rt-default-class e-con e-child",
+         "children": [
+          {
+           "type": "react-heading",
+           "id": "4d2e0a8",
+           "classes": "elementor-element elementor-element-4d2e0a8 elementor-widget elementor-widget-react-heading",
+           "wrapped": true,
+           "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Begin Your Next Dive Adventure at Mocean Beach Resort </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Your Ocean Journey Awaits     </h2>\n</div>"
+          }
+         ]
+        },
+        {
+         "type": "text-editor",
+         "id": "a036fdd",
+         "classes": "elementor-element elementor-element-a036fdd elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor",
+         "wrapped": true,
+         "html": "<p>West Sumbawa’s vibrant reefs are calling. At Mocean Beach Resort, we offer boutique accommodations, expert dive instructors, small-group guided dives, and effortless access to pristine coral gardens. Whether you’re earning your first PADI certification, refining buoyancy, or exploring secret dive sites, every underwater adventure is tailored to your experience and goals. Discover Indonesia’s hidden dive paradise with comfort, safety, and unforgettable marine encounters.</p>"
+        },
+        {
+         "type": "rt-button",
+         "id": "5088157",
+         "classes": "elementor-element elementor-element-5088157 elementor-widget elementor-widget-rt-button",
+         "wrapped": true,
+         "html": "<a class=\"theme-btn btn-style fill\" href=\"/\" rel=\"nofollow\">\n<span>Mocean Beach Resort</span>\n</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

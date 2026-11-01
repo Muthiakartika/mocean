@@ -1,0 +1,96 @@
+/*
+ * Port of the Elementor "Nested Accordion" widget (widget-nested-accordion.min.css):
+ * 1px grey borders, 10px padding, plus/minus icon on the left of the title.
+ */
+.accordion {
+  --title-size: 22px;
+  --border: 1px solid #d5d8dc;
+  --text-color: #1f2124;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.heading {
+  margin: 0;
+  font-size: var(--title-size);
+  line-height: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0 10px;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  border: var(--border);
+  background: none;
+  color: var(--text-color);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.titleText {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: var(--color-secondary);
+  font-family: var(--font-body);
+  font-size: var(--title-size);
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.icon {
+  display: flex;
+  order: -1;
+  align-items: center;
+  width: fit-content;
+}
+
+.icon svg {
+  height: 15px;
+  width: auto;
+  fill: var(--text-color);
+}
+
+/* Height animation (400ms, like the original) */
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.open .panel {
+  grid-template-rows: 1fr;
+}
+
+.panelInner {
+  overflow: hidden;
+}
+
+.content {
+  padding: 10px;
+  border: var(--border);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Hide closed answers from screen readers once the closing animation has finished */
+.closedContent {
+  visibility: hidden;
+  transition: visibility 0s 0.4s;
+}
+
+@media (max-width: 767px) {
+  .accordion {
+    --title-size: 20px;
+  }
+}

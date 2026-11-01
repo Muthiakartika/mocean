@@ -1,0 +1,31 @@
+/* jarallax markup: .jarallax (frame) > .jarallax-container (clip) > img */
+.frame {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius, 0);
+}
+
+.clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -100;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  border-radius: var(--radius, 0);
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  pointer-events: none;
+  backface-visibility: hidden;
+  border-radius: var(--radius, 0);
+}

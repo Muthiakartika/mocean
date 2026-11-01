@@ -1,0 +1,104 @@
+/*
+ * Port of the Moonlit theme button: `.theme-btn.btn-style.fill`
+ * (wp-content/plugins/rt-moonlit/assets/css/elements.css).
+ */
+.button {
+  pointer-events: auto;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  padding: 8px 20px;
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+  /* Site custom CSS: centre long labels that wrap onto two lines. */
+  text-align: center;
+  transition: var(--transition);
+}
+
+.button:hover {
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* Label slides up and back in on hover. */
+.label {
+  display: block;
+  position: relative;
+  z-index: 10;
+  color: currentColor;
+}
+
+.button:hover .label {
+  animation: moveScaleUpInitial 0.3s forwards, moveScaleUpEnd 0.3s forwards 0.3s;
+}
+
+/* Two background layers that sweep in on hover. */
+.button::before,
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+}
+
+.button::before {
+  width: 120%;
+  height: 0;
+  padding-bottom: 120%;
+  top: -110%;
+  left: -10%;
+  border-radius: 50%;
+  transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+}
+
+.button:hover::before {
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.button::after {
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.button:hover::after {
+  transform: translate3d(0, 0, 0);
+  transition-duration: 0.05s;
+  transition-delay: 0.4s;
+  transition-timing-function: linear;
+}
+
+/* Header variant: border uses the brand color (header template 10288). */
+.solidBorder {
+  border-style: solid;
+  border-color: var(--color-primary);
+}
+
+@keyframes moveScaleUpInitial {
+  to {
+    transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes moveScaleUpEnd {
+  from {
+    transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

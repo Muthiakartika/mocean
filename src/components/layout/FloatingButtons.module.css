@@ -1,0 +1,84 @@
+/*
+ * Floating buttons on every page (footer template 10289 + site custom CSS).
+ */
+
+/*
+ * On the original these buttons live inside a footer container with
+ * `position: relative; z-index: 0`, so content with z-index 1 (e.g. the small
+ * framed photo on the homepage) can cover them. Same stacking here.
+ */
+.layer {
+  position: relative;
+  z-index: 0;
+}
+
+/* WhatsApp (widget d100897) */
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 103px;
+  z-index: 1;
+  display: flex;
+}
+
+.whatsappLink {
+  display: inline-block;
+  padding: 15px;
+  border-radius: 50px;
+  background-color: var(--color-whatsapp);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1;
+  transition: all 0.3s;
+}
+
+.whatsappLink svg {
+  display: block;
+  width: 25px;
+  height: 25px;
+  fill: #fff;
+}
+
+/* Cloudbeds book button (widget 35bad87, class .cb-book-btn) */
+.book {
+  position: fixed;
+  right: 16px;
+  bottom: 31px;
+  z-index: 1;
+  display: flex;
+}
+
+.bookButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  /* !important: the Cloudbeds script injects `button[data-be-url] { background-color: black; ... }`.
+     The original site overrides it the same way. */
+  padding: 10px !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: var(--color-primary) !important;
+  cursor: pointer;
+}
+
+.bookButton:hover {
+  filter: brightness(1.1);
+}
+
+.bookIcon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .whatsapp {
+    right: 17px;
+    bottom: 95px;
+  }
+}

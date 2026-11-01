@@ -1,0 +1,112 @@
+/*
+ * Layout containers — a small copy of Elementor's "flexbox container" model
+ * (uploads/elementor/css/custom-frontend.min.css), so sections keep the exact
+ * spacing of the original site.
+ *
+ * How to use (see src/components/home/*.module.css for examples):
+ *
+ *   <section className="con con-boxed ..."><div className="con-inner">…</div></section>
+ *   <div className="con con-full ...">…</div>
+ *
+ * Every value is controlled with a CSS variable, set in the section's own CSS module:
+ *   --padding-top / --padding-right / --padding-bottom / --padding-left
+ *   --margin-top / --margin-bottom ...
+ *   --flex-direction  --flex-wrap  --justify-content  --align-items
+ *   --row-gap  --column-gap   (default 20px, like Elementor)
+ *   --width        (child containers, e.g. 36%)
+ *   --content-width (boxed containers: max width of the inner box)
+ */
+.con {
+  --display: flex;
+  --flex-direction: column;
+  --flex-wrap: nowrap;
+  --justify-content: normal;
+  --align-items: normal;
+  --align-self: auto;
+  --row-gap: var(--widget-gap);
+  --column-gap: var(--widget-gap);
+  --width: 100%;
+  --min-height: initial;
+  --overflow: visible;
+  --border-radius: 0;
+  --order: initial;
+  --content-width: min(100%, var(--container-max));
+  --padding-top: 10px;
+  --padding-right: 10px;
+  --padding-bottom: 10px;
+  --padding-left: 10px;
+  --margin-top: 0px;
+  --margin-right: 0px;
+  --margin-bottom: 0px;
+  --margin-left: 0px;
+
+  position: relative;
+  display: var(--display);
+  flex: 0 1 auto;
+  align-self: var(--align-self);
+  order: var(--order);
+  width: var(--width);
+  min-width: 0;
+  min-height: var(--min-height);
+  overflow: var(--overflow);
+  border-radius: var(--border-radius);
+  margin: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+  padding-left: var(--padding-left);
+  padding-right: var(--padding-right);
+}
+
+/* Full-width container: lays out its own children. */
+.con-full {
+  flex-direction: var(--flex-direction);
+  flex-wrap: var(--flex-wrap);
+  justify-content: var(--justify-content);
+  align-items: var(--align-items);
+  gap: var(--row-gap) var(--column-gap);
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+
+/* Boxed container: the inner box is centred and limited to --content-width. */
+.con-boxed {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.con-inner {
+  display: var(--display);
+  flex: 1 1 auto;
+  flex-direction: var(--flex-direction);
+  flex-wrap: var(--flex-wrap);
+  justify-content: var(--justify-content);
+  align-items: var(--align-items);
+  gap: var(--row-gap) var(--column-gap);
+  width: 100%;
+  max-width: var(--content-width);
+  height: 100%;
+  margin: 0 auto;
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+
+/* A widget (heading, text, image, button…) inside a container. */
+.con > .widget,
+.con-inner > .widget {
+  position: relative;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Elementor background overlay (::before) used by image-background containers. */
+.con.has-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--border-radius);
+  background-color: var(--overlay-color, #000);
+  opacity: var(--overlay-opacity, 0.5);
+  pointer-events: none;
+}
+.con.has-overlay > * {
+  position: relative;
+  z-index: 1;
+}

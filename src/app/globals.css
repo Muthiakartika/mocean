@@ -1,0 +1,114 @@
+/*
+ * Tailwind without its "preflight" reset: the original WordPress theme renders with
+ * browser defaults (inline images/iframes, list bullets, etc.), and preflight would change that.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+/*
+ * Utilities are generated only from our own components. The migrated WordPress
+ * HTML (src/content) uses class names like "mb-20" or "d-block" that mean
+ * something else there, so it must not be scanned.
+ */
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "../components/**/*.tsx";
+@source "../app/**/*.tsx";
+@import "../styles/variables.css";
+/* In the "base" layer so every component CSS module can override it. */
+@import "../styles/layout.css" layer(base);
+
+/* Let Tailwind utilities use the original brand tokens, e.g. `text-primary`. */
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-text: var(--color-text);
+  --color-teal: var(--color-teal);
+  --font-sans: var(--font-body);
+  --font-menu: var(--font-menu);
+  /* Elementor breakpoints: tablet <=1024px, mobile <=767px */
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1025px;
+}
+
+/*
+ * Base styles — ported from the Moonlit theme (theme.css) and Elementor kit 12054.
+ */
+/* Same box model as the original (bootstrap-grid.css + Elementor frontend). */
+html {
+  box-sizing: border-box;
+  scroll-behavior: auto;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #fff;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Elementor kit heading defaults (widgets override size where the original does). */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--color-secondary);
+  line-height: 100%;
+}
+h1 { font-size: 80px; }
+h2 { font-size: 60px; }
+h3 { font-size: 50px; }
+h4 { font-size: 40px; }
+h5 { font-size: 30px; }
+h6 { font-size: 20px; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Theme icon font, e.g. <i className="rt rt-phone-flip" /> */
+.rt::before {
+  font-family: var(--font-rt-icons);
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  line-height: 1em;
+  speak: never;
+}
+.rt-location-dot::before { content: "\e801"; }
+.rt-phone-flip::before { content: "\e803"; }
+.rt-angle-down::before { content: "\e809"; }
+.rt-xmark::before { content: "\e81a"; }
+.rt-user-2::before { content: "\e826"; }
+
+/* Screen-reader-only text (same as Elementor's .elementor-screen-only) */
+.sr-only-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}

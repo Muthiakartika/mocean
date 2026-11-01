@@ -1,0 +1,46 @@
+/*
+ * Port of the RT "React Heading" widget (.react-heading-here) from the Moonlit theme:
+ * a coloured sub heading above an <h2>.
+ *
+ * Each section can set these variables in its own CSS module:
+ *   --align, --sub-color, --sub-size, --sub-line-height,
+ *   --title-color, --title-size, --title-line-height, --title-margin
+ * Anything not set falls back to the theme defaults below.
+ */
+.heading {
+  text-align: var(--align, left);
+}
+
+.sub {
+  display: flex;
+  justify-content: var(--align, left);
+  align-items: center;
+  color: var(--sub-color, var(--color-primary));
+  font-family: var(--font-body);
+  font-size: var(--sub-size, 24px);
+  line-height: var(--sub-line-height, 1.7);
+}
+
+/* Site custom CSS: no left padding on the sub heading text. */
+.sub em {
+  font-style: normal;
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+.title {
+  margin: var(--title-margin, 6px 0 0);
+  color: var(--title-color, var(--color-secondary));
+  font-family: var(--font-body);
+  font-size: var(--title-size, 60px);
+  font-weight: normal;
+  line-height: var(--title-line-height, 70px);
+}
+
+/* Theme responsive.css: on phones the default title is 40px / 45px. */
+@media (max-width: 767px) {
+  .title {
+    font-size: var(--title-size, 40px);
+    line-height: var(--title-line-height, 45px);
+  }
+}

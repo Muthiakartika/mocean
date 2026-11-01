@@ -1,0 +1,19 @@
+npm notice run mocean-nextjs@0.1.0 npx
+npm notice run tsx scripts/compare-layout.ts /coral-reefs/ 1440
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/coral-reefs/
+Call log:
+[2m  - navigating to "http://localhost:3000/coral-reefs/", waiting until "load"[22m
+
+    at collect (D:\Kerja\algo\Next Js\mocean\scripts\compare-layout.ts:14:14)
+    at main (D:\Kerja\algo\Next Js\mocean\scripts\compare-layout.ts:75:85) {
+  log: [
+    '  - navigating to "http://localhost:3000/coral-reefs/", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v22.23.1
