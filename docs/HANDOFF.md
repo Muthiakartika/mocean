@@ -20,7 +20,8 @@ For Claude Code: *"Read docs/HANDOFF.md, README.md and docs/migration-checklist.
 
 1. **Fix mobile (390px) differences on inner pages.**
    Run `bash scripts/compare-all.sh 1440 390` (dev server must run; takes ~70 min, sequential).
-   Pages that differed at 390 in the last partial run: `/contact/`, `/discover-scuba-diving/`, `/dive-sites/diving-amed/`,
+   Results go to `docs/compare/` (not in Git). The last full run on 2026-11-01 is **not valid** — the dev server
+   stopped during the run — so start with a fresh run. Pages that differed at 390 in an earlier partial run: `/contact/`, `/discover-scuba-diving/`, `/dive-sites/diving-amed/`,
    `/dive-sites/diving-bali/`, `/dive-sites/diving-komodo-island/`, `/dive-sites/diving-lombok/` (the run crashed after 20 of 110 checks).
    Method that worked so far: `npx tsx scripts/compare-layout.ts <path> 390` → find the first `DIFF` → measure with
    `AUDIT_TARGET=local npx tsx scripts/audit-selectors.ts <path> 390 "<selector>"` vs the live site (no `AUDIT_TARGET`) → usually a missing or mis-ordered original stylesheet.

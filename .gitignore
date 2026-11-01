@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# layout comparison output (regenerate with scripts/compare-all.sh)
+/docs/compare/
