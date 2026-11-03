@@ -17,7 +17,10 @@
 
   /* Type */
   --rd-font-text: var(--font-quicksand), "Trebuchet MS", sans-serif;
-  --rd-font-data: var(--font-jost), "Century Gothic", sans-serif;
+  /* One face everywhere, as on the live site (owner, 2026-11-03): the former Jost roles use Quicksand too. */
+  --rd-font-data: var(--font-quicksand), "Trebuchet MS", sans-serif;
+  --rd-heading-weight: 400; /* headings as on the live site */
+  --rd-ui-weight: 500; /* buttons, FAQ questions, as on the live site */
   --rd-heading-max: 40px;
   --rd-heading-max-mobile: 30px;
   --rd-hero-max-mobile: 40px; /* page title in the hero on phones */

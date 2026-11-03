@@ -79,7 +79,7 @@
 }
 
 /*
- * Redesign (not with ?original): the FAQ of the inner pages (MASTER.md, "FAQ"): a Jost heading without the small
+ * Redesign (not with ?original): the FAQ of the inner pages (MASTER.md, "FAQ"): the heading without the small
  * "FAQ" label, the questions as cards (Accordion variant "cards") and beside them a collage of three photos that
  * stand still, on the ice band. The original parallax photo stays for ?original.
  */
@@ -98,11 +98,10 @@
 :global(html:not([data-design="original"])) .heading h2 {
   margin: 0;
   color: #0e1530;
-  font-family: var(--font-jost), sans-serif;
+  font-family: var(--font-body);
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.1;
-  letter-spacing: -0.01em;
 }
 
 :global(html:not([data-design="original"])) .row {

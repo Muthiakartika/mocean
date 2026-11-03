@@ -17,7 +17,8 @@ html:not([data-design="original"]) #mocean-page {
   /* Hooks in the converted original CSS (scripts/migration/convert-css.mjs). Justified text stays justified on wide screens (left on phones, below). */
   --rd-band: var(--rd-ice);
   --rd-w400: 500;
-  /* Elementor kit variables */
+  /* Elementor kit variables (the kit's primary face was Jost: one face, Quicksand, as on the live site) */
+  --e-global-typography-primary-font-family: var(--rd-font-data);
   --e-global-color-text: var(--rd-body);
   --e-global-color-secondary: var(--rd-ink);
   --e-global-typography-text-font-weight: 500;
@@ -119,9 +120,9 @@ html:not([data-design="original"]) #mocean-page {
   & .rd-title-lead .rt-title-here {
     --rd-hcap: var(--rd-heading-max);
     font-family: var(--rd-font-data);
-    font-weight: 600;
+    font-weight: var(--rd-heading-weight);
     line-height: 1.1;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 
   & .rd-title-lead .rt-title-here {
@@ -158,8 +159,8 @@ html:not([data-design="original"]) #mocean-page {
   & .elementor-icon-box-title,
   & .elementor-image-box-title {
     font-family: var(--rd-font-data);
-    font-weight: 600;
-    letter-spacing: -0.005em;
+    font-weight: var(--rd-heading-weight);
+    letter-spacing: 0;
   }
 
   /* Short headings such as "Types of dives:" become data labels. */
@@ -254,6 +255,47 @@ html:not([data-design="original"]) #mocean-page {
       & dd {
         color: var(--rd-white);
       }
+    }
+  }
+
+  /*
+   * ---------- One face everywhere: Quicksand, as on the live site (owner, 2026-11-03) ----------
+   * These kept another theme or browser face (Montserrat, Arial): the blog post title and article headings, the post
+   * titles and "Load More" on /news/, the reviewer names on /restaurant/, the tab and form buttons.
+   */
+  & :is(
+      .current-page-title,
+      .wp-block-heading,
+      .eael-entry-title,
+      .slider__author__info__content h6,
+      .menu__link__price h4,
+      .elementor-widget-text-editor :is(h2, h3, h4, h5, h6)
+    ) {
+    font-family: var(--rd-font-data);
+    font-weight: var(--rd-heading-weight);
+    letter-spacing: 0;
+  }
+
+  & .current-page-title {
+    line-height: 1.1;
+  }
+
+  & :is(.e-n-tab-title, .wpforms-submit, .eael-load-more-button) {
+    font-family: var(--rd-font-data);
+  }
+
+  & :is(.wpforms-submit, .eael-load-more-button) {
+    font-weight: var(--rd-ui-weight);
+    border-radius: var(--rd-r);
+
+    & * {
+      font: inherit;
+    }
+  }
+
+  @media (max-width: 767px) {
+    & .current-page-title {
+      font-size: var(--rd-hero-max-mobile);
     }
   }
 
@@ -373,6 +415,47 @@ html:not([data-design="original"]) #mocean-page {
     scrollbar-color: var(--rd-line) transparent;
   }
 
+  /*
+   * The restaurant menu's own tabs (/restaurant/): fourteen categories in one row did not fit, so "Dessert" ran past
+   * the edge of the screen (on the live site too). Here they wrap, as Logbook segmented buttons.
+   */
+  & .resturant__menu__list .nav-tabs {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: var(--rd-s2);
+  }
+
+  & .resturant__menu__list .nav-tabs .menu-tab-btn {
+    flex: none;
+    padding: 10px 16px;
+    border: 1px solid var(--rd-line);
+    border-radius: var(--rd-r);
+    background: var(--rd-white);
+    color: var(--rd-navy);
+    font-family: var(--rd-font-data);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color var(--rd-t-hover) var(--rd-ease),
+      border-color var(--rd-t-hover) var(--rd-ease),
+      color var(--rd-t-hover) var(--rd-ease);
+
+    &:hover {
+      border-color: var(--rd-navy);
+      background: var(--rd-white);
+      color: var(--rd-navy);
+    }
+
+    &.active {
+      border-color: var(--rd-navy);
+      background: var(--rd-navy);
+      color: var(--rd-white);
+    }
+  }
+
   /* A bar with a single tab only repeats the heading above it. */
   & .e-n-tabs-heading:not(:has(> .e-n-tab-title ~ .e-n-tab-title)) {
     display: none;
@@ -409,6 +492,26 @@ html:not([data-design="original"]) #mocean-page {
       border-color: var(--rd-navy);
       background: var(--rd-navy);
       color: var(--rd-white);
+    }
+  }
+
+  /*
+   * A card the original lays over the hero with position: absolute, the next section keeping a fixed margin as room
+   * for it (rd-overlay-card / rd-after-overlay: ElementorPage.tsx, course pages). On tablets and phones the redesign's
+   * denser card is shorter than that room and left an empty band of 200-350px, so there the card joins the flow under
+   * the hero and the next section drops the room it kept.
+   */
+  @media (max-width: 1024px) {
+    & .rd-overlay-card {
+      --position: relative;
+      position: relative;
+      top: auto;
+    }
+
+    & .rd-after-overlay {
+      --margin-top: 0px;
+      --padding-top: var(--rd-section-max-mobile);
+      margin-top: 0;
     }
   }
 
@@ -483,7 +586,7 @@ html:not([data-design="original"]) #mocean-page {
     & .e-n-accordion-item-title-text {
       font-family: var(--rd-font-data);
       font-size: 17px;
-      font-weight: 600;
+      font-weight: var(--rd-ui-weight);
       line-height: 1.35;
       color: var(--rd-ink);
       transition: color var(--rd-t-hover) var(--rd-ease);
@@ -886,9 +989,9 @@ html:not([data-design="original"]) #mocean-page {
       margin: 0 0 var(--rd-s3);
       font-family: var(--rd-font-data);
       font-size: 28px;
-      font-weight: 600;
+      font-weight: var(--rd-heading-weight);
       line-height: 1.2;
-      letter-spacing: -0.01em;
+      letter-spacing: 0;
       text-wrap: balance;
       color: var(--rd-navy);
     }
@@ -1027,7 +1130,7 @@ html:not([data-design="original"]) #mocean-page {
     background: var(--rd-white);
     color: var(--rd-navy);
     font-family: var(--rd-font-data);
-    font-weight: 600;
+    font-weight: var(--rd-ui-weight);
     cursor: pointer;
     transition:
       background-color var(--rd-t-hover) var(--rd-ease),

@@ -71,6 +71,7 @@ export default function ElementorNode({
   inCardGrid = false,
   chipLength,
   collages,
+  extraClass,
 }: {
   node: Node;
   path: string;
@@ -79,10 +80,14 @@ export default function ElementorNode({
   chipLength?: number;
   /** FAQ photo container id → the extra photos of its collage (faqCollages). */
   collages?: Map<string, FaqPhoto[]>;
+  /** A redesign marker set by the page (e.g. rd-overlay-card). */
+  extraClass?: string;
 }) {
   // Original id/classes. Elements with an entrance animation start hidden; ElementorBehaviors reveals them on scroll.
   const collage = collages?.get(node.id);
-  const classes = [redesignClasses(node, path, inCardGrid), chipLength && "rd-chip-run", collage && "rd-faq-photos"].filter(Boolean).join(" ");
+  const classes = [redesignClasses(node, path, inCardGrid), chipLength && "rd-chip-run", collage && "rd-faq-photos", extraClass]
+    .filter(Boolean)
+    .join(" ");
   const wrapperProps = {
     id: node.cssId,
     style: chipLength ? ({ "--rd-chip-len": chipLength } as CSSProperties) : undefined,

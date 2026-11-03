@@ -223,3 +223,8 @@
     transform: translate(-50%, calc(var(--y) * var(--u)));
   }
 }
+
+/* Redesign (not with ?original): "Book Now" in the site's one face, Quicksand, instead of Roboto. */
+:global(html:not([data-design="original"])) .button {
+  font-family: var(--font-body);
+}
