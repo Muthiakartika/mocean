@@ -203,7 +203,8 @@
      "wrapped": true,
      "html": "<p><span style=\"font-weight: 400;\">In Bali, even seasoned surfers like Marthe have to learn difficult lessons. Her board and skin were broken in a wipeout at Dreamland, proving that shallow reefs need to be respected. Respect wave priority, keep an eye out for lulls, and hold your board during falls. Canggu’s rips and Bukit’s low-tide reefs are serious business. Bali’s flag system is helpful: green indicates go, and red indicates stay. </span></p>"
     }
-   ]
+   ],
+   "cssId": "general-info"
   },
   {
    "type": "container",
@@ -231,7 +232,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14337\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Top-Surf-Spots-in-Bali.jpg.webp\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "top-surf-sports"
   },
   {
    "type": "container",
@@ -301,7 +303,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14335\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Tabanan-Bali.jpg.webp\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "desert-point"
   },
   {
    "type": "container",
@@ -637,7 +640,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14327\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Best-Surfing-Spots-for-Every-Level-1.jpg.webp\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "surf-levels"
   },
   {
    "type": "container",

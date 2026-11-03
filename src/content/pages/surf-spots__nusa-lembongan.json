@@ -203,7 +203,8 @@
      "wrapped": true,
      "html": "<p><span style=\"font-weight: 400;\">Be aware of the dangers before you paddle out in Lembongan, including concealed seaweed farm spikes, rip currents, and shallow reefs. Never surf alone at unknown breaks, wear reef boots, and consult tide charts. With large swells and spring tides, shipwrecks become shady. Get a good safety briefing from a local guide. Surfing here is exciting, but not risky, if you prepare a little.</span></p>"
     }
-   ]
+   ],
+   "cssId": "general-info"
   },
   {
    "type": "container",
@@ -231,7 +232,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14404\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Top-Surf-Spots-in-Nusa-Lembongan.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "top-surf-sports"
   },
   {
    "type": "container",
@@ -301,7 +303,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14406\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Nusa-Lembongan.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "desert-point"
   },
   {
    "type": "container",
@@ -385,7 +388,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14408\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Level-of-Surfing-Spot.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "surf-levels"
   },
   {
    "type": "container",

@@ -32,11 +32,16 @@ async function main() {
   let written = 0;
 
   for (const file of (await readdir("src/content/pages")).filter((f) => f.endsWith(".json"))) {
-    const { path: urlPath, elementorId } = JSON.parse(await readFile(path.join("src/content/pages", file), "utf8"));
+    const json = await readFile(path.join("src/content/pages", file), "utf8");
+    const { path: urlPath, elementorId } = JSON.parse(json);
     const slug = file.replace(/\.json$/, "");
     const hasEael = await access(`src/styles/elementor/eael-${elementorId}.css`).then(() => true, () => false);
     const eaelImport = hasEael ? `
 import "@/styles/elementor/eael-${elementorId}.css";` : "";
+    // WPForms CSS is printed last on the original (in the footer), after the theme CSS.
+    const formImports = json.includes('"type": "wpforms"') ? `
+import "@/styles/elementor/vendor/wpforms.css";
+import "@/styles/elementor/vendor/wpforms-inline.css";` : "";
     const code = `${MARKER}
 // Content: src/content/pages/${file} · Original CSS: src/styles/elementor/post-${elementorId}.css
 import ElementorPage from "@/components/elementor/ElementorPage";
@@ -44,7 +49,7 @@ import type { PageContent } from "@/components/elementor/types";
 import content from "@/content/pages/${slug}.json";
 import { pageMetadata } from "@/lib/metadata";
 import "@/styles/elementor/post-${elementorId}.css";${eaelImport}
-import "@/components/elementor/styles-after";
+import "@/components/elementor/styles-after";${formImports}
 
 export const metadata = pageMetadata("${urlPath}");
 

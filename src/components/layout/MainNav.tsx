@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { mainMenu, type MenuItem } from "@/data/navigation";
 import styles from "./MainNav.module.css";
 
@@ -104,6 +104,16 @@ function MobileItem({ item, pathname, onNavigate }: { item: MenuItem; pathname: 
 export default function MainNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
+
+  // Keyboard focus follows the mobile menu: into the panel when it opens, back to the hamburger when it closes.
+  useEffect(() => {
+    if (open) closeRef.current?.focus();
+    else if (wasOpen.current) hamburgerRef.current?.focus({ preventScroll: true });
+    wasOpen.current = open;
+  }, [open]);
 
   // Close the mobile menu with the Escape key.
   useEffect(() => {
@@ -128,7 +138,7 @@ export default function MainNav() {
       </div>
 
       {/* Mobile & tablet */}
-      <button type="button" className={styles.hamburger} aria-label="Open Menu" onClick={() => setOpen(true)}>
+      <button ref={hamburgerRef} type="button" className={styles.hamburger} aria-label="Open Menu" aria-expanded={open} onClick={() => setOpen(true)}>
         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="14" width="18" height="2" fill="#FFFFFF" />
           <rect y="7" width="18" height="2" fill="#FFFFFF" />
@@ -139,7 +149,7 @@ export default function MainNav() {
       {open && <div className={styles.overlay} onClick={() => setOpen(false)} />}
 
       <div className={`${styles.sidebar} ${open ? styles.open : ""}`} aria-hidden={!open} inert={!open}>
-        <button type="button" className={styles.close} aria-label="Close Menu" onClick={() => setOpen(false)}>
+        <button ref={closeRef} type="button" className={styles.close} aria-label="Close Menu" onClick={() => setOpen(false)}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" aria-hidden="true">
             <path d="M317.7 402.3c3.125 3.125 3.125 8.188 0 11.31c-3.127 3.127-8.186 3.127-11.31 0L160 267.3l-146.3 146.3c-3.127 3.127-8.186 3.127-11.31 0c-3.125-3.125-3.125-8.188 0-11.31L148.7 256L2.344 109.7c-3.125-3.125-3.125-8.188 0-11.31s8.188-3.125 11.31 0L160 244.7l146.3-146.3c3.125-3.125 8.188-3.125 11.31 0s3.125 8.188 0 11.31L171.3 256L317.7 402.3z" />
           </svg>

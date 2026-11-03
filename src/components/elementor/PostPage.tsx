@@ -28,12 +28,13 @@ export type PostContent = {
  */
 export default function PostPage({ post }: { post: PostContent }) {
   return (
-    <div className="elementor-kit-12054 post-page">
+    // #mocean-page scopes the redesign layer (src/styles/redesign/inner-pages.css).
+    <div id="mocean-page" className="elementor-kit-12054 post-page" data-path={post.path}>
       <JsonLd path={post.path} />
       <div className="footer-width-fixer">
         <div className={`elementor elementor-${post.bannerId}`} data-elementor-type="wp-post" data-elementor-id={post.bannerId}>
           {post.banner.map((node) => (
-            <ElementorNode key={node.id} node={node} />
+            <ElementorNode key={node.id} node={node} path={post.path} />
           ))}
         </div>
       </div>

@@ -203,7 +203,8 @@
      "wrapped": true,
      "html": "<p><span style=\"font-weight: 400;\">Canggu’s surf is rewarding. A fantastic session might become dangerous because to packed queues, strong rip currents, and sharp reefs. Recognize your risks: paddling wide maintains calm on crowded peaks like Batu Bolong, while reef shoes are helpful for shallow takeoffs like Echo Reef. Observe local customs by waiting your turn, apologizing frequently, and not snapping. Every lineup respects safe surfing.</span></p>"
     }
-   ]
+   ],
+   "cssId": "general-info"
   },
   {
    "type": "container",
@@ -231,7 +232,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14227\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Top-Surf-Spots-in-Canggu.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "top-surf-sports"
   },
   {
    "type": "container",
@@ -301,7 +303,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14229\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Batu-Bolong-Canggu.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "desert-point"
   },
   {
    "type": "container",
@@ -343,7 +346,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14230\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Best-Surfing-Spots-for-Every-Level.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "surf-levels"
   },
   {
    "type": "container",

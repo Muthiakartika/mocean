@@ -167,7 +167,7 @@ a {
   justify-content: center;
   align-items: center;
   color: var(--e-global-color-primary);
-  font-size: 24px;
+  font-size:min(24px, var(--rd-hcap, 999px));
   font-family: var(--e-global-typography-secondary-font-family);
 }
 .react-heading-here span.rt-sub-heading-here svg {
@@ -182,7 +182,7 @@ a {
   padding-right: 15px;
 }
 .react-heading-here .rt-title-here {
-  font-size: 60px;
+  font-size:min(60px, var(--rd-hcap, 999px));
   line-height: 70px;
   color: var(--e-global-color-secondary);
   font-weight: normal;
@@ -299,7 +299,7 @@ a {
   height: 310px;
   min-width: 310px;
   border-radius: 50%;
-  border: 5px solid #f1f1f1;
+  border: 5px solid var(--rd-band, #F1F1F1);
 }
 .testimonial__item__content .slider__rating i {
   font-size: 25px;
@@ -321,7 +321,7 @@ a {
   position: relative;
   color: var(--e-global-color-primary);
   display: inline-block;
-  font-family: "rt-icons";
+  font-family: var(--font-rt-icons);
   font-size: 18px;
   font-style: normal;
   font-weight: normal;
@@ -784,7 +784,7 @@ a {
   z-index: 2;
 }
 .rt-nav-wrap .nav-btn-prev::before {
-  font-family: "rt-icons";
+  font-family: var(--font-rt-icons);
   font-size: 32px;
   content: "\e80a";
   position: relative;
@@ -797,7 +797,7 @@ a {
   cursor: pointer;
 }
 .rt-nav-wrap .nav-btn-next::before {
-  font-family: "rt-icons";
+  font-family: var(--font-rt-icons);
   font-size: 32px;
   content: "\e82e";
   position: relative;
@@ -853,7 +853,7 @@ body.single-eshb_accomodation #content {
 body.single-eshb_accomodation #eshb-contents h1.eshb-single-title {
   margin: 0;
   font-size: 60px;
-  font-weight: 400;
+  font-weight:var(--rd-w400, 400);
   line-height: 1;
 }
 body.single-eshb_accomodation #eshb-contents .basic-information-list {
@@ -1243,7 +1243,7 @@ body::-webkit-scrollbar-thumb,
   row-gap: 0px;
 }
 .easy--hotel-search-style-2 .eshb-search .eshb-search-form .eshb-form-group {
-  background: #f1f1f1;
+  background: var(--rd-band, #F1F1F1);
   padding: 8px 20px;
   margin-top: 26px;
   align-items: center;
@@ -1301,7 +1301,7 @@ body::-webkit-scrollbar-thumb,
 }
 
 .easy--hotel-search-style-2.search-bg .eshb-search-form .eshb-form-group.dates-wrapper .eshb-form-group {
-  background: #f1f1f1;
+  background: var(--rd-band, #F1F1F1);
 }
 
 .is__home__five.image__1 {
@@ -1803,7 +1803,7 @@ body.single-eshb_accomodation .accomodation-gallery::before {
 .menu-area-addon-offcan .navbar ul > li.menu-item-has-children > a:before {
   content: "\e80a";
   position: absolute;
-  font-family: "rt-icons" !important;
+  font-family: var(--font-rt-icons) !important;
   left: auto;
   right: -1px;
   top: 52%;
@@ -1813,7 +1813,7 @@ body.single-eshb_accomodation .accomodation-gallery::before {
   display: block;
   cursor: pointer;
   transform: translateY(-50%);
-  font-weight: 400;
+  font-weight:var(--rd-w400, 400);
 }
 .menu-area-addon-offcan .navbar ul > li.menu-item-has-children > a.rt-open:before {
   content: "\e82e";
@@ -1850,7 +1850,7 @@ body.single-eshb_accomodation .accomodation-gallery::before {
 }
 .elementor-widget-image-gallery.has-view-icon-yes .gallery-item .gallery-icon a::before {
   z-index: 99;
-  font-family: "rt-icons";
+  font-family: var(--font-rt-icons);
   content: "\ea5f";
   left: 50%;
   top: 50%;

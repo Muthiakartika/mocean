@@ -6,6 +6,8 @@ import content from "@/content/pages/contact.json";
 import { pageMetadata } from "@/lib/metadata";
 import "@/styles/elementor/post-48.css";
 import "@/components/elementor/styles-after";
+import "@/styles/elementor/vendor/wpforms.css";
+import "@/styles/elementor/vendor/wpforms-inline.css";
 
 export const metadata = pageMetadata("/contact/");
 

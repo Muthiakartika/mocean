@@ -4,7 +4,10 @@
  * bootstrap-grid.min.css, theme.css, style.css and the site's custom CSS.
  */
 
-/* Bootstrap .container (max widths per breakpoint; style.css raises 1140 to 1320) */
+/*
+ * Bootstrap .container (max widths per breakpoint). style.css sets 1320px from 1200px, but
+ * bootstrap-grid.min.css loads after it on the original, so 1140px wins until 1400px.
+ */
 .post-page .theme-container {
   width: 100%;
   margin-right: auto;
@@ -22,6 +25,9 @@
   .post-page .theme-container { max-width: 960px; }
 }
 @media (min-width: 1200px) {
+  .post-page .theme-container { max-width: 1140px; }
+}
+@media (min-width: 1400px) {
   .post-page .theme-container { max-width: 1320px; }
 }
 

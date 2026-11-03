@@ -19,8 +19,7 @@ async function main() {
     await page.goto(TARGETS.original + "/", { waitUntil: "load", timeout: 120_000 });
     await page.waitForTimeout(2500); // first slide's layers have finished animating in
     out[width] = await page.evaluate(() => {
-      const module = document.querySelector("sr7-module")!;
-      const m = module.getBoundingClientRect();
+      const m = document.querySelector("sr7-module")!.getBoundingClientRect();
       const slide = document.querySelector("sr7-slide")!;
       const layers = [...slide.querySelectorAll(".sr7-layer")].map((el) => {
         const r = el.getBoundingClientRect();

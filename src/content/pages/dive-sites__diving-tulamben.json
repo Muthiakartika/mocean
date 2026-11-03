@@ -217,7 +217,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14102\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Tulamben.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "tulamben"
   },
   {
    "type": "container",
@@ -259,7 +260,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14103\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Tulamben-Bay-Tulamben.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "tulamben-bay"
   },
   {
    "type": "container",
@@ -301,7 +303,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14104\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Kubu-Tulamben.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "kubu"
   },
   {
    "type": "container",

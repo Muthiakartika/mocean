@@ -8,6 +8,8 @@ export type ContainerNode = {
   id: string;
   /** Original class list (layout: e-con-boxed / e-con-full, etc.). */
   classes: string;
+  /** Elementor "CSS ID" (id attribute): target of in-page anchor links and custom CSS. */
+  cssId?: string;
   animation?: string;
   children: ElementorNode[];
 };
@@ -17,6 +19,7 @@ export type WidgetNode = {
   type: string;
   id: string;
   classes: string;
+  cssId?: string;
   animation?: string;
   /** true when the content sits inside <div class="elementor-widget-container">. */
   wrapped: boolean;

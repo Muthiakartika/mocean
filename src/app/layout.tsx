@@ -22,11 +22,18 @@ export const metadata: Metadata = {
   ...(isProduction ? {} : { robots: { index: false, follow: false } }),
 };
 
+const ORIGINAL_DESIGN_SWITCH = `if (/[?&]original(=|&|$)/.test(location.search)) document.documentElement.dataset.design = "original";`;
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const fontVariables = `${quicksand.variable} ${jost.variable} ${roboto.variable} ${rtIcons.variable}`;
 
   return (
-    <html lang="en-US" className={fontVariables}>
+    // suppressHydrationWarning: the inline script below may set data-design before React hydrates.
+    <html lang="en-US" className={fontVariables} suppressHydrationWarning>
+      <head>
+        {/* "?original" in the URL shows the original design (switches off the redesign layer, see MASTER.md). */}
+        <script dangerouslySetInnerHTML={{ __html: ORIGINAL_DESIGN_SWITCH }} />
+      </head>
       <body>
         <Header />
         <main>{children}</main>

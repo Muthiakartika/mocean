@@ -111,6 +111,7 @@
 /* ---------- Mobile / tablet (<=1024px) ---------- */
 .hamburger {
   display: none;
+  position: relative;
   width: 20px;
   height: 19px;
   margin: 0;
@@ -119,6 +120,16 @@
   background: none;
   line-height: 0;
   cursor: pointer;
+}
+
+/*
+ * The icon stays 20×19 as on the original; the area that reacts to a tap is 44×43. It reaches further left
+ * than right: the icon sits 10px from the screen edge on phones, and anything past the edge widens the page.
+ */
+.hamburger::before {
+  content: "";
+  position: absolute;
+  inset: -12px -8px -12px -16px;
 }
 
 .hamburger svg {

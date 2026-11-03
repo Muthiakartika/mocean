@@ -64,7 +64,8 @@
          "id": "89b684d",
          "classes": "elementor-element elementor-element-89b684d elementor-widget elementor-widget-react-heading",
          "wrapped": true,
-         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Sumbawa rewards the surfers who make the effort to get here.  </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Why Choose Sumbawa for Surfing     </h2>\n</div>"
+         "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Sumbawa rewards the surfers who make the effort to get here.  </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Why Choose Sumbawa for Surfing     </h2>\n</div>",
+         "cssId": "sumbawa-heading"
         },
         {
          "type": "text-editor",
@@ -89,7 +90,8 @@
      "id": "0fc32c9",
      "classes": "elementor-element elementor-element-0fc32c9 elementor-widget elementor-widget-react-heading",
      "wrapped": true,
-     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> We'll walk you through the simple prep, the top spots, and how the levels stack up. </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Feel the Challenge of Sumbawa's Waves     </h2>\n</div>"
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> We'll walk you through the simple prep, the top spots, and how the levels stack up. </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Feel the Challenge of Sumbawa's Waves     </h2>\n</div>",
+     "cssId": "sumbawa-heading"
     },
     {
      "type": "container",
@@ -159,7 +161,8 @@
      "id": "fb77b17",
      "classes": "elementor-element elementor-element-fb77b17 elementor-widget elementor-widget-react-heading",
      "wrapped": true,
-     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Here's the practical stuff that makes a Sumbawa surf trip smooth, safe, and stress-free. </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Simple Tips     </h2>\n</div>"
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Here's the practical stuff that makes a Sumbawa surf trip smooth, safe, and stress-free. </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Simple Tips     </h2>\n</div>",
+     "cssId": "sumbawa-heading"
     },
     {
      "type": "image",
@@ -175,7 +178,8 @@
      "wrapped": true,
      "html": "<div aria-label=\"Tabs. Open items with Enter or Space, close with Escape and navigate using the Arrow keys.\" class=\"e-n-tabs\" data-widget-number=\"78001559\">\n<div class=\"e-n-tabs-heading\" role=\"tablist\">\n<button aria-controls=\"e-n-tab-content-780015591\" aria-selected=\"true\" class=\"e-n-tab-title\" data-tab-index=\"1\" data-tab-title-id=\"e-n-tab-title-780015591\" id=\"e-n-tab-title-780015591\" role=\"tab\" style=\"--n-tabs-title-order: 1;\" tabindex=\"0\">\n<span class=\"e-n-tab-title-text\">\n\t\t\t\tWhat Need to Bring Before Surfing\t\t\t</span>\n</button>\n<button aria-controls=\"e-n-tab-content-780015592\" aria-selected=\"false\" class=\"e-n-tab-title\" data-tab-index=\"2\" data-tab-title-id=\"e-n-tab-title-780015592\" id=\"e-n-tab-title-780015592\" role=\"tab\" style=\"--n-tabs-title-order: 2;\" tabindex=\"-1\">\n<span class=\"e-n-tab-title-text\">\n\t\t\t\tWhen the Best Time to Surf\t\t\t</span>\n</button>\n</div>\n<div class=\"e-n-tabs-content\">\n<div aria-labelledby=\"e-n-tab-title-780015591\" class=\"e-active elementor-element elementor-element-a915ff0 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"a915ff0\" data-tab-index=\"1\" id=\"e-n-tab-content-780015591\" role=\"tabpanel\" style=\"--n-tabs-title-order: 1;\">\n<div class=\"elementor-element elementor-element-167056c e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"167056c\">\n<div class=\"elementor-element elementor-element-eaf19be e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"eaf19be\">\n<div class=\"elementor-element elementor-element-6c8ae50 rtimg-contain elementor-widget elementor-widget-image\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"6c8ae50\" data-widget_type=\"image.default\">\n<div class=\"elementor-widget-container\">\n<img alt=\"\" class=\"attachment-large size-large wp-image-17680\" decoding=\"async\" height=\"559\" src=\"/images/uploads/2026/07/Whats-need-to-Bring-1024x895.jpg\" width=\"640\"/> </div>\n</div>\n</div>\n<div class=\"elementor-element elementor-element-6240395 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"6240395\">\n<div class=\"elementor-element elementor-element-be5c1a6 elementor-widget elementor-widget-react-heading\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"be5c1a6\" data-widget_type=\"react-heading.default\">\n<div class=\"elementor-widget-container\">\n<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          What to Bring for a Sumbawa Surf Trip     </h3>\n</div> </div>\n</div>\n<div class=\"elementor-element elementor-element-6d7213a elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"6d7213a\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p><span style=\"font-weight: 400;\">Sumbawa is remote, and surf shops are few and far between, so come self-sufficient. Bring the right boards for reef breaks (and a spare if you can), plus backup leashes, fins, and plenty of wax. Reef booties are a must for shallow, low-tide sessions, and a rash guard, reef-safe sunscreen, and a basic first-aid kit for coral scrapes are all wise additions. Since the waves pack a punch, pack for power rather than for gentle beach days.</span></p> </div>\n</div>\n</div>\n</div>\n</div>\n<div aria-labelledby=\"e-n-tab-title-780015592\" class=\"elementor-element elementor-element-7929f29 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"7929f29\" data-tab-index=\"2\" id=\"e-n-tab-content-780015592\" role=\"tabpanel\" style=\"--n-tabs-title-order: 2;\">\n<div class=\"elementor-element elementor-element-44b514a e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"44b514a\">\n<div class=\"elementor-element elementor-element-188356f e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"188356f\">\n<div class=\"elementor-element elementor-element-4b8858f elementor-widget elementor-widget-react-heading\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"4b8858f\" data-widget_type=\"react-heading.default\">\n<div class=\"elementor-widget-container\">\n<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> </em>\n</span>\n<h3 class=\"rt-title-here\">\n          When Is the Best Time to Surf Sumbawa?     </h3>\n</div> </div>\n</div>\n<div class=\"elementor-element elementor-element-1250f6c elementor-widget elementor-widget-text-editor\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"1250f6c\" data-widget_type=\"text-editor.default\">\n<div class=\"elementor-widget-container\">\n<p><span style=\"font-weight: 400;\">The dry season, roughly May to September (with April and October as solid shoulder months), is prime time. This is when consistent southwest swells and offshore trade winds groom the reefs into their best form, with June and July often the most reliable for size. If you’re a beginner or intermediate, the wet season (November to March) can actually be lovely with smaller, mellower waves, lighter winds, glassy mornings, and even thinner crowds. Whatever the season, dawn patrol usually serves up the cleanest conditions before the wind picks up.</span></p> </div>\n</div>\n</div>\n<div class=\"elementor-element elementor-element-3c6e017 e-con-full e-flex rt-default-class e-con e-child\" data-e-type=\"container\" data-element_type=\"container\" data-id=\"3c6e017\">\n<div class=\"elementor-element elementor-element-32aaf7e rtimg-contain elementor-widget elementor-widget-image\" data-e-type=\"widget\" data-element_type=\"widget\" data-id=\"32aaf7e\" data-widget_type=\"image.default\">\n<div class=\"elementor-widget-container\">\n<img alt=\"\" class=\"attachment-large size-large wp-image-17681\" decoding=\"async\" height=\"559\" loading=\"lazy\" src=\"/images/uploads/2026/07/When-The-Best-Time-to-Surf-1024x895.jpg\" width=\"640\"/> </div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>"
     }
-   ]
+   ],
+   "cssId": "simple-tips"
   },
   {
    "type": "container",
@@ -187,7 +191,8 @@
      "id": "d416b40",
      "classes": "elementor-element elementor-element-d416b40 elementor-widget elementor-widget-react-heading",
      "wrapped": true,
-     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Here are the breaks that put Sumbawa on the map. </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Top Surf Spots     </h2>\n</div>"
+     "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> Here are the breaks that put Sumbawa on the map. </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Top Surf Spots     </h2>\n</div>",
+     "cssId": "sumbawa-heading"
     },
     {
      "type": "image",
@@ -196,7 +201,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-17674\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2026/07/Top-Surf-Spots.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "top-surf-spots"
   },
   {
    "type": "container",
@@ -266,7 +272,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-17676\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2026/07/Surf-Spot-Levels.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "surf-sport-levels"
   },
   {
    "type": "container",
@@ -384,7 +391,8 @@
            "id": "ec4ce12",
            "classes": "elementor-element elementor-element-ec4ce12 elementor-widget elementor-widget-react-heading",
            "wrapped": true,
-           "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> There's no better feeling than waking up to the sound of the ocean.  </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Surf West Sumbawa from Mocean     </h2>\n</div>"
+           "html": "<div class=\"react-heading-here\">\n<span class=\"rt-sub-heading-here\">\n<em> There's no better feeling than waking up to the sound of the ocean.  </em>\n</span>\n<h2 class=\"rt-title-here\">\n          Surf West Sumbawa from Mocean     </h2>\n</div>",
+           "cssId": "sumbawa-heading"
           }
          ]
         },

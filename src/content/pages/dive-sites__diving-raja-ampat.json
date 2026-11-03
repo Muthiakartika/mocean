@@ -476,7 +476,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14029\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Saonek-Kecil-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "saonek-kecil"
   },
   {
    "type": "container",
@@ -518,7 +519,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14023\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Jerief-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "jerief"
   },
   {
    "type": "container",
@@ -560,7 +562,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14024\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Keruo-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "keruo"
   },
   {
    "type": "container",
@@ -602,7 +605,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14031\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Yanggelo-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "yanggelo"
   },
   {
    "type": "container",
@@ -644,7 +648,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14028\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Mansuar-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "mansuar"
   },
   {
    "type": "container",
@@ -686,7 +691,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14030\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Sauwandarek-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "sauwandarek"
   },
   {
    "type": "container",
@@ -728,7 +734,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14017\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Yenbuba-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "yenbuba"
   },
   {
    "type": "container",
@@ -770,7 +777,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14025\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Koh-Island-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "koh-island"
   },
   {
    "type": "container",
@@ -812,7 +820,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14026\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Kri-Island-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "kri-island"
   },
   {
    "type": "container",
@@ -854,7 +863,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14022\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Gam-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gam"
   },
   {
    "type": "container",
@@ -896,7 +906,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14021\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Friwinbonda-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "friwinbonda"
   },
   {
    "type": "container",
@@ -938,7 +949,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14032\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Yenbeser-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "yenbeser"
   },
   {
    "type": "container",
@@ -980,7 +992,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14018\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Bat-Raja-Ampat.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "bat"
   },
   {
    "type": "container",

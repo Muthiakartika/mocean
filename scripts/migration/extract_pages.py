@@ -15,6 +15,7 @@ Output per page (src/content/pages/<slug>.json):
   }
   node = {"type": "container", "id", "classes", "children": [node...]}
        | {"type": "<widget type>", "id", "classes", "html", "wrapped": bool}
+  plus "cssId" when the element has an Elementor "CSS ID" (in-page anchors, custom CSS).
 
 Widget HTML is cleaned: image/link URLs point to this site, srcset/scripts removed.
 Run it again any time the source HTML is re-downloaded; it overwrites the JSON files.
@@ -98,6 +99,9 @@ def node_for(el) -> dict:
             "wrapped": container is not None,
             "html": clean_html(container if container is not None else el),
         }
+    # Elementor "CSS ID": target of in-page links (#gili-biaha) and of the site's custom CSS (#sumbawa-heading).
+    if el.get("id"):
+        node["cssId"] = el["id"]
     animation = animation_of(el)
     if animation:
         node["animation"] = animation

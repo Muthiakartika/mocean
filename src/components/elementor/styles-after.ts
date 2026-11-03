@@ -10,4 +10,8 @@ import "@/styles/elementor/vendor/widget-social-icons.css";
 import "@/styles/elementor/vendor/essential-addons.css";
 import "@/styles/elementor/vendor/dialog.css";
 import "@/styles/elementor/vendor/lightbox.css";
+import "@/styles/elementor/wp-custom-css.css";
 import "@/styles/elementor/elementor-fixes.css";
+// Redesign layer (MASTER.md); "?original" in the URL switches it off.
+import "@/styles/redesign/tokens.css";
+import "@/styles/redesign/inner-pages.css";

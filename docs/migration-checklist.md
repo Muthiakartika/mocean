@@ -55,7 +55,7 @@ The home page gets dedicated components as the PRD's folder structure lists (`co
 
 - [x] Header (logo, menu, hover dropdown, nested dropdown, Book Now)
 - [x] Mobile off-canvas menu (open/close, accordion, Esc to close, hidden panel is `inert`)
-- [ ] Mobile menu: move focus into the panel on open and back to the hamburger on close
+- [x] Mobile menu: move focus into the panel on open and back to the hamburger on close
 - [x] Footer
 - [x] Floating Cloudbeds button (immersive script) + WhatsApp button
 - [x] Button component with original hover animation
@@ -80,25 +80,36 @@ The home page gets dedicated components as the PRD's folder structure lists (`co
 > Checked with `scripts/compare-all.sh` (all pages × 1440 / 390) and `scripts/check-inner.ts`.
 
 - [x] Renderer for all widget types (original markup + CSS) and behaviours: tabs, accordion, fadeInUp, parallax, lightbox, testimonial sliders
-- [ ] Lightbox: add the original toolbar (zoom / fullscreen / share), image-name caption and zoom-in opening animation
+- [x] Lightbox: original toolbar (counter, fullscreen, zoom with drag, share menu), image-name caption, UI auto-hide. (The original has no opening animation: its `zoomIn` CSS is never loaded.)
 - [x] Content JSON + route per page (48 Elementor pages + 7 posts)
-- [ ] Visit & Stay (5) · Surfing (2 + surf-spots 7 + surf posts) · Diving (scuba 8, fun-diving, snorkeling, dive-resort, dive-sites 9, seasonal) · Wildlife (2) · Tours (5) · Pricing · Contact · News · 8 posts · `lombok-2` (noindex)
+- [x] Visit & Stay (5) · Surfing (2 + surf-spots 7 + surf posts) · Diving (scuba 8, fun-diving, snorkeling, dive-resort, dive-sites 9, seasonal) · Wildlife (2) · Tours (5) · Pricing · Contact · News · 8 posts · `lombok-2` (noindex) — all within 2px of the live site at 1440 / 1280 / 768 / 390 / 375 (2026-11-02)
+- [x] Site "Additional CSS" (`wp-custom-css.css`), Elementor CSS IDs (in-page anchors), WPForms styling, 150 missing `.jpg.webp` images
+
+### Phase 5b — Inner-page redesign "Logbook" (owner request, `MASTER.md`)
+- [x] Redesign layer scoped under `#mocean-page`, `?original` switch, hooks in the converted CSS
+- [x] Typography, section rhythm, chips, tabs, card rows, buttons, jump-nav, back-to-top
+- [x] Facts bars (14 pages) and dive-site spec rows (48 sites), every figure checked against the page text
+- [x] FAQ: accordion on phones/tablets, index + panel on wide screens (owner's choice of three options)
+- [x] All 55 pages checked at 1440 / 390, `?original` still within 2px of the live site, contrast, reduced motion, static audits
+- [ ] Owner approval
+- [ ] Real devices, screen reader, 200% zoom
 
 ### Phase 6 — Functionality
 - [ ] All Cloudbeds/WhatsApp/mailto links identical (automated check vs `audit/pages.json`)
-- [ ] Contact form: fields, required validation, success/error states, server-side send, honeypot (WPForms' anti-spam equivalent)
-- [ ] Tabs, accordions, galleries, sliders, maps, video
+- [x] Contact form: fields, required validation, success/error states, server-side send through SendGrid (`src/app/api/contact/route.ts`), honeypot — live once the SendGrid key and addresses are set on Vercel
+- [x] Cloudflare cache purge after each production deployment (`.github/workflows/purge-cloudflare.yml`) — live once the two GitHub secrets are set
+- [x] Tabs, accordions, galleries, sliders, lightbox, in-page anchor links (`scripts/check-inner.ts`)
 
 ### Phase 7 — SEO & performance
-- [ ] Metadata API per page from `audit/seo.json` (title, description, canonical, robots, OG, Twitter)
-- [ ] JSON-LD (Yoast graph + page schemas)
-- [ ] `sitemap.ts`, `robots.ts`, preview noindex, sitemap redirects, uploads redirect
-- [ ] Ahrefs analytics script once, in root layout, production only
+- [x] Metadata API per page from `audit/seo.json` (title, description, canonical, robots, OG, Twitter)
+- [x] JSON-LD (Yoast graph + page schemas)
+- [x] `sitemap.ts`, `robots.ts`, preview noindex, sitemap redirects, uploads redirect
+- [x] Ahrefs analytics script once, in root layout, production only
 - [ ] Hero image `priority`, everything else lazy; static generation for all routes
 
 ### Phase 8 — QA
 - [ ] Playwright visual diff, 56 pages × 5 viewports, every difference reviewed
-- [ ] Link checker (no broken internal links)
+- [x] Link checker (no broken internal links) — `scripts/check-links.ts`; 4 anchors are broken on the original too (owner question)
 - [ ] No console errors
-- [ ] `npm run build` passes, Lighthouse/CWV check
+- [ ] `npm run build` passes ✓ (2026-11-02), Lighthouse/CWV check still to do
 - [ ] Deployment prep (Vercel) — after your approval

@@ -1,0 +1,53 @@
+/*
+ * Design tokens of the inner-page redesign layer, direction "Logbook". Values and roles: MASTER.md.
+ * Only defined here; the layer (inner-pages.css) and the new components read them.
+ */
+:root {
+  /* Colour */
+  --rd-navy: #111f90;
+  --rd-navy-deep: #0d1873;
+  --rd-ink: #0e1530;
+  --rd-body: #454a57;
+  --rd-meta: #5e6575;
+  --rd-ice: #f2f5fb;
+  --rd-line: #d9dfea;
+  --rd-white: #ffffff;
+  --rd-on-ink-meta: #c5cce4;
+
+  /* Type */
+  --rd-font-text: var(--font-quicksand), "Trebuchet MS", sans-serif;
+  --rd-font-data: var(--font-jost), "Century Gothic", sans-serif;
+  --rd-heading-max: 40px;
+  --rd-heading-max-mobile: 30px;
+  --rd-hero-max-mobile: 40px; /* page title in the hero on phones */
+  --rd-deck: 19px;
+  --rd-deck-mobile: 17px;
+  --rd-body-size: 17px;
+  --rd-faq-size: 19px;
+  --rd-figure: 28px;
+  --rd-label: 12px;
+
+  /* Space */
+  --rd-s1: 4px;
+  --rd-s2: 8px;
+  --rd-s3: 12px;
+  --rd-s4: 16px;
+  --rd-s5: 24px;
+  --rd-s6: 32px;
+  --rd-s7: 48px;
+  --rd-s8: 64px;
+  --rd-s9: 96px;
+  --rd-section-max: 96px;
+  --rd-section-max-mobile: 56px;
+  --rd-text-inset: 10px; /* side padding of full-width text, the original left value */
+  --rd-header-mobile: 112px; /* height of the site header over the hero on phones */
+
+  /* Shape and depth */
+  --rd-r: 4px;
+  --rd-shadow-float: 0 10px 24px -20px rgb(14 21 48 / 0.6);
+  --rd-z-nav: 20;
+
+  /* Motion */
+  --rd-ease: cubic-bezier(0.25, 1, 0.5, 1);
+  --rd-t-hover: 140ms;
+}

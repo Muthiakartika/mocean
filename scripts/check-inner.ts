@@ -27,8 +27,8 @@ async function main() {
   report.hiddenAnimations = await page.locator(".elementor-invisible").count();
   report.parallaxLayers = await page.locator(".jarallax-clip").count();
 
-  // Tabs: click the second tab of the first tab widget
-  const tabs = page.locator(".e-n-tabs").first();
+  // Tabs: click the second tab of the first tab widget that has two or more tabs
+  const tabs = page.locator(".e-n-tabs:has(> .e-n-tabs-heading > .e-n-tab-title:nth-child(2))").first();
   if ((await tabs.count()) > 0) {
     const second = tabs.locator(".e-n-tab-title").nth(1);
     await second.scrollIntoViewIfNeeded();
@@ -36,6 +36,13 @@ async function main() {
     await page.waitForTimeout(300);
     report.tabSelected = await second.getAttribute("aria-selected");
     report.activePanelIndex = await tabs.locator("[role=tabpanel].e-active").getAttribute("data-tab-index");
+    // What is actually shown: Elementor's CSS keeps the first panel visible until the widget is "e-activated".
+    report.visiblePanels = await tabs.evaluate((t) =>
+      [...t.querySelectorAll<HTMLElement>(":scope > .e-n-tabs-content > [role=tabpanel]")]
+        .filter((panel) => getComputedStyle(panel).display !== "none")
+        .map((panel) => panel.dataset.tabIndex)
+        .join(","),
+    );
   }
 
   // Accordion: open first item, then second → first closes
