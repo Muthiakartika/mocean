@@ -35,6 +35,7 @@ Text on photographs keeps the colour each page sets (white). WhatsApp green stay
 | Role | Face | Size / line-height | Weight | Colour |
 |---|---|---|---|---|
 | Section heading (the larger line of each Elementor heading pair) | Jost | page size, capped 40px desktop / 30px mobile; 1.1; tracking -0.01em | 600 | page colour (navy or ink) |
+| Elementor heading widget on phones | Jost | page size, capped 30px; the page title in the hero 40px; line height 1.15 | page | page colour |
 | Deck (the smaller line) | Quicksand | 19px / 1.4 (17px mobile) | 500 | at 80% opacity |
 | Body | Quicksand | 17px / 1.65; full-width text runs flush with the section, justified where the original was (left on phones), with hyphenation; text in columns is left-aligned without hyphenation | 500 | body |
 | Figure (facts) | Jost | 28px / 1, units 15px | 600 | navy (white on ink) |
@@ -77,7 +78,7 @@ No entrance animations: Elementor's fadeInUp is switched off and content starts 
 - **Chips**: short fact lists ("Types of dives") as 4px outlined navy tags.
 - **Card grids** (child containers with a photo, heading, text and button): rows of a table under a 2px ink rule; photo 180px, text, button on the right; hover tints the row.
 - **Buttons** (`.theme-btn`): Jost 600, 4px. Fill navy, hover navy-deep. Outline: white with navy border, hover ice. Focus 2px navy ring. Press 1px.
-- **Jump-nav and back to top**: as before, square 4px.
+- **Jump-nav and back to top**: as before, square 4px. The jump-nav hides once the footer comes into view. On phones it runs flush along the top edge, full width (no text showing above it), and the back-to-top button only appears while the visitor scrolls up, so the text beside the WhatsApp and booking buttons stays free while reading.
 
 ## Rules
 

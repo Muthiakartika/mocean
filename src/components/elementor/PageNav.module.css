@@ -142,14 +142,38 @@
   transform: translateY(1px);
 }
 
-/* Phones: bottom-left would cover the text column, so it stacks above the WhatsApp button instead. */
 @media (max-width: 767px) {
+  /* Phones: the bar runs along the top edge, full width, so no text shows above it while scrolling. */
+  .wrap {
+    top: 0;
+    padding: 0;
+  }
+
+  .bar {
+    width: 100%;
+    max-width: none;
+    padding: calc(6px + env(safe-area-inset-top, 0px)) max(var(--rd-s2), env(safe-area-inset-right, 0px)) 6px
+      max(var(--rd-s2), env(safe-area-inset-left, 0px));
+    border-width: 0 0 1px;
+    border-radius: 0;
+  }
+
+  /*
+   * Bottom-left would cover the text column, so it stacks above the WhatsApp button, and only while the
+   * visitor scrolls up (class "up", PageNav.tsx): reading down, the text beside the buttons stays free.
+   */
   .top {
     left: auto;
     right: max(22px, env(safe-area-inset-right, 0px));
     bottom: calc(172px + env(safe-area-inset-bottom, 0px));
     width: 44px;
     height: 44px;
+  }
+
+  .top.visible:not(.up) {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
   }
 }
 

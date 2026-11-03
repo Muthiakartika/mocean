@@ -19,6 +19,7 @@
   --rd-font-data: var(--font-jost), "Century Gothic", sans-serif;
   --rd-heading-max: 40px;
   --rd-heading-max-mobile: 30px;
+  --rd-hero-max-mobile: 40px; /* page title in the hero on phones */
   --rd-deck: 19px;
   --rd-deck-mobile: 17px;
   --rd-body-size: 17px;

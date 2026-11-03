@@ -642,6 +642,15 @@ html:not([data-design="original"]) #mocean-page {
     }
   }
 
+  /*
+   * Image galleries: the WordPress gallery puts its spacing on the right of each image and pulls it back with
+   * margin-right: -20px. On phones (one image per row) that reaches 10px past the screen, so the whole page
+   * pans sideways and the floating buttons slide off the edge. Only that empty margin is clipped.
+   */
+  & .elementor-image-gallery {
+    overflow: clip;
+  }
+
   /* ---------- Card grids read as rows of a table (rd-cards / rd-card: ElementorNode.tsx) ---------- */
   & :is(.rd-cards.e-con-boxed > .e-con-inner, .rd-cards:not(.e-con-boxed)) {
     flex-direction: column;
@@ -791,6 +800,20 @@ html:not([data-design="original"]) #mocean-page {
     & .elementor-widget-react-heading:not(.rd-title-lead) .rt-title-here,
     & .rd-title-lead .rt-sub-heading-here {
       --rd-hcap: var(--rd-deck-mobile);
+    }
+
+    /*
+     * Elementor's own heading widget: section titles get the same ceiling as the theme headings, the page
+     * title in the hero a larger one (/contact/ asks for 80px). The original line heights are fixed px for
+     * the desktop size, so they follow the font size here.
+     */
+    & .elementor-widget-heading .elementor-heading-title {
+      --rd-hcap: var(--rd-heading-max-mobile);
+      line-height: 1.15;
+    }
+
+    & .elementor > .e-con:first-child .elementor-widget-heading .elementor-heading-title {
+      --rd-hcap: var(--rd-hero-max-mobile);
     }
 
     & .rd-facts {

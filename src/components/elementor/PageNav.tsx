@@ -33,8 +33,10 @@ function findSections(content: HTMLElement): Section[] {
 export default function PageNav() {
   const [sections, setSections] = useState<Section[]>([]);
   const [isLong, setIsLong] = useState(false);
-  const [navVisible, setNavVisible] = useState(false);
+  const [pastToc, setPastToc] = useState(false);
+  const [atFooter, setAtFooter] = useState(false);
   const [topVisible, setTopVisible] = useState(false);
+  const [scrollingUp, setScrollingUp] = useState(false);
   const [current, setCurrent] = useState<string | null>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
@@ -52,16 +54,24 @@ export default function PageNav() {
     return () => cancelAnimationFrame(frame);
   }, []);
 
-  // Show the bar once the page's own table of contents has scrolled away, and mark the section being read.
+  // Show the bar once the page's own table of contents has scrolled away (until the footer comes in),
+  // and mark the section being read.
   useEffect(() => {
     if (!sections.length) return;
     const tocLink = document.querySelector<HTMLAnchorElement>(`#content a[href="#${CSS.escape(sections[0].id)}"]`);
     const observers: IntersectionObserver[] = [];
 
     if (tocLink) {
-      const toc = new IntersectionObserver(([entry]) => setNavVisible(!entry.isIntersecting && entry.boundingClientRect.top < 0));
+      const toc = new IntersectionObserver(([entry]) => setPastToc(!entry.isIntersecting && entry.boundingClientRect.top < 0));
       toc.observe(tocLink);
       observers.push(toc);
+    }
+
+    const footer = document.querySelector("footer");
+    if (footer) {
+      const end = new IntersectionObserver(([entry]) => setAtFooter(entry.isIntersecting));
+      end.observe(footer);
+      observers.push(end);
     }
 
     const reading = new IntersectionObserver(
@@ -94,6 +104,21 @@ export default function PageNav() {
     };
   }, [isLong]);
 
+  // Scroll direction: on phones the back-to-top button only shows while scrolling up (CSS), so it does not
+  // sit over the text being read next to the WhatsApp and booking buttons.
+  useEffect(() => {
+    if (!isLong) return;
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (Math.abs(y - last) < 24) return;
+      setScrollingUp(y < last);
+      last = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isLong]);
+
   // Keep the current pill in view inside the bar (horizontal only, never moves the page).
   useEffect(() => {
     const bar = barRef.current;
@@ -104,6 +129,7 @@ export default function PageNav() {
   }, [current]);
 
   if (!isLong) return null;
+  const navVisible = pastToc && !atFooter;
 
   return (
     <>
@@ -122,7 +148,7 @@ export default function PageNav() {
       )}
       <button
         type="button"
-        className={`${styles.top} ${topVisible ? styles.visible : ""}`}
+        className={`${styles.top} ${topVisible ? styles.visible : ""} ${scrollingUp ? styles.up : ""}`}
         aria-label="Back to top"
         tabIndex={topVisible ? 0 : -1}
         onClick={() => window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" })}

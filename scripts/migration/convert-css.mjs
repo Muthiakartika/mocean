@@ -70,7 +70,8 @@ const REDESIGN_HOOKS = [
 
 /** Heading-pair font sizes get a ceiling the redesign layer sets per role (--rd-hcap); without it they are unchanged. */
 function capHeadingSizes(css) {
-  return css.replace(/([^{}]*rt-(?:sub-heading|title)-here[^{}]*)\{([^{}]*)\}/g, (rule, selector, body) =>
+  // Theme headings (rt-title-here / rt-sub-heading-here) and Elementor's own heading widget.
+  return css.replace(/([^{}]*(?:rt-(?:sub-heading|title)-here|elementor-heading-title)[^{}]*)\{([^{}]*)\}/g, (rule, selector, body) =>
     `${selector}{${body.replace(/font-size:\s*(\d+(?:\.\d+)?px)/g, "font-size:min($1, var(--rd-hcap, 999px))")}}`,
   );
 }
