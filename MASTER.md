@@ -8,7 +8,7 @@ The homepage is not part of this layer. The original design stays reachable with
 
 ## Theses
 
-**Visual.** A dive log: the numbers a diver plans with come before the prose. Light and technical: white pages, an ice-blue band colour, ink text, navy #111F90 as the only accent. Headings and figures in Jost 600, running text in Quicksand 500 at 17px, flush with the section edges, uppercase Jost labels for data. Sharp 4px corners everywhere, 1px hairlines, tables and rows instead of floating cards. Each dive site shows a spec row (depth, water, currents, wildlife, level) taken from its own text; pages with numbers in their copy get a facts bar under the hero; card grids read as rows; FAQs are compact accordions.
+**Visual.** A dive log: the numbers a diver plans with come before the prose. Light and technical: white pages, an ice-blue band colour, ink text, navy #111F90 as the only accent. Headings and figures in Jost 600, running text in Quicksand 500 at 17px, flush with the section edges, uppercase Jost labels for data. Sharp 4px corners everywhere, 1px hairlines, tables and rows instead of floating cards. Each dive site shows a spec row (depth, water, currents, wildlife, level) taken from its own text; pages with numbers in their copy get a facts bar under the hero; card grids read as rows; FAQs are white question cards beside a collage of three photos.
 
 **Interaction.** Dry and immediate: 140ms ease-out colour changes, no lift, no entrance animation (content is there when the page loads). Hover tints a row ice-blue or darkens a button; press moves a button 1px. Tabs and FAQ answers swap instantly. The sticky jump-nav marks the section being read. No bounce, no scroll reveals, no image zoom, no loops. Under `prefers-reduced-motion` the few transitions and the parallax stop too.
 
@@ -40,9 +40,9 @@ Text on photographs keeps the colour each page sets (white). WhatsApp green stay
 | Body | Quicksand | 17px / 1.65; full-width text runs flush with the section, justified where the original was (left on phones), with hyphenation; text in columns is left-aligned without hyphenation | 500 | body |
 | Figure (facts) | Jost | 28px / 1, units 15px | 600 | navy (white on ink) |
 | Label | Jost | 12px uppercase, tracking 0.08em | 500 | meta |
-| FAQ question (accordion) | Jost | 19px / 1.3 | 600 | ink |
-| FAQ index row (wide screens) | Jost | 17px / 1.3 | 500, open 600 | ink, open white on navy |
-| FAQ panel question | Jost | 26px / 1.2 | 600 | navy |
+| FAQ question (card) | Jost | 17px / 1.35 | 600 | ink, hover navy |
+| FAQ answer | Quicksand | 16px / 1.65 | 500 | body |
+| Price list category | Jost | 28px / 1.2 (24px below 1025px) | 600 | navy |
 | Chip, tab, button | Jost | 14-16px / 1 | 500-600 | navy / white |
 
 Tabular figures everywhere numbers line up. Justified text keeps the original alignment only where it runs the full width of a section on wide screens; text in columns (beside a photo, in tabs, 250-450px wide) and all text on phones is left-aligned, because narrow justified lines open wide gaps and split words (owner feedback 2026-11-02). Which line of a heading pair leads comes from the original CSS (`scripts/migration/heading-roles.mjs`).
@@ -53,7 +53,7 @@ Scale (px): 4, 8, 12, 16, 24, 32, 48, 64, 96. Section padding `min(original, 96p
 
 ## Shape
 
-One radius: `--rd-r` 4px for buttons, chips, tabs, cards, images in content, the jump-nav and the back-to-top button. Borders 1px `--rd-line`; tables open with a 2px ink rule. No shadows except the floating jump-nav (`--rd-shadow-float`).
+One radius: `--rd-r` 4px for buttons, chips, tabs, cards, images in content, the jump-nav and the back-to-top button. Borders 1px `--rd-line`; tables open with a 2px ink rule. No shadows except the floating jump-nav (`--rd-shadow-float`). Exception chosen by the owner (2026-11-03): the FAQ cards and the FAQ photo collage use `--rd-r-card` 12px, the cards a soft shadow (`--rd-shadow-card`, stronger when open: `--rd-shadow-card-open`) and a hover border `--rd-line-strong`.
 
 Z-index: jump-nav and back-to-top 20, floating WhatsApp/booking 30 (existing), header menu panel 40 (existing).
 
@@ -63,7 +63,7 @@ Z-index: jump-nav and back-to-top 20, floating WhatsApp/booking 30 (existing), h
 |---|---|---|
 | `--rd-ease` | `cubic-bezier(0.25, 1, 0.5, 1)` | every transition |
 | `--rd-t-hover` | 140ms | hover colour, row tint, press |
-| `--rd-t-swap` | 0ms | tabs and FAQ (instant) |
+| `--rd-t-swap` | 0ms | tabs, FAQ answers and price categories (instant) |
 
 No entrance animations: Elementor's fadeInUp is switched off and content starts visible.
 
@@ -72,11 +72,11 @@ No entrance animations: Elementor's fadeInUp is switched off and content starts 
 - **Facts bar** (`Facts.tsx`, `pages` in `src/data/facts.json`): ink strip directly under the hero, 4 figures with uppercase labels.
 - **Spec row** (`sites` in `src/data/facts.json`): ice strip after a dive site's intro, across the section width; level as text, figures in Jost 600 navy. Only facts stated in that site's own text; sites with fewer than two get none.
 - **Tabs**: 4px segmented buttons; inactive white with hairline, active navy. A bar with a single tab is hidden. Scrolls sideways when it does not fit.
-- **FAQ, wide screens (1025px and up)**: index + panel (`src/components/elementor/faqPanel.ts`). The questions form an index under a 2px ink rule (Jost 500 17px rows, hairlines, chevron; the open one navy with white text, hover white with navy text). The chosen answer appears in a white panel beside it (1px hairline, 4px radius, 32px padding): question in Jost 600 26px navy, answer at 18px / 1.7, then a "Next question" link. One question is always open (the first by default); clicking the open one leaves it open, ↑/↓ move through the index. The panel replaces the original photo. The shorter column stays in view while the other scrolls (for long answers such as the room rates on /pricing/). After a question is picked far down a long answer, the page scrolls back to the start of the new one. The panel shows a copy of the whole answer, so price cards and tables keep their original layout.
-- **FAQ, tablet and phone, and without JavaScript**: an accordion as on the original (one answer open at a time, click or Enter toggles), next to the original photo where there is room. Opens under a 2px ink rule, items separated by hairlines, questions in Jost 600; a 4px square marker with plus/minus, outlined when closed and navy when open.
-- The small "FAQ" label above the FAQ heading is hidden. (The first Logbook pass showed every answer open in two columns; on 2026-11-02 the owner asked for toggles, then chose the index + panel from three options.)
-- **Chips**: short fact lists ("Types of dives") as 4px outlined navy tags.
-- **Card grids** (child containers with a photo, heading, text and button): rows of a table under a 2px ink rule; photo 180px, text, button on the right; hover tints the row.
+- **Price list** (`src/components/elementor/priceList.ts`, the accordion of price tables on /pricing/): every category open under its own heading (Jost 600 28px navy), with a category menu: "All prices" plus one entry per category (2px ink rule, hairline rows, chosen one navy) and sticky beside the list on screens 1025px and up, a row of 4px buttons that scrolls sideways above it on tablets and phones. A category shows only that one, "All prices" shows them all; the choice is in the URL hash (`/pricing/#dive-prices`), so links can open a category. Room rates read as rows (room name left, price right in navy, hairlines) instead of navy boxes; the price tables open with a 2px ink rule, uppercase Jost labels, prices right-aligned in navy. Without JavaScript and with `?original` it stays the accordion. (Owner request 2026-11-03: the FAQ index + panel did not suit the price section.)
+- **FAQ** (all screen sizes; owner reference 2026-11-03): each question is a white card (1px hairline, 12px radius, soft shadow, 12px apart), question in Jost 600 17px with a plain navy plus/minus; the answer opens inside the card (one at a time, as on the original; click or Enter toggles). Beside the questions (below them on phones) a collage of three photos with 12px corners: the section's original photo tall on the right, two more photos of the same page stacked on the left (3 : 2), chosen by `src/components/elementor/faqPhotos.ts` (the nearest real photos before the FAQ, no banners or icons, never the same photo twice). With fewer photos on the page the collage has two or one. The original photo stands still there (no parallax). `?original` shows the original single photo and accordion. (Replaces the index + panel of 2026-11-02.) The homepage FAQ (`src/components/home/FAQ.tsx`, Accordion variant "cards") has the same cards and collage (FAQ photo tall, the pool and the manta stacked), on the ice band, with the heading in Jost 600 and no "FAQ" label; `?original` keeps it as on the live site.
+- The small "FAQ" label above the FAQ heading is hidden. (History: the first Logbook pass showed every answer open in two columns; on 2026-11-02 the owner asked for toggles and chose an index + answer panel; on 2026-11-03 the owner replaced it with the question cards and photo collage.)
+- **Chips**: short fact lists ("Types of dives") as 4px outlined navy tags. A chip list that Elementor split over several list widgets (two or three per widget, sometimes a one-item list after them; every chip list on the site) is one aligned grid: every list in the run gets the same column width, sized from its longest chip (`--rd-chip-len`, set in `ElementorNode.tsx`), 8px between all rows; columns that do not fit fall back to one chip per row.
+- **Card grids** (two or more child containers with a photo, heading, text and button side by side): rows of a table under a 2px ink rule; photo 180px, text, button on the right; hover tints the row. A single photo + text block keeps its original two-column layout (fixed 2026-11-03: treating those as rows squeezed the text into the 180px photo column on 25 sections of 13 pages).
 - **Buttons** (`.theme-btn`): Jost 600, 4px. Fill navy, hover navy-deep. Outline: white with navy border, hover ice. Focus 2px navy ring. Press 1px.
 - **Jump-nav and back to top**: as before, square 4px. The jump-nav hides once the footer comes into view. On phones it runs flush along the top edge, full width (no text showing above it), and the back-to-top button only appears while the visitor scrolls up, so the text beside the WhatsApp and booking buttons stays free while reading.
 

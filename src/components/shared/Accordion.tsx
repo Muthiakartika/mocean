@@ -7,15 +7,17 @@ import styles from "./Accordion.module.css";
 type AccordionProps = {
   items: { question: string; answer: string }[];
   className?: string;
+  /** "cards": in the redesign (not with ?original) each question is a card, like the FAQ on the inner pages. */
+  variant?: "cards";
 };
 
 /** FAQ accordion: all closed at first, only one item open at a time. */
-export default function Accordion({ items, className }: AccordionProps) {
+export default function Accordion({ items, className, variant }: AccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const id = useId();
 
   return (
-    <div className={`${styles.accordion} ${className ?? ""}`}>
+    <div className={[styles.accordion, variant === "cards" && styles.cards, className].filter(Boolean).join(" ")}>
       {items.map((item, index) => {
         const open = openIndex === index;
         const panelId = `${id}-panel-${index}`;

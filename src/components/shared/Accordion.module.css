@@ -94,3 +94,94 @@
     --title-size: 20px;
   }
 }
+
+/*
+ * Redesign, variant "cards" (not with ?original): each question a white card with the answer inside, as the FAQ on
+ * the inner pages (MASTER.md, "FAQ"). Values from src/styles/redesign/tokens.css, written out because the homepage
+ * does not load the redesign layer.
+ */
+:global(html:not([data-design="original"])) .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+:global(html:not([data-design="original"])) .cards .item {
+  border: 1px solid #d9dfea;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow:
+    0 1px 2px rgb(14 21 48 / 0.05),
+    0 12px 28px -18px rgb(14 21 48 / 0.3);
+  transition:
+    box-shadow 140ms cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 140ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+:global(html:not([data-design="original"])) .cards .item:hover {
+  border-color: #c3cbdb;
+}
+
+:global(html:not([data-design="original"])) .cards .open {
+  box-shadow:
+    0 1px 2px rgb(14 21 48 / 0.06),
+    0 20px 40px -20px rgb(14 21 48 / 0.38);
+}
+
+:global(html:not([data-design="original"])) .cards .title {
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border: 0;
+  border-radius: 12px;
+}
+
+:global(html:not([data-design="original"])) .cards .title:focus-visible {
+  outline: 2px solid #111f90;
+  outline-offset: 2px;
+}
+
+:global(html:not([data-design="original"])) .cards .titleText {
+  color: #0e1530;
+  font-family: var(--font-jost), sans-serif;
+  font-size: 17px;
+  line-height: 1.35;
+  transition: color 140ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+:global(html:not([data-design="original"])) .cards .title:hover .titleText {
+  color: #111f90;
+}
+
+:global(html:not([data-design="original"])) .cards .icon {
+  order: 2;
+  flex: none;
+}
+
+:global(html:not([data-design="original"])) .cards .icon svg {
+  height: 14px;
+  fill: #111f90;
+}
+
+:global(html:not([data-design="original"])) .cards .content {
+  padding: 0 24px 24px;
+  border: 0;
+  color: #454a57;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+:global(html:not([data-design="original"])) .cards .content p {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .cards .title {
+    padding: 16px;
+  }
+
+  :global(html:not([data-design="original"])) .cards .content {
+    padding: 0 16px 16px;
+  }
+}

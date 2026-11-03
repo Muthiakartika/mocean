@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import JsonLd from "@/components/shared/JsonLd";
 import ElementorBehaviors from "./ElementorBehaviors";
 import ElementorNode from "./ElementorNode";
+import { faqCollages } from "./faqPhotos";
 import { PageFacts } from "./Facts";
 import PageNav from "./PageNav";
 import type { PageContent } from "./types";
@@ -14,6 +15,7 @@ import "./styles";
  *   body.elementor-kit-12054 > .main-contain > .container (here: .theme-container) > #content > .elementor.elementor-<id>
  */
 export default function ElementorPage({ page }: { page: PageContent }) {
+  const collages = faqCollages(page.content);
   return (
     // #mocean-page scopes the redesign layer (src/styles/redesign/inner-pages.css).
     <div id="mocean-page" className="elementor-kit-12054 elementor-page" data-path={page.path}>
@@ -25,7 +27,7 @@ export default function ElementorPage({ page }: { page: PageContent }) {
             <div className={`elementor elementor-${page.elementorId}`} data-elementor-type="wp-page" data-elementor-id={page.elementorId}>
               {page.content.map((node, i) => (
                 <Fragment key={node.id}>
-                  <ElementorNode node={node} path={page.path} />
+                  <ElementorNode node={node} path={page.path} collages={collages} />
                   {/* Logbook redesign: key figures directly under the hero. */}
                   {i === 0 && <PageFacts path={page.path} />}
                 </Fragment>

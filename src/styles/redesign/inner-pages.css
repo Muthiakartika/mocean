@@ -258,7 +258,8 @@ html:not([data-design="original"]) #mocean-page {
   }
 
   /* ---------- Chips: inline fact lists ---------- */
-  & .elementor-icon-list-items.elementor-inline-items {
+  /* Lists in a split chip list (rd-chip-run), e.g. the one-item list "Authentic rural charm" on the tour pages, are chips too. */
+  & :is(.elementor-icon-list-items.elementor-inline-items, .rd-chip-run .elementor-icon-list-items) {
     display: flex;
     flex-wrap: wrap;
     gap: var(--rd-s2);
@@ -279,7 +280,7 @@ html:not([data-design="original"]) #mocean-page {
       font-size: 14px;
       font-weight: 500;
       font-style: normal;
-      line-height: 1;
+      line-height: 1.2;
 
       &::after {
         display: none;
@@ -301,6 +302,41 @@ html:not([data-design="original"]) #mocean-page {
       margin: 0;
       color: inherit;
       font: inherit;
+    }
+  }
+
+  /*
+   * A chip list split over several list widgets (two or three chips per widget, rd-chip-run: ElementorNode.tsx)
+   * gets one column width for all its lists, sized from its longest chip (--rd-chip-len characters), so the chips
+   * line up in columns instead of each row having its own widths. Narrow columns fall back to one chip per row.
+   */
+  /*
+   * Full width up front: in a wrapping column container the browser sizes the widget's height before stretching it,
+   * which would measure the grid at one chip per row and leave an empty row below (dive-site pages on phones).
+   */
+  & .rd-chip-run {
+    width: 100%;
+  }
+
+  & .rd-chip-run .elementor-icon-list-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, min(100%, calc(var(--rd-chip-len) * 7.6px + 64px)));
+  }
+
+  /* Between the lists of a run the same 8px as between chip rows: no widget padding, no container gap. */
+  & .rd-chip-run:has(+ .rd-chip-run),
+  & .rd-chip-run:has(+ .rd-chip-run) > .elementor-widget-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  & .rd-chip-run + .rd-chip-run {
+    margin-top: calc(-1 * var(--row-gap, 0px));
+    padding-top: 0;
+
+    & > .elementor-widget-container {
+      margin-top: 0;
+      padding-top: 0;
     }
   }
 
@@ -376,25 +412,56 @@ html:not([data-design="original"]) #mocean-page {
     }
   }
 
-  /* ---------- FAQ: a Logbook accordion beside the original photo (one answer open at a time, as on the original) ---------- */
+  /*
+   * ---------- FAQ: questions as cards beside a collage of three photos (owner reference 2026-11-03) ----------
+   * One answer open at a time, as on the original (ElementorBehaviors). The collage is the original photo plus two
+   * of the page's own (rd-faq-photos / rd-faq-more: faqPhotos.ts, ElementorNode.tsx); the original photo sits still.
+   */
   & .e-n-accordion {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    border-top: 2px solid var(--rd-ink);
+    gap: var(--rd-s3);
+    border: 0;
   }
 
   & .e-n-accordion-item {
-    border: 0;
-    border-bottom: 1px solid var(--rd-line);
-    border-radius: 0;
-    background: transparent;
     margin: 0;
+    border: 1px solid var(--rd-line);
+    border-radius: var(--rd-r-card);
+    background: var(--rd-white);
+    box-shadow: var(--rd-shadow-card);
+    transition:
+      box-shadow var(--rd-t-hover) var(--rd-ease),
+      border-color var(--rd-t-hover) var(--rd-ease);
 
+    &:hover {
+      border-color: var(--rd-line-strong);
+    }
+
+    &[open] {
+      box-shadow: var(--rd-shadow-card-open);
+    }
+
+    /* The answer: Elementor's columns keep room for the icon (up to 80px); the card has its own padding. */
     & > :not(summary) {
-      padding: 0 var(--rd-s7) var(--rd-s5) 0;
+      --padding-top: 0px;
+      --padding-right: 0px;
+      --padding-bottom: 0px;
+      --padding-left: 0px;
+      padding: 0 var(--rd-s5) var(--rd-s5);
       border: 0;
       background: transparent;
+      font-size: 16px;
+      line-height: 1.65;
+
+      & .e-con {
+        --padding-left: 0px;
+        --padding-right: 0px;
+      }
+
+      & :is(p, ul, ol):last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -403,7 +470,7 @@ html:not([data-design="original"]) #mocean-page {
     justify-content: space-between;
     align-items: center;
     gap: var(--rd-s4);
-    padding: var(--rd-s4) 0;
+    padding: 18px var(--rd-s5);
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -415,9 +482,9 @@ html:not([data-design="original"]) #mocean-page {
 
     & .e-n-accordion-item-title-text {
       font-family: var(--rd-font-data);
-      font-size: var(--rd-faq-size);
+      font-size: 17px;
       font-weight: 600;
-      line-height: 1.3;
+      line-height: 1.35;
       color: var(--rd-ink);
       transition: color var(--rd-t-hover) var(--rd-ease);
     }
@@ -426,219 +493,439 @@ html:not([data-design="original"]) #mocean-page {
       color: var(--rd-navy);
     }
 
-    /* Plus / minus in a 4px square: outlined when closed, navy when open. */
+    /* A plain plus / minus. */
     & .e-n-accordion-item-title-icon {
       order: 2;
       flex: none;
       display: grid;
       place-items: center;
-      width: 28px;
-      height: 28px;
-      border: 1px solid var(--rd-navy);
-      border-radius: var(--rd-r);
-      background: var(--rd-white);
-      transition: background-color var(--rd-t-hover) var(--rd-ease);
+      width: 24px;
+      height: 24px;
+      border: 0;
+      background: none;
 
       & svg {
-        width: 12px;
-        height: 12px;
+        width: 14px;
+        height: 14px;
         fill: var(--rd-navy);
       }
     }
-
-    &:hover .e-n-accordion-item-title-icon {
-      background: var(--rd-ice);
-    }
   }
 
-  & .e-n-accordion-item[open] > .e-n-accordion-item-title .e-n-accordion-item-title-icon {
-    background: var(--rd-navy);
+  /* The row: the questions first, the collage beside them (below them on phones). */
+  & .e-con:has(> .rd-faq-photos) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--rd-s7);
 
-    & svg {
-      fill: var(--rd-white);
+    & > :not(.rd-faq-photos) {
+      order: 1;
+      width: 100%;
+      max-width: 100%;
     }
   }
 
   /*
-   * ---------- FAQ on wide screens: an index of questions and the chosen answer in a panel ----------
-   * rd-faq-index and rd-faq-panel are set by faqPanel.ts (JavaScript only; without it the accordion above stays).
+   * The collage: the original photo tall on the right, the two extra photos stacked on the left (3 : 2).
+   * With one extra photo the two stand side by side; with none the original photo fills the box.
    */
-  @media (min-width: 1025px) {
-    /* The panel takes the place of the photo beside the questions. */
-    & .e-con:has(> .e-con > .rd-faq-index) > .e-con:not(:has(.rd-faq-index)) {
-      display: none;
+  & .rd-faq-photos {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
+    gap: var(--rd-s3);
+    width: 100%;
+    max-width: 100%;
+    height: clamp(380px, 36vw, 520px);
+    min-height: 0;
+    padding: 0;
+
+    & > .elementor-widget-image {
+      grid-column: 2;
+      grid-row: 1 / span 2;
     }
 
-    & .e-con:has(> .rd-faq-index) {
-      --width: 100%;
+    & > .elementor-widget-image,
+    & > .elementor-widget-image > .elementor-widget-container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
     }
 
-    & .rd-faq-index > .elementor-widget-container {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: var(--rd-s7);
-      align-items: start;
-      scroll-margin-top: var(--rd-s9);
+    & :is(.elementor-widget-image img, .rd-faq-more img) {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--rd-r-card);
     }
 
-    /* The shorter of the two columns stays in view (the questions beside a long answer such as the room rates). */
-    & .rd-faq-index .e-n-accordion {
-      position: sticky;
-      top: var(--rd-s9);
+    &:not(:has(.rd-faq-more)) > .elementor-widget-image {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* The extra photos take the first column, one above the other. */
+  & .rd-faq-more {
+    display: contents;
+
+    & img:first-child {
+      grid-column: 1;
+      grid-row: 1;
     }
 
-    & .rd-faq-index .e-n-accordion-item > :not(summary) {
-      display: none;
+    & img:nth-child(2) {
+      grid-column: 1;
+      grid-row: 2;
     }
 
-    & .rd-faq-index .e-n-accordion-item-title {
-      padding: 14px var(--rd-s3);
-      color: var(--rd-ink);
-      transition:
-        background-color var(--rd-t-hover) var(--rd-ease),
-        color var(--rd-t-hover) var(--rd-ease);
+    &[data-count="1"] img {
+      grid-row: 1 / span 2;
+    }
+  }
 
-      & .e-n-accordion-item-title-text {
-        font-size: var(--rd-body-size);
-        font-weight: 500;
-        color: inherit;
-      }
-
-      & .e-n-accordion-item-title-icon {
-        display: none;
-      }
-
-      /* Chevron pointing to the panel */
-      &::after {
-        content: "";
-        flex: none;
-        width: 8px;
-        height: 8px;
-        border-top: 2px solid currentColor;
-        border-right: 2px solid currentColor;
-        transform: rotate(45deg);
-        opacity: 0.4;
-      }
-
-      &:hover {
-        background: var(--rd-white);
-        color: var(--rd-navy);
-      }
+  @media (max-width: 767px) {
+    & .e-con:has(> .rd-faq-photos) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--rd-s5);
     }
 
-    & .rd-faq-index .e-n-accordion-item[open] > .e-n-accordion-item-title {
+    & .rd-faq-photos {
+      height: 300px;
+    }
+
+    & .e-n-accordion-item-title {
+      padding: var(--rd-s4);
+    }
+
+    & .e-n-accordion-item > :not(summary) {
+      padding: 0 var(--rd-s4) var(--rd-s4);
+    }
+  }
+
+  /*
+   * ---------- Price list (/pricing/): a category menu beside every category, open (priceList.ts) ----------
+   * An accordion of price tables. Without JavaScript the accordion above stays.
+   */
+  & :has(> .rd-price-nav) {
+    display: grid;
+    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--rd-s8);
+    scroll-margin-top: var(--rd-s5);
+  }
+
+  & .rd-price-nav {
+    position: sticky;
+    top: var(--rd-s5);
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid var(--rd-ink);
+  }
+
+  & .rd-price-nav-item {
+    appearance: none;
+    display: block;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 14px var(--rd-s3);
+    border: 0;
+    border-bottom: 1px solid var(--rd-line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--rd-ink);
+    font-family: var(--rd-font-data);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-align: left;
+    text-transform: none;
+    cursor: pointer;
+    transition:
+      background-color var(--rd-t-hover) var(--rd-ease),
+      color var(--rd-t-hover) var(--rd-ease);
+
+    &:hover {
+      background: var(--rd-ice);
+      color: var(--rd-navy);
+    }
+
+    &[aria-pressed="true"] {
       background: var(--rd-navy);
       color: var(--rd-white);
+      font-weight: 600;
+    }
+  }
 
-      & .e-n-accordion-item-title-text {
-        font-weight: 600;
-      }
-
-      &::after {
-        opacity: 1;
-      }
+  & .rd-price-list {
+    & .e-n-accordion {
+      gap: 0;
+      border-top: 2px solid var(--rd-ink);
     }
 
-    & .rd-faq-panel {
-      position: sticky;
-      top: var(--rd-s9);
-      padding: var(--rd-s6);
-      border: 1px solid var(--rd-line);
-      border-radius: var(--rd-r);
-      background: var(--rd-white);
+    /* Sections of a list, not FAQ cards. */
+    & .e-n-accordion-item,
+    & .e-n-accordion-item:hover,
+    & .e-n-accordion-item[open] {
+      padding: var(--rd-s6) 0 var(--rd-s7);
+      border: 0;
+      border-bottom: 1px solid var(--rd-line);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      transition: none;
+    }
+
+    & .e-n-accordion-item {
 
       &[hidden] {
         display: none;
       }
+
+      & > :not(summary) {
+        padding: 0;
+      }
+
+      /* Replaced by the category heading (priceList.ts). */
+      & > summary[hidden] {
+        display: none;
+      }
     }
 
-    & .rd-faq-panel-title {
+    /* The answer containers: spacing comes from the list, not from Elementor's columns or boxes. */
+    & .e-n-accordion-item .e-con {
+      --padding-top: 0px;
+      --padding-right: 0px;
+      --padding-bottom: 0px;
+      --padding-left: 0px;
+      --margin-top: 0px;
+      --margin-bottom: 0px;
+      width: 100%;
+      max-width: 100%;
+      min-height: 0;
       margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      transition: none;
+    }
+
+    & .e-n-accordion-item .e-con-inner {
+      padding: 0;
+    }
+
+    & .elementor-widget-divider {
+      display: none;
+    }
+
+    & :is(.elementor-widget-text-editor, .elementor-widget-heading) {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+
+      & > .elementor-widget-container {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    & .elementor-widget-text-editor {
+      align-self: flex-start;
+      max-width: 68ch;
+      font-size: var(--rd-body-size);
+      line-height: 1.65;
+      color: var(--rd-body);
+
+      & p {
+        margin: 0 0 var(--rd-s3);
+      }
+    }
+
+    /* Sub-headings inside a category ("2026 to 2028", "Dive Season", season names; the season h3s carry inline sizes). */
+    & :is(.elementor-widget-heading .elementor-heading-title, .elementor-widget-text-editor h3) {
+      margin: var(--rd-s6) 0 var(--rd-s2) !important;
+      padding: 0;
       font-family: var(--rd-font-data);
-      font-size: 26px;
+      font-size: 19px !important;
+      font-weight: 600;
+      line-height: 1.3 !important;
+      letter-spacing: 0;
+      text-align: left;
+      color: var(--rd-ink);
+
+      & * {
+        font: inherit;
+        color: inherit;
+      }
+    }
+
+    /* Room rates: each navy price box (a name and a price heading) becomes a row of a price list. */
+    & .e-con:has(> .e-con > .elementor-widget-heading:first-child + .elementor-widget-heading:last-child) {
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--rd-line);
+    }
+
+    & .e-con:has(> .elementor-widget-heading:first-child + .elementor-widget-heading:last-child) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--rd-s1) var(--rd-s5);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rd-line);
+
+      & > .elementor-widget-heading {
+        width: auto;
+      }
+
+      /* !important only to beat the sub-heading rule above (which overrides inline sizes). */
+      & .elementor-heading-title {
+        margin: 0 !important;
+        font-size: 17px !important;
+        font-weight: 500;
+        line-height: 1.3 !important;
+        text-decoration: none;
+        color: var(--rd-ink);
+      }
+
+      & > :last-child .elementor-heading-title {
+        font-size: 18px !important;
+        font-weight: 600;
+        white-space: nowrap;
+        color: var(--rd-navy);
+
+        & * {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+
+    /* Price tables: a table under a 2px ink rule, prices right-aligned. */
+    & .eael-data-table-wrap {
+      overflow-x: auto;
+    }
+
+    & .eael-data-table {
+      width: 100%;
+      margin: var(--rd-s3) 0 0;
+      border: 0;
+      border-collapse: collapse;
+
+      & tr {
+        background: transparent;
+      }
+
+      & th {
+        padding: 0 0 10px;
+        border: 0;
+        border-bottom: 2px solid var(--rd-ink);
+        background: transparent;
+        color: var(--rd-meta);
+        font-family: var(--rd-font-data);
+        font-size: var(--rd-label);
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.08em;
+        text-align: left;
+        text-transform: uppercase;
+
+        & * {
+          color: inherit;
+          font: inherit;
+        }
+      }
+
+      & td {
+        padding: 12px 0;
+        border: 0;
+        border-bottom: 1px solid var(--rd-line);
+        background: transparent;
+        color: var(--rd-ink);
+        font-family: var(--rd-font-data);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: left;
+        vertical-align: baseline;
+
+        /* eael centres some cells on phones. */
+        & :is(.td-content-wrapper, .td-content) {
+          justify-content: flex-start;
+          text-align: inherit;
+        }
+      }
+
+      & :is(th, td):last-child {
+        padding-left: var(--rd-s5);
+        text-align: right;
+      }
+
+      & td:last-child {
+        font-weight: 600;
+        white-space: nowrap;
+        color: var(--rd-navy);
+
+        & :is(.td-content-wrapper, .td-content) {
+          text-align: right;
+        }
+      }
+    }
+
+    & .rd-price-title {
+      margin: 0 0 var(--rd-s3);
+      font-family: var(--rd-font-data);
+      font-size: 28px;
       font-weight: 600;
       line-height: 1.2;
       letter-spacing: -0.01em;
       text-wrap: balance;
       color: var(--rd-navy);
     }
+  }
 
-    & .rd-faq-panel-body {
-      margin-top: var(--rd-s4);
-      font-size: 18px;
-      line-height: 1.7;
-      text-wrap: pretty;
-      color: var(--rd-body);
+  /* Tablets and phones: the menu is a row of buttons above the list (scrolls sideways when it does not fit). */
+  @media (max-width: 1024px) {
+    & :has(> .rd-price-nav) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--rd-s5);
+    }
 
-      /* The copied answer container: its spacing comes from the panel. */
-      & > .e-con {
-        --padding-top: 0px;
-        --padding-right: 0px;
-        --padding-bottom: 0px;
-        --padding-left: 0px;
-        padding: 0;
-      }
+    & .rd-price-nav {
+      position: static;
+      flex-direction: row;
+      gap: var(--rd-s1);
+      overflow-x: auto;
+      border-top: 0;
+      scrollbar-width: none;
+    }
 
-      /* Its outer columns keep room for the accordion icon (up to 80px on the right); the panel has none. */
-      & > .e-con > :is(.e-con, .e-con-inner > .e-con),
-      & > .e-con > .e-con > .e-con-inner > .e-con {
-        --padding-left: 0px;
-        --padding-right: 0px;
-      }
+    & .rd-price-nav-item {
+      flex: none;
+      width: auto;
+      padding: 10px 14px;
+      border: 1px solid var(--rd-line);
+      border-radius: var(--rd-r);
+      font-size: 15px;
+      white-space: nowrap;
 
-      & :is(p, ul, ol) {
-        margin: 0 0 var(--rd-s3);
-        font-size: inherit;
-        line-height: inherit;
-      }
-
-      & > :last-child {
-        margin-bottom: 0;
-      }
-
-      & span[style*="font-weight: 400"] {
-        font-weight: inherit !important;
+      &[aria-pressed="true"] {
+        border-color: var(--rd-navy);
       }
     }
 
-    & .rd-faq-panel-next {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: var(--rd-s3);
-      margin-top: 28px;
-      padding-top: var(--rd-s4);
-      border-top: 1px solid var(--rd-line);
-      font-size: 14px;
-      color: var(--rd-meta);
-
-      & button {
-        appearance: none;
-        min-height: 0;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        background: none;
-        box-shadow: none;
-        font-family: var(--rd-font-data);
-        font-size: 15px;
-        font-weight: 500;
-        line-height: 1.4;
-        letter-spacing: normal;
-        text-align: right;
-        text-transform: none;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        color: var(--rd-navy);
-        cursor: pointer;
-        transition: color var(--rd-t-hover) var(--rd-ease);
-
-        &:hover {
-          color: var(--rd-navy-deep);
-          text-decoration-thickness: 2px;
-        }
-      }
+    & .rd-price-list .rd-price-title {
+      font-size: 24px;
     }
   }
 
@@ -839,10 +1126,6 @@ html:not([data-design="original"]) #mocean-page {
 
     & .rd-facts-bar .rd-facts > div:nth-child(n + 3) {
       border-top-color: rgb(255 255 255 / 0.16);
-    }
-
-    & .e-n-accordion-item > :not(summary) {
-      padding-right: 0;
     }
 
     & .rd-card {
