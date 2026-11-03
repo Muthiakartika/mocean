@@ -63,7 +63,7 @@
 
 @media only screen and (max-width: 767px) {
 	.react-heading-here .rt-title-here {
-	  	font-size: 40px;
+	  	font-size:min(40px, var(--rd-hcap, 999px));
 	  	line-height: 45px;
 	}
 	.blog__item.if__is__small{

@@ -1,0 +1,331 @@
+{
+ "pages": {
+  "/dive-sites/diving-bali/": [
+   { "label": "Dive sites", "value": "50+" },
+   { "label": "Regions", "value": "8" },
+   { "label": "Avg water", "value": "27", "unit": "°C" },
+   { "label": "Marine species", "value": "1,000+" }
+  ],
+  "/dive-sites/diving-amed/": [
+   { "label": "Water temp", "value": "26-29", "unit": "°C" },
+   { "label": "Visibility", "value": "50-80", "unit": "ft" },
+   { "label": "Dry season", "value": "May-Sep" },
+   { "label": "Nudibranch species", "value": "15+" }
+  ],
+  "/dive-sites/diving-komodo-island/": [
+   { "label": "Dive sites", "value": "70+" },
+   { "label": "Water temp", "value": "27", "unit": "°C" },
+   { "label": "Max visibility", "value": "30", "unit": "m" },
+   { "label": "Depth", "value": "5-40", "unit": "m" }
+  ],
+  "/dive-sites/diving-lombok/": [
+   { "label": "Best season", "value": "Apr-Oct" },
+   { "label": "Hammerhead season", "value": "Mar-Jun" },
+   { "label": "Shark species", "value": "7" }
+  ],
+  "/dive-sites/diving-nusa-lembongan/": [
+   { "label": "Boat ride", "value": "30", "unit": "min" },
+   { "label": "Class ratio", "value": "4:1" },
+   { "label": "Cheaper than Bali", "value": "15", "unit": "%" }
+  ],
+  "/dive-sites/diving-nusa-penida/": [
+   { "label": "Water temp", "value": "23-28", "unit": "°C" },
+   { "label": "Sunfish season", "value": "Jul-Oct" },
+   { "label": "Protected since", "value": "2010" }
+  ],
+  "/dive-sites/diving-raja-ampat/": [
+   { "label": "Fish species", "value": "1,500+" },
+   { "label": "Best season", "value": "Oct-Apr" },
+   { "label": "Best visibility", "value": "30+", "unit": "m" },
+   { "label": "Manta peak", "value": "Jan-Mar" }
+  ],
+  "/dive-sites/diving-tulamben/": [
+   { "label": "Macro species", "value": "50+" },
+   { "label": "Currents", "value": "Calm" },
+   { "label": "Liberty length", "value": "120", "unit": "m" }
+  ],
+  "/surf-spots/bali/": [
+   { "label": "West coast swell", "value": "4-8", "unit": "ft" },
+   { "label": "West coast season", "value": "May-Oct" },
+   { "label": "East coast season", "value": "Nov-Apr" },
+   { "label": "Beginner months", "value": "Jun-Aug" }
+  ],
+  "/surf-spots/canggu/": [
+   { "label": "Surf beaches", "value": "5" },
+   { "label": "Coastline", "value": "7", "unit": "km" },
+   { "label": "Dry season", "value": "May-Oct" },
+   { "label": "Dry-season swell", "value": "4-8", "unit": "ft" }
+  ],
+  "/surf-spots/lombok/": [
+   { "label": "From Bali", "value": "25", "unit": "min" },
+   { "label": "Best season", "value": "Apr-Oct" },
+   { "label": "Swell size", "value": "4-8", "unit": "ft" }
+  ],
+  "/surf-spots/nusa-lembongan/": [
+   { "label": "Boat from Sanur", "value": "30-45", "unit": "min" },
+   { "label": "Best season", "value": "Apr-Sep" },
+   { "label": "Peak months", "value": "Jun-Aug" }
+  ],
+  "/surf-spots/sumbawa/": [
+   { "label": "Best season", "value": "May-Sep" },
+   { "label": "Peak months", "value": "Jun-Jul" },
+   { "label": "Wet season", "value": "Nov-Mar" }
+  ],
+  "/surf-spots/uluwatu/": [
+   { "label": "Bali surf tourists", "value": "70+", "unit": "%" },
+   { "label": "Tomas Beach waves", "value": "1-3", "unit": "ft" },
+   { "label": "Bombie waves", "value": "15-20", "unit": "ft" },
+   { "label": "Impossibles rides", "value": "500", "unit": "m" }
+  ]
+ },
+ "sites": {
+  "/dive-sites/diving-bali/": {
+   "gili-biaha": [
+    { "label": "Level", "value": "Experienced" },
+    { "label": "Drift", "value": "2", "unit": "km" },
+    { "label": "Water", "value": "28", "unit": "°C" },
+    { "label": "Shark sightings", "value": "88", "unit": "%" }
+   ],
+   "gili-tepekong": [
+    { "label": "Level", "value": "Advanced" },
+    { "label": "Currents", "value": "3-5", "unit": "knots" },
+    { "label": "Cathedral", "value": "34", "unit": "m" },
+    { "label": "Thermocline", "value": "18", "unit": "m" }
+   ],
+   "gili-mimpang": [
+    { "label": "Best visibility", "value": "May-Nov" },
+    { "label": "Below 18 m", "value": "24", "unit": "°C" },
+    { "label": "Wetsuit", "value": "3", "unit": "mm" }
+   ],
+   "baong-penyu": [
+    { "label": "Level", "value": "Beginner" },
+    { "label": "Depth", "value": "18", "unit": "m" },
+    { "label": "Water", "value": "28", "unit": "°C" },
+    { "label": "Nesting turtles", "value": "May-Sep" }
+   ],
+   "blue-lagoon": [
+    { "label": "Level", "value": "Beginner" },
+    { "label": "Japanese Wreck", "value": "30", "unit": "m" }
+   ],
+   "tanjung-benoa": [
+    { "label": "From Sanur", "value": "25", "unit": "min" },
+    { "label": "Biorock coral growth", "value": "400", "unit": "%" }
+   ],
+   "gilimanuk": [
+    { "label": "Secret Bay depth", "value": "3-10", "unit": "m" },
+    { "label": "Peak visibility", "value": "15", "unit": "m" },
+    { "label": "Best months", "value": "Mar-Apr" }
+   ],
+   "menjangan": [
+    { "label": "Visibility", "value": "30", "unit": "m" },
+    { "label": "Coral caverns", "value": "18", "unit": "m" },
+    { "label": "Pygmy seahorses", "value": "12", "unit": "m" },
+    { "label": "Conditions", "value": "Calm" }
+   ],
+   "pemuteran": [
+    { "label": "Level", "value": "All levels" },
+    { "label": "Boat ride", "value": "35", "unit": "min" },
+    { "label": "Temple Wall", "value": "5-40", "unit": "m" },
+    { "label": "Bio Wreck", "value": "28", "unit": "m" }
+   ]
+  },
+  "/dive-sites/diving-amed/": {
+   "jemeluk-amed": [
+    { "label": "Coral Garden", "value": "10", "unit": "m" },
+    { "label": "Jemeluk Wall", "value": "25", "unit": "m" }
+   ],
+   "amed": [
+    { "label": "Melasti", "value": "18", "unit": "m" },
+    { "label": "Blue Moon", "value": "25", "unit": "m" },
+    { "label": "Coral nurseries", "value": "3-7", "unit": "m" }
+   ],
+   "bunutan-amed": [
+    { "label": "Best months", "value": "May-Nov" },
+    { "label": "Japanese Wreck", "value": "12", "unit": "m" }
+   ],
+   "lipah-amed": [
+    { "label": "Level", "value": "Beginner" },
+    { "label": "Coral bommies", "value": "15", "unit": "m" },
+    { "label": "Conditions", "value": "Calm" }
+   ]
+  },
+  "/dive-sites/diving-komodo-island/": {
+   "komodo-national-park": [
+    { "label": "Cauldron current", "value": "8", "unit": "knots" },
+    { "label": "Crystal Rock", "value": "18", "unit": "m" },
+    { "label": "Batu Bolong", "value": "30", "unit": "m" },
+    { "label": "Manta season", "value": "Jul-Sep" }
+   ],
+   "pasir-putih": [
+    { "label": "Coral cover", "value": "80", "unit": "%" },
+    { "label": "Fish species", "value": "300+" },
+    { "label": "Best visibility", "value": "Apr-Oct" }
+   ],
+   "siaba-besar": [
+    { "label": "Turtle sightings", "value": "90+", "unit": "%" },
+    { "label": "Day visibility", "value": "15-20", "unit": "m" },
+    { "label": "Night visibility", "value": "5-8", "unit": "m" },
+    { "label": "Conditions", "value": "Calm" }
+   ],
+   "peramba-island": [
+    { "label": "Manta season", "value": "Jul-Sep" },
+    { "label": "Clear water", "value": "Apr-Jun" }
+   ],
+   "sebayur-kecil": [
+    { "label": "Level", "value": "Beginner" },
+    { "label": "Depth", "value": "5-18", "unit": "m" },
+    { "label": "Conditions", "value": "Calm" }
+   ],
+   "batu-pengah": [
+    { "label": "Level", "value": "Advanced" },
+    { "label": "Currents", "value": "4-6", "unit": "knots" }
+   ],
+   "pengah-kecil": [
+    { "label": "Pinnacle", "value": "5-30", "unit": "m" },
+    { "label": "Cleaning stations", "value": "18", "unit": "m" },
+    { "label": "Day visibility", "value": "15-25", "unit": "m" },
+    { "label": "Night visibility", "value": "8-12", "unit": "m" }
+   ]
+  },
+  "/dive-sites/diving-lombok/": {
+   "gili-asahan": [
+    { "label": "Jay's Cathedral", "value": "50", "unit": "m" },
+    { "label": "Best months", "value": "Nov-Apr" }
+   ],
+   "gili-rengit": [
+    { "label": "Wave Corner", "value": "12-30", "unit": "m" },
+    { "label": "Rengit West", "value": "18", "unit": "m" },
+    { "label": "Batu Putih", "value": "8-22", "unit": "m" }
+   ],
+   "gili-lontar": [
+    { "label": "Gili Nanggu Wall", "value": "30", "unit": "m" },
+    { "label": "Hawksbill sightings", "value": "78", "unit": "%" }
+   ],
+   "buwun-mas": [
+    { "label": "Magnet", "value": "80", "unit": "m" },
+    { "label": "Gili Sarang", "value": "18", "unit": "m" },
+    { "label": "Manta season", "value": "Nov-Mar" }
+   ],
+   "gili-trawangan": [
+    { "label": "Shallow Turbo", "value": "5", "unit": "m" },
+    { "label": "Deep Turbo", "value": "40", "unit": "m" },
+    { "label": "Manta season", "value": "Jul-Oct" }
+   ],
+   "gili-meno": [
+    { "label": "Best visibility", "value": "Apr-Nov" },
+    { "label": "Gili Meno Wall", "value": "25", "unit": "m" },
+    { "label": "Simon Reef", "value": "40", "unit": "m" }
+   ],
+   "gili-air": [
+    { "label": "Level", "value": "All levels" },
+    { "label": "Visibility", "value": "15-30", "unit": "m" },
+    { "label": "Boat ride", "value": "15", "unit": "min" },
+    { "label": "Turtle encounters", "value": "95", "unit": "%" }
+   ],
+   "tanjung-ringgit": [
+    { "label": "From shore", "value": "200", "unit": "m" },
+    { "label": "Thresher season", "value": "Nov-Jan" }
+   ],
+   "pink-beach": [
+    { "label": "Coral gardens", "value": "15-30", "unit": "m" },
+    { "label": "Hammerhead season", "value": "Jun-Sep" },
+    { "label": "Manta season", "value": "Apr-Nov" }
+   ]
+  },
+  "/dive-sites/diving-nusa-lembongan/": {
+   "nusa-lembongan": [
+    { "label": "Blue Corner", "value": "12-30", "unit": "m" },
+    { "label": "Mangrove Point", "value": "5-15", "unit": "m" }
+   ]
+  },
+  "/dive-sites/diving-nusa-penida/": {
+   "nusa-penida": [
+    { "label": "Manta Point", "value": "12-18", "unit": "m" },
+    { "label": "The Labyrinth", "value": "30", "unit": "m" },
+    { "label": "Mola Mola", "value": "Jul-Oct" }
+   ],
+   "batu-nunggul": [
+    { "label": "Level", "value": "Advanced" },
+    { "label": "Depth", "value": "18-30", "unit": "m" }
+   ],
+   "karangsari": [
+    { "label": "Level", "value": "Beginner" },
+    { "label": "Depth", "value": "5-18+", "unit": "m" },
+    { "label": "Conditions", "value": "Calm" }
+   ],
+   "sampalan": [
+    { "label": "Currents", "value": "2-3", "unit": "knots" },
+    { "label": "Manta season", "value": "Nov-Apr" },
+    { "label": "Manta sightings", "value": "85", "unit": "%" },
+    { "label": "Tugu Pinnacles", "value": "30", "unit": "m" }
+   ],
+   "suana": [
+    { "label": "Depth", "value": "10-25", "unit": "m" },
+    { "label": "Level", "value": "All levels" }
+   ],
+   "ceningan-island": [
+    { "label": "Ceningan Wall", "value": "45", "unit": "m" },
+    { "label": "Level", "value": "Advanced" },
+    { "label": "Guide ratio", "value": "1:4" }
+   ]
+  },
+  "/dive-sites/diving-raja-ampat/": {
+   "jerief": [
+    { "label": "P47 Plane Wreck", "value": "18", "unit": "m" },
+    { "label": "Wreck since", "value": "1944" }
+   ],
+   "yanggelo": [
+    { "label": "Citrus Ridge", "value": "40", "unit": "m" },
+    { "label": "Citrus Rush", "value": "15", "unit": "m" }
+   ],
+   "sauwandarek": [
+    { "label": "Level", "value": "All levels" },
+    { "label": "Depth", "value": "5-25", "unit": "m" },
+    { "label": "Mollusk species", "value": "700+" }
+   ],
+   "koh-island": [
+    { "label": "Kuburan", "value": "15-30", "unit": "m" },
+    { "label": "Cape Kri", "value": "5-40", "unit": "m" },
+    { "label": "Manta season", "value": "Jul-Sep" }
+   ],
+   "kri-island": [
+    { "label": "Chicken Reef", "value": "18-30", "unit": "m" },
+    { "label": "Water temp", "value": "28-30", "unit": "°C" },
+    { "label": "Visibility", "value": "30", "unit": "m" },
+    { "label": "Blue Magic", "value": "25", "unit": "m" }
+   ],
+   "gam": [
+    { "label": "Mike's Point", "value": "40+", "unit": "m" },
+    { "label": "Currents meet", "value": "18", "unit": "m" }
+   ],
+   "friwinbonda": [
+    { "label": "Friwen Wall", "value": "30+", "unit": "m" },
+    { "label": "Thermocline", "value": "18", "unit": "m" }
+   ],
+   "yenbeser": [
+    { "label": "Corals planted", "value": "1,200+" },
+    { "label": "Coral coverage", "value": "65", "unit": "%" },
+    { "label": "Species per dive", "value": "280+" }
+   ],
+   "bat": [
+    { "label": "Lau Lau Reef", "value": "3-25", "unit": "m" },
+    { "label": "Best months", "value": "Oct-Apr" }
+   ]
+  },
+  "/dive-sites/diving-tulamben/": {
+   "tulamben": [
+    { "label": "Nudibranch species", "value": "40+" },
+    { "label": "Tech max depth", "value": "40", "unit": "m" }
+   ],
+   "tulamben-bay": [
+    { "label": "Liberty wreck", "value": "3-29", "unit": "m" },
+    { "label": "Drop Off", "value": "60+", "unit": "m" },
+    { "label": "Seraya and Sidem", "value": "5-18", "unit": "m" }
+   ],
+   "kubu": [
+    { "label": "Boga Wreck", "value": "30-40", "unit": "m" },
+    { "label": "Level", "value": "Experienced" }
+   ]
+  }
+ }
+}

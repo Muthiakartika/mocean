@@ -2,7 +2,8 @@
  * Migration tool: copies the original Elementor/theme CSS into src/styles/elementor/
  * with two small rewrites so it works in Next.js:
  *   1. image URLs  https://moceanbeachresort.com/wp-content/uploads/...  ->  /images/uploads/...
- *   2. font names  "Quicksand" / "Jost" / "Roboto"  ->  the self-hosted next/font families
+ *   2. font names  "Quicksand" / "Jost" / "Roboto" / "rt-icons"  ->  the self-hosted next/font families
+ *   3. three values the redesign layer adjusts become variables with the original value as fallback
  *
  *   node scripts/migration/convert-css.mjs
  *
@@ -41,6 +42,9 @@ const VENDOR = {
   "theme-responsive.css": "themes__moonlit__assets__css__responsive.css",
   "dialog.css": "plugins__elementor__assets__css__conditionals__dialog.min.css",
   "lightbox.css": "plugins__elementor__assets__css__conditionals__lightbox.min.css",
+  // Contact page only (WPForms, loaded last on the original)
+  "wpforms.css": "plugins__wpforms-lite__assets__css__frontend__modern__wpforms-full.min.css",
+  "wpforms-inline.css": "_inline-wpforms-modern-full.css",
   // Blog posts only (Gutenberg block styles)
   "wp-block-library.css": "wp-includes__css__dist__block-library__style.min.css",
   "wp-block-library-theme.css": "_inline-wp-block-library-theme.css",
@@ -50,7 +54,34 @@ const FONTS = {
   Quicksand: "var(--font-quicksand)",
   Jost: "var(--font-jost)",
   Roboto: "var(--font-roboto)",
+  // Theme icon font (testimonial stars, etc.), self-hosted in src/app/fonts.ts
+  "rt-icons": "var(--font-rt-icons)",
 };
+
+/**
+ * Values the redesign layer re-tokenizes (MASTER.md, src/styles/redesign/inner-pages.css).
+ * Each one falls back to the original value, so with the layer off (?original) nothing changes.
+ */
+const REDESIGN_HOOKS = [
+  [/#f1f1f1/gi, "var(--rd-band, #F1F1F1)"],
+  [/text-align:\s*justify/g, "text-align:var(--rd-justify, justify)"],
+  [/font-weight:\s*400/g, "font-weight:var(--rd-w400, 400)"],
+];
+
+/** Heading-pair font sizes get a ceiling the redesign layer sets per role (--rd-hcap); without it they are unchanged. */
+function capHeadingSizes(css) {
+  return css.replace(/([^{}]*rt-(?:sub-heading|title)-here[^{}]*)\{([^{}]*)\}/g, (rule, selector, body) =>
+    `${selector}{${body.replace(/font-size:\s*(\d+(?:\.\d+)?px)/g, "font-size:min($1, var(--rd-hcap, 999px))")}}`,
+  );
+}
+
+function addRedesignHooks(css) {
+  // Not inside @font-face, where var() is invalid.
+  return css
+    .split(/(@font-face\s*\{[^}]*\})/)
+    .map((part) => (part.startsWith("@font-face") ? part : capHeadingSizes(REDESIGN_HOOKS.reduce((out, [from, to]) => out.replace(from, to), part))))
+    .join("");
+}
 
 function convert(css) {
   // Rules without a selector (e.g. "}{}") are ignored by browsers but rejected by Next.js' CSS parser.
@@ -59,7 +90,7 @@ function convert(css) {
   for (const [name, variable] of Object.entries(FONTS)) {
     out = out.replace(new RegExp(`(["'])${name}\\1`, "g"), variable);
   }
-  return out;
+  return addRedesignHooks(out);
 }
 
 async function main() {

@@ -189,7 +189,8 @@
      "wrapped": true,
      "html": "<p><span style=\"font-weight: 400;\">Before you surf in Lombok, learn its seasons and respect local customs. Dry season (April–September) brings 4–8 ft swells to Mawi and Desert Point, while wet season (October–March) favors Gerupuk and Seger Beach. Watch for reef closures during spawning. Respect traditions, ask locals before paddling out, wear booties, avoid plastic, and steer clear of temple zones during sacred times.</span></p>"
     }
-   ]
+   ],
+   "cssId": "general-info"
   },
   {
    "type": "container",
@@ -217,7 +218,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13662\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Top-Surf-Spots.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "top-surf-sports"
   },
   {
    "type": "container",
@@ -259,7 +261,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13663\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Desert-Point-Bangko-Bangko.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "desert-point"
   },
   {
    "type": "container",
@@ -301,7 +304,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13664\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Surf-Spot-Levels.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "surf-levels"
   },
   {
    "type": "container",

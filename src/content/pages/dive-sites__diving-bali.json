@@ -406,7 +406,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13922\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Gili-Biaha-Candidasa.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-biaha"
   },
   {
    "type": "container",
@@ -448,7 +449,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13923\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Gili-Tepekong-Candidasa.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-tepekong"
   },
   {
    "type": "container",
@@ -490,7 +492,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13924\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Gili-Mimpang-Amuk-Bay.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-mimpang"
   },
   {
    "type": "container",
@@ -532,7 +535,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13925\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Baong-Penyu-Padangbai.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "baong-penyu"
   },
   {
    "type": "container",
@@ -574,7 +578,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13926\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Blue-Lagoon-Padangbai.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "blue-lagoon"
   },
   {
    "type": "container",
@@ -616,7 +621,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13927\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Sanur-Bali.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "sanur"
   },
   {
    "type": "container",
@@ -658,7 +664,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13928\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Tanjung-Benoa-Nusa-Dua.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "tanjung-benoa"
   },
   {
    "type": "container",
@@ -700,7 +707,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13929\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Gilimanuk-Bali.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gilimanuk"
   },
   {
    "type": "container",
@@ -742,7 +750,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13930\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Menjangan-Bali.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "menjangan"
   },
   {
    "type": "container",
@@ -784,7 +793,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13931\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Pemuteran-Bali.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "pemuteran"
   },
   {
    "type": "container",

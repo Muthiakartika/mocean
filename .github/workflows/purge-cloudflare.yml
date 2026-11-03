@@ -1,0 +1,35 @@
+# Clears Cloudflare's cache when Vercel reports a successful production deployment
+# (Vercel's GitHub integration sends a deployment_status event), or by hand from the Actions tab.
+# Repository secrets needed: CLOUDFLARE_API_TOKEN (Zone > Cache Purge), CLOUDFLARE_ZONE_ID.
+# What is purged: scripts/purge-cloudflare.ts.
+name: Purge Cloudflare cache
+
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      everything:
+        description: "Purge the whole zone (images too), not only the pages"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  purge:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/purge-cloudflare.ts ${{ inputs.everything && '--everything' || '' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}

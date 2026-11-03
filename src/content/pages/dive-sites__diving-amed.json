@@ -322,7 +322,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13887\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Jemeluk-Amed.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "jemeluk-amed"
   },
   {
    "type": "container",
@@ -364,7 +365,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13883\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Amed.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "amed"
   },
   {
    "type": "container",
@@ -406,7 +408,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13884\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Bunutan-Amed.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "bunutan-amed"
   },
   {
    "type": "container",
@@ -448,7 +451,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13882\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Lipah-Amed.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "lipah-amed"
   },
   {
    "type": "container",
@@ -490,7 +494,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13886\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Gili-Selang-Amed.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-selang"
   },
   {
    "type": "container",

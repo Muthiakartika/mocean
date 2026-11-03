@@ -259,7 +259,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13840\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Nusa-Penida-Bali.jpg.webp\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "nusa-penida"
   },
   {
    "type": "container",
@@ -301,7 +302,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13841\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Batu-Nunggul-Nusa-Penida.jpg.webp\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "batu-nunggul"
   },
   {
    "type": "container",
@@ -413,7 +415,8 @@
      "wrapped": true,
      "html": "<p><span style=\"font-weight: 400;\">Morning dives might show you </span><i><span style=\"font-weight: 400;\">mobula rays</span></i><span style=\"font-weight: 400;\"> in sapphire waters. Afternoon dives focus on safety stops. Karang Sari is close to Nusa Penida’s manta highways. It’s exciting yet peaceful for learning.</span></p>"
     }
-   ]
+   ],
+   "cssId": "karangsari"
   },
   {
    "type": "container",
@@ -441,7 +444,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13843\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Sampalan-Nusa-Penida.jpg.webp\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "sampalan"
   },
   {
    "type": "container",
@@ -483,7 +487,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13844\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Suana-Nusa-Penida.jpg.webp\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "suana"
   },
   {
    "type": "container",
@@ -525,7 +530,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13847\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Ceningan-Island-Nusa-Penida.jpg.webp\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "ceningan-island"
   },
   {
    "type": "container",

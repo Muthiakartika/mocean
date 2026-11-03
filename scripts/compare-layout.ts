@@ -2,6 +2,7 @@
  * Compares element positions between the live WordPress page and the local Next.js page.
  * Elements are matched by their text (headings, paragraphs, buttons, list items) or
  * image file name, then any difference in x / y / width / height above the tolerance is listed.
+ * The local page is loaded with "?original", which switches off the redesign layer (MASTER.md).
  *
  *   npx tsx scripts/compare-layout.ts / 1440 [tolerancePx=2]
  */
@@ -36,11 +37,13 @@ async function collect(page: Page, url: string): Promise<Box[]> {
         fs: getComputedStyle(el).fontSize,
       });
     };
-    const text = (el: Element) => (el.textContent ?? "").replace(/\s+/g, " ").trim().slice(0, 40);
+    const text = (el: Element) => (el.textContent ?? "").replace(/\s+/g, " ").trim().slice(0, 40).trimEnd();
+    // Blog posts on the original have no <main>: leave out the site header and footer there.
+    const inChrome = (el: Element) => el.closest("#reactheme-header, #colophon");
     main.querySelectorAll("h1,h2,h3,h4,h5,h6,p,li,a.theme-btn,a[class*=button],.rt-sub-heading-here,.elementor-heading-title,span[class*=sub]").forEach((el) => {
       // Skip containers whose text is mostly from children of the same kinds.
       const t = text(el);
-      if (t.length < 3) return;
+      if (t.length < 3 || inChrome(el)) return;
       // Sliders move over time, so their content is not compared (hero checked by screenshot).
       if (el.closest("sr7-module, [aria-roledescription=carousel], .swiper, [data-slider]")) return;
       add(`${el.tagName.toLowerCase()}:${t}`, el);
@@ -49,15 +52,17 @@ async function collect(page: Page, url: string): Promise<Box[]> {
     main.querySelectorAll("div, span").forEach((el) => {
       if (el.children.length > 0 || el.closest("h1,h2,h3,h4,h5,h6,p,li,a")) return;
       const t = text(el);
-      if (t.length < 3 || el.closest("sr7-module, [aria-roledescription=carousel], .swiper, [data-slider], style")) return;
+      if (t.length < 3 || inChrome(el) || el.closest("sr7-module, [aria-roledescription=carousel], .swiper, [data-slider], style")) return;
       add(`text:${t}`, el);
     });
     main.querySelectorAll("img").forEach((img) => {
-      if (img.closest("sr7-module, [aria-roledescription=carousel], .swiper, [data-slider]")) return;
+      if (inChrome(img) || img.closest("sr7-module, [aria-roledescription=carousel], .swiper, [data-slider]")) return;
       const src = (img.getAttribute("src") ?? "").split("/").pop()!.split("?")[0];
       // next/image URLs look like /_next/image?url=%2Fimages%2F...%2Ffile.jpg
       const file = decodeURIComponent(img.currentSrc || img.src).split("/").pop()!.split("&")[0];
-      add(`img:${(file || src).replace(/\.webp$/, "")}`, img.closest(".jarallax, [class*=frame]") ?? img);
+      // WordPress serves size variants ("photo-600x400.jpg", "photo-scaled.jpg"), next/image the original file: compare them as one image.
+      const name = (file || src).replace(/\.webp$/, "").replace(/-(\d+x\d+|scaled)(?=\.\w+$)/, "");
+      add(`img:${name}`, img.closest(".jarallax, [class*=frame]") ?? img);
     });
     return boxes;
   });
@@ -72,7 +77,7 @@ async function main() {
   const [pa, pb] = [await mk(), await mk()];
   for (const p of [pa, pb]) await p.addInitScript({ content: "window.__name = (f) => f;" });
 
-  const [orig, local] = await Promise.all([collect(pa, TARGETS.original + urlPath), collect(pb, TARGETS.local + urlPath)]);
+  const [orig, local] = await Promise.all([collect(pa, TARGETS.original + urlPath), collect(pb, TARGETS.local + urlPath + "?original")]);
   await browser.close();
 
   const localByKey = new Map(local.map((b) => [b.key.replace(/ +#/, " #"), b]));

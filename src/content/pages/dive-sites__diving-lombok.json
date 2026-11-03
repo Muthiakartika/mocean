@@ -399,7 +399,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-12908\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/07/hiu-martil-2.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "kuta-lombok"
   },
   {
    "type": "container",
@@ -441,7 +442,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13076\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/07/Gili-Asahan.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-asahan"
   },
   {
    "type": "container",
@@ -483,7 +485,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13086\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/07/Gili-Rengit.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-rengit"
   },
   {
    "type": "container",
@@ -525,7 +528,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13103\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/07/Gili-Lontar.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-lontar"
   },
   {
    "type": "container",
@@ -567,7 +571,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13107\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/07/Buwun-Mas.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "buwun-mas"
   },
   {
    "type": "container",
@@ -609,7 +614,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13111\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/07/Gili-Trawangan.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-trawangan"
   },
   {
    "type": "container",
@@ -651,7 +657,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13130\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/07/Gili-Meno.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-meno"
   },
   {
    "type": "container",
@@ -693,7 +700,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13143\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/07/Gili-Air.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "gili-air"
   },
   {
    "type": "container",
@@ -735,7 +743,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13150\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/07/Tanjung-Ringgit.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "tanjung-ringgit"
   },
   {
    "type": "container",
@@ -777,7 +786,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-13157\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/07/Pink-Beach.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "pink-beach"
   },
   {
    "type": "container",

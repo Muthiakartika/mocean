@@ -217,7 +217,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14282\" decoding=\"async\" height=\"825\" src=\"/images/uploads/2025/08/Surf-Sites-in-Bingin-Beach-Area.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "bingin-beach"
   },
   {
    "type": "container",
@@ -259,7 +260,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14284\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Surf-Sites-In-The-Bombie-Area.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "desert-point"
   },
   {
    "type": "container",
@@ -301,7 +303,8 @@
      "wrapped": true,
      "html": "<img alt=\"\" class=\"attachment-full size-full wp-image-14285\" decoding=\"async\" height=\"825\" loading=\"lazy\" src=\"/images/uploads/2025/08/Surf-Sites-In-The-Peak-Area.jpg\" width=\"1650\"/>"
     }
-   ]
+   ],
+   "cssId": "peak-area"
   },
   {
    "type": "container",
@@ -371,7 +374,8 @@
      "wrapped": true,
      "html": "<p><span style=\"font-weight: 400;\">Hikers can enjoy uncrowded waves in the cliff-backed breaks of Nyang Nyang, which are remote and unadulterated. This location, which pairs glassy mornings with northwest swells, is best from May to September. These waves are for surfers looking for seclusion and great lines outside of the regular Uluwatu circuit, so bring reef booties, patience, and an adventurous spirit.</span></p>"
     }
-   ]
+   ],
+   "cssId": "nyang-nyang"
   },
   {
    "type": "container",

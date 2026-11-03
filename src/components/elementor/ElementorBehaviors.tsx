@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { applyContactForms } from "./contactForm";
+import { applyFaqPanels } from "./faqPanel";
 import { applyParallax } from "./parallax";
 import { startTestimonialSliders } from "./sliders";
 import Lightbox, { type LightboxSlide } from "./Lightbox";
@@ -13,6 +15,7 @@ import Lightbox, { type LightboxSlide } from "./Lightbox";
  *   - parallax images and section backgrounds (jarallax)
  *   - image lightbox for gallery / image links
  *   - testimonial sliders
+ *   - the contact form (WPForms' AJAX submit, now sent through /api/contact/)
  * It works on the HTML rendered by ElementorNode, the same way Elementor did.
  */
 export default function ElementorBehaviors() {
@@ -44,6 +47,8 @@ export default function ElementorBehaviors() {
       if (tab) {
         const tabs = tab.closest(".e-n-tabs")!;
         const index = tab.dataset.tabIndex;
+        // Until this class is set, Elementor's CSS keeps the first panel visible next to the active one.
+        tabs.classList.add("e-activated");
         tabs.querySelectorAll<HTMLElement>(":scope > .e-n-tabs-heading > .e-n-tab-title, :scope > .e-n-tabs-content > .e-n-tab-title").forEach((t) => {
           const active = t.dataset.tabIndex === index;
           t.setAttribute("aria-selected", String(active));
@@ -95,8 +100,14 @@ export default function ElementorBehaviors() {
   // Parallax (jarallax) for images and section backgrounds
   useEffect(() => applyParallax(), []);
 
+  // Logbook redesign: FAQ index + answer panel on wide screens
+  useEffect(() => applyFaqPanels(), []);
+
   // Testimonial sliders (Swiper on the original)
   useEffect(() => startTestimonialSliders(), []);
+
+  // Contact form (WPForms on the original)
+  useEffect(() => applyContactForms(), []);
 
   return lightbox ? (
     <Lightbox slides={lightbox.slides} startIndex={lightbox.index} onClose={() => setLightbox(null)} />

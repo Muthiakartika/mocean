@@ -1,0 +1,29 @@
+/*
+ * The site's "Additional CSS" from the WordPress Customizer (<style id="wp-custom-css">,
+ * identical on every page, printed after all other stylesheets).
+ * Only the rules that affect the migrated inner pages are kept here:
+ *   - header/menu, off-canvas and Cloudbeds button rules → rebuilt as React components
+ *   - post author/category hiding → src/styles/elementor/posts.css
+ *   - #parking-box, .page-error → not used by any migrated page
+ */
+
+/* editing subheading */
+.react-heading-here span.rt-sub-heading-here em {
+  font-style: normal;
+  padding-left: 0px;
+  padding-right: 15px;
+}
+
+/* Title above sub-heading (widgets with CSS ID "sumbawa-heading": /kalela-waterfall/, /surf-spots/sumbawa/) */
+#sumbawa-heading .react-heading-here {
+  display: flex;
+  flex-direction: column;
+}
+
+#sumbawa-heading .rt-sub-heading-here {
+  order: 2 !important;
+}
+
+#sumbawa-heading .rt-title-here {
+  order: 1 !important;
+}

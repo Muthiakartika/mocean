@@ -1,0 +1,851 @@
+/*
+ * Redesign layer for the inner pages (Elementor content), direction "Logbook". Rules and values: MASTER.md.
+ *
+ * Everything sits under `html:not([data-design="original"]) #mocean-page`:
+ *   - "?original" in the URL sets data-design="original" and switches the whole layer off;
+ *   - the #mocean-page id outranks the per-page Elementor selectors, which only use classes,
+ *     so no !important is needed except against inline styles in the migrated HTML.
+ * Colours, sizes and timings come from ./tokens.css only.
+ */
+
+/* New elements (facts bars) exist only in the redesign. */
+html[data-design="original"] .rd-only {
+  display: none !important;
+}
+
+html:not([data-design="original"]) #mocean-page {
+  /* Hooks in the converted original CSS (scripts/migration/convert-css.mjs). Justified text stays justified on wide screens (left on phones, below). */
+  --rd-band: var(--rd-ice);
+  --rd-w400: 500;
+  /* Elementor kit variables */
+  --e-global-color-text: var(--rd-body);
+  --e-global-color-secondary: var(--rd-ink);
+  --e-global-typography-text-font-weight: 500;
+  /* WPForms (contact form) */
+  --wpforms-button-background-color: var(--rd-navy);
+  --wpforms-button-border-color: var(--rd-navy);
+  --wpforms-field-border-color: var(--rd-meta);
+  --wpforms-field-border-radius: var(--rd-r);
+  --wpforms-button-border-radius: var(--rd-r);
+
+  font-variant-numeric: tabular-nums;
+
+  & ::selection {
+    background: var(--rd-navy);
+    color: var(--rd-white);
+  }
+
+  & :focus-visible {
+    outline: 2px solid var(--rd-navy);
+    outline-offset: 3px;
+  }
+
+  /* In-page anchors land below the sticky jump-nav. */
+  & [id] {
+    scroll-margin-top: 88px;
+  }
+
+  /* No entrance animations: content is there when the page loads. */
+  & .elementor-invisible {
+    visibility: visible;
+  }
+
+  & .animated {
+    animation: none;
+  }
+
+  /*
+   * ---------- Section rhythm ----------
+   * Large paddings are capped; values above 300px are room reserved for a card overlapping from the
+   * section above and stay: min(p, max(cap, (p - 300px) * 1000)) is p when p > 300px, else min(p, cap).
+   */
+  & .elementor > .e-con.e-parent:not(:first-child):not(.jarallax) {
+    --padding-block-start: min(var(--padding-top, 0px), max(var(--rd-section-max), (var(--padding-top, 0px) - 300px) * 1000));
+    --padding-block-end: min(var(--padding-bottom, 0px), max(var(--rd-section-max), (var(--padding-bottom, 0px) - 300px) * 1000));
+  }
+
+  /* ---------- Body text ---------- */
+  & .elementor-widget-text-editor {
+    text-wrap: pretty;
+    /* Hyphenation keeps justified lines without wide gaps between words. */
+    hyphens: auto;
+
+    & :is(p, li) {
+      font-size: max(1em, var(--rd-body-size));
+      line-height: 1.65;
+    }
+
+    /* Pasted text carries inline font-weight: 400 spans; let it follow the body weight. */
+    & span[style*="font-weight: 400"] {
+      font-weight: inherit !important;
+    }
+  }
+
+  /*
+   * Full-width text runs flush with the section, lined up with the grids above and below it.
+   * The original pads it 10px left but 50px right; on tablet and desktop both sides get the left value.
+   */
+  @media (min-width: 768px) {
+    & .elementor > .e-con.e-parent:not(:first-child) > .e-con-inner > .elementor-widget-text-editor > .elementor-widget-container {
+      padding-inline: var(--rd-text-inset);
+    }
+  }
+
+  /*
+   * Only that full-width text stays justified. Text inside columns (next to a photo, in tabs) is often
+   * 250-450px wide, where justified lines open wide gaps and split words; it reads ragged-right.
+   */
+  & .e-con.e-child .elementor-widget-text-editor {
+    --rd-justify: left;
+    hyphens: manual;
+  }
+
+  & .rd-facts.spec {
+    width: 100%;
+  }
+
+  /* ---------- Heading pairs: the larger line leads (scripts/migration/heading-roles.mjs) ---------- */
+  & .react-heading-here {
+    display: flex;
+    flex-direction: column;
+
+    & :is(.rt-sub-heading-here, .rt-title-here) {
+      text-wrap: balance;
+    }
+  }
+
+  /* Lead line. Sizes stay as each page set them, under a ceiling (--rd-hcap, added by convert-css.mjs). Colours are not forced. */
+  & .elementor-widget-react-heading:not(.rd-title-lead) .rt-sub-heading-here,
+  & .rd-title-lead .rt-title-here {
+    --rd-hcap: var(--rd-heading-max);
+    font-family: var(--rd-font-data);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  & .rd-title-lead .rt-title-here {
+    order: 1;
+  }
+
+  /* Deck: the other line, below the heading, quieter through opacity (works on white and on photos). */
+  & .elementor-widget-react-heading:not(.rd-title-lead) .rt-title-here,
+  & .rd-title-lead .rt-sub-heading-here {
+    --rd-hcap: var(--rd-deck);
+    font-family: var(--rd-font-text);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0;
+    opacity: 0.8;
+    margin: var(--rd-s2) 0 0;
+  }
+
+  & .rd-title-lead .rt-sub-heading-here {
+    order: 2;
+  }
+
+  & .rd-no-sub .rt-sub-heading-here {
+    display: none;
+  }
+
+  /* The small "FAQ" label above the FAQ heading repeats the heading. */
+  & .e-parent:has(.elementor-widget-n-accordion) .rd-title-lead .rt-sub-heading-here {
+    display: none;
+  }
+
+  /* Plain Elementor headings follow the same face. */
+  & .elementor-widget-heading .elementor-heading-title,
+  & .elementor-icon-box-title,
+  & .elementor-image-box-title {
+    font-family: var(--rd-font-data);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+
+  /* Short headings such as "Types of dives:" become data labels. */
+  & .elementor-widget-heading:has(+ .elementor-widget-icon-list .elementor-inline-items) .elementor-heading-title {
+    font-size: var(--rd-label);
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rd-meta);
+  }
+
+  /* ---------- Facts bar (under the hero) and spec row (dive sites): src/components/elementor/Facts.tsx ---------- */
+  & .rd-facts {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--rd-facts, 4), minmax(0, 1fr));
+
+    /* Values sit on the cell's bottom edge, so they line up across a row when a label wraps. */
+    & > div {
+      display: flex;
+      flex-direction: column;
+      padding: var(--rd-s3) var(--rd-s5);
+      border-left: 1px solid var(--rd-line);
+    }
+
+    & > div:first-child {
+      border-left: 0;
+    }
+
+    & dt {
+      margin-bottom: var(--rd-s1);
+      font-family: var(--rd-font-data);
+      font-size: var(--rd-label);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rd-meta);
+    }
+
+    & dd {
+      margin: auto 0 0;
+      font-family: var(--rd-font-data);
+      font-size: var(--rd-figure);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--rd-navy);
+
+      & small {
+        margin-left: 2px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      &.word {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+    }
+  }
+
+  & .rd-facts.spec {
+    margin-block: var(--rd-s5);
+    border: 1px solid var(--rd-line);
+    border-radius: var(--rd-r);
+    background: var(--rd-ice);
+  }
+
+  & .rd-facts-bar {
+    background: var(--rd-ink);
+    padding-left: max(var(--rd-s4), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--rd-s4), env(safe-area-inset-right, 0px));
+
+    & .rd-facts {
+      max-width: 1320px;
+      margin-inline: auto;
+
+      & > div {
+        padding-block: var(--rd-s4);
+        border-color: rgb(255 255 255 / 0.16);
+      }
+
+      & > div:first-child {
+        padding-left: 0;
+      }
+
+      & dt {
+        color: var(--rd-on-ink-meta);
+      }
+
+      & dd {
+        color: var(--rd-white);
+      }
+    }
+  }
+
+  /* ---------- Chips: inline fact lists ---------- */
+  & .elementor-icon-list-items.elementor-inline-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--rd-s2);
+    margin: var(--rd-s2) 0 0;
+    padding: 0;
+
+    & > .elementor-icon-list-item {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--rd-s2);
+      margin: 0;
+      padding: 7px 11px;
+      border: 1px solid var(--rd-navy);
+      border-radius: var(--rd-r);
+      background: transparent;
+      color: var(--rd-navy);
+      font-family: var(--rd-font-data);
+      font-size: 14px;
+      font-weight: 500;
+      font-style: normal;
+      line-height: 1;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    & .elementor-icon-list-icon {
+      padding: 0;
+
+      & svg {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+    }
+
+    & .elementor-icon-list-text {
+      padding: 0;
+      margin: 0;
+      color: inherit;
+      font: inherit;
+    }
+  }
+
+  /* A lone bold item right after a fact list (e.g. "Cave and Wall" on the dive-site pages) is one more chip. */
+  & .elementor-widget-icon-list:has(.elementor-inline-items) + .elementor-widget-text-editor:has(> .elementor-widget-container > :is(strong, em):only-child) > .elementor-widget-container {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: var(--rd-s2);
+    padding: 7px 11px;
+    border: 1px solid var(--rd-navy);
+    border-radius: var(--rd-r);
+    color: var(--rd-navy);
+    font-family: var(--rd-font-data);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+
+    & :is(strong, em) {
+      font-weight: inherit;
+      font-style: normal;
+    }
+  }
+
+  /* ---------- Tabs: segmented buttons ---------- */
+  & .e-n-tabs-heading {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Centred while the buttons fit, still scrollable from the start when they don't. */
+    justify-content: safe center;
+    gap: var(--rd-s1);
+    overflow-x: auto;
+    padding-bottom: var(--rd-s1);
+    scrollbar-width: thin;
+    scrollbar-color: var(--rd-line) transparent;
+  }
+
+  /* A bar with a single tab only repeats the heading above it. */
+  & .e-n-tabs-heading:not(:has(> .e-n-tab-title ~ .e-n-tab-title)) {
+    display: none;
+  }
+
+  & .e-n-tab-title {
+    flex: none;
+    padding: 10px 16px;
+    border: 1px solid var(--rd-line);
+    border-radius: var(--rd-r);
+    background: var(--rd-white);
+    color: var(--rd-navy);
+    cursor: pointer;
+    transition:
+      background-color var(--rd-t-hover) var(--rd-ease),
+      border-color var(--rd-t-hover) var(--rd-ease),
+      color var(--rd-t-hover) var(--rd-ease);
+
+    & .e-n-tab-title-text {
+      font-family: var(--rd-font-data);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      color: inherit;
+    }
+
+    &:hover {
+      border-color: var(--rd-navy);
+      background: var(--rd-ice);
+      color: var(--rd-navy);
+    }
+
+    &[aria-selected="true"] {
+      border-color: var(--rd-navy);
+      background: var(--rd-navy);
+      color: var(--rd-white);
+    }
+  }
+
+  /* ---------- FAQ: a Logbook accordion beside the original photo (one answer open at a time, as on the original) ---------- */
+  & .e-n-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 2px solid var(--rd-ink);
+  }
+
+  & .e-n-accordion-item {
+    border: 0;
+    border-bottom: 1px solid var(--rd-line);
+    border-radius: 0;
+    background: transparent;
+    margin: 0;
+
+    & > :not(summary) {
+      padding: 0 var(--rd-s7) var(--rd-s5) 0;
+      border: 0;
+      background: transparent;
+    }
+  }
+
+  & .e-n-accordion-item-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--rd-s4);
+    padding: var(--rd-s4) 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    & .e-n-accordion-item-title-text {
+      font-family: var(--rd-font-data);
+      font-size: var(--rd-faq-size);
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--rd-ink);
+      transition: color var(--rd-t-hover) var(--rd-ease);
+    }
+
+    &:hover .e-n-accordion-item-title-text {
+      color: var(--rd-navy);
+    }
+
+    /* Plus / minus in a 4px square: outlined when closed, navy when open. */
+    & .e-n-accordion-item-title-icon {
+      order: 2;
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--rd-navy);
+      border-radius: var(--rd-r);
+      background: var(--rd-white);
+      transition: background-color var(--rd-t-hover) var(--rd-ease);
+
+      & svg {
+        width: 12px;
+        height: 12px;
+        fill: var(--rd-navy);
+      }
+    }
+
+    &:hover .e-n-accordion-item-title-icon {
+      background: var(--rd-ice);
+    }
+  }
+
+  & .e-n-accordion-item[open] > .e-n-accordion-item-title .e-n-accordion-item-title-icon {
+    background: var(--rd-navy);
+
+    & svg {
+      fill: var(--rd-white);
+    }
+  }
+
+  /*
+   * ---------- FAQ on wide screens: an index of questions and the chosen answer in a panel ----------
+   * rd-faq-index and rd-faq-panel are set by faqPanel.ts (JavaScript only; without it the accordion above stays).
+   */
+  @media (min-width: 1025px) {
+    /* The panel takes the place of the photo beside the questions. */
+    & .e-con:has(> .e-con > .rd-faq-index) > .e-con:not(:has(.rd-faq-index)) {
+      display: none;
+    }
+
+    & .e-con:has(> .rd-faq-index) {
+      --width: 100%;
+    }
+
+    & .rd-faq-index > .elementor-widget-container {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: var(--rd-s7);
+      align-items: start;
+      scroll-margin-top: var(--rd-s9);
+    }
+
+    /* The shorter of the two columns stays in view (the questions beside a long answer such as the room rates). */
+    & .rd-faq-index .e-n-accordion {
+      position: sticky;
+      top: var(--rd-s9);
+    }
+
+    & .rd-faq-index .e-n-accordion-item > :not(summary) {
+      display: none;
+    }
+
+    & .rd-faq-index .e-n-accordion-item-title {
+      padding: 14px var(--rd-s3);
+      color: var(--rd-ink);
+      transition:
+        background-color var(--rd-t-hover) var(--rd-ease),
+        color var(--rd-t-hover) var(--rd-ease);
+
+      & .e-n-accordion-item-title-text {
+        font-size: var(--rd-body-size);
+        font-weight: 500;
+        color: inherit;
+      }
+
+      & .e-n-accordion-item-title-icon {
+        display: none;
+      }
+
+      /* Chevron pointing to the panel */
+      &::after {
+        content: "";
+        flex: none;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid currentColor;
+        border-right: 2px solid currentColor;
+        transform: rotate(45deg);
+        opacity: 0.4;
+      }
+
+      &:hover {
+        background: var(--rd-white);
+        color: var(--rd-navy);
+      }
+    }
+
+    & .rd-faq-index .e-n-accordion-item[open] > .e-n-accordion-item-title {
+      background: var(--rd-navy);
+      color: var(--rd-white);
+
+      & .e-n-accordion-item-title-text {
+        font-weight: 600;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    & .rd-faq-panel {
+      position: sticky;
+      top: var(--rd-s9);
+      padding: var(--rd-s6);
+      border: 1px solid var(--rd-line);
+      border-radius: var(--rd-r);
+      background: var(--rd-white);
+
+      &[hidden] {
+        display: none;
+      }
+    }
+
+    & .rd-faq-panel-title {
+      margin: 0;
+      font-family: var(--rd-font-data);
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+      color: var(--rd-navy);
+    }
+
+    & .rd-faq-panel-body {
+      margin-top: var(--rd-s4);
+      font-size: 18px;
+      line-height: 1.7;
+      text-wrap: pretty;
+      color: var(--rd-body);
+
+      /* The copied answer container: its spacing comes from the panel. */
+      & > .e-con {
+        --padding-top: 0px;
+        --padding-right: 0px;
+        --padding-bottom: 0px;
+        --padding-left: 0px;
+        padding: 0;
+      }
+
+      /* Its outer columns keep room for the accordion icon (up to 80px on the right); the panel has none. */
+      & > .e-con > :is(.e-con, .e-con-inner > .e-con),
+      & > .e-con > .e-con > .e-con-inner > .e-con {
+        --padding-left: 0px;
+        --padding-right: 0px;
+      }
+
+      & :is(p, ul, ol) {
+        margin: 0 0 var(--rd-s3);
+        font-size: inherit;
+        line-height: inherit;
+      }
+
+      & > :last-child {
+        margin-bottom: 0;
+      }
+
+      & span[style*="font-weight: 400"] {
+        font-weight: inherit !important;
+      }
+    }
+
+    & .rd-faq-panel-next {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--rd-s3);
+      margin-top: 28px;
+      padding-top: var(--rd-s4);
+      border-top: 1px solid var(--rd-line);
+      font-size: 14px;
+      color: var(--rd-meta);
+
+      & button {
+        appearance: none;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+        font-family: var(--rd-font-data);
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: normal;
+        text-align: right;
+        text-transform: none;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        color: var(--rd-navy);
+        cursor: pointer;
+        transition: color var(--rd-t-hover) var(--rd-ease);
+
+        &:hover {
+          color: var(--rd-navy-deep);
+          text-decoration-thickness: 2px;
+        }
+      }
+    }
+  }
+
+  /* ---------- Card grids read as rows of a table (rd-cards / rd-card: ElementorNode.tsx) ---------- */
+  & :is(.rd-cards.e-con-boxed > .e-con-inner, .rd-cards:not(.e-con-boxed)) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    border-top: 2px solid var(--rd-ink);
+  }
+
+  & .rd-card {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    align-items: center;
+    gap: var(--rd-s5);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: var(--rd-s4) var(--rd-s3);
+    border: 0;
+    border-bottom: 1px solid var(--rd-line);
+    border-radius: 0;
+    background: transparent;
+    transition: background-color var(--rd-t-hover) var(--rd-ease);
+
+    &:hover {
+      background: var(--rd-ice);
+    }
+
+    & > .e-con:has(> .elementor-widget-image) {
+      width: 100%;
+      padding: 0;
+
+      & img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: var(--rd-r);
+      }
+    }
+
+    /* Text block: title and text on the left, button on the right. */
+    & > .e-con:has(> .elementor-widget-rt-button) {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: var(--rd-s5);
+      row-gap: var(--rd-s1);
+      width: 100%;
+      padding: 0;
+      text-align: left;
+
+      & > .elementor-widget {
+        grid-column: 1;
+        width: auto;
+        margin: 0;
+        text-align: left;
+      }
+
+      & > .elementor-widget-rt-button {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        align-self: center;
+      }
+
+      & .rt-title-here {
+        text-align: left;
+      }
+
+      & :is(p, li) {
+        font-size: 15px;
+        line-height: 1.55;
+      }
+    }
+  }
+
+  /* ---------- Images in content ---------- */
+  & .elementor-widget-image img,
+  & .has-jarallax-img .jarallax,
+  & .has-jarallax-img .jarallax-clip {
+    border-radius: var(--rd-r);
+  }
+
+  /* ---------- Buttons (theme .theme-btn) ---------- */
+  & .theme-btn {
+    border-radius: var(--rd-r);
+    border: 1px solid var(--rd-navy);
+    background: var(--rd-white);
+    color: var(--rd-navy);
+    font-family: var(--rd-font-data);
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+      background-color var(--rd-t-hover) var(--rd-ease),
+      color var(--rd-t-hover) var(--rd-ease),
+      transform var(--rd-t-hover) var(--rd-ease);
+
+    /* The theme's circle and slide fills and the flying label take 0.6-0.8s; replaced by a colour change. */
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &:hover span {
+      animation: none;
+    }
+
+    &:hover {
+      background: var(--rd-ice);
+      color: var(--rd-navy);
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &.fill {
+      background: var(--rd-navy);
+      color: var(--rd-white);
+
+      &:hover {
+        background: var(--rd-navy-deep);
+        color: var(--rd-white);
+      }
+    }
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 767px) {
+    /* Justified text leaves wide gaps between words on narrow lines. */
+    --rd-justify: left;
+
+    /* The header overlays the hero (112px on phones); long hero titles started under the logo. */
+    & .elementor > .e-con.e-parent:first-child {
+      --padding-block-start: max(var(--padding-top, 0px), var(--rd-header-mobile));
+    }
+
+    & .elementor > .e-con.e-parent:not(:first-child):not(.jarallax) {
+      --padding-block-start: min(var(--padding-top, 0px), max(var(--rd-section-max-mobile), (var(--padding-top, 0px) - 300px) * 1000));
+      --padding-block-end: min(var(--padding-bottom, 0px), max(var(--rd-section-max-mobile), (var(--padding-bottom, 0px) - 300px) * 1000));
+    }
+
+    & .elementor-widget-react-heading:not(.rd-title-lead) .rt-sub-heading-here,
+    & .rd-title-lead .rt-title-here {
+      --rd-hcap: var(--rd-heading-max-mobile);
+    }
+
+    & .elementor-widget-react-heading:not(.rd-title-lead) .rt-title-here,
+    & .rd-title-lead .rt-sub-heading-here {
+      --rd-hcap: var(--rd-deck-mobile);
+    }
+
+    & .rd-facts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      & > div:nth-child(odd) {
+        border-left: 0;
+      }
+
+      & > div:nth-child(n + 3) {
+        border-top: 1px solid var(--rd-line);
+      }
+
+      /* An odd one out (three facts) takes the whole row. */
+      & > div:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+      }
+    }
+
+    & .rd-facts-bar .rd-facts > div:nth-child(odd) {
+      padding-left: 0;
+    }
+
+    & .rd-facts-bar .rd-facts > div:nth-child(n + 3) {
+      border-top-color: rgb(255 255 255 / 0.16);
+    }
+
+    & .e-n-accordion-item > :not(summary) {
+      padding-right: 0;
+    }
+
+    & .rd-card {
+      grid-template-columns: 96px minmax(0, 1fr);
+      align-items: start;
+      gap: var(--rd-s4);
+
+      & > .e-con:has(> .elementor-widget-rt-button) {
+        grid-template-columns: minmax(0, 1fr);
+
+        & > .elementor-widget-rt-button {
+          grid-column: 1;
+          grid-row: auto;
+          justify-self: start;
+          margin-top: var(--rd-s2);
+        }
+      }
+    }
+  }
+
+  /* ---------- Reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    & *,
+    & *::before,
+    & *::after {
+      transition: none !important;
+    }
+  }
+}

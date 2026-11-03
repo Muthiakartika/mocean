@@ -2,7 +2,8 @@
 
 export const TARGETS = {
   original: "https://moceanbeachresort.com",
-  local: "http://localhost:3000",
+  // LOCAL_URL=http://localhost:3100 when port 3000 is taken by another project.
+  local: process.env.LOCAL_URL ?? "http://localhost:3000",
 } as const;
 
 export type TargetName = keyof typeof TARGETS;

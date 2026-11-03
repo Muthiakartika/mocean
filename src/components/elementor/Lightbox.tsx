@@ -1,85 +1,318 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type AriaAttributes, type KeyboardEvent as ReactKeyboardEvent, type PointerEvent as ReactPointerEvent } from "react";
 
 export type LightboxSlide = { src: string; title: string };
 
+/** Elementor's lightbox uses Swiper zoom with its default maximum ratio. */
+const ZOOM_RATIO = 3;
+/** The header/footer fade out this long after the last mouse movement (Elementor default). */
+const UI_HIDE_DELAY = 3500;
+
+/** Paths of the Elementor icons the lightbox uses (eicons, viewBox 0 0 1000 1000). */
+const ICONS = {
+  close: "M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z",
+  "share-arrow": "M946 383L667 133C642 112 604 129 604 162V292C238 296 71 637 42 812 238 587 363 521 604 517V658C604 692 642 708 667 687L946 442C963 425 963 400 946 383Z",
+  "zoom-in-bold": "M388 383V312C388 283 413 258 442 258 471 258 496 283 496 312V383H567C596 383 621 408 621 437S596 492 567 492H496V562C496 592 471 617 442 617 413 617 388 592 388 562V492H317C288 492 263 467 263 437S288 383 317 383H388ZM654 733C592 779 517 804 438 804 233 804 71 642 71 437S233 71 438 71 804 233 804 437C804 521 779 596 733 654L896 817C917 837 917 871 896 892 875 913 842 913 821 892L654 733ZM438 696C579 696 696 579 696 437S579 179 438 179 179 296 179 437 296 696 438 696Z",
+  "zoom-out-bold": "M750 683L946 879C963 896 963 929 946 946 929 963 896 967 879 946L683 750C617 804 533 833 438 833 221 833 42 654 42 437S221 42 438 42 833 221 833 437C833 529 800 612 750 683ZM296 392H575C600 392 621 412 621 442 621 467 600 487 575 487H296C271 487 250 467 250 442 250 412 271 392 296 392ZM438 737C604 737 738 604 738 437S604 137 438 137 138 271 138 437 271 737 438 737Z",
+  "frame-expand": "M863 583C890 583 914 605 916 632L917 637V863L916 868C914 893 893 914 868 916L863 917H638L632 916C607 914 586 893 584 868L583 863 584 857C586 832 607 811 632 809L638 808H808V637L809 632C811 605 835 583 863 583ZM138 583C165 583 189 605 191 632L192 637V808H363C390 808 414 830 416 857L417 863C417 890 395 914 368 916L363 917H138C110 917 86 895 84 868L83 863V637C83 607 108 583 138 583ZM863 83C890 83 914 105 916 132L917 137V362C917 392 893 417 863 417 835 417 811 395 809 368L808 362V192H638C610 192 586 170 584 143L583 137C583 110 605 86 632 84L638 83H863ZM363 83L368 84C393 86 414 107 416 132L417 137 416 143C414 168 393 189 368 191L363 192H192V362L191 368C189 395 165 417 138 417S86 395 84 368L83 362V137L84 132C86 107 107 86 132 84L138 83H363Z",
+  "frame-minimize": "M363 583C392 583 413 604 417 633L417 637V863C417 892 392 917 363 917 333 917 313 896 308 867L308 863V692H138C108 692 88 671 83 642L83 637C83 608 104 587 133 583L138 583H363ZM638 583C608 583 588 604 583 633L583 637V863C583 892 608 917 638 917 667 917 688 896 692 867L692 863V692H863C892 692 913 671 917 642L917 637C917 608 896 587 867 583L863 583H638ZM363 417C392 417 413 396 417 367L417 362V137C417 108 392 83 363 83 333 83 313 104 308 133L308 137V308H138C108 308 88 329 83 358L83 362C83 392 104 412 133 417L138 417H363ZM638 417C608 417 588 396 583 367L583 362V137C583 108 608 83 638 83 667 83 688 104 692 133L692 137V308H863C892 308 913 329 917 358L917 362C917 392 896 412 867 417L863 417H638Z",
+  "chevron-left": "M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z",
+  "chevron-right": "M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z",
+  facebook: "M858 42H142C88 42 42 87 42 142V863C42 913 88 958 142 958H421V646H292V500H421V387C421 258 496 192 613 192 667 192 725 200 725 200V325H663C600 325 579 362 579 404V500H721L700 646H583V958H863C917 958 963 913 963 858V142C958 87 913 42 858 42L858 42Z",
+  "x-twitter": "M760.16 93.75h137.89L596.88 437.89 951.17 906.25H673.83L456.45 622.27 208.01 906.25H69.92L391.99 538.09 52.34 93.75H336.72L533.01 353.32 760.16 93.75zM711.72 823.83h76.37L295.12 171.88h-82.03L711.72 823.83z",
+  pinterest: "M950 496C950 746 746 950 496 950 450 950 404 942 363 929 379 900 408 850 421 808 425 787 450 700 450 700 467 729 508 754 554 754 692 754 792 629 792 471 792 321 671 208 513 208 317 208 213 342 213 483 213 550 250 633 304 658 313 662 317 662 321 654 321 650 329 617 333 604 333 600 333 596 329 592 313 567 296 525 296 487 288 387 367 292 496 292 608 292 688 367 688 475 688 600 625 683 546 683 500 683 467 646 479 600 492 546 517 487 517 450 517 417 500 387 458 387 413 387 375 433 375 496 375 537 388 562 388 562S342 754 333 787C325 825 329 883 333 917 163 854 42 687 42 496 42 246 246 42 496 42S950 246 950 496Z",
+  "download-bold": "M572 42H428C405 42 385 61 385 85V385H228C197 385 180 424 203 447L475 719C489 732 511 732 524 719L797 447C819 424 803 385 771 385H614V85C615 61 595 42 572 42ZM958 915V715C958 691 939 672 915 672H653L565 760C529 796 471 796 435 760L347 672H85C61 672 42 691 42 715V915C42 939 61 958 85 958H915C939 958 958 939 958 915ZM736 873C736 853 720 837 700 837 681 837 665 853 665 873 665 892 681 908 700 908 720 908 736 892 736 873ZM815 837C835 837 851 853 851 873 851 892 835 908 815 908 795 908 779 892 779 873 779 853 795 837 815 837Z",
+};
+
+type IconName = keyof typeof ICONS;
+
+function iconClass(name: IconName, extra = "") {
+  return `e-font-icon-svg e-eicon-${name}${extra ? ` ${extra}` : ""}`;
+}
+
+/** Enter / Space activate an element that is not a native <button>, like a click. */
+function activateOnKey(onActivate: () => void) {
+  return (e: ReactKeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onActivate();
+    }
+  };
+}
+
+/** Header icons are bare <svg> elements on the original (the CSS targets `header > svg`), so they get button semantics here. */
+function HeaderIcon({
+  name,
+  hidden = false,
+  onActivate,
+  ...aria
+}: { name: IconName; hidden?: boolean; onActivate: () => void } & Pick<AriaAttributes, "aria-label" | "aria-checked" | "aria-expanded"> & {
+  role: "button" | "switch";
+}) {
+  return (
+    <svg className={iconClass(name, hidden ? "elementor-hidden" : "")} viewBox="0 0 1000 1000" tabIndex={0} {...aria} onClick={onActivate} onKeyDown={activateOnKey(onActivate)}>
+      <path d={ICONS[name]} />
+    </svg>
+  );
+}
+
+/** Previous / next areas: a <div role="button"> as on the original, since they cover 15% of the width and a <button> would paint its default background there. */
+function NavButton({ direction, onActivate }: { direction: "prev" | "next"; onActivate: () => void }) {
+  const icon = direction === "next" ? "chevron-right" : "chevron-left";
+  return (
+    <div
+      className={`elementor-swiper-button elementor-swiper-button-${direction} elementor-lightbox-prevent-close`}
+      role="button"
+      tabIndex={0}
+      aria-label={direction === "next" ? "Next slide" : "Previous slide"}
+      onClick={onActivate}
+      onKeyDown={activateOnKey(onActivate)}
+    >
+      <svg aria-hidden="true" className={iconClass(icon)} viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+        <path d={ICONS[icon]} />
+      </svg>
+    </div>
+  );
+}
+
 /**
- * Full-screen image viewer, rebuilt with Elementor's lightbox class names so the
+ * Full-screen image viewer, rebuilt with Elementor's lightbox markup and class names so the
  * original lightbox CSS (vendor/lightbox.css + dialog.css) styles it.
+ * Toolbar like the original: counter, fullscreen, zoom (drag to pan), share menu, close; file name as caption.
  * Arrows / keyboard (←, →, Esc) / click outside the image to close.
+ * The original adds `animated zoomIn` to the message but never loads that animation's CSS, so it opens without animation.
  */
 export default function Lightbox({ slides, startIndex, onClose }: { slides: LightboxSlide[]; startIndex: number; onClose: () => void }) {
   const [index, setIndex] = useState(startIndex);
-  const count = slides.length;
-  const go = useCallback((step: number) => setIndex((i) => (i + step + count) % count), [count]);
+  const [zoomed, setZoomed] = useState(false);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [dragging, setDragging] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
+  const [sharing, setSharing] = useState(false);
+  const [uiHidden, setUiHidden] = useState(false);
 
+  const rootRef = useRef<HTMLDivElement>(null);
+  const slideRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const dragStart = useRef<{ pointerX: number; pointerY: number; x: number; y: number } | null>(null);
+  const hideTimer = useRef<number | undefined>(undefined);
+
+  const count = slides.length;
+  const slide = slides[index];
+
+  const go = useCallback(
+    (step: number) => {
+      setIndex((i) => (i + step + count) % count);
+      setZoomed(false);
+      setPan({ x: 0, y: 0 });
+    },
+    [count],
+  );
+
+  const close = useCallback(() => {
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    onClose();
+  }, [onClose]);
+
+  // Keyboard, focus into the dialog on open and back to the clicked link on close.
   useEffect(() => {
+    const previousFocus = document.activeElement as HTMLElement | null;
+    rootRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") close();
       if (e.key === "ArrowRight") go(1);
       if (e.key === "ArrowLeft") go(-1);
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [go, onClose]);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      previousFocus?.focus({ preventScroll: true });
+    };
+  }, [go, close]);
 
-  const slide = slides[index];
+  useEffect(() => {
+    const onChange = () => setFullscreen(document.fullscreenElement === rootRef.current);
+    document.addEventListener("fullscreenchange", onChange);
+    return () => document.removeEventListener("fullscreenchange", onChange);
+  }, []);
+
+  useEffect(() => () => window.clearTimeout(hideTimer.current), []);
+
+  const showUi = () => {
+    setUiHidden(false);
+    window.clearTimeout(hideTimer.current);
+    hideTimer.current = window.setTimeout(() => setUiHidden(true), UI_HIDE_DELAY);
+  };
+
+  const toggleFullscreen = () => {
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    else rootRef.current?.requestFullscreen().catch(() => {});
+  };
+
+  const toggleZoom = () => {
+    setZoomed((z) => !z);
+    setPan({ x: 0, y: 0 });
+  };
+
+  // Drag to pan a zoomed image, kept inside the image edges (like Swiper zoom).
+  const clampPan = (x: number, y: number) => {
+    const img = imageRef.current;
+    const box = slideRef.current;
+    if (!img || !box) return { x: 0, y: 0 };
+    const maxX = Math.max(0, (img.offsetWidth * ZOOM_RATIO - box.clientWidth) / 2);
+    const maxY = Math.max(0, (img.offsetHeight * ZOOM_RATIO - box.clientHeight) / 2);
+    return { x: Math.min(maxX, Math.max(-maxX, x)), y: Math.min(maxY, Math.max(-maxY, y)) };
+  };
+
+  const onPointerDown = (e: ReactPointerEvent) => {
+    if (!zoomed) return;
+    e.preventDefault();
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    dragStart.current = { pointerX: e.clientX, pointerY: e.clientY, ...pan };
+    setDragging(true);
+  };
+  const onPointerMove = (e: ReactPointerEvent) => {
+    const start = dragStart.current;
+    if (!start) return;
+    setPan(clampPan(start.x + e.clientX - start.pointerX, start.y + e.clientY - start.pointerY));
+  };
+  const onPointerUp = () => {
+    dragStart.current = null;
+    setDragging(false);
+  };
+
+  const pageUrl = window.location.href.split("#")[0];
+  const imageUrl = new URL(slide.src, window.location.href).href;
+  const shareLinks = [
+    { icon: "facebook" as const, label: "Share on Facebook", href: `https://www.facebook.com/sharer.php?u=${encodeURIComponent(pageUrl)}` },
+    { icon: "x-twitter" as const, label: "Share on X", href: `https://x.com/intent/tweet?text=${encodeURIComponent(pageUrl)}` },
+    {
+      icon: "pinterest" as const,
+      label: "Pin it",
+      href: `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(pageUrl)}&media=${encodeURIComponent(imageUrl)}`,
+    },
+  ];
+
+  const swiperClasses = [
+    "swiper",
+    zoomed && "elementor-slideshow--zoom-mode",
+    fullscreen && "elementor-slideshow--fullscreen-mode",
+    sharing && "elementor-slideshow--share-mode",
+    uiHidden && !sharing && "elementor-slideshow--ui-hidden",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div
+      ref={rootRef}
       className="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-lightbox"
       role="dialog"
       aria-modal="true"
       aria-label="Image lightbox"
-      style={{ display: "block" }}
+      tabIndex={0}
+      style={{ display: "block", outline: "none" }}
+      onMouseMove={showUi}
     >
       <div className="dialog-widget-content dialog-lightbox-widget-content">
-        <button type="button" className="dialog-lightbox-close-button dialog-close-button" aria-label="Close" onClick={onClose}>
-          <svg aria-hidden="true" className="e-font-icon-svg e-eicon-close" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-            <path d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z" />
-          </svg>
-        </button>
-        <div
-          className="dialog-message dialog-lightbox-message"
+        {/* A link-styled button as on the original (a <button> adds browser padding and borders). */}
+        <a
+          href="#"
+          role="button"
+          className="dialog-close-button dialog-lightbox-close-button"
+          aria-label="Close (Esc)"
           onClick={(e) => {
-            if (e.target === e.currentTarget) onClose();
+            e.preventDefault();
+            close();
           }}
         >
-          <div className="elementor-lightbox-item elementor-lightbox-slideshow" style={{ height: "100%" }}>
-            <div className="swiper elementor-slideshow__swiper" style={{ height: "100%" }}>
-              <div className="elementor-slideshow__header elementor-lightbox-prevent-close">
-                <span className="elementor-slideshow__counter">
-                  {index + 1} / {count}
-                </span>
+          <svg aria-hidden="true" className={iconClass("close", "dialog-close-button-icon")} viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+            <path d={ICONS.close} />
+          </svg>
+        </a>
+        <div
+          className="dialog-message dialog-lightbox-message animated zoomIn"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) close();
+          }}
+        >
+          <div className={swiperClasses} style={{ height: "100%" }}>
+            <header className="elementor-slideshow__header elementor-lightbox-prevent-close">
+              <HeaderIcon name="share-arrow" role="button" aria-label="Share" aria-expanded={sharing} onActivate={() => setSharing((s) => !s)} />
+              <div
+                className="elementor-slideshow__share-menu"
+                onClick={(e) => {
+                  if (!(e.target as HTMLElement).closest("a")) setSharing(false);
+                }}
+              >
+                <div className="elementor-slideshow__share-links">
+                  {shareLinks.map((link) => (
+                    <a key={link.icon} href={link.href} target="_blank" rel="noopener noreferrer" tabIndex={sharing ? 0 : -1}>
+                      <svg aria-hidden="true" className={iconClass(link.icon)} viewBox="0 0 1000 1000">
+                        <path d={ICONS[link.icon]} />
+                      </svg>
+                      {link.label}
+                    </a>
+                  ))}
+                  <a href={slide.src} download tabIndex={sharing ? 0 : -1}>
+                    <svg aria-hidden="true" className={iconClass("download-bold")} viewBox="0 0 1000 1000">
+                      <path d={ICONS["download-bold"]} />
+                    </svg>
+                    Download image
+                  </a>
+                </div>
               </div>
-              <div className="swiper-wrapper" style={{ height: "100%" }}>
+              <HeaderIcon name="zoom-in-bold" hidden={zoomed} role="switch" aria-checked={false} aria-label="Zoom" onActivate={toggleZoom} />
+              <HeaderIcon name="zoom-out-bold" hidden={!zoomed} role="switch" aria-checked={true} aria-label="Zoom" onActivate={toggleZoom} />
+              <HeaderIcon name="frame-expand" hidden={fullscreen} role="switch" aria-checked={false} aria-label="Fullscreen" onActivate={toggleFullscreen} />
+              <HeaderIcon name="frame-minimize" hidden={!fullscreen} role="switch" aria-checked={true} aria-label="Fullscreen" onActivate={toggleFullscreen} />
+              <span className="elementor-slideshow__counter">
+                {index + 1} / {count}
+              </span>
+            </header>
+            <div className="swiper-wrapper" style={{ height: "100%" }}>
+              <div
+                ref={slideRef}
+                className={`swiper-slide elementor-lightbox-item swiper-slide-active${zoomed ? " swiper-slide-zoomed" : ""}`}
+                style={{ height: "100%", overflow: zoomed ? "hidden" : undefined, cursor: zoomed ? (dragging ? "grabbing" : "grab") : undefined, touchAction: zoomed ? "none" : undefined }}
+                onClick={(e) => {
+                  if (e.target === e.currentTarget && !zoomed) close();
+                }}
+                onPointerDown={onPointerDown}
+                onPointerMove={onPointerMove}
+                onPointerUp={onPointerUp}
+                onPointerCancel={onPointerUp}
+              >
                 <div
-                  className="swiper-slide elementor-lightbox-item swiper-slide-active"
-                  style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}
+                  className="swiper-zoom-container"
+                  style={{ transitionDuration: dragging ? "0ms" : "300ms", transform: `translate3d(${pan.x}px, ${pan.y}px, 0)` }}
                   onClick={(e) => {
-                    if (e.target === e.currentTarget) onClose();
+                    if (e.target === e.currentTarget && !zoomed) close();
                   }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img className="elementor-lightbox-image" src={slide.src} alt={slide.title} />
+                  <img
+                    ref={imageRef}
+                    className="elementor-lightbox-image elementor-lightbox-prevent-close"
+                    src={slide.src}
+                    alt={slide.title}
+                    draggable={false}
+                    style={{ transitionDuration: "300ms", transform: `translate3d(0, 0, 0) scale(${zoomed ? ZOOM_RATIO : 1})` }}
+                  />
                 </div>
               </div>
-              {count > 1 && (
-                <>
-                  <button type="button" className="elementor-swiper-button elementor-swiper-button-prev" aria-label="Previous slide" onClick={() => go(-1)}>
-                    <svg aria-hidden="true" className="e-font-icon-svg e-eicon-chevron-left" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z" />
-                    </svg>
-                  </button>
-                  <button type="button" className="elementor-swiper-button elementor-swiper-button-next" aria-label="Next slide" onClick={() => go(1)}>
-                    <svg aria-hidden="true" className="e-font-icon-svg e-eicon-chevron-right" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z" />
-                    </svg>
-                  </button>
-                </>
-              )}
             </div>
+            {count > 1 && (
+              <>
+                <NavButton direction="next" onActivate={() => go(1)} />
+                <NavButton direction="prev" onActivate={() => go(-1)} />
+              </>
+            )}
+            <footer className="elementor-slideshow__footer elementor-lightbox-prevent-close">
+              <div className="elementor-slideshow__title">{slide.title}</div>
+              <div className="elementor-slideshow__description" />
+            </footer>
           </div>
         </div>
       </div>

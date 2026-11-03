@@ -10,8 +10,11 @@ const SPEED = 0.5;
 
 type Item = { frame: HTMLElement; layer: HTMLElement };
 
-function wrapImage(img: HTMLImageElement): Item | null {
-  if (img.closest(".jarallax-container")) return null; // already wrapped
+// Both wrappers reuse an existing wrapper: React runs effects twice in development (Strict Mode),
+// and the second run must still return the items so the scroll handler moves them.
+function wrapImage(img: HTMLImageElement): Item {
+  const existing = img.closest<HTMLElement>(".jarallax.jarallax-container");
+  if (existing) return { frame: existing, layer: img };
   const frame = document.createElement("div");
   frame.className = "jarallax jarallax-container";
   const clip = document.createElement("div");
@@ -24,8 +27,10 @@ function wrapImage(img: HTMLImageElement): Item | null {
 }
 
 function wrapBackground(section: HTMLElement): Item | null {
+  const existing = section.querySelector<HTMLElement>(":scope > .jarallax-clip > .jarallax-bg");
+  if (existing) return { frame: section, layer: existing };
   const background = getComputedStyle(section).backgroundImage;
-  if (!background || background === "none" || section.querySelector(":scope > .jarallax-clip")) return null;
+  if (!background || background === "none") return null;
   const clip = document.createElement("div");
   clip.className = "jarallax-container jarallax-clip";
   const layer = document.createElement("div");
@@ -35,6 +40,11 @@ function wrapBackground(section: HTMLElement): Item | null {
   section.prepend(clip);
   section.style.backgroundImage = "none";
   return { frame: section, layer };
+}
+
+/** Redesign (MASTER.md): under reduced motion the image just fills its frame. The original design always moves. */
+function staysStill() {
+  return document.documentElement.dataset.design !== "original" && matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
 function update({ frame, layer }: Item) {
@@ -52,14 +62,20 @@ function update({ frame, layer }: Item) {
 
 export function applyParallax(): () => void {
   const items: Item[] = [];
-  document.querySelectorAll<HTMLImageElement>(".has-jarallax-img img").forEach((img) => {
-    const item = wrapImage(img);
-    if (item) items.push(item);
-  });
+  document.querySelectorAll<HTMLImageElement>(".has-jarallax-img img").forEach((img) => items.push(wrapImage(img)));
   document.querySelectorAll<HTMLElement>(".e-con.jarallax").forEach((section) => {
     const item = wrapBackground(section);
     if (item) items.push(item);
   });
+
+  if (staysStill()) {
+    items.forEach(({ layer }) => {
+      layer.style.height = "100%";
+      layer.style.marginTop = "0";
+      layer.style.transform = "none";
+    });
+    return () => {};
+  }
 
   let frameRequest = 0;
   const run = () => {
