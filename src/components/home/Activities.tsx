@@ -3,6 +3,7 @@ import FadeInUp from "@/components/shared/FadeInUp";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { activities as content } from "@/data/homepage";
 import styles from "./Activities.module.css";
+import Wave from "./Wave";
 
 /** Sections 6 + 7: "Surf, Waterfalls and Island Tours" and the Surf / Nature / Activities boxes. */
 export default function Activities() {
@@ -35,6 +36,7 @@ export default function Activities() {
                 <div className={`widget ${styles.imageBox} ${index === 1 ? styles.imageBoxOffset : ""}`}>
                   <figure className={styles.imageBoxImg}>
                     <Image src={box.image} alt="" width={600} height={800} sizes="(max-width: 767px) 100vw, 410px" />
+                    <Wave className={styles.cardWave} />
                   </figure>
                   <div>
                     <h3 className={styles.imageBoxTitle}>{box.title}</h3>

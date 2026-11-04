@@ -11,6 +11,7 @@ export default function DivingSection() {
       paragraphs={content.paragraphs}
       button={content.button}
       image={content.image}
+      band
     />
   );
 }

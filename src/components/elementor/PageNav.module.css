@@ -92,7 +92,7 @@
   outline-offset: 2px;
 }
 
-/* Bottom-left, clear of the WhatsApp and booking buttons on the right. */
+/* Placed above the WhatsApp button (see the end of this file). */
 .top {
   position: fixed;
   left: max(var(--rd-s4), env(safe-area-inset-left, 0px));
@@ -175,6 +175,22 @@
     pointer-events: none;
     transform: translateY(8px);
   }
+}
+
+/*
+ * Redesign "Waves" (owner, 2026-11-04): a round button stacked above the WhatsApp button on every screen size, as
+ * on phones; bottom-left it sat under the Next.js dev indicator and looked like an empty white box.
+ */
+@media (min-width: 768px) {
+  .top {
+    left: auto;
+    right: max(24px, env(safe-area-inset-right, 0px));
+    bottom: calc(176px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+.top {
+  border-radius: 50%;
 }
 
 @media (prefers-reduced-motion: reduce) {

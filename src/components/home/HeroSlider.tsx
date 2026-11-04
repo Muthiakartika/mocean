@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { contact } from "@/data/contact";
 import { heroSlides } from "@/data/homepage";
 import styles from "./HeroSlider.module.css";
+import Wave from "./Wave";
 
 /** Each slide stays 4.5s (Slider Revolution "len": 4500). */
 const SLIDE_DURATION = 4500;
@@ -12,6 +13,7 @@ const SLIDE_DURATION = 4500;
 /**
  * Home hero slider: 6 photos that cross-fade every 4.5s with a slow zoom,
  * the resort name and a "Book Now" link to Cloudbeds. Swipe/drag changes slide.
+ * The redesign adds arrows, one dash per slide and a wavy bottom edge (all hidden with ?original).
  */
 export default function HeroSlider() {
   const [active, setActive] = useState(0);
@@ -90,6 +92,34 @@ export default function HeroSlider() {
           </a>
         </div>
       ))}
+
+      <button type="button" className={`${styles.arrow} ${styles.prev}`} aria-label="Previous slide" onClick={() => go(-1)}>
+        <Chevron />
+      </button>
+      <button type="button" className={`${styles.arrow} ${styles.next}`} aria-label="Next slide" onClick={() => go(1)}>
+        <Chevron />
+      </button>
+      <div className={styles.dots}>
+        {heroSlides.map((slide, index) => (
+          <button
+            key={slide.image}
+            type="button"
+            className={`${styles.dot} ${index === active ? styles.dotActive : ""}`}
+            aria-label={`Slide ${index + 1} of ${heroSlides.length}`}
+            aria-current={index === active ? "true" : undefined}
+            onClick={() => setActive(index)}
+          />
+        ))}
+      </div>
+      <Wave />
     </section>
+  );
+}
+
+function Chevron() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }

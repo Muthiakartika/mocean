@@ -183,3 +183,118 @@
     padding: 0 0 2px;
   }
 }
+
+/*
+ * Redesign "Waves" (not with ?original, tokens: src/styles/redesign/waves.css): the sea band with a wavy bottom
+ * edge, the top photo with one large round corner over a white circle, the lower photo as a capsule, and the
+ * facilities in two aligned columns with round icon badges.
+ */
+:global(html:not([data-design="original"])) .section {
+  --padding-top: 110px;
+  --padding-bottom: 170px;
+  background-color: var(--hm-sea);
+}
+
+:global(html:not([data-design="original"])) .photoColumn {
+  --overflow: visible;
+  --border-radius: 0;
+  isolation: isolate;
+}
+
+:global(html:not([data-design="original"])) .photoColumn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -44px;
+  right: -52px;
+  width: 58%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+}
+
+:global(html:not([data-design="original"])) .topImage {
+  --radius: 280px var(--hm-r) var(--hm-r) var(--hm-r);
+}
+
+:global(html:not([data-design="original"])) .bottomImage {
+  --radius: 999px;
+}
+
+:global(html:not([data-design="original"])) .topImage img,
+:global(html:not([data-design="original"])) .bottomImage img {
+  border-radius: 0;
+}
+
+:global(html:not([data-design="original"])) .listRow {
+  padding: 0 0 12px;
+  overflow: visible;
+}
+
+:global(html:not([data-design="original"])) .items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin: 0;
+}
+
+:global(html:not([data-design="original"])) .item {
+  margin: 0;
+}
+
+:global(html:not([data-design="original"])) .icon {
+  flex: none;
+  place-items: center;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 14px -8px rgb(14 21 48 / 0.35);
+}
+
+:global(html:not([data-design="original"])) .icon img {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+:global(html:not([data-design="original"])) .label {
+  padding-inline-start: 10px;
+}
+
+@media (max-width: 1024px) {
+  :global(html:not([data-design="original"])) .topImage {
+    --radius: 200px var(--hm-r) var(--hm-r) var(--hm-r);
+  }
+}
+
+@media (max-width: 880px) {
+  :global(html:not([data-design="original"])) .section {
+    --padding-top: 80px;
+    --padding-bottom: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .section {
+    --padding-top: 40px;
+    --padding-bottom: 90px;
+    --padding-left: 10px;
+    --padding-right: 10px;
+  }
+
+  :global(html:not([data-design="original"])) .photoColumn::before {
+    top: -24px;
+    right: -10px;
+  }
+
+  :global(html:not([data-design="original"])) .topImage {
+    --radius: var(--hm-curve) var(--hm-r) var(--hm-r) var(--hm-r);
+  }
+
+  :global(html:not([data-design="original"])) .items {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+}

@@ -1,5 +1,10 @@
+import type { CSSProperties } from "react";
+import Image from "next/image";
 import headingRoles from "@/data/heading-roles.json";
 import { SiteFacts, hasSiteFacts } from "./Facts";
+import type { Chapter } from "./chapters";
+import type { FaqPhoto } from "./faqPhotos";
+import { responsiveImages } from "./responsiveImages";
 import type { ElementorNode as Node } from "./types";
 
 /**
@@ -16,11 +21,41 @@ function isCard(node: Node) {
   return node.children.some((child) => holds(child, "image")) && node.children.some((child) => holds(child, "rt-button"));
 }
 
+/** A card grid: two or more cards side by side. A single photo + text block is a normal section, not a row. */
+export const isCardGrid = (node: Node) => node.type === "container" && "children" in node && node.children.filter(isCard).length >= 2;
+
+const isChipList = (node: Node) => node.type === "icon-list" && "html" in node && node.html.includes("elementor-inline-items");
+
+/** The item texts of a list widget. */
+const listItems = (node: Node) =>
+  "html" in node
+    ? [...node.html.matchAll(/<span class="elementor-icon-list-text">([\s\S]*?)<\/span>/g)].map((m) => m[1].replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").trim())
+    : [];
+
+/**
+ * Chip lists that Elementor split over several list widgets (two or three chips per widget, a run of list widgets
+ * starting with an inline one): widget id → length of the longest chip in the run. The redesign layer gives every
+ * list in the run the same column width from it, so the chips line up.
+ */
+function chipRuns(children: Node[]) {
+  const runs = new Map<string, number>();
+  for (let i = 0; i < children.length; i++) {
+    if (!isChipList(children[i]) || children[i - 1]?.type === "icon-list") continue;
+    let end = i + 1;
+    while (children[end]?.type === "icon-list") end++;
+    if (end - i < 2) continue;
+    const run = children.slice(i, end);
+    const longest = Math.max(...run.flatMap(listItems).map((text) => text.length));
+    for (const list of run) runs.set(list.id, longest);
+  }
+  return runs;
+}
+
 /** Original classes plus the redesign markers (heading roles, cards). */
-function redesignClasses(node: Node, path: string) {
+function redesignClasses(node: Node, path: string, inCardGrid: boolean) {
   if (node.type === "container" && "children" in node) {
-    if (isCard(node)) return `${node.classes} rd-card`;
-    if (node.children.filter(isCard).length >= 2) return `${node.classes} rd-cards`;
+    if (inCardGrid && isCard(node)) return `${node.classes} rd-card`;
+    if (isCardGrid(node)) return `${node.classes} rd-cards`;
     return node.classes;
   }
   if (node.type !== "react-heading") return node.classes;
@@ -32,18 +67,67 @@ function redesignClasses(node: Node, path: string) {
  * Renders one container or widget with the same markup the original site used,
  * so the original page CSS (src/styles/elementor/post-<id>.css) applies unchanged.
  */
-export default function ElementorNode({ node, path }: { node: Node; path: string }) {
+export default function ElementorNode({
+  node,
+  path,
+  inCardGrid = false,
+  chipLength,
+  collages,
+  marks,
+  chapters,
+  extraClass,
+}: {
+  node: Node;
+  path: string;
+  inCardGrid?: boolean;
+  /** Set on list widgets in a split chip list (chipRuns). */
+  chipLength?: number;
+  /** FAQ photo container id → the extra photos of its collage (faqCollages). */
+  collages?: Map<string, FaqPhoto[]>;
+  /** Element id → Waves classes, on the pages that have that look (waves.ts). */
+  marks?: Map<string, string>;
+  /** Jump-nav entries (surf spots) of a top-level section on the surf guides (chapters.ts). */
+  chapters?: Chapter[];
+  /** A redesign marker set by the page (e.g. rd-overlay-card). */
+  extraClass?: string;
+}) {
   // Original id/classes. Elements with an entrance animation start hidden; ElementorBehaviors reveals them on scroll.
-  const classes = redesignClasses(node, path);
+  const collage = collages?.get(node.id);
+  const classes = [redesignClasses(node, path, inCardGrid), chipLength && "rd-chip-run", collage && "rd-faq-photos", marks?.get(node.id), extraClass]
+    .filter(Boolean)
+    .join(" ");
   const wrapperProps = {
     id: node.cssId,
+    style: chipLength ? ({ "--rd-chip-len": chipLength } as CSSProperties) : undefined,
     ...(node.animation
       ? { "data-animation": node.animation, className: `${classes} elementor-invisible` }
       : { className: classes }),
   };
 
   if (node.type === "container" && "children" in node) {
-    const children = node.children.map((child) => <ElementorNode key={child.id} node={child} path={path} />);
+    const grid = isCardGrid(node);
+    const chips = chipRuns(node.children);
+    const children = node.children.map((child) => (
+      <ElementorNode key={child.id} node={child} path={path} inCardGrid={grid} chipLength={chips.get(child.id)} collages={collages} marks={marks} />
+    ));
+    // Logbook redesign: two more of the page's photos beside the FAQ photo.
+    if (collage?.length) {
+      children.push(
+        <div key="rd-faq-more" className="rd-only rd-faq-more" data-count={collage.length}>
+          {collage.map((photo) => (
+            <Image key={photo.src} src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} sizes="(max-width: 767px) 45vw, 22vw" />
+          ))}
+        </div>,
+      );
+    }
+    // Redesign: jump-nav targets of a surf guide section, empty markers at its top (out of the flex flow).
+    if (chapters?.length) {
+      children.unshift(
+        ...chapters.map((c) => (
+          <span key={c.id} id={c.id} className="rd-only rd-chapter" data-rd-chapter={c.label} data-rd-tab={c.tab} aria-hidden="true" />
+        )),
+      );
+    }
     // Logbook redesign: a dive site's spec row goes right after its intro text.
     if (hasSiteFacts(path, node.cssId)) {
       const intro = node.children.findIndex((child) => child.type === "text-editor");
@@ -62,7 +146,7 @@ export default function ElementorNode({ node, path }: { node: Node; path: string
     if (node.wrapped) {
       return (
         <div {...wrapperProps} data-id={node.id} data-element_type="widget" data-widget_type={`${node.type}.default`}>
-          <div className="elementor-widget-container" dangerouslySetInnerHTML={{ __html: node.html }} />
+          <div className="elementor-widget-container" dangerouslySetInnerHTML={{ __html: responsiveImages(node.html) }} />
         </div>
       );
     }
@@ -72,7 +156,7 @@ export default function ElementorNode({ node, path }: { node: Node; path: string
         data-id={node.id}
         data-element_type="widget"
         data-widget_type={`${node.type}.default`}
-        dangerouslySetInnerHTML={{ __html: node.html }}
+        dangerouslySetInnerHTML={{ __html: responsiveImages(node.html) }}
       />
     );
   }

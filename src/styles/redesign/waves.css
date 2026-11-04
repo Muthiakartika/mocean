@@ -1,0 +1,23 @@
+/*
+ * Tokens of the redesign "Waves" (owner reference 2026-11-04): same content and section order, with curved photo
+ * shapes and pale sea bands with wavy edges. Used by the homepage modules (src/components/home/) and by the layer
+ * on the main menu pages (./waves-pages.css); every rule that uses them sits behind html:not([data-design="original"]),
+ * so ?original still shows the live design.
+ */
+:root {
+  --hm-navy: #111f90;
+  --hm-navy-deep: #0d1873;
+  --hm-sea: #eaf2fc; /* bands (diving, facilities, FAQ) */
+  --hm-sea-deep: #d6e5fa; /* circles behind photos on white */
+  --hm-ring: rgb(17 31 144 / 0.22); /* thin rings beside photos */
+  --hm-r: 24px; /* small corners of the curved photos */
+  --hm-curve: 240px; /* large corners of the leaf-shaped photos */
+  --hm-shadow: 0 2px 4px rgb(14 21 48 / 0.04), 0 28px 48px -30px rgb(14 21 48 / 0.45);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --hm-r: 18px;
+    --hm-curve: clamp(110px, 30vw, 160px);
+  }
+}

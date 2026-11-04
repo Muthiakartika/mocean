@@ -77,3 +77,153 @@
     height: 260px;
   }
 }
+
+/*
+ * Redesign (not with ?original): the FAQ of the inner pages (MASTER.md, "FAQ"): the heading without the small
+ * "FAQ" label, the questions as cards (Accordion variant "cards") and beside them a collage of three photos that
+ * stand still, on the ice band. The original parallax photo stays for ?original.
+ */
+.collage {
+  display: none;
+}
+
+:global(html:not([data-design="original"])) .section {
+  --padding-top: 190px;
+  --padding-bottom: 190px;
+  background-color: var(--hm-sea);
+}
+
+:global(html:not([data-design="original"])) .heading > span:first-child {
+  display: none;
+}
+
+:global(html:not([data-design="original"])) .heading h2 {
+  margin: 0;
+  color: #0e1530;
+  font-family: var(--font-body);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+:global(html:not([data-design="original"])) .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 48px;
+}
+
+:global(html:not([data-design="original"])) .accordionColumn {
+  order: 1;
+  width: 100%;
+}
+
+:global(html:not([data-design="original"])) .imageColumn {
+  order: 2;
+  width: 100%;
+  overflow: visible;
+  border-radius: 0;
+}
+
+:global(html:not([data-design="original"])) .parallax {
+  display: none;
+}
+
+/* The FAQ photo tall on the right, the two others stacked on the left (3 : 2). */
+:global(html:not([data-design="original"])) .collage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 12px;
+  height: clamp(380px, 36vw, 520px);
+}
+
+.collage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.collageSmall:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.collageSmall:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.collageTall {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+@media (max-width: 880px) {
+  :global(html:not([data-design="original"])) .row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  :global(html:not([data-design="original"])) .collage {
+    height: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .heading h2 {
+    font-size: 30px;
+  }
+
+  :global(html:not([data-design="original"])) .collage {
+    height: 300px;
+  }
+}
+
+/*
+ * Redesign "Waves" (tokens: src/styles/redesign/waves.css): wavy edges on the sea band and curved collage photos
+ * (one large round corner on each small photo, the tall one an arch), so the three read as one rounded shape.
+ */
+:global(html:not([data-design="original"])) .collage img {
+  border-radius: var(--hm-r);
+}
+
+:global(html:not([data-design="original"])) .collage .collageSmall:first-child {
+  border-radius: 160px var(--hm-r) var(--hm-r) var(--hm-r);
+}
+
+:global(html:not([data-design="original"])) .collage .collageSmall:nth-child(2) {
+  border-radius: var(--hm-r) var(--hm-r) var(--hm-r) 140px;
+}
+
+:global(html:not([data-design="original"])) .collage .collageTall {
+  border-radius: 50% 50% var(--hm-r) var(--hm-r) / 150px 150px var(--hm-r) var(--hm-r);
+}
+
+@media (max-width: 1024px) {
+  :global(html:not([data-design="original"])) .section {
+    --padding-top: 140px;
+    --padding-bottom: 140px;
+  }
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .section {
+    --padding-top: 90px;
+    --padding-bottom: 90px;
+  }
+
+  :global(html:not([data-design="original"])) .collage .collageSmall:first-child {
+    border-radius: 90px var(--hm-r) var(--hm-r) var(--hm-r);
+  }
+
+  :global(html:not([data-design="original"])) .collage .collageSmall:nth-child(2) {
+    border-radius: var(--hm-r) var(--hm-r) var(--hm-r) 80px;
+  }
+
+  :global(html:not([data-design="original"])) .collage .collageTall {
+    border-radius: 50% 50% var(--hm-r) var(--hm-r) / 90px 90px var(--hm-r) var(--hm-r);
+  }
+}

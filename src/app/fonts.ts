@@ -21,12 +21,13 @@ export const jost = Jost({
   display: "swap",
 });
 
-/** Only used by one text layer in the home hero slider. */
+/** Only used by one text layer in the home hero slider, and only with ?original (the redesign uses Quicksand). */
 export const roboto = Roboto({
   subsets: ["latin"],
   weight: ["500"],
   variable: "--font-roboto",
   display: "swap",
+  preload: false,
 });
 
 /** Icon font from the Moonlit theme (phone, location, user icons). */

@@ -11,12 +11,16 @@
   --rd-meta: #5e6575;
   --rd-ice: #f2f5fb;
   --rd-line: #d9dfea;
+  --rd-line-strong: #c3cbdb; /* FAQ card border on hover */
   --rd-white: #ffffff;
   --rd-on-ink-meta: #c5cce4;
 
   /* Type */
   --rd-font-text: var(--font-quicksand), "Trebuchet MS", sans-serif;
-  --rd-font-data: var(--font-jost), "Century Gothic", sans-serif;
+  /* One face everywhere, as on the live site (owner, 2026-11-03): the former Jost roles use Quicksand too. */
+  --rd-font-data: var(--font-quicksand), "Trebuchet MS", sans-serif;
+  --rd-heading-weight: 400; /* headings as on the live site */
+  --rd-ui-weight: 500; /* buttons, FAQ questions, as on the live site */
   --rd-heading-max: 40px;
   --rd-heading-max-mobile: 30px;
   --rd-hero-max-mobile: 40px; /* page title in the hero on phones */
@@ -44,6 +48,9 @@
 
   /* Shape and depth */
   --rd-r: 4px;
+  --rd-r-card: 12px; /* FAQ cards and the FAQ photo collage only (owner reference 2026-11-03) */
+  --rd-shadow-card: 0 1px 2px rgb(14 21 48 / 0.05), 0 12px 28px -18px rgb(14 21 48 / 0.3);
+  --rd-shadow-card-open: 0 1px 2px rgb(14 21 48 / 0.06), 0 20px 40px -20px rgb(14 21 48 / 0.38);
   --rd-shadow-float: 0 10px 24px -20px rgb(14 21 48 / 0.6);
   --rd-z-nav: 20;
 

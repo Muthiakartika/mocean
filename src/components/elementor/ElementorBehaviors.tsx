@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { applyContactForms } from "./contactForm";
-import { applyFaqPanels } from "./faqPanel";
+import { applyMenuTabs } from "./menuTabs";
+import { applyPriceLists } from "./priceList";
 import { applyParallax } from "./parallax";
 import { startTestimonialSliders } from "./sliders";
 import Lightbox, { type LightboxSlide } from "./Lightbox";
@@ -14,7 +15,8 @@ import Lightbox, { type LightboxSlide } from "./Lightbox";
  *   - nested accordions (only one item open at a time)
  *   - parallax images and section backgrounds (jarallax)
  *   - image lightbox for gallery / image links
- *   - testimonial sliders
+ *   - testimonial sliders (autoplay and arrows)
+ *   - the restaurant menu's category buttons
  *   - the contact form (WPForms' AJAX submit, now sent through /api/contact/)
  * It works on the HTML rendered by ElementorNode, the same way Elementor did.
  */
@@ -79,6 +81,8 @@ export default function ElementorBehaviors() {
     const onToggle = (event: Event) => {
       const item = event.target as HTMLDetailsElement;
       if (!item.matches?.(".e-n-accordion-item") || !item.open) return;
+      // A price list (priceList.ts) keeps every category open.
+      if (item.closest(".rd-price-list")) return;
       const summary = item.querySelector(":scope > summary");
       summary?.setAttribute("aria-expanded", "true");
       item.parentElement?.querySelectorAll<HTMLDetailsElement>(":scope > .e-n-accordion-item[open]").forEach((other) => {
@@ -101,10 +105,13 @@ export default function ElementorBehaviors() {
   useEffect(() => applyParallax(), []);
 
   // Logbook redesign: FAQ index + answer panel on wide screens
-  useEffect(() => applyFaqPanels(), []);
+  useEffect(() => applyPriceLists(), []);
 
   // Testimonial sliders (Swiper on the original)
   useEffect(() => startTestimonialSliders(), []);
+
+  // Restaurant menu categories (the theme's script on the original)
+  useEffect(() => applyMenuTabs(), []);
 
   // Contact form (WPForms on the original)
   useEffect(() => applyContactForms(), []);

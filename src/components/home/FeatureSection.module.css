@@ -193,3 +193,128 @@
     padding-top: 11px;
   }
 }
+
+/*
+ * Redesign "Waves" (not with ?original, tokens: src/styles/redesign/waves.css): curved photos with a circle and a
+ * thin ring behind them (rooms an arch, diving and restaurant leaf shapes facing each other), diving on the sea
+ * band with wavy edges.
+ */
+:global(html:not([data-design="original"])) .imageColumn {
+  --overflow: visible;
+  --border-radius: 0;
+  isolation: isolate;
+}
+
+:global(html:not([data-design="original"])) .imageColumn::before,
+:global(html:not([data-design="original"])) .imageColumn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+:global(html:not([data-design="original"])) .imageColumn::before {
+  width: 62%;
+  background: var(--hm-sea-deep);
+}
+
+:global(html:not([data-design="original"])) .imageColumn::after {
+  width: 150px;
+  border: 2px solid var(--hm-ring);
+}
+
+:global(html:not([data-design="original"])) .image img {
+  border-radius: 0;
+}
+
+/* Rooms: arch, circle low on the left, ring at the top right */
+:global(html:not([data-design="original"])) .rooms .image {
+  --radius: 50% 50% var(--hm-r) var(--hm-r) / 300px 300px var(--hm-r) var(--hm-r);
+}
+
+:global(html:not([data-design="original"])) .rooms .imageColumn::before {
+  bottom: -48px;
+  left: -64px;
+}
+
+:global(html:not([data-design="original"])) .rooms .imageColumn::after {
+  top: 36px;
+  right: -40px;
+}
+
+/* Diving: on the sea band; leaf (round top right and bottom left), white circle at the bottom right */
+:global(html:not([data-design="original"])) .band {
+  --margin-top: 110px;
+  --padding-top: 170px;
+  --padding-bottom: 170px;
+  --wave-fill: #fff;
+  background: var(--hm-sea);
+}
+
+:global(html:not([data-design="original"])) .diving .image {
+  --radius: var(--hm-r) var(--hm-curve);
+}
+
+:global(html:not([data-design="original"])) .diving .imageColumn::before {
+  right: -56px;
+  bottom: -56px;
+  background: #fff;
+}
+
+:global(html:not([data-design="original"])) .diving .imageColumn::after {
+  top: -40px;
+  left: -40px;
+}
+
+/* Restaurant: the mirrored leaf, circle at the top left, ring at the bottom right */
+:global(html:not([data-design="original"])) .restaurant .image {
+  --radius: var(--hm-curve) var(--hm-r);
+}
+
+:global(html:not([data-design="original"])) .restaurant .imageColumn::before {
+  top: -48px;
+  left: -64px;
+}
+
+:global(html:not([data-design="original"])) .restaurant .imageColumn::after {
+  right: -40px;
+  bottom: -40px;
+}
+
+@media (max-width: 880px) {
+  :global(html:not([data-design="original"])) .band {
+    --padding-top: 110px;
+    --padding-bottom: 110px;
+  }
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .imageColumn::after {
+    display: none;
+  }
+
+  :global(html:not([data-design="original"])) .imageColumn::before {
+    width: 70%;
+  }
+
+  :global(html:not([data-design="original"])) .rooms .image {
+    --radius: 50% 50% var(--hm-r) var(--hm-r) / 46vw 46vw var(--hm-r) var(--hm-r);
+  }
+
+  :global(html:not([data-design="original"])) .rooms .imageColumn::before,
+  :global(html:not([data-design="original"])) .restaurant .imageColumn::before {
+    left: -10px;
+  }
+
+  :global(html:not([data-design="original"])) .diving .imageColumn::before {
+    right: -10px;
+    bottom: -32px;
+  }
+
+  :global(html:not([data-design="original"])) .band {
+    --margin-top: 56px;
+    --padding-top: 80px;
+    --padding-bottom: 80px;
+  }
+}

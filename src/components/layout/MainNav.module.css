@@ -272,3 +272,9 @@
     display: block;
   }
 }
+
+/* Redesign (not with ?original): one face everywhere, Quicksand, as the rest of the site (owner, 2026-11-03). */
+:global(html:not([data-design="original"])) .topLink,
+:global(html:not([data-design="original"])) .subLink {
+  font-family: var(--font-body);
+}

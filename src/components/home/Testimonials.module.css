@@ -150,3 +150,29 @@
     margin-bottom: 30px;
   }
 }
+
+/*
+ * Redesign "Waves" (not with ?original, tokens: src/styles/redesign/waves.css): a navy tint over the photo, white
+ * stars, a wavy top edge and a bottom edge running into the sea band of the facilities.
+ */
+:global(html:not([data-design="original"])) .section {
+  --padding-top: 190px;
+  --padding-bottom: 180px;
+  --overlay-color: #08124e;
+  --overlay-opacity: 0.74;
+}
+
+:global(html:not([data-design="original"])) .star {
+  color: #fff;
+}
+
+.waveBottom {
+  --wave-fill: var(--hm-sea);
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .section {
+    --padding-top: 86px;
+    --padding-bottom: 80px;
+  }
+}

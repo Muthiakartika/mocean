@@ -3,11 +3,23 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./PageNav.module.css";
 
-type Section = { id: string; label: string };
+/** `tab`: a surf spot that is a tab on the page (chapters.ts); its entry opens that tab. */
+type Section = { id: string; label: string; tab?: string };
 
 /** Pages shorter than this many screens get neither the jump-nav nor the back-to-top button. */
 const LONG_PAGE_SCREENS = 4;
 const MIN_SECTIONS = 3;
+/** The surf guides list only their spots, two on some pages. */
+const MIN_CHAPTERS = 2;
+
+/** The surf spots of a surf guide (rd-chapter markers from chapters.ts), when the page has them. */
+function findChapters(content: HTMLElement): Section[] {
+  return [...content.querySelectorAll<HTMLElement>(".rd-chapter[data-rd-chapter]")].map((el) => ({
+    id: el.id,
+    label: el.dataset.rdChapter!,
+    tab: el.dataset.rdTab,
+  }));
+}
 
 /** In-page anchor targets in document order, labelled by the text of the links that point to them. */
 function findSections(content: HTMLElement): Section[] {
@@ -26,8 +38,8 @@ function findSections(content: HTMLElement): Section[] {
 }
 
 /**
- * Redesign (MASTER.md): a sticky jump-nav built from the page's own table-of-contents links
- * (dive sites, surf spots), plus a back-to-top button on long pages.
+ * Redesign (MASTER.md): a sticky jump-nav built from the page's own table-of-contents links (dive sites) or from
+ * the page's sections (surf guides, chapters.ts), plus a back-to-top button on long pages.
  * Not rendered for the original design ("?original") or on short pages.
  */
 export default function PageNav() {
@@ -48,17 +60,20 @@ export default function PageNav() {
       if (!content) return;
       const long = document.documentElement.scrollHeight > window.innerHeight * LONG_PAGE_SCREENS;
       setIsLong(long);
-      const found = findSections(content);
-      if (long && found.length >= MIN_SECTIONS) setSections(found);
+      const chapters = findChapters(content);
+      const found = chapters.length >= MIN_CHAPTERS ? chapters : findSections(content);
+      if (long && found.length >= (found === chapters ? MIN_CHAPTERS : MIN_SECTIONS)) setSections(found);
     });
     return () => cancelAnimationFrame(frame);
   }, []);
 
-  // Show the bar once the page's own table of contents has scrolled away (until the footer comes in),
-  // and mark the section being read.
+  // Show the bar once the page's own table of contents (on the surf guides: the hero) has scrolled away, until the
+  // footer comes in, and mark the section being read.
   useEffect(() => {
     if (!sections.length) return;
-    const tocLink = document.querySelector<HTMLAnchorElement>(`#content a[href="#${CSS.escape(sections[0].id)}"]`);
+    const tocLink =
+      document.querySelector<HTMLElement>(`#content a[href="#${CSS.escape(sections[0].id)}"]`) ??
+      (document.querySelector(".rd-chapter") ? document.querySelector<HTMLElement>("#content .elementor > .e-con:first-child") : null);
     const observers: IntersectionObserver[] = [];
 
     if (tocLink) {
@@ -74,19 +89,40 @@ export default function PageNav() {
       observers.push(end);
     }
 
+    // A surf guide marker is an empty dot at the top of its section: the whole section is watched instead. Several
+    // spots can share a section (tabs): the one whose tab is open is the one being read.
+    const watched = new Map<Element, Section[]>();
+    const isOpen = (s: Section) => !!s.tab && document.getElementById(s.tab)?.getAttribute("aria-selected") === "true";
     const reading = new IntersectionObserver(
       (entries) => {
         const hit = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-        if (hit) setCurrent(hit.target.id);
+        const list = hit && watched.get(hit.target);
+        if (list) setCurrent((list.find(isOpen) ?? list[0]).id);
       },
       { rootMargin: "-30% 0px -60% 0px" },
     );
     sections.forEach((s) => {
       const el = document.getElementById(s.id);
-      if (el) reading.observe(el);
+      const target = el?.classList.contains("rd-chapter") ? el.closest(".elementor > .e-con") : el;
+      if (!target) return;
+      watched.set(target, [...(watched.get(target) ?? []), s]);
+      reading.observe(target);
     });
     observers.push(reading);
-    return () => observers.forEach((o) => o.disconnect());
+
+    // Opening a spot's tab on the page marks it in the bar too (after ElementorBehaviors has switched it).
+    const onTabClick = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest(".e-n-tab-title")) return;
+      requestAnimationFrame(() => {
+        const open = sections.find(isOpen);
+        if (open) setCurrent(open.id);
+      });
+    };
+    document.addEventListener("click", onTabClick);
+    return () => {
+      observers.forEach((o) => o.disconnect());
+      document.removeEventListener("click", onTabClick);
+    };
   }, [sections]);
 
   // Back-to-top appears after two screens of scrolling.
@@ -138,7 +174,15 @@ export default function PageNav() {
           <nav className={styles.bar} aria-label="On this page">
             <div className={styles.track} ref={barRef}>
               {sections.map((s) => (
-                <a key={s.id} href={`#${s.id}`} data-id={s.id} className={styles.pill} aria-current={current === s.id ? "true" : undefined}>
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  data-id={s.id}
+                  className={styles.pill}
+                  aria-current={current === s.id ? "true" : undefined}
+                  // A spot that is a tab: open it (ElementorBehaviors switches the panel), then the link scrolls there.
+                  onClick={s.tab ? () => document.getElementById(s.tab!)?.click() : undefined}
+                >
                   {s.label}
                 </a>
               ))}

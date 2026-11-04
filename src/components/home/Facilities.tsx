@@ -3,6 +3,7 @@ import ParallaxImage from "@/components/shared/ParallaxImage";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { facilities as content } from "@/data/homepage";
 import styles from "./Facilities.module.css";
+import Wave from "./Wave";
 
 /** Section 9: resort facilities with icons and two photos. */
 export default function Facilities() {
@@ -61,6 +62,7 @@ export default function Facilities() {
           </div>
         </div>
       </div>
+      <Wave />
     </section>
   );
 }

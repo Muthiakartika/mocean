@@ -62,7 +62,11 @@ function update({ frame, layer }: Item) {
 
 export function applyParallax(): () => void {
   const items: Item[] = [];
-  document.querySelectorAll<HTMLImageElement>(".has-jarallax-img img").forEach((img) => items.push(wrapImage(img)));
+  // In the redesign the FAQ photo sits still in its collage (faqPhotos.ts), next to the two extra photos.
+  const stillFaqPhoto = (img: Element) => document.documentElement.dataset.design !== "original" && img.closest(".rd-faq-photos");
+  document.querySelectorAll<HTMLImageElement>(".has-jarallax-img img").forEach((img) => {
+    if (!stillFaqPhoto(img)) items.push(wrapImage(img));
+  });
   document.querySelectorAll<HTMLElement>(".e-con.jarallax").forEach((section) => {
     const item = wrapBackground(section);
     if (item) items.push(item);
