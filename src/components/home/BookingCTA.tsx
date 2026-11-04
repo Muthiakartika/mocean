@@ -3,6 +3,7 @@ import FadeInUp from "@/components/shared/FadeInUp";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { bookingCta as content } from "@/data/homepage";
 import styles from "./BookingCTA.module.css";
+import Wave from "./Wave";
 
 /** Section 12: final booking call to action. */
 export default function BookingCTA() {
@@ -16,6 +17,7 @@ export default function BookingCTA() {
           <FadeInUp className={`widget ${styles.headingWrap}`}>
             <SectionHeading className={styles.heading} sub="" title={content.title} />
           </FadeInUp>
+          <Wave className={styles.bannerWave} />
         </div>
         <div className={`widget ${styles.text}`}>
           <p>{content.text}</p>
@@ -33,6 +35,7 @@ export default function BookingCTA() {
           ))}
         </div>
       </div>
+      <Wave className={styles.footerWave} />
     </section>
   );
 }

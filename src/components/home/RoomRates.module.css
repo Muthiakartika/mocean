@@ -180,3 +180,21 @@
     padding-top: 0;
   }
 }
+
+/* Redesign "Waves" (not with ?original, tokens: src/styles/redesign/waves.css): the room cards as arches. */
+:global(html:not([data-design="original"])) .card {
+  --border-radius: 50% 50% var(--hm-r) var(--hm-r) / 150px 150px var(--hm-r) var(--hm-r);
+  box-shadow: var(--hm-shadow);
+}
+
+@media (max-width: 1200px) {
+  :global(html:not([data-design="original"])) .card {
+    --border-radius: 50% 50% var(--hm-r) var(--hm-r) / 120px 120px var(--hm-r) var(--hm-r);
+  }
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .card {
+    --border-radius: 50% 50% var(--hm-r) var(--hm-r) / 46vw 46vw var(--hm-r) var(--hm-r);
+  }
+}

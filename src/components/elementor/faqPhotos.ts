@@ -11,7 +11,7 @@ export type FaqPhoto = { src: string; alt: string; width: number; height: number
 const attr = (html: string, name: string) => html.match(new RegExp(`\\b${name}="([^"]*)"`))?.[1];
 
 /** The photo of an image widget, if it is a real photo (not an icon, a logo or a wide banner strip). */
-function photoOf(node: Node): FaqPhoto | null {
+export function photoOf(node: Node): FaqPhoto | null {
   if (node.type !== "image" || !("html" in node)) return null;
   const src = attr(node.html, "src");
   const width = Number(attr(node.html, "width"));

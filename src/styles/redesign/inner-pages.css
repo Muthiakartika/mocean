@@ -13,6 +13,16 @@ html[data-design="original"] .rd-only {
   display: none !important;
 }
 
+/* Jump-nav target at the top of a surf guide section (chapters.ts): out of the flex flow, so it adds no gap. */
+.rd-chapter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
 html:not([data-design="original"]) #mocean-page {
   /* Hooks in the converted original CSS (scripts/migration/convert-css.mjs). Justified text stays justified on wide screens (left on phones, below). */
   --rd-band: var(--rd-ice);

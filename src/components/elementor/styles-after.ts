@@ -15,3 +15,6 @@ import "@/styles/elementor/elementor-fixes.css";
 // Redesign layer (MASTER.md); "?original" in the URL switches it off.
 import "@/styles/redesign/tokens.css";
 import "@/styles/redesign/inner-pages.css";
+// Redesign "Waves" (the homepage look) on the main menu pages: src/components/elementor/waves.ts.
+import "@/styles/redesign/waves.css";
+import "@/styles/redesign/waves-pages.css";

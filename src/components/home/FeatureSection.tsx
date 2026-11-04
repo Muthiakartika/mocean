@@ -2,6 +2,7 @@ import Button from "@/components/shared/Button";
 import ParallaxImage from "@/components/shared/ParallaxImage";
 import SectionHeading from "@/components/shared/SectionHeading";
 import styles from "./FeatureSection.module.css";
+import Wave from "./Wave";
 
 type FeatureSectionProps = {
   /** Which homepage section this is — selects its spacing. */
@@ -13,6 +14,8 @@ type FeatureSectionProps = {
   asParagraphs?: boolean;
   button: { label: string; href: string };
   image: { src: string; width: number; height: number };
+  /** Redesign: the section sits on the pale sea band with wavy top and bottom edges. */
+  band?: boolean;
 };
 
 /**
@@ -20,7 +23,7 @@ type FeatureSectionProps = {
  * In the HTML the photo comes first for Rooms/Restaurant and the text first for
  * Diving, exactly like the original, so the photo appears on alternating sides.
  */
-export default function FeatureSection({ variant, sub, title, paragraphs, asParagraphs = true, button, image }: FeatureSectionProps) {
+export default function FeatureSection({ variant, sub, title, paragraphs, asParagraphs = true, button, image, band }: FeatureSectionProps) {
   const imageColumn = (
     <div className={`con con-full ${styles.imageColumn}`}>
       <div className="widget">
@@ -58,7 +61,8 @@ export default function FeatureSection({ variant, sub, title, paragraphs, asPara
   );
 
   return (
-    <section className={`con con-boxed ${styles.section} ${styles[variant]}`}>
+    <section className={`con con-boxed ${styles.section} ${styles[variant]} ${band ? styles.band : ""}`}>
+      {band && <Wave edge="top" />}
       <div className="con-inner">
         <div className={`con con-full ${styles.row}`}>
           {variant === "diving" ? (
@@ -74,6 +78,7 @@ export default function FeatureSection({ variant, sub, title, paragraphs, asPara
           )}
         </div>
       </div>
+      {band && <Wave />}
     </section>
   );
 }

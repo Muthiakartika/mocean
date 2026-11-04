@@ -103,3 +103,40 @@
     --padding-right: 10px;
   }
 }
+
+/*
+ * Redesign "Waves" (not with ?original, tokens: src/styles/redesign/waves.css): the photo banner with round top
+ * corners and a wavy lower edge, and a teal wave at the bottom of the section running into the footer.
+ */
+:global(html:not([data-design="original"])) .section {
+  --padding-bottom: 190px;
+}
+
+:global(html:not([data-design="original"])) .banner {
+  --border-radius: 40px 40px 0 0;
+  --overlay-color: #08124e;
+}
+
+.bannerWave {
+  --wave-height: clamp(28px, 4.5vw, 64px);
+}
+
+.footerWave {
+  --wave-fill: var(--color-footer-top);
+}
+
+@media (max-width: 1024px) {
+  :global(html:not([data-design="original"])) .section {
+    --padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .section {
+    --padding-bottom: 100px;
+  }
+
+  :global(html:not([data-design="original"])) .banner {
+    --border-radius: 28px 28px 0 0;
+  }
+}

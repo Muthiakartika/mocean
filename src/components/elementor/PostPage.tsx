@@ -2,6 +2,8 @@ import Image from "next/image";
 import JsonLd from "@/components/shared/JsonLd";
 import ElementorBehaviors from "./ElementorBehaviors";
 import ElementorNode from "./ElementorNode";
+import HeroImage from "./HeroImage";
+import { responsiveImages } from "./responsiveImages";
 import type { ElementorNode as Node } from "./types";
 
 // Same shared CSS as ElementorPage, plus Gutenberg block styles and the post layout.
@@ -28,13 +30,15 @@ export type PostContent = {
  */
 export default function PostPage({ post }: { post: PostContent }) {
   return (
-    // #mocean-page scopes the redesign layer (src/styles/redesign/inner-pages.css).
-    <div id="mocean-page" className="elementor-kit-12054 post-page" data-path={post.path}>
+    // #mocean-page scopes the redesign layer (src/styles/redesign/inner-pages.css); data-look="waves" adds
+    // the homepage look over it (waves-pages.css): here the wavy bottom of the banner and rounder photos.
+    <div id="mocean-page" className="elementor-kit-12054 post-page" data-path={post.path} data-look="waves">
       <JsonLd path={post.path} />
+      {post.banner[0] && <HeroImage elementorId={post.bannerId} sectionId={post.banner[0].id} />}
       <div className="footer-width-fixer">
         <div className={`elementor elementor-${post.bannerId}`} data-elementor-type="wp-post" data-elementor-id={post.bannerId}>
-          {post.banner.map((node) => (
-            <ElementorNode key={node.id} node={node} path={post.path} />
+          {post.banner.map((node, i) => (
+            <ElementorNode key={node.id} node={node} path={post.path} extraClass={i === 0 ? "rd-wave-hero rd-wave-bottom" : undefined} />
           ))}
         </div>
       </div>
@@ -62,7 +66,7 @@ export default function PostPage({ post }: { post: PostContent }) {
                       )}
                       <div className="single-content-full">
                         {/* Trusted HTML extracted from the client's own website. */}
-                        <div className="bs-desc" dangerouslySetInnerHTML={{ __html: post.html }} />
+                        <div className="bs-desc" dangerouslySetInnerHTML={{ __html: responsiveImages(post.html) }} />
                       </div>
                       <div className="clear-fix" />
                     </article>

@@ -4,10 +4,13 @@ import { Fragment } from "react";
 import JsonLd from "@/components/shared/JsonLd";
 import ElementorBehaviors from "./ElementorBehaviors";
 import ElementorNode from "./ElementorNode";
+import { pageChapters } from "./chapters";
 import { faqCollages } from "./faqPhotos";
 import { PageFacts } from "./Facts";
+import HeroImage from "./HeroImage";
 import PageNav from "./PageNav";
 import type { PageContent } from "./types";
+import { waveMarks } from "./waves";
 
 import "./styles";
 
@@ -31,10 +34,14 @@ function overlaySections(elementorId: string): Set<string> {
 export default function ElementorPage({ page }: { page: PageContent }) {
   const collages = faqCollages(page.content);
   const overlays = overlaySections(page.elementorId);
+  const marks = waveMarks(page, overlays, collages);
+  const chapters = pageChapters(page);
   return (
-    // #mocean-page scopes the redesign layer (src/styles/redesign/inner-pages.css).
-    <div id="mocean-page" className="elementor-kit-12054 elementor-page" data-path={page.path}>
+    // #mocean-page scopes the redesign layer (src/styles/redesign/inner-pages.css); data-look="waves" adds
+    // the homepage look over it (waves-pages.css).
+    <div id="mocean-page" className="elementor-kit-12054 elementor-page" data-path={page.path} data-look="waves">
       <JsonLd path={page.path} />
+      {page.content[0] && <HeroImage elementorId={page.elementorId} sectionId={page.content[0].id} />}
       <div className="main-contain">
         {/* The theme's ".container" is full width here; renamed so Tailwind's `container` utility doesn't apply. */}
         <div className="theme-container">
@@ -46,6 +53,8 @@ export default function ElementorPage({ page }: { page: PageContent }) {
                     node={node}
                     path={page.path}
                     collages={collages}
+                    marks={marks}
+                    chapters={chapters.get(node.id)}
                     extraClass={overlays.has(node.id) ? "rd-overlay-card" : overlays.has(page.content[i - 1]?.id) ? "rd-after-overlay" : undefined}
                   />
                   {/* Logbook redesign: key figures directly under the hero. */}

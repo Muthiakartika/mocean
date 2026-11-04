@@ -11,6 +11,7 @@ import RoomRates from "@/components/home/RoomRates";
 import Testimonials from "@/components/home/Testimonials";
 import JsonLd from "@/components/shared/JsonLd";
 import { pageMetadata } from "@/lib/metadata";
+import "@/styles/redesign/waves.css";
 
 export const metadata = pageMetadata("/");
 

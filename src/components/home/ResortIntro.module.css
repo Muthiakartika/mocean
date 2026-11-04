@@ -135,3 +135,83 @@
     padding-top: 12px;
   }
 }
+
+/*
+ * Redesign "Waves" (not with ?original, tokens: src/styles/redesign/waves.css): the pool photo as an arch in front
+ * of a pale sea circle, the resort photo as a round inset on its shoulder, and a thin ring below.
+ */
+:global(html:not([data-design="original"])) .imageColumn {
+  isolation: isolate;
+}
+
+:global(html:not([data-design="original"])) .imageColumn::before,
+:global(html:not([data-design="original"])) .imageColumn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+:global(html:not([data-design="original"])) .imageColumn::before {
+  top: 110px;
+  left: -120px;
+  width: 470px;
+  background: var(--hm-sea-deep);
+}
+
+:global(html:not([data-design="original"])) .imageColumn::after {
+  right: -46px;
+  bottom: -46px;
+  width: 150px;
+  border: 2px solid var(--hm-ring);
+}
+
+:global(html:not([data-design="original"])) .mainImage {
+  --radius: 50% 50% var(--hm-r) var(--hm-r) / 212px 212px var(--hm-r) var(--hm-r);
+}
+
+:global(html:not([data-design="original"])) .mainImage img {
+  border-radius: 0;
+}
+
+:global(html:not([data-design="original"])) .smallImageBox {
+  right: -104px;
+  bottom: 318px;
+  width: 224px;
+  max-width: none;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: var(--hm-shadow);
+}
+
+:global(html:not([data-design="original"])) .smallImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .imageColumn::before {
+    top: 90px;
+    left: -10px;
+    width: 78%;
+  }
+
+  :global(html:not([data-design="original"])) .imageColumn::after {
+    display: none;
+  }
+
+  :global(html:not([data-design="original"])) .mainImage {
+    --radius: 50% 50% var(--hm-r) var(--hm-r) / 46vw 46vw var(--hm-r) var(--hm-r);
+  }
+
+  :global(html:not([data-design="original"])) .smallImageBox {
+    right: 0;
+    bottom: 400px;
+    width: 156px;
+    padding: 6px;
+  }
+}

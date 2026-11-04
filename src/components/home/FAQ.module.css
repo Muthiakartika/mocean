@@ -88,7 +88,9 @@
 }
 
 :global(html:not([data-design="original"])) .section {
-  background-color: #f2f5fb;
+  --padding-top: 190px;
+  --padding-bottom: 190px;
+  background-color: var(--hm-sea);
 }
 
 :global(html:not([data-design="original"])) .heading > span:first-child {
@@ -177,5 +179,51 @@
 
   :global(html:not([data-design="original"])) .collage {
     height: 300px;
+  }
+}
+
+/*
+ * Redesign "Waves" (tokens: src/styles/redesign/waves.css): wavy edges on the sea band and curved collage photos
+ * (one large round corner on each small photo, the tall one an arch), so the three read as one rounded shape.
+ */
+:global(html:not([data-design="original"])) .collage img {
+  border-radius: var(--hm-r);
+}
+
+:global(html:not([data-design="original"])) .collage .collageSmall:first-child {
+  border-radius: 160px var(--hm-r) var(--hm-r) var(--hm-r);
+}
+
+:global(html:not([data-design="original"])) .collage .collageSmall:nth-child(2) {
+  border-radius: var(--hm-r) var(--hm-r) var(--hm-r) 140px;
+}
+
+:global(html:not([data-design="original"])) .collage .collageTall {
+  border-radius: 50% 50% var(--hm-r) var(--hm-r) / 150px 150px var(--hm-r) var(--hm-r);
+}
+
+@media (max-width: 1024px) {
+  :global(html:not([data-design="original"])) .section {
+    --padding-top: 140px;
+    --padding-bottom: 140px;
+  }
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .section {
+    --padding-top: 90px;
+    --padding-bottom: 90px;
+  }
+
+  :global(html:not([data-design="original"])) .collage .collageSmall:first-child {
+    border-radius: 90px var(--hm-r) var(--hm-r) var(--hm-r);
+  }
+
+  :global(html:not([data-design="original"])) .collage .collageSmall:nth-child(2) {
+    border-radius: var(--hm-r) var(--hm-r) var(--hm-r) 80px;
+  }
+
+  :global(html:not([data-design="original"])) .collage .collageTall {
+    border-radius: 50% 50% var(--hm-r) var(--hm-r) / 90px 90px var(--hm-r) var(--hm-r);
   }
 }

@@ -2,7 +2,9 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import headingRoles from "@/data/heading-roles.json";
 import { SiteFacts, hasSiteFacts } from "./Facts";
+import type { Chapter } from "./chapters";
 import type { FaqPhoto } from "./faqPhotos";
+import { responsiveImages } from "./responsiveImages";
 import type { ElementorNode as Node } from "./types";
 
 /**
@@ -20,7 +22,7 @@ function isCard(node: Node) {
 }
 
 /** A card grid: two or more cards side by side. A single photo + text block is a normal section, not a row. */
-const isCardGrid = (node: Node) => node.type === "container" && "children" in node && node.children.filter(isCard).length >= 2;
+export const isCardGrid = (node: Node) => node.type === "container" && "children" in node && node.children.filter(isCard).length >= 2;
 
 const isChipList = (node: Node) => node.type === "icon-list" && "html" in node && node.html.includes("elementor-inline-items");
 
@@ -71,6 +73,8 @@ export default function ElementorNode({
   inCardGrid = false,
   chipLength,
   collages,
+  marks,
+  chapters,
   extraClass,
 }: {
   node: Node;
@@ -80,12 +84,16 @@ export default function ElementorNode({
   chipLength?: number;
   /** FAQ photo container id → the extra photos of its collage (faqCollages). */
   collages?: Map<string, FaqPhoto[]>;
+  /** Element id → Waves classes, on the pages that have that look (waves.ts). */
+  marks?: Map<string, string>;
+  /** Jump-nav entries (surf spots) of a top-level section on the surf guides (chapters.ts). */
+  chapters?: Chapter[];
   /** A redesign marker set by the page (e.g. rd-overlay-card). */
   extraClass?: string;
 }) {
   // Original id/classes. Elements with an entrance animation start hidden; ElementorBehaviors reveals them on scroll.
   const collage = collages?.get(node.id);
-  const classes = [redesignClasses(node, path, inCardGrid), chipLength && "rd-chip-run", collage && "rd-faq-photos", extraClass]
+  const classes = [redesignClasses(node, path, inCardGrid), chipLength && "rd-chip-run", collage && "rd-faq-photos", marks?.get(node.id), extraClass]
     .filter(Boolean)
     .join(" ");
   const wrapperProps = {
@@ -100,7 +108,7 @@ export default function ElementorNode({
     const grid = isCardGrid(node);
     const chips = chipRuns(node.children);
     const children = node.children.map((child) => (
-      <ElementorNode key={child.id} node={child} path={path} inCardGrid={grid} chipLength={chips.get(child.id)} collages={collages} />
+      <ElementorNode key={child.id} node={child} path={path} inCardGrid={grid} chipLength={chips.get(child.id)} collages={collages} marks={marks} />
     ));
     // Logbook redesign: two more of the page's photos beside the FAQ photo.
     if (collage?.length) {
@@ -110,6 +118,14 @@ export default function ElementorNode({
             <Image key={photo.src} src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} sizes="(max-width: 767px) 45vw, 22vw" />
           ))}
         </div>,
+      );
+    }
+    // Redesign: jump-nav targets of a surf guide section, empty markers at its top (out of the flex flow).
+    if (chapters?.length) {
+      children.unshift(
+        ...chapters.map((c) => (
+          <span key={c.id} id={c.id} className="rd-only rd-chapter" data-rd-chapter={c.label} data-rd-tab={c.tab} aria-hidden="true" />
+        )),
       );
     }
     // Logbook redesign: a dive site's spec row goes right after its intro text.
@@ -130,7 +146,7 @@ export default function ElementorNode({
     if (node.wrapped) {
       return (
         <div {...wrapperProps} data-id={node.id} data-element_type="widget" data-widget_type={`${node.type}.default`}>
-          <div className="elementor-widget-container" dangerouslySetInnerHTML={{ __html: node.html }} />
+          <div className="elementor-widget-container" dangerouslySetInnerHTML={{ __html: responsiveImages(node.html) }} />
         </div>
       );
     }
@@ -140,7 +156,7 @@ export default function ElementorNode({
         data-id={node.id}
         data-element_type="widget"
         data-widget_type={`${node.type}.default`}
-        dangerouslySetInnerHTML={{ __html: node.html }}
+        dangerouslySetInnerHTML={{ __html: responsiveImages(node.html) }}
       />
     );
   }

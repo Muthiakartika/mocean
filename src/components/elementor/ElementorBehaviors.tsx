@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { applyContactForms } from "./contactForm";
+import { applyMenuTabs } from "./menuTabs";
 import { applyPriceLists } from "./priceList";
 import { applyParallax } from "./parallax";
 import { startTestimonialSliders } from "./sliders";
@@ -14,7 +15,8 @@ import Lightbox, { type LightboxSlide } from "./Lightbox";
  *   - nested accordions (only one item open at a time)
  *   - parallax images and section backgrounds (jarallax)
  *   - image lightbox for gallery / image links
- *   - testimonial sliders
+ *   - testimonial sliders (autoplay and arrows)
+ *   - the restaurant menu's category buttons
  *   - the contact form (WPForms' AJAX submit, now sent through /api/contact/)
  * It works on the HTML rendered by ElementorNode, the same way Elementor did.
  */
@@ -107,6 +109,9 @@ export default function ElementorBehaviors() {
 
   // Testimonial sliders (Swiper on the original)
   useEffect(() => startTestimonialSliders(), []);
+
+  // Restaurant menu categories (the theme's script on the original)
+  useEffect(() => applyMenuTabs(), []);
 
   // Contact form (WPForms on the original)
   useEffect(() => applyContactForms(), []);

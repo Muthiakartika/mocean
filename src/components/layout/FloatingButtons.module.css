@@ -82,3 +82,11 @@
     bottom: 95px;
   }
 }
+
+/*
+ * Redesign (not with ?original): the buttons above everything on the page. The original's z-index 0 let the
+ * redesign's wavy section edges (z-index 1 and 2) cover the booking button.
+ */
+:global(html:not([data-design="original"])) .layer {
+  z-index: 30;
+}

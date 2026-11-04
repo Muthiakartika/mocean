@@ -4,7 +4,7 @@ Single source of truth for the redesign layer of the 55 inner pages (Elementor c
 Direction "A. Logbook", chosen 2026-11-02 from three options (https://claude.ai/artifact/Y93HUFETEJ3HVAJm5hLDH3, private).
 Code: `src/styles/redesign/tokens.css` (tokens), `src/styles/redesign/inner-pages.css` (the layer), `src/components/elementor/Facts.tsx` + `src/data/facts.json` (facts bars), `src/components/elementor/PageNav.tsx` (jump-nav, back to top).
 
-The homepage is not part of this layer. The original design stays reachable with `?original` in the URL (sets `<html data-design="original">`, which switches the whole layer and the facts bars off); the layout comparison scripts use it.
+The homepage is not part of this layer. Every page now also has the look "Waves" (see the end of this file). The original design stays reachable with `?original` in the URL (sets `<html data-design="original">`, which switches the whole layer and the facts bars off); the layout comparison scripts use it.
 
 ## Theses
 
@@ -82,6 +82,7 @@ No entrance animations: Elementor's fadeInUp is switched off and content starts 
 - **Chips**: short fact lists ("Types of dives") as 4px outlined navy tags. A chip list that Elementor split over several list widgets (two or three per widget, sometimes a one-item list after them; every chip list on the site) is one aligned grid: every list in the run gets the same column width, sized from its longest chip (`--rd-chip-len`, set in `ElementorNode.tsx`), 8px between all rows; columns that do not fit fall back to one chip per row.
 - **Card grids** (two or more child containers with a photo, heading, text and button side by side): rows of a table under a 2px ink rule; photo 180px, text, button on the right; hover tints the row. A single photo + text block keeps its original two-column layout (fixed 2026-11-03: treating those as rows squeezed the text into the 180px photo column on 25 sections of 13 pages).
 - **Buttons** (`.theme-btn`): Quicksand 600, 4px. Fill navy, hover navy-deep. Outline: white with navy border, hover ice. Focus 2px navy ring. Press 1px.
+- **Jump-nav on the surf guides** (`chapters.ts`, owner 2026-11-04): the surf spot pages have no working table of contents, so their jump-nav lists the surf spot names only (owner: "cuma nama lokasi surfing"), read from the page: the spot sections between "Top Surf Spots" and the levels / getting there / FAQ sections (Bali: Jembrana, Kuta…; Uluwatu: the areas), or, where those are group titles, the spot tabs (Sumbawa: Northern Rights, Supersuck…; Lombok: Gerupuk Bay…, Desert Point). Empty markers (`rd-chapter`) at the top of each section are the targets; an entry that is a tab also opens that tab. The bar appears once the hero has scrolled away.
 - **Jump-nav and back to top**: as before, square 4px. The jump-nav hides once the footer comes into view. On phones it runs flush along the top edge, full width (no text showing above it), and the back-to-top button only appears while the visitor scrolls up, so the text beside the WhatsApp and booking buttons stays free while reading.
 
 ## Rules
@@ -89,3 +90,22 @@ No entrance animations: Elementor's fadeInUp is switched off and content starts 
 - No new copy and no invented numbers; facts come from the page's own text (owner list of content errors: `docs/HANDOFF.md`).
 - No eyebrow labels above headings, no em-dashes in new UI text, no decorative dots, no gradients beyond the existing footer.
 - Every value comes from `tokens.css`.
+
+## Waves: the homepage look on every page (2026-11-04)
+
+Owner reference 2026-11-04 (a dive-club page with wavy edges and curved photos): first the homepage (`src/components/home/`, `Wave.tsx`), then the 25 main menu pages, then ("lanjutkan") every inner page and post. Waves sits over Logbook: the sections above still describe the content layer, Waves changes shape and colour.
+
+- Code: tokens `src/styles/redesign/waves.css` (`--hm-*`), layer `src/styles/redesign/waves-pages.css` over Logbook, markers `src/components/elementor/waves.ts` (`#mocean-page[data-look="waves"]`, classes `rd-wave-*` and `rd-shape-*`, read from each page's own CSS at build time). `?original` switches it off with the rest of the redesign.
+- Same content and section order; Logbook's content changes (FAQ cards, card rows, price list, chips, tabs) stay. Only shape and colour change.
+- Wavy edge (a mask with the curves of `Wave.tsx`) wherever a band or photo section meets a white one; the hero has one at the bottom, the last section a teal wave into the footer.
+- The band is the pale sea `--hm-sea` #EAF2FC instead of ice; photo sections get a navy tint (#08124E) instead of black.
+- Wide photos (900px and more, a container query on `rd-wave-img`) have round top corners and a wavy bottom edge instead of the arch or leaf, which looked like a dome on a wide frame (owner chose this from four options, 2026-11-04). Phones keep the shapes.
+- Curves are fixed radii (arch 400px on both top corners, leaf `--hm-curve` 240px), never percentages: a percentage draws an oval on a photo that is not square, which looked squashed on wide photos (owner, 2026-11-04).
+- Photos take an arch, a leaf and a mirrored leaf in turn, each with a pale circle and a thin navy ring beside it (rings hidden on phones; the owner preferred the circles to a shadow shape, outline frame or wave lines). Circles stop 16px below a photo, so they never run under the text after it. Band boxes 24px corners, photo banners round on top with a wavy bottom, card-row photos `14px 48px`, gallery photos 24px, FAQ collage as on the homepage.
+- Two photos side by side (restaurant intro, `rd-wave-pair`) are one composition as on the homepage intro (owner, 2026-11-04: the side-by-side pair looked odd): the second photo large as an arch with a pale circle behind it, the first a round inset with a white ring over its lower left corner. Fact boxes (a heading over one icon list: restaurant phone and hours, dive site seasons, `rd-wave-info`) are soft sea cards with 20px corners (white on the band), title 18px navy.
+- Logbook's 4px corners become 8px (`--rd-r` inside the Waves scope). The ink facts bar is a rounded card resting on the hero's wave; spec rows are white with 16px corners. News cards 24px with the soft shadow; a post's featured photo is a leaf.
+- Price list (/pricing/): the category menu is a white card with 12px rounded items (a row of 8px buttons to swipe on tablets and phones); no ink rules; the rows of each season and each price table sit in a pale sea card with 20px corners and white lines between rows.
+- Footer (`src/components/layout/Footer.module.css`, all pages, the homepage included): same content and gradient, deeper navy at the bottom; headings 20px, no decorative lines (owner, 2026-11-04); guide links in two aligned columns; contact icons in round translucent badges; social links as outlined circles (white on hover); the map with 20px corners and a soft frame; copyright 15px. Phones: one centred column with even spacing.
+- The floating WhatsApp and booking buttons sit above everything (z-index 30; the original's 0 let the wavy edges cover the booking button). Back to top is a round button above the WhatsApp button on every screen size.
+- Restaurant: the menu categories are buttons with the 8px corners, not pills (owner, 2026-11-04) (one swipeable row on phones, the chosen one scrolled into view; dish name above its price on phones) and now switch the dishes (`menuTabs.ts`; the theme script that did this was not migrated). The reviews are white cards of equal height with the avatar as a small circle on top and round arrows below, which now work (`sliders.ts`).
+

@@ -4,6 +4,7 @@ import ParallaxImage from "@/components/shared/ParallaxImage";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { diving, faq as content, resortIntro } from "@/data/homepage";
 import styles from "./FAQ.module.css";
+import Wave from "./Wave";
 
 /** Redesign collage beside the questions (not with ?original): the pool and the manta, then the FAQ photo, tall. */
 const collage = [resortIntro.mainImage, diving.image];
@@ -12,6 +13,7 @@ const collage = [resortIntro.mainImage, diving.image];
 export default function FAQ() {
   return (
     <section className={`con con-boxed ${styles.section}`}>
+      <Wave edge="top" />
       <div className="con-inner">
         <div className={`widget ${styles.headingWrap}`}>
           <SectionHeading className={styles.heading} sub={content.sub} title={content.title} />
@@ -41,6 +43,7 @@ export default function FAQ() {
           </div>
         </div>
       </div>
+      <Wave />
     </section>
   );
 }
