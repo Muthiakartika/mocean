@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Script from "next/script";
 import { contact } from "@/data/contact";
 import { WhatsappIcon } from "@/components/shared/icons";
@@ -21,12 +22,20 @@ export default function FloatingButtons() {
 
       <div className={styles.book}>
         <button className={`cb-book-btn ${styles.bookButton}`} data-be-url={contact.cloudbedsUrl}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className={styles.bookIcon} src="/images/uploads/2025/11/mattress.png" alt="Book Now" />
+          {/* A 35px icon: the optimiser sends ~100px instead of the 704px PNG (12 KB), lazily, after the hero photo. */}
+          <Image
+            className={styles.bookIcon}
+            src="/images/uploads/2025/11/mattress.png"
+            alt="Book Now"
+            width={704}
+            height={704}
+            sizes="35px"
+          />
         </button>
       </div>
 
-      <Script src={contact.cloudbedsWidgetScript} strategy="afterInteractive" />
+      {/* After page load, so the widget does not compete with the first paint. */}
+      <Script src={contact.cloudbedsWidgetScript} strategy="lazyOnload" />
     </div>
   );
 }

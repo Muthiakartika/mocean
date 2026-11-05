@@ -45,7 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Script
             src="https://analytics.ahrefs.com/analytics.js"
             data-key="BIyHVfWYrucIZ49dWHIDlw"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
           />
         )}
       </body>

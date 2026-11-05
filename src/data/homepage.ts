@@ -6,13 +6,16 @@
 const img = (path: string) => `/images/uploads/${path}`;
 
 /** Hero slides in the original order. */
+/** `mobileImage`: the middle of the photo for phones and small tablets (scripts/hero-mobile-crops.ts). */
+const heroSlide = (file: string) => ({ image: img(`2025/06/${file}`), mobileImage: `/images/hero-mobile/${file}` });
+
 export const heroSlides = [
-  { image: img("2025/06/Slider-mocean-1.jpg") },
-  { image: img("2025/06/Slider-mocean-4.jpg") },
-  { image: img("2025/06/Slider-mocean-5.jpg") },
-  { image: img("2025/06/Slider-mocean-3.jpg") },
-  { image: img("2025/06/Slider-mocean-2.jpg") },
-  { image: img("2025/06/Slider-mocean-6.jpg") },
+  heroSlide("Slider-mocean-1.jpg"),
+  heroSlide("Slider-mocean-4.jpg"),
+  heroSlide("Slider-mocean-5.jpg"),
+  heroSlide("Slider-mocean-3.jpg"),
+  heroSlide("Slider-mocean-2.jpg"),
+  heroSlide("Slider-mocean-6.jpg"),
 ];
 
 export const resortIntro = {

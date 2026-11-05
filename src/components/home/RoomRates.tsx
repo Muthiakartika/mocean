@@ -1,5 +1,6 @@
 import Button from "@/components/shared/Button";
 import FadeInUp from "@/components/shared/FadeInUp";
+import LazyBackground from "@/components/shared/LazyBackground";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { TagIcon } from "@/components/shared/icons";
 import { roomRates as content } from "@/data/homepage";
@@ -25,10 +26,11 @@ export default function RoomRates() {
       <div className={`con con-boxed ${styles.cards}`}>
         <div className="con-inner">
           {content.rooms.map((room) => (
-            <div
+            <LazyBackground
               key={room.name}
               className={`con con-full has-overlay ${styles.card}`}
-              style={{ backgroundImage: `url(${room.image})`, "--overlay-opacity": room.overlayOpacity } as React.CSSProperties}
+              src={room.image}
+              style={{ "--overlay-opacity": room.overlayOpacity } as React.CSSProperties}
             >
               <div className={`widget ${styles.cardTitle}`}>{room.name}</div>
               <div className={`widget ${styles.list}`}>
@@ -56,7 +58,7 @@ export default function RoomRates() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </LazyBackground>
           ))}
         </div>
       </div>

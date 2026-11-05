@@ -13,12 +13,16 @@ export const quicksand = Quicksand({
   display: "swap",
 });
 
-/** Desktop menu links and the footer copyright line. */
+/**
+ * Desktop menu links and the footer copyright line, only with ?original: the redesign sets everything in
+ * Quicksand (src/styles/redesign/tokens.css). Not preloaded, so it no longer delays the home hero on phones.
+ */
 export const jost = Jost({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-jost",
   display: "swap",
+  preload: false,
 });
 
 /** Only used by one text layer in the home hero slider, and only with ?original (the redesign uses Quicksand). */
@@ -35,4 +39,6 @@ export const rtIcons = localFont({
   src: "../../public/fonts/rt-icons.woff2",
   variable: "--font-rt-icons",
   display: "block",
+  // Its icons (room rates, testimonials, footer) are all below the fold: no preload ahead of the hero photo.
+  preload: false,
 });
