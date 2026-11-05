@@ -49,9 +49,10 @@ export default function ParallaxImage({ src, alt = "", width, height, sizes, cla
       const fromViewportCenter = 1 - 2 * ((windowHeight - rect.top) / (windowHeight + frameHeight));
       const offset = scrollDistance * fromViewportCenter - rect.top;
 
+      // jarallax sets margin-top; it is folded into the transform here, because moving the image with a margin
+      // after hydration counted as a layout shift (CLS). A transform does not.
       image.style.height = `${imageHeight}px`;
-      image.style.marginTop = `${marginTop}px`;
-      image.style.transform = `translate3d(0, ${offset}px, 0)`;
+      image.style.transform = `translate3d(0, ${offset + marginTop}px, 0)`;
     };
 
     const requestUpdate = () => {

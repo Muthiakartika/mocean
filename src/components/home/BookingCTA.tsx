@@ -1,5 +1,6 @@
 import Button from "@/components/shared/Button";
 import FadeInUp from "@/components/shared/FadeInUp";
+import LazyBackground from "@/components/shared/LazyBackground";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { bookingCta as content } from "@/data/homepage";
 import styles from "./BookingCTA.module.css";
@@ -10,15 +11,12 @@ export default function BookingCTA() {
   return (
     <section className={`con con-boxed ${styles.section}`}>
       <div className="con-inner">
-        <div
-          className={`con con-full has-overlay ${styles.banner}`}
-          style={{ backgroundImage: `url(${content.background})` }}
-        >
+        <LazyBackground className={`con con-full has-overlay ${styles.banner}`} src={content.background}>
           <FadeInUp className={`widget ${styles.headingWrap}`}>
             <SectionHeading className={styles.heading} sub="" title={content.title} />
           </FadeInUp>
           <Wave className={styles.bannerWave} />
-        </div>
+        </LazyBackground>
         <div className={`widget ${styles.text}`}>
           <p>{content.text}</p>
           <p>

@@ -40,7 +40,7 @@ export default function Facilities() {
                       <li key={item.label} className={styles.item}>
                         <span className={styles.icon}>
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={`/icons/facilities/${item.icon}.svg`} alt="" width={14} height={14} />
+                          <img src={`/icons/facilities/${item.icon}.svg`} alt="" width={14} height={14} loading="lazy" />
                         </span>
                         <span className={styles.label}>{item.label}</span>
                       </li>

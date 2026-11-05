@@ -13,10 +13,11 @@ export default function Header() {
           <div className={styles.logoCol}>
             <Link href="/" className={styles.logoLink}>
               {/* Plain <img>: the logo is small and must keep its exact rendered size. */}
+              {/* The 1024px file (8 KB) is still sharp on 3x screens; the full one was 40 KB for a 172px logo. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={styles.logo}
-                src="/images/uploads/2025/02/Mocean-FULL-Logo_White.png"
+                src="/images/uploads/2025/02/Mocean-FULL-Logo_White-1024x578.png"
                 alt="Mocean FULL Logo_White"
                 width={2048}
                 height={1156}
