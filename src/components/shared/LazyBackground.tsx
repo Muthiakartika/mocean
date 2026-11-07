@@ -43,7 +43,8 @@ export default function LazyBackground({ as = "div", src, className, style, chil
     return () => observer.disconnect();
   }, [box, src]);
 
-  const boxStyle = url ? { ...style, backgroundImage: `url("${url}")` } : style;
+  // --bg-image: the same photo for CSS that paints it on a pseudo-element (cover inside a part of the box).
+  const boxStyle = url ? ({ ...style, backgroundImage: `url("${url}")`, "--bg-image": `url("${url}")` } as CSSProperties) : style;
   return as === "section" ? (
     <section ref={setBox} className={className} style={boxStyle}>
       {children}

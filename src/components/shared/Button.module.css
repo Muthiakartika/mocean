@@ -102,3 +102,91 @@
     opacity: 1;
   }
 }
+
+/*
+ * Redesign (not with ?original): the same pill button as the inner pages (src/styles/redesign/inner-pages.css).
+ * Navy with a soft glow and a small arrow that moves on hover; the sweeping circle and the flying label are gone.
+ */
+:global(html:not([data-design="original"])) .button {
+  /* Defined here, not in tokens.css: the tokens only load on the inner pages. */
+  --btn-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2133c4 0%, var(--color-primary) 55%, #0d1873 100%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.2),
+    0 10px 22px -12px rgb(17 31 144 / 0.75);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  transition:
+    box-shadow 200ms ease,
+    transform 200ms ease,
+    background-color 200ms ease;
+}
+
+:global(html:not([data-design="original"])) .button::before {
+  display: none;
+}
+
+:global(html:not([data-design="original"])) .button::after {
+  position: static;
+  display: block;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 0;
+  background: currentColor;
+  transform: none;
+  transition: transform 250ms ease;
+  -webkit-mask: var(--btn-arrow) center / contain no-repeat;
+  mask: var(--btn-arrow) center / contain no-repeat;
+}
+
+:global(html:not([data-design="original"])) .button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.25),
+    0 16px 28px -14px rgb(17 31 144 / 0.8);
+}
+
+:global(html:not([data-design="original"])) .button:hover::after {
+  transform: translateX(4px);
+}
+
+:global(html:not([data-design="original"])) .button:hover .label {
+  animation: none;
+}
+
+:global(html:not([data-design="original"])) .button:focus-visible {
+  outline: 3px solid rgb(17 31 144 / 0.35);
+  outline-offset: 3px;
+}
+
+/* Header "Book Now": a white pill on the glass bar. */
+:global(html:not([data-design="original"])) .solidBorder {
+  border-color: transparent;
+  background: #fff;
+  box-shadow: 0 8px 20px -12px rgb(0 0 0 / 0.5);
+  color: var(--color-primary);
+}
+
+:global(html:not([data-design="original"])) .solidBorder:hover {
+  color: var(--color-primary);
+  box-shadow: 0 14px 26px -12px rgb(0 0 0 / 0.55);
+}
+
+/* Blog posts have a light header: "Book Now" is a navy pill there instead of a white one. */
+:global(html:not([data-design="original"]):has(#mocean-page.post-page)) .solidBorder {
+  background: linear-gradient(135deg, #2133c4 0%, var(--color-primary) 55%, #0d1873 100%);
+  color: #fff;
+}
+
+:global(html:not([data-design="original"]):has(#mocean-page.post-page)) .solidBorder:hover {
+  color: #fff;
+}

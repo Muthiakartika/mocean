@@ -37,13 +37,49 @@ const nextConfig: NextConfig = {
       { source: "/page-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/post-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      // Old page URLs that the live WordPress site answers with a 301 (checked 2026-11-06). Google still shows some of
+      // them (Search Console: /dive-trips/ 16 clicks at position 4 in 90 days) and some have backlinks (Ahrefs), so they
+      // keep pointing at the same pages. 301 as on WordPress. Exact paths only: /surf-camp/surf-spots/lombok-2/ is a page.
+      ...(
+        [
+          ["/dive-trips/", "/fun-diving/"],
+          ["/dive-trips/fun-diving/", "/fun-diving/"],
+          ["/dive-trips/scuba-diving/", "/scuba-diving/"],
+          ["/dive-trips/discover-scuba-diving/", "/discover-scuba-diving/"],
+          ["/dive-trips/snorkeling/", "/snorkeling/"],
+          ["/dive-trips/manta-rays/", "/manta-rays/"],
+          ["/dive-trips/dive-sites/", "/dive-sites/"],
+          ["/surf-camp/", "/surf-trip/"],
+          ["/surf-camp/surf-trip/", "/surf-trip/"],
+          ["/surf-camp/surf-lesson/", "/surf-lesson/"],
+          ["/surf-camp/surf-spots/", "/surf-spots/"],
+          ["/surf-camp/surf-spots/bali/", "/surf-spots/bali/"],
+          ["/surf-camp/surf-spots/canggu/", "/surf-spots/canggu/"],
+          ["/surf-camp/surf-spots/uluwatu/", "/surf-spots/uluwatu/"],
+          ["/surf-camp/surf-spots/lombok/", "/surf-spots/lombok/"],
+          ["/surf-camp/surf-spots/nusa-lembongan/", "/surf-spots/nusa-lembongan/"],
+          ["/surf-spots/scar-reef/", "/scar-reef/"],
+          ["/sumbawa-indonesia-tour/", "/sumbawa-indonesia/"],
+          ["/sumbawa-indonesia-tour/danau-lebo-taliwang/", "/sumbawa-indonesia-tour/danau-lebo/"],
+          ["/sumbawa-indonesia-tour/kalela-waterfall/", "/kalela-waterfall/"],
+          ["/travel-lombok-bali-sumbawa/", "/travel-lombok-sumbawa/"],
+          ["/accommodation/tropical-beach-resort/", "/tropical-beach-resort/"],
+          // On WordPress this page now redirects too (it used to be a copy with a canonical to the beach resort page).
+          ["/luxury-surf-resort/", "/tropical-beach-resort/"],
+        ] as const
+      ).map(([source, destination]) => ({ source, destination, statusCode: 301 as const })),
     ];
   },
 
   async headers() {
+    const noindex = [{ key: "X-Robots-Tag", value: "noindex, nofollow" }];
     // Block indexing of anything that is not the production deployment.
-    if (process.env.VERCEL_ENV === "production" || process.env.SITE_ENV === "production") return [];
-    return [{ source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }];
+    if (!(process.env.VERCEL_ENV === "production" || process.env.SITE_ENV === "production")) {
+      return [{ source: "/:path*", headers: noindex }];
+    }
+    // Production is also served on its *.vercel.app address (mocean-six.vercel.app was indexable, 2026-11-06): only the
+    // real domain may be indexed. The www host is redirected to the bare domain in the Vercel domain settings.
+    return [{ source: "/:path*", missing: [{ type: "host", value: "moceanbeachresort\\.com" }], headers: noindex }];
   },
 };
 

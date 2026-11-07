@@ -28,6 +28,22 @@ function backgrounds(elementorId: string): Map<string, Kind> {
   return kinds;
 }
 
+/** Containers drawn as a bordered box in the page CSS (the tour cards): rd-wave-box clips and rounds them. */
+function boxes(elementorId: string): Set<string> {
+  const file = path.join(process.cwd(), "src/styles/elementor", `post-${elementorId}.css`);
+  const ids = new Set<string>();
+  if (!fs.existsSync(file)) return ids;
+  for (const [, selectors, body] of fs.readFileSync(file, "utf8").matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    if (!/(^|;)border-style:\s*solid/.test(body) || !/border-width:\s*[1-9]/.test(body)) continue;
+    for (const selector of selectors.split(",")) {
+      if (/::?(before|after)|:hover/.test(selector)) continue;
+      const id = selector.match(/elementor-element-[0-9a-f]+/g)?.at(-1)?.slice("elementor-element-".length);
+      if (id) ids.add(id);
+    }
+  }
+  return ids;
+}
+
 const SHAPES = ["arch", "leaf", "mirror"];
 
 const isContainer = (node: Node): node is Node & { children: Node[] } => node.type === "container" && "children" in node;
@@ -49,6 +65,7 @@ const isInfoBox = (node: Node) => isContainer(node) && node.children.length === 
  */
 export function waveMarks(page: PageContent, overlays: Set<string>, collages: Map<string, unknown>): Map<string, string> {
   const kinds = backgrounds(page.elementorId);
+  const boxed = boxes(page.elementorId);
   const marks = new Map<string, string>();
   const add = (id: string, classes: string) => marks.set(id, [marks.get(id), classes].filter(Boolean).join(" "));
 
@@ -73,6 +90,7 @@ export function waveMarks(page: PageContent, overlays: Set<string>, collages: Ma
         return;
       }
       if (isInfoBox(node)) add(node.id, "rd-wave-info");
+      if (depth > 0 && boxed.has(node.id)) add(node.id, "rd-wave-box");
       const kind = depth > 0 ? kinds.get(node.id) : undefined;
       if (kind === "band") add(node.id, "rd-wave-card");
       if (kind === "photo") add(node.id, "rd-wave-banner");

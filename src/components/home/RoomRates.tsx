@@ -47,15 +47,30 @@ export default function RoomRates() {
                 </ul>
               </div>
               <div className={`widget ${styles.list}`}>
-                <ul className={styles.items}>
-                  {room.prices.map((price) => (
-                    <li key={price} className={styles.item}>
-                      <span className={styles.icon}>
-                        <TagIcon />
-                      </span>
-                      <span className={styles.itemText}>{price}</span>
-                    </li>
-                  ))}
+                <ul className={`${styles.items} ${styles.prices}`}>
+                  {room.prices.map((price) => {
+                    // "High Season Price: 2,800,000 IDR" -> label and amount (the text reads the same in the original design).
+                    const [, label, amount] = price.match(/^([^:]+:)\s*(.+)$/) ?? [];
+                    return (
+                      <li key={price} className={styles.item}>
+                        <span className={styles.icon}>
+                          <TagIcon />
+                        </span>
+                        <span className={styles.itemText}>
+                          {label ? (
+                            <>
+                              <span className={styles.priceLabel}>
+                                {label.replace(/ Price:$/, "")}
+                                <span className={styles.priceWord}>{label.endsWith(" Price:") ? " Price:" : ""}</span>
+                              </span> <span className={styles.priceAmount}>{amount}</span>
+                            </>
+                          ) : (
+                            price
+                          )}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </LazyBackground>

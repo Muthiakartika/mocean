@@ -1,0 +1,282 @@
+/*
+ * Blog post layout of the redesign (owner reference, 2026-11-06): one rounded panel with a "News" chip, the date, the
+ * title, the photo and the text in a 720px column; then "Read Our Next Article", the other posts in a sideways row
+ * with round previous / next buttons. The original design (?original) has neither the chip line nor the row, and the
+ * panel is a plain wrapper there.
+ */
+.meta,
+.more {
+  display: none;
+}
+
+:global(html:not([data-design="original"])) .panel {
+  --post-col: 720px;
+  max-width: 1200px;
+  margin: 112px auto 0;
+  padding: 56px 24px 72px;
+  border-radius: 32px;
+  background: var(--hm-sea);
+}
+
+/* Posts built in Elementor bring their own bands and photos: no panel colour behind them. */
+:global(html:not([data-design="original"]) #mocean-page:not(.rd-post-article)) .panel {
+  padding-bottom: 0;
+  background: transparent;
+}
+
+:global(html:not([data-design="original"])) .meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: var(--post-col);
+  margin: 0 auto 14px;
+}
+
+.chip {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--hm-navy);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 1px 2px rgb(14 21 48 / 0.06);
+  transition: background-color 0.2s ease;
+}
+
+.chip:hover {
+  background: var(--hm-sea-deep);
+}
+
+/* On the posts without a panel colour the white chip would vanish on the white page. */
+:global(#mocean-page:not(.rd-post-article)) .chip {
+  background: var(--hm-sea);
+  box-shadow: none;
+}
+
+.date {
+  margin: 0;
+  color: #5e6575;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ---------- Read Our Next Article ---------- */
+:global(html:not([data-design="original"])) .more {
+  display: block;
+  max-width: 1200px;
+  margin: 72px auto 32px;
+  padding: 0 24px;
+}
+
+/* Course, dive-site and surf-spot pages (relatedPages.ts): the page's last section already ends with its own space. */
+:global(html:not([data-design="original"]) #mocean-page:not(.post-page)) > .more {
+  margin-top: 0;
+}
+
+.moreHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Two classes: the Elementor kit's "h2" rule (class + element, 60px) would otherwise win. */
+.moreHead .moreTitle {
+  margin: 0;
+  color: var(--hm-navy);
+  font-family: var(--font-body);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.arrows {
+  display: flex;
+  flex: none;
+  gap: 10px;
+}
+
+.arrows button {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--hm-navy);
+  color: #fff;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.arrows button:hover:not(:disabled) {
+  background: var(--hm-navy-deep);
+  transform: translateY(-1px);
+}
+
+.arrows button:disabled {
+  background: var(--hm-sea-deep);
+  color: var(--hm-navy);
+  cursor: default;
+  opacity: 0.6;
+}
+
+.arrows button:focus-visible {
+  outline: 3px solid rgb(17 31 144 / 0.35);
+  outline-offset: 3px;
+}
+
+.arrows svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The row scrolls sideways (swipe on phones, the buttons elsewhere); cards snap into place. */
+.track {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 4px 2px 18px;
+  overflow-x: auto;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track li {
+  flex: 0 0 calc((100% - 3 * 24px) / 4);
+  scroll-snap-align: start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
+.card:focus-visible {
+  outline: 3px solid rgb(17 31 144 / 0.35);
+  outline-offset: 4px;
+  border-radius: 20px;
+}
+
+.cardImage {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.cardImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.05);
+}
+
+.cardChip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.92);
+  color: var(--hm-navy);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 4px 0;
+}
+
+.cardMeta {
+  color: #5e6575;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cardTitle {
+  color: var(--hm-navy);
+  font-family: var(--font-body);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+.card:hover .cardTitle {
+  color: var(--hm-navy-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 1024px) {
+  .track li {
+    flex-basis: calc((100% - 2 * 24px) / 2.5);
+  }
+}
+
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .panel {
+    margin: 84px 10px 0;
+    padding: 32px 16px 44px;
+    border-radius: 24px;
+  }
+
+  :global(html:not([data-design="original"])) .more {
+    margin-top: 48px;
+    padding: 0 16px;
+  }
+
+  :global(html:not([data-design="original"]) #mocean-page:not(.post-page)) > .more {
+    margin-top: 16px;
+  }
+
+  .moreHead .moreTitle {
+    font-size: 24px;
+  }
+
+  .arrows button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .track {
+    gap: 16px;
+  }
+
+  .track li {
+    flex-basis: 78%;
+  }
+}

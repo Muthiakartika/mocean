@@ -81,26 +81,11 @@ export default function HeroSlider() {
           {hasPhoto(index) && <SlidePhoto slide={slide} first={index === 0} />}
           <div className={styles.overlay} />
 
-          {/* Only the first slide's title is the page <h1>, as on the original. */}
-          {index === 0 ? (
-            <h1 className={`${styles.layer} ${styles.titleDesktop}`}>
-              <span className={styles.layerInner}>Mocean Beach&nbsp;Resort</span>
-            </h1>
-          ) : (
-            <div className={`${styles.layer} ${styles.titleDesktop}`}>
-              <span className={styles.layerInner}>Mocean Beach&nbsp;Resort</span>
-            </div>
-          )}
-          <div className={`${styles.layer} ${styles.titleMobile}`}>
-            <span className={styles.layerInner}>
-              Mocean Beach
-              <br />
-              &nbsp;Resort
-            </span>
-          </div>
-          <div className={`${styles.layer} ${styles.subtitle}`}>
-            <span className={styles.layerInner}>West Sumbawa, Indonesia</span>
-          </div>
+          {/* Only the first slide's title is the page <h1>, as on the original. SEO (owner, 2026-11-06): the h1 also
+              holds the subtitle ("Mocean Beach Resort West Sumbawa, Indonesia"), and one title serves every
+              screen, so phones get a visible h1 too (it was the desktop-only layer). The h1 has no box of its own
+              (display: contents): the layers sit where they did. */}
+          {index === 0 ? <h1 className={styles.heading}>{titleLayers}</h1> : titleLayers}
           <a className={`${styles.layer} ${styles.button}`} href={contact.cloudbedsUrl} tabIndex={index === active ? 0 : -1}>
             <span className={styles.layerInner}>Book Now</span>
           </a>
@@ -129,6 +114,22 @@ export default function HeroSlider() {
     </section>
   );
 }
+
+/** "Mocean Beach Resort" (one line; two lines on phones) and "West Sumbawa, Indonesia". Spans: they sit in the h1. */
+const titleLayers = (
+  <>
+    <span className={`${styles.layer} ${styles.title}`}>
+      <span className={styles.layerInner}>
+        Mocean Beach<span className={styles.wideOnly}>&nbsp;</span>
+        <br className={styles.phoneOnly} />
+        <span className={styles.phoneOnly}>&nbsp;</span>Resort
+      </span>
+    </span>{" "}
+    <span className={`${styles.layer} ${styles.subtitle}`}>
+      <span className={styles.layerInner}>West Sumbawa, Indonesia</span>
+    </span>
+  </>
+);
 
 /** Up to 777px the phone crop (46% of the width, ratio 0.84) is shown; wider screens get the whole photo. */
 const WIDE = "(min-width: 778px)";

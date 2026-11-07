@@ -1133,24 +1133,53 @@ html:not([data-design="original"]) #mocean-page {
     border-radius: var(--rd-r);
   }
 
-  /* ---------- Buttons (theme .theme-btn) ---------- */
+  /*
+   * ---------- Buttons (theme .theme-btn) ----------
+   * Pills with a small arrow that moves on hover. The filled one is navy with a soft glow, the plain one a navy
+   * outline. The theme's circle and slide fills and the flying label (0.6-0.8s) are replaced by a lift.
+   */
   & .theme-btn {
-    border-radius: var(--rd-r);
-    border: 1px solid var(--rd-navy);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 26px;
+    border: 1.5px solid var(--rd-navy);
+    border-radius: 999px;
     background: var(--rd-white);
     color: var(--rd-navy);
     font-family: var(--rd-font-data);
-    font-weight: var(--rd-ui-weight);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
     cursor: pointer;
     transition:
-      background-color var(--rd-t-hover) var(--rd-ease),
-      color var(--rd-t-hover) var(--rd-ease),
-      transform var(--rd-t-hover) var(--rd-ease);
+      background-color 200ms var(--rd-ease),
+      color 200ms var(--rd-ease),
+      box-shadow 200ms var(--rd-ease),
+      transform 200ms var(--rd-ease);
 
-    /* The theme's circle and slide fills and the flying label take 0.6-0.8s; replaced by a colour change. */
-    &::before,
-    &::after {
+    &::before {
       display: none;
+    }
+
+    /* The arrow: a mask, so it takes the text colour. */
+    &::after {
+      content: "";
+      position: static;
+      inset: auto;
+      display: block;
+      flex: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 0;
+      background: currentColor;
+      opacity: 1;
+      transform: none;
+      transition: transform 250ms var(--rd-ease);
+      -webkit-mask: var(--rd-arrow) center / contain no-repeat;
+      mask: var(--rd-arrow) center / contain no-repeat;
     }
 
     &:hover span {
@@ -1160,19 +1189,38 @@ html:not([data-design="original"]) #mocean-page {
     &:hover {
       background: var(--rd-ice);
       color: var(--rd-navy);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -14px rgb(17 31 144 / 0.5);
+    }
+
+    &:hover::after {
+      transform: translateX(4px);
     }
 
     &:active {
-      transform: translateY(1px);
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      outline: 3px solid rgb(17 31 144 / 0.35);
+      outline-offset: 3px;
     }
 
     &.fill {
-      background: var(--rd-navy);
+      border-color: transparent;
+      background: linear-gradient(135deg, #2133c4 0%, var(--rd-navy) 55%, var(--rd-navy-deep) 100%);
       color: var(--rd-white);
+      box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 0.2),
+        0 10px 22px -12px rgb(17 31 144 / 0.75);
 
       &:hover {
-        background: var(--rd-navy-deep);
+        background: linear-gradient(135deg, #2a3fd6 0%, #1426a8 55%, var(--rd-navy) 100%);
         color: var(--rd-white);
+        box-shadow:
+          inset 0 1px 0 rgb(255 255 255 / 0.25),
+          0 16px 28px -14px rgb(17 31 144 / 0.8);
       }
     }
   }

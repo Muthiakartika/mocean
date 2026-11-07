@@ -318,3 +318,11 @@
     --padding-bottom: 80px;
   }
 }
+
+/*
+ * The decorative circles beside the photos reached past the screen edge on tablets (homepage +46px wide at 820px,
+ * 2026-11-06): the section clips them at its own edges. clip, not hidden, so the circles may still rise above it.
+ */
+:global(html:not([data-design="original"])) .section {
+  overflow-x: clip;
+}

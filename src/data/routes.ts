@@ -62,5 +62,8 @@ export const allPaths = [
   "/wellness-retreat/",
 ] as const;
 
-/** Pages that exist but must stay out of the sitemap (noindex or canonical elsewhere). */
-export const notInSitemap = ["/surf-camp/surf-spots/lombok-2/"];
+/**
+ * Pages that exist but must stay out of the sitemap (noindex, canonical elsewhere, or redirected).
+ * /luxury-surf-resort/ now 301s to /tropical-beach-resort/ (next.config.ts), as on the live WordPress site.
+ */
+export const notInSitemap = ["/surf-camp/surf-spots/lombok-2/", "/luxury-surf-resort/"];
