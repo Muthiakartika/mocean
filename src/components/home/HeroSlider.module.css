@@ -125,8 +125,13 @@
   transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-/* "Mocean Beach Resort" — one line (desktop/tablet) */
-.titleDesktop {
+/* The h1 of the first slide: no box, its layers are placed by the slide as before (HeroSlider.tsx). */
+.heading {
+  display: contents;
+}
+
+/* "Mocean Beach Resort" — one line (desktop/tablet), two lines on phones (.phoneOnly line break). */
+.title {
   --x: 14;
   --y: -65;
   color: #fff;
@@ -136,11 +141,8 @@
   line-height: calc(80 * var(--u));
 }
 
-/* "Mocean Beach / Resort" — two lines (phones) */
-.titleMobile {
+.phoneOnly {
   display: none;
-  color: #fff;
-  font-family: var(--font-body);
 }
 
 .subtitle {
@@ -173,13 +175,15 @@
 }
 
 @media (max-width: 777px) {
-  .titleDesktop {
+  .wideOnly {
     display: none;
   }
-  .titleMobile {
+  .phoneOnly {
+    display: inline;
+  }
+  .title {
     --x: 0;
     --y: 50;
-    display: block;
     font-size: calc(69 * var(--u));
     font-weight: 600;
     line-height: calc(65 * var(--u));
@@ -201,7 +205,7 @@
 }
 
 @media (max-width: 479px) {
-  .titleMobile {
+  .title {
     --x: -2;
     --y: 3;
     font-size: calc(50 * var(--u));

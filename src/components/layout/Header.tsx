@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Button from "@/components/shared/Button";
 import { contact } from "@/data/contact";
+import HeaderScroll from "./HeaderScroll";
 import MainNav from "./MainNav";
 import styles from "./Header.module.css";
 
@@ -8,6 +9,7 @@ import styles from "./Header.module.css";
 export default function Header() {
   return (
     <header className={styles.header}>
+      <HeaderScroll />
       <div className={styles.bar}>
         <div className={styles.row}>
           <div className={styles.logoCol}>
@@ -18,7 +20,8 @@ export default function Header() {
               <img
                 className={styles.logo}
                 src="/images/uploads/2025/02/Mocean-FULL-Logo_White-1024x578.png"
-                alt="Mocean FULL Logo_White"
+                // The logo is the link to the homepage: its alt is the link's name (was the file name).
+                alt="Mocean Beach Resort"
                 width={2048}
                 height={1156}
               />

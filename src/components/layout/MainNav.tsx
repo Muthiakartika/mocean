@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { mainMenu, type MenuItem } from "@/data/navigation";
+import { contact } from "@/data/contact";
+import { WhatsappIcon } from "@/components/shared/icons";
 import styles from "./MainNav.module.css";
 
 /** Font Awesome "angle-down" — the arrow used by RT Mega Menu. */
@@ -56,12 +58,12 @@ function DesktopSubMenu({ items, pathname }: { items: MenuItem[]; pathname: stri
 
 /* ---------------- Mobile off-canvas menu ---------------- */
 
-function MobileItem({ item, pathname, onNavigate }: { item: MenuItem; pathname: string; onNavigate: () => void }) {
+function MobileItem({ item, pathname, onNavigate, index }: { item: MenuItem; pathname: string; onNavigate: () => void; index?: number }) {
   const [expanded, setExpanded] = useState(false);
   const linkClass = `${styles.mobileLink} ${item.href === pathname ? styles.current : ""}`;
 
   return (
-    <li className={styles.mobileItem}>
+    <li className={styles.mobileItem} style={index === undefined ? undefined : ({ "--i": index } as React.CSSProperties)}>
       <div className={styles.mobileRow}>
         {item.href === null ? (
           // Items without a page open their sub-menu, like the original.
@@ -115,6 +117,17 @@ export default function MainNav() {
     wasOpen.current = open;
   }, [open]);
 
+  // The page behind the open menu does not scroll.
+  useEffect(() => {
+    if (!open) return;
+    const html = document.documentElement;
+    const before = html.style.overflow;
+    html.style.overflow = "hidden";
+    return () => {
+      html.style.overflow = before;
+    };
+  }, [open]);
+
   // Close the mobile menu with the Escape key.
   useEffect(() => {
     if (!open) return;
@@ -149,16 +162,31 @@ export default function MainNav() {
       {open && <div className={styles.overlay} onClick={() => setOpen(false)} />}
 
       <div className={`${styles.sidebar} ${open ? styles.open : ""}`} aria-hidden={!open} inert={!open}>
-        <button ref={closeRef} type="button" className={styles.close} aria-label="Close Menu" onClick={() => setOpen(false)}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" aria-hidden="true">
-            <path d="M317.7 402.3c3.125 3.125 3.125 8.188 0 11.31c-3.127 3.127-8.186 3.127-11.31 0L160 267.3l-146.3 146.3c-3.127 3.127-8.186 3.127-11.31 0c-3.125-3.125-3.125-8.188 0-11.31L148.7 256L2.344 109.7c-3.125-3.125-3.125-8.188 0-11.31s8.188-3.125 11.31 0L160 244.7l146.3-146.3c3.125-3.125 8.188-3.125 11.31 0s3.125 8.188 0 11.31L171.3 256L317.7 402.3z" />
-          </svg>
-        </button>
-        <ul className={styles.mobileList}>
-          {mainMenu.map((item) => (
-            <MobileItem key={item.label} item={item} pathname={pathname} onNavigate={() => setOpen(false)} />
-          ))}
-        </ul>
+        <div className={styles.panelHead}>
+          <span className={styles.panelTitle}>Menu</span>
+          <button ref={closeRef} type="button" className={styles.close} aria-label="Close Menu" onClick={() => setOpen(false)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" aria-hidden="true">
+              <path d="M317.7 402.3c3.125 3.125 3.125 8.188 0 11.31c-3.127 3.127-8.186 3.127-11.31 0L160 267.3l-146.3 146.3c-3.127 3.127-8.186 3.127-11.31 0c-3.125-3.125-3.125-8.188 0-11.31L148.7 256L2.344 109.7c-3.125-3.125-3.125-8.188 0-11.31s8.188-3.125 11.31 0L160 244.7l146.3-146.3c3.125-3.125 8.188-3.125 11.31 0s3.125 8.188 0 11.31L171.3 256L317.7 402.3z" />
+            </svg>
+          </button>
+        </div>
+        <div className={styles.panelScroll}>
+          <ul className={styles.mobileList}>
+            {mainMenu.map((item, i) => (
+              <MobileItem key={item.label} item={item} index={i} pathname={pathname} onNavigate={() => setOpen(false)} />
+            ))}
+          </ul>
+        </div>
+        {/* Booking and WhatsApp stay one tap away (shown by the redesign only). */}
+        <div className={styles.panelFoot}>
+          <a className={styles.footBook} href={contact.cloudbedsUrl} target="_blank" rel="nofollow">
+            Book Now
+          </a>
+          <a className={styles.footWhatsapp} href={contact.whatsappUrl} target="_blank" rel="noopener">
+            <WhatsappIcon />
+            WhatsApp
+          </a>
+        </div>
       </div>
     </nav>
   );

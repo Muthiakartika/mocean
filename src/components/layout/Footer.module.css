@@ -425,3 +425,127 @@
     width: 100%;
   }
 }
+
+/*
+ * Phones, tidied (owner, 2026-11-06): everything on one left edge instead of a mix of centred and left-aligned rows.
+ * Logos on top, the guide links as four chips in two columns, each contact line a soft card, then the social links,
+ * a rounded map, and a copyright line that leaves room for the round buttons on the right.
+ */
+@media (max-width: 767px) {
+  :global(html:not([data-design="original"])) .main {
+    padding: 48px 0 28px;
+  }
+
+  :global(html:not([data-design="original"])) .columns {
+    gap: 32px;
+    padding: 0 20px;
+  }
+
+  :global(html:not([data-design="original"])) .column {
+    align-items: stretch;
+  }
+
+  /* Logos: side by side where they fit, left aligned. */
+  :global(html:not([data-design="original"])) .column:first-child {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+  }
+
+  :global(html:not([data-design="original"])) .logo {
+    width: 132px;
+  }
+
+  :global(html:not([data-design="original"])) .padi {
+    width: 190px;
+    margin: 0;
+  }
+
+  :global(html:not([data-design="original"])) .heading {
+    padding-bottom: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  /* Guide links: four chips, two per row. The lists dissolve so the chips share one grid. */
+  :global(html:not([data-design="original"])) .columnLinks > div:last-child {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  :global(html:not([data-design="original"])) .inlineList {
+    display: contents;
+  }
+
+  :global(html:not([data-design="original"])) .inlineList a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 12px;
+    border: 1px solid rgb(255 255 255 / 0.28);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.06);
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  /* Contact: one card per line, icon badge on the left. */
+  :global(html:not([data-design="original"])) .columnContact {
+    gap: 10px;
+  }
+
+  :global(html:not([data-design="original"])) .columnContact .heading {
+    padding-bottom: 4px;
+  }
+
+  :global(html:not([data-design="original"])) .iconItem {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    background: rgb(255 255 255 / 0.1);
+  }
+
+  :global(html:not([data-design="original"])) .iconItem :is(a, li) {
+    width: 100%;
+    min-height: 40px;
+  }
+
+  :global(html:not([data-design="original"])) .iconItem a {
+    text-decoration: none;
+  }
+
+  :global(html:not([data-design="original"])) .social {
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+
+  :global(html:not([data-design="original"])) .columnMap > div:last-child {
+    border-radius: 24px;
+  }
+
+  :global(html:not([data-design="original"])) .map {
+    height: 200px;
+  }
+
+  /* The round WhatsApp and booking buttons sit bottom right: the text stays clear of them. */
+  :global(html:not([data-design="original"])) .bottomInner {
+    padding: 8px 88px 8px 20px;
+  }
+
+  :global(html:not([data-design="original"])) .copyright {
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  :global(html:not([data-design="original"])) .spacer {
+    height: 24px;
+  }
+}

@@ -181,20 +181,131 @@
   }
 }
 
-/* Redesign "Waves" (not with ?original, tokens: src/styles/redesign/waves.css): the room cards as arches. */
+/*
+ * Redesign "Waves" (not with ?original, tokens: src/styles/redesign/waves.css): each room a white card under an arched
+ * photo. Less to read: the name, two small chips (size, guests) and the season prices as a three-row table, label on
+ * the left and amount on the right. (Text over the photo was hard to read and the long price lines wrapped.)
+ */
 :global(html:not([data-design="original"])) .card {
-  --border-radius: 50% 50% var(--hm-r) var(--hm-r) / 150px 150px var(--hm-r) var(--hm-r);
+  --room-photo: 300px;
+  --arch: 150px;
+  --border-radius: 50% 50% 28px 28px / var(--arch) var(--arch) 28px 28px;
+  --padding-top: calc(var(--room-photo) + 24px);
+  --padding-bottom: 24px;
+  --padding-left: 24px;
+  --padding-right: 24px;
+  --row-gap: 14px;
+  overflow: hidden;
+  background-color: #fff;
+  /* The photo is painted by ::after (cover, top part only); the box itself keeps no image, so it is not stretched. */
+  background-image: none !important;
   box-shadow: var(--hm-shadow);
+}
+
+:global(html:not([data-design="original"])) .card::before {
+  display: none;
+}
+
+:global(html:not([data-design="original"])) .card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 0;
+  height: var(--room-photo);
+  border-radius: 50% 50% 0 0 / var(--arch) var(--arch) 0 0;
+  background-image: var(--bg-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+}
+
+:global(html:not([data-design="original"])) .cardTitle {
+  color: var(--hm-navy);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Size and guests: two small chips. */
+:global(html:not([data-design="original"])) .list .items {
+  gap: 8px;
+  margin: 0;
+}
+
+:global(html:not([data-design="original"])) .list .item {
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--hm-sea);
+}
+
+:global(html:not([data-design="original"])) .list .itemText,
+:global(html:not([data-design="original"])) .list .icon {
+  color: var(--hm-navy);
+  fill: var(--hm-navy);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+:global(html:not([data-design="original"])) .list .icon i {
+  font-size: 14px;
+}
+
+/* Prices: three rows, label left, amount right. */
+:global(html:not([data-design="original"])) .prices {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin-top: 4px;
+}
+
+:global(html:not([data-design="original"])) .list .prices .item {
+  display: block;
+  padding: 12px 0;
+  border-top: 1px solid #e3e9f5;
+  border-radius: 0;
+  background: transparent;
+}
+
+:global(html:not([data-design="original"])) .prices .icon {
+  display: none;
+}
+
+:global(html:not([data-design="original"])) .prices .itemText {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-inline-start: 0;
+  font-weight: 400;
+}
+
+:global(html:not([data-design="original"])) .priceLabel {
+  color: var(--rd-meta, #5e6575);
+  font-size: 14px;
+}
+
+:global(html:not([data-design="original"])) .priceWord {
+  display: none;
+}
+
+:global(html:not([data-design="original"])) .priceAmount {
+  color: var(--hm-navy);
+  font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 @media (max-width: 1200px) {
   :global(html:not([data-design="original"])) .card {
-    --border-radius: 50% 50% var(--hm-r) var(--hm-r) / 120px 120px var(--hm-r) var(--hm-r);
+    --arch: 120px;
   }
 }
 
 @media (max-width: 767px) {
   :global(html:not([data-design="original"])) .card {
-    --border-radius: 50% 50% var(--hm-r) var(--hm-r) / 46vw 46vw var(--hm-r) var(--hm-r);
+    --room-photo: 250px;
+    --arch: 46vw;
   }
 }

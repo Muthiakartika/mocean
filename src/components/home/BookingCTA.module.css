@@ -113,12 +113,30 @@
 }
 
 :global(html:not([data-design="original"])) .banner {
-  --border-radius: 40px 40px 0 0;
   --overlay-color: #08124e;
 }
 
 .bannerWave {
   --wave-height: clamp(28px, 4.5vw, 64px);
+}
+
+/*
+ * The banner's lower edge is a mask, not a white SVG laid over the photo: a mask lets the lower corners be round (15px)
+ * where the wave meets the sides. Same wave and same mask as the banners on the inner pages (waves-pages.css).
+ */
+:global(html:not([data-design="original"])) .banner {
+  --bn-r: 40px 40px 15px 15px;
+  --bn-h: clamp(28px, 4.5vw, 64px);
+  --bn-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3CclipPath id='f'%3E%3Cpath d='M0 0H1440V40Q1440 58 1416 57C1376 55 1290 68 1180 76C980 96 820 82 600 56C380 30 200 40 26 65Q0 70 0 48Z'/%3E%3C/clipPath%3E%3Cpath fill-opacity='.55' d='M0 0H1440V40Q1440 58 1416 57C1376 55 1290 68 1180 76C980 96 820 82 600 56C380 30 200 40 26 65Q0 70 0 48Z'/%3E%3Cpath clip-path='url(%23f)' d='M0 0H1440V48C1360 56 1300 36 1100 20C900 4 760 36 560 64C360 92 180 84 0 44Z'/%3E%3C/svg%3E");
+  --border-radius: var(--bn-r);
+  border-radius: var(--bn-r);
+  clip-path: inset(0 round var(--bn-r));
+  -webkit-mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - var(--bn-h) + 2px) no-repeat, var(--bn-mask) 0 100% / 100% var(--bn-h) no-repeat;
+  mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - var(--bn-h) + 2px) no-repeat, var(--bn-mask) 0 100% / 100% var(--bn-h) no-repeat;
+}
+
+:global(html:not([data-design="original"])) .bannerWave {
+  display: none;
 }
 
 .footerWave {
@@ -137,6 +155,6 @@
   }
 
   :global(html:not([data-design="original"])) .banner {
-    --border-radius: 28px 28px 0 0;
+    --bn-r: 28px 28px 15px 15px;
   }
 }

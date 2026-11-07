@@ -8,7 +8,9 @@ import { pageChapters } from "./chapters";
 import { faqCollages } from "./faqPhotos";
 import { PageFacts } from "./Facts";
 import HeroImage from "./HeroImage";
+import CardCarousel from "./CardCarousel";
 import PageNav from "./PageNav";
+import { relatedPages } from "./relatedPages";
 import type { PageContent } from "./types";
 import { waveMarks } from "./waves";
 
@@ -36,6 +38,7 @@ export default function ElementorPage({ page }: { page: PageContent }) {
   const overlays = overlaySections(page.elementorId);
   const marks = waveMarks(page, overlays, collages);
   const chapters = pageChapters(page);
+  const related = relatedPages(page.path);
   return (
     // #mocean-page scopes the redesign layer (src/styles/redesign/inner-pages.css); data-look="waves" adds
     // the homepage look over it (waves-pages.css).
@@ -65,6 +68,8 @@ export default function ElementorPage({ page }: { page: PageContent }) {
           </div>
         </div>
       </div>
+      {/* Course, dive-site and surf-spot pages: the other pages of their group (SEO internal links, relatedPages.ts). */}
+      {related && <CardCarousel title={related.title} cards={related.cards} />}
       <ElementorBehaviors />
       <PageNav />
     </div>

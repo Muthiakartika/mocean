@@ -205,6 +205,20 @@
   --wave-height: 34px;
 }
 
+/*
+ * The photo ends in a wave made by a mask, not by a white SVG laid over it: the mask's ends curve down into the lower
+ * corners, so the photo does not end in a sharp point where the wave meets the card's edge. The SVG wave is hidden.
+ */
+:global(html:not([data-design="original"])) .imageBoxImg {
+  --card-wave-h: 34px;
+  -webkit-mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - var(--card-wave-h) + 2px) no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3CclipPath id='f'%3E%3Cpath d='M0 0H1440V40Q1440 58 1416 57C1376 55 1290 68 1180 76C980 96 820 82 600 56C380 30 200 40 26 65Q0 70 0 48Z'/%3E%3C/clipPath%3E%3Cpath fill-opacity='.55' d='M0 0H1440V40Q1440 58 1416 57C1376 55 1290 68 1180 76C980 96 820 82 600 56C380 30 200 40 26 65Q0 70 0 48Z'/%3E%3Cpath clip-path='url(%23f)' d='M0 0H1440V48C1360 56 1300 36 1100 20C900 4 760 36 560 64C360 92 180 84 0 44Z'/%3E%3C/svg%3E") 0 100% / 100% var(--card-wave-h) no-repeat;
+  mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - var(--card-wave-h) + 2px) no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3CclipPath id='f'%3E%3Cpath d='M0 0H1440V40Q1440 58 1416 57C1376 55 1290 68 1180 76C980 96 820 82 600 56C380 30 200 40 26 65Q0 70 0 48Z'/%3E%3C/clipPath%3E%3Cpath fill-opacity='.55' d='M0 0H1440V40Q1440 58 1416 57C1376 55 1290 68 1180 76C980 96 820 82 600 56C380 30 200 40 26 65Q0 70 0 48Z'/%3E%3Cpath clip-path='url(%23f)' d='M0 0H1440V48C1360 56 1300 36 1100 20C900 4 760 36 560 64C360 92 180 84 0 44Z'/%3E%3C/svg%3E") 0 100% / 100% var(--card-wave-h) no-repeat;
+}
+
+:global(html:not([data-design="original"])) .cardWave {
+  display: none;
+}
+
 :global(html:not([data-design="original"])) .boxText {
   padding: 0 24px;
 }

@@ -22,7 +22,8 @@ export const metadata: Metadata = {
   ...(isProduction ? {} : { robots: { index: false, follow: false } }),
 };
 
-const ORIGINAL_DESIGN_SWITCH = `if (/[?&]original(=|&|$)/.test(location.search)) document.documentElement.dataset.design = "original";`;
+const ORIGINAL_DESIGN_SWITCH = `if (/[?&]original(=|&|$)/.test(location.search)) document.documentElement.dataset.design = "original";
+var h = location.search.match(/[?&]header=(bar)/); if (h) document.documentElement.dataset.header = h[1];`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const fontVariables = `${quicksand.variable} ${jost.variable} ${roboto.variable} ${rtIcons.variable}`;
