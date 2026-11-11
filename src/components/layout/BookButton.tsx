@@ -1,55 +1,34 @@
-"use client";
-
 import Image from "next/image";
-import Script from "next/script";
 import { contact } from "@/data/contact";
 import styles from "./FloatingButtons.module.css";
 
 /**
- * The Cloudbeds "immersive" script only wires `button[data-be-url]` (and adds its booking overlay to the page) in a
- * `window` DOMContentLoaded listener. With `lazyOnload` it runs after that event has already fired, so the button
- * stayed dead. Replay the event once the script is in. Safe today: no other script on the site listens for it on
- * `window` this late (Ahrefs checks `document.readyState` first).
+ * Floating book button (widget 35bad87, class .cb-book-btn): opens the Cloudbeds booking page in a new tab, like the
+ * header's "Book Now".
+ *
+ * It used to open Cloudbeds' "immersive" overlay (script /widget/load/yPrE1K/immersive). Cloudbeds retired that
+ * overlay: by 2026-11-11 it only showed a card saying "This live booking component is outdated" with another Book Now
+ * link and an email line that ran out of the card, all inside Cloudbeds' iframe where the site's CSS cannot reach.
+ * A plain link takes guests straight to the booking page and drops the third-party script from every page.
  */
-function wireCloudbeds() {
-  if (document.readyState !== "loading") window.dispatchEvent(new Event("DOMContentLoaded"));
-}
-
-/**
- * Cloudbeds' own click listener sits on the button and runs before React's, so the overlay is already open here
- * when the widget works. If it is not (clicked before the lazy script loaded, or the script is blocked), open the
- * booking engine in a new tab instead, like the header's Book button.
- */
-function openFallback() {
-  if (!document.querySelector("#immersive-experience-overlay.open")) {
-    window.open(contact.cloudbedsUrl, "_blank", "noopener");
-  }
-}
-
-/** Floating Cloudbeds book button (widget 35bad87, class .cb-book-btn), the same markup Cloudbeds expects. */
 export default function BookButton() {
   return (
-    <>
-      <button
-        type="button"
-        className={`cb-book-btn ${styles.bookButton}`}
-        data-be-url={contact.cloudbedsUrl}
-        aria-label="Book Now"
-        onClick={openFallback}
-      >
-        {/* A 35px icon: the optimiser sends ~100px instead of the 704px PNG (12 KB), lazily, after the hero photo. */}
-        <Image
-          className={styles.bookIcon}
-          src="/images/uploads/2025/11/mattress.png"
-          alt=""
-          width={704}
-          height={704}
-          sizes="35px"
-        />
-      </button>
-
-      {/* After page load, so the widget does not compete with the first paint. */}
-      <Script src={contact.cloudbedsWidgetScript} strategy="lazyOnload" onLoad={wireCloudbeds} />
-    </>
+    <a
+      className={`cb-book-btn ${styles.bookButton}`}
+      href={contact.cloudbedsUrl}
+      target="_blank"
+      rel="nofollow noopener"
+      aria-label="Book Now"
+    >
+      {/* A 35px icon: the optimiser sends ~100px instead of the 704px PNG (12 KB), lazily, after the hero photo. */}
+      <Image
+        className={styles.bookIcon}
+        src="/images/uploads/2025/11/mattress.png"
+        alt=""
+        width={704}
+        height={704}
+        sizes="35px"
+      />
+    </a>
   );
 }

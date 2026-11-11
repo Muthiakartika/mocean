@@ -7,8 +7,6 @@ export const SITE_URL = "https://moceanbeachresort.com";
 export const contact = {
   /** Cloudbeds booking engine (property code yPrE1K). */
   cloudbedsUrl: "https://us2.cloudbeds.com/reservation/yPrE1K",
-  /** Loads the Cloudbeds "immersive" overlay used by the floating book button. */
-  cloudbedsWidgetScript: "https://us2.cloudbeds.com/widget/load/yPrE1K/immersive",
   whatsappUrl: "https://wa.me/6282144191647",
   phoneDisplay: "+62 821-4419-1647",
   /** Same number for tel: links and structured data (E.164). */

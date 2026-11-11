@@ -56,8 +56,8 @@
   justify-content: center;
   width: 55px;
   height: 55px;
-  /* !important: the Cloudbeds script injects `button[data-be-url] { background-color: black; ... }`.
-     The original site overrides it the same way. */
+  /* !important: kept from when the Cloudbeds overlay script injected `button[data-be-url] { background-color: black }`
+     (the original site overrides it the same way); the button is a plain link now (BookButton.tsx). */
   padding: 10px !important;
   border: none !important;
   border-radius: 50% !important;
