@@ -1,6 +1,8 @@
 /**
  * Main menu, copied from the original RT Mega Menu ("Main Menu").
  * `href: null` = the original item links to "#" (it only opens a dropdown).
+ * Blog posts (News) stay out of the menu and the footer (owner, 2026-11-11); they are linked from /news/ (all posts in
+ * the HTML, newsGrid.ts), from each other ("Read Our Next Article") and from the pages that mention them.
  */
 export type MenuItem = {
   label: string;

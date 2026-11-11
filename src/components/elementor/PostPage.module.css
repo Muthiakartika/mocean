@@ -12,7 +12,8 @@
 :global(html:not([data-design="original"])) .panel {
   --post-col: 720px;
   max-width: 1200px;
-  margin: 112px auto 0;
+  /* Clears the fixed header (location line + logo row, Header.module.css). */
+  margin: 140px auto 0;
   padding: 56px 24px 72px;
   border-radius: 32px;
   background: var(--hm-sea);
@@ -249,7 +250,7 @@
 
 @media (max-width: 767px) {
   :global(html:not([data-design="original"])) .panel {
-    margin: 84px 10px 0;
+    margin: 110px 10px 0;
     padding: 32px 16px 44px;
     border-radius: 24px;
   }

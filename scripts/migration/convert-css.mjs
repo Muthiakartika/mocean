@@ -4,6 +4,9 @@
  *   1. image URLs  https://moceanbeachresort.com/wp-content/uploads/...  ->  /images/uploads/...
  *   2. font names  "Quicksand" / "Jost" / "Roboto" / "rt-icons"  ->  the self-hosted next/font families
  *   3. three values the redesign layer adjusts become variables with the original value as fallback
+ *   4. theme rules that hit the homepage after a menu click from an inner page (the theme CSS stays loaded) are
+ *      scoped to the inner pages (#mocean-page): ".widget" margins and the normalize "section { display: block }"
+ *      (2026-11-11, see scopeThemeWidgets)
  *
  *   node scripts/migration/convert-css.mjs
  *
@@ -94,12 +97,29 @@ function convert(css) {
   return addRedesignHooks(out);
 }
 
+/**
+ * Rule 4: theme rules that reach the homepage's own layout, kept to the inner pages (#mocean-page). The homepage's
+ * layout.css sits in a CSS layer and the theme CSS does not, so after a menu click from an inner page the theme's
+ * rules beat it whatever their specificity:
+ *   - ".widget {…}" / ".widget select {…}": WordPress sidebar widgets (3em margin); the homepage uses .widget too.
+ *   - the normalize "article, …, section, summary { display: block }": turned the homepage's flex <section>s into
+ *     blocks (no row gap). Wrapped in :where() so it keeps zero-ish weight against Elementor's own rules.
+ */
+const scopeThemeWidgets = (css) =>
+  css
+    .replace(/(^|[}\s])\.widget(\s+select)?\s*\{/g, "$1#mocean-page .widget$2 {")
+    .replace(
+      /article,\s*aside,\s*details,\s*figcaption,\s*figure,\s*footer,\s*header,\s*main,\s*menu,\s*nav,\s*section,\s*summary\s*\{/,
+      ":where(#mocean-page) :where(article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary) {",
+    );
+
 async function main() {
   await mkdir(path.join(OUT, "vendor"), { recursive: true });
 
   for (const [outName, srcName] of Object.entries(VENDOR)) {
     const css = await readFile(path.join(SRC, srcName), "utf8");
-    await writeFile(path.join(OUT, "vendor", outName), `/* Original file: ${srcName} */\n` + convert(css));
+    const converted = outName === "theme-style.css" ? scopeThemeWidgets(convert(css)) : convert(css);
+    await writeFile(path.join(OUT, "vendor", outName), `/* Original file: ${srcName} */\n` + converted);
   }
 
   // Page CSS: one file per Elementor document used by pages and posts

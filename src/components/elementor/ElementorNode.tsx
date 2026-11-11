@@ -5,6 +5,8 @@ import { SiteFacts, hasSiteFacts } from "./Facts";
 import type { Chapter } from "./chapters";
 import type { FaqPhoto } from "./faqPhotos";
 import { responsiveImages } from "./responsiveImages";
+import { followInternalLinks } from "./internalLinks";
+import { completeNewsGrid } from "./newsGrid";
 import type { ElementorNode as Node } from "./types";
 
 /**
@@ -146,7 +148,7 @@ export default function ElementorNode({
     if (node.wrapped) {
       return (
         <div {...wrapperProps} data-id={node.id} data-element_type="widget" data-widget_type={`${node.type}.default`}>
-          <div className="elementor-widget-container" dangerouslySetInnerHTML={{ __html: responsiveImages(node.html) }} />
+          <div className="elementor-widget-container" dangerouslySetInnerHTML={{ __html: responsiveImages(followInternalLinks(completeNewsGrid(node.html))) }} />
         </div>
       );
     }
@@ -156,7 +158,7 @@ export default function ElementorNode({
         data-id={node.id}
         data-element_type="widget"
         data-widget_type={`${node.type}.default`}
-        dangerouslySetInnerHTML={{ __html: responsiveImages(node.html) }}
+        dangerouslySetInnerHTML={{ __html: responsiveImages(followInternalLinks(completeNewsGrid(node.html))) }}
       />
     );
   }

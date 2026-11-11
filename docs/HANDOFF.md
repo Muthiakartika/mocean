@@ -3,6 +3,8 @@
 Read this first when continuing the project (also on another computer).
 For Claude Code: *"Read docs/HANDOFF.md, README.md and docs/migration-checklist.md, then continue."*
 
+**2026-11-11 — SEO/AEO pass** (Search Console, Ahrefs, live site, Google Business Profile): location line in the header, Business Profile address in the footer and schema, Resort entity on every page, internal nofollow removed, retreat/guide pages added to menu and footer, `/llms.txt`, AI crawlers in robots.txt. Findings, changes and the owner's to-do list: [`seo-aeo-2026-11.md`](seo-aeo-2026-11.md).
+
 ## Overall status: about 85%
 
 | Area | Status |
@@ -90,6 +92,9 @@ The owner asked for a redesign of the inner pages (not the homepage). Direction 
 - Answered: images and site belong to the owner (OK to copy 1:1). Inner pages: "renderer + data" approach.
 
 ## Things that are easy to get wrong
+
+- **Inner-page CSS stays loaded after a menu click to the homepage** (client-side navigation). `layout.css` (the homepage's `.con` / `.widget` layout) sits in the `base` CSS layer and the converted theme/Elementor CSS has no layer, so any theme rule that matches homepage elements wins whatever its specificity. Found 2026-11-11: the theme's `.widget { margin: 0 0 3em }` and normalize `section { display: block }` spread every homepage section apart. Both are now scoped to `#mocean-page` in `convert-css.mjs` (rule 4). Check with a fresh load of `/` versus `/news/` → click Home.
+- `scripts/check-inner.ts /pricing/` times out on the accordion step: in the redesign the price accordion is a price list whose summaries are hidden (`priceList.ts`). Not a site error.
 
 - **Don't run `create-next-app` or `npm install` without `--prefer-offline` on a slow connection**; `package-lock.json` pins everything.
 - **Port 3000 may belong to another project** on this PC (`charisma-code`). `next dev` then picks 3001. The check scripts read `LOCAL_URL`, e.g. `LOCAL_URL=http://localhost:3001 bash scripts/compare-all.sh 1440 390`.

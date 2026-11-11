@@ -1,0 +1,166 @@
+/* The chart itself. Colours come from the option's tokens (ChartHome.module.css). */
+.chart {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-chart-sans), sans-serif;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.water { fill: var(--b-water); }
+.shoalOuter { fill: none; stroke: var(--b-shoal-1); stroke-width: 58; stroke-linejoin: round; }
+.shoalInner { fill: none; stroke: var(--b-shoal-2); stroke-width: 22; stroke-linejoin: round; }
+.land { fill: var(--b-land); stroke: var(--b-coast); stroke-width: 1.4; stroke-linejoin: round; }
+
+.graticule { stroke: var(--b-ink); stroke-width: 0.7; opacity: 0.22; }
+
+/* Border */
+.border { fill: var(--b-ink); stroke: var(--b-ink); }
+.border line { stroke-width: 1; }
+.neatInner { fill: none; stroke-width: 1; }
+.neatOuter { fill: none; stroke-width: 2; }
+.border rect:not(.neatInner):not(.neatOuter) { stroke: none; }
+.tickLabel {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  fill: var(--b-meta);
+}
+
+/* Names */
+.landName {
+  font-size: 34px;
+  font-weight: 500;
+  font-stretch: 118%;
+  letter-spacing: 0.42em;
+  fill: var(--b-ink);
+  opacity: 0.78;
+}
+.waterName,
+.waterNameSmall,
+.featureName,
+.coastName {
+  font-family: var(--font-chart-serif), serif;
+  font-style: italic;
+  fill: var(--b-water-ink);
+}
+.waterName { font-size: 44px; font-weight: 400; letter-spacing: 0.04em; }
+.waterNameSmall { font-size: 21px; letter-spacing: 0.06em; }
+.featureName { font-size: 23px; font-weight: 500; }
+.coastName { font-size: 21px; fill: var(--b-ink-2); }
+
+.placeName {
+  font-size: 17px;
+  font-weight: 600;
+  font-stretch: 112%;
+  letter-spacing: 0.14em;
+  fill: var(--b-ink);
+}
+.placeNote { font-size: 19px; font-weight: 600; fill: var(--b-ink); }
+.placeNoteSmall { font-size: 17px; font-weight: 500; fill: var(--b-ink-2); }
+
+.resortName {
+  font-size: 22px;
+  font-weight: 700;
+  font-stretch: 112%;
+  letter-spacing: 0.1em;
+  fill: var(--b-magenta);
+}
+
+/* Routes and symbols */
+.ferry {
+  fill: none;
+  stroke: var(--b-magenta);
+  stroke-width: 2.6;
+  stroke-dasharray: 14 9;
+  stroke-linecap: round;
+}
+.routeLabel {
+  font-family: var(--font-chart-serif), serif;
+  font-style: italic;
+  font-size: 21px;
+  fill: var(--b-magenta);
+}
+.road {
+  fill: none;
+  stroke: var(--b-ink);
+  stroke-width: 2.4;
+  stroke-dasharray: 0.1 7;
+  stroke-linecap: round;
+}
+.arrow { fill: var(--b-ink); }
+.port { fill: var(--b-paper); stroke: var(--b-ink); stroke-width: 2; }
+
+.breakers path { fill: none; stroke: var(--b-water-ink); stroke-width: 2.2; stroke-linecap: round; }
+.reef { fill: none; stroke: var(--b-ink); stroke-width: 1.6; stroke-dasharray: 0.1 5; stroke-linecap: round; }
+.reefCrosses path { stroke: var(--b-ink); stroke-width: 1.6; }
+
+.resortHalo { fill: none; stroke: var(--b-magenta); stroke-width: 2.4; }
+.resortDot { fill: var(--b-magenta); }
+
+.rose circle { fill: none; stroke: var(--b-ink); stroke-width: 1; opacity: 0.55; }
+.rose line { stroke: var(--b-ink); stroke-width: 1; opacity: 0.55; }
+.roseNeedle { fill: none; stroke: var(--b-ink); stroke-width: 1.2; opacity: 0.7; }
+.roseNorth { fill: var(--b-ink); opacity: 0.75; }
+.roseN { font-size: 18px; font-weight: 600; text-anchor: middle; fill: var(--b-ink); }
+
+.scaleBar rect { stroke: var(--b-ink); stroke-width: 1.2; }
+.scaleFill { fill: var(--b-ink); }
+.scaleEmpty { fill: var(--b-paper); }
+.scaleBar text { font-size: 15px; font-weight: 500; fill: var(--b-ink); }
+
+/* Note marks link to the notes under the chart. */
+.mark { cursor: pointer; }
+.mark circle {
+  fill: var(--b-paper);
+  stroke: var(--b-magenta);
+  stroke-width: 2.2;
+  transition: fill 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mark text {
+  font-size: 17px;
+  font-weight: 700;
+  text-anchor: middle;
+  fill: var(--b-magenta);
+  transition: fill 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mark:hover circle,
+.mark:focus-visible circle { fill: var(--b-magenta); }
+.mark:hover text,
+.mark:focus-visible text { fill: var(--b-paper); }
+.mark:focus-visible { outline: none; }
+.mark:focus-visible circle { stroke: var(--b-ink); stroke-width: 3; }
+
+/* The one authored motion: the way here is drawn in once, ferry first, then the road. */
+.reveal {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 40;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .revealFerry { animation: draw 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both; }
+  .revealRoad { animation: draw 1.1s cubic-bezier(0.16, 1, 0.3, 1) 1.45s both; }
+}
+@keyframes draw {
+  from { stroke-dashoffset: 1; }
+}
+
+/* Phones: the chart is cropped around the resort, so labels grow and the long ones shorten. */
+.mob { display: none; }
+@media (max-width: 767px) {
+  .desk { display: none; }
+  .mob { display: inline; }
+  .landName { font-size: 32px; letter-spacing: 0.3em; }
+  .waterName { font-size: 52px; }
+  .waterNameSmall { font-size: 26px; }
+  .featureName { font-size: 26px; }
+  .coastName { font-size: 26px; }
+  .placeName { font-size: 19px; letter-spacing: 0.08em; }
+  .placeNoteSmall { font-size: 22px; }
+  .resortName { font-size: 30px; }
+  .routeLabel { font-size: 26px; }
+  .tickLabel { font-size: 20px; }
+  .mark text { font-size: 19px; }
+}

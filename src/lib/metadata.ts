@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import seoData from "@/data/seo.json";
+import { seoOverrides } from "@/data/seo-overrides";
 
 /**
  * SEO for every page, copied from the original Yoast SEO output
@@ -31,10 +32,21 @@ type PageSeo = {
 
 const pages = seoData as Record<string, PageSeo>;
 
+/** Google shows og:site_name as the site name; Yoast had the bare domain (same fix as the WebSite node, structuredData.ts). */
+const SITE_NAME = "Mocean Beach Resort";
+
+/** The page's SEO data, with the title/description overrides of src/data/seo-overrides.ts applied. */
 export function getPageSeo(path: string): PageSeo {
   const seo = pages[path];
   if (!seo) throw new Error(`No SEO data for ${path} — add it to src/data/seo.json`);
-  return seo;
+  const override = seoOverrides[path];
+  if (!override) return seo;
+  return {
+    ...seo,
+    title: override.title,
+    description: override.description,
+    og: { ...seo.og, title: override.title, description: override.description },
+  };
 }
 
 /** Only the real production deployment may be indexed (PRD §10.4). */
@@ -68,7 +80,7 @@ export function pageMetadata(path: string): Metadata {
       title: seo.og.title,
       description: seo.og.description ?? undefined,
       url: seo.og.url,
-      siteName: seo.og.siteName,
+      siteName: SITE_NAME,
       ...(seo.og.modifiedTime ? { modifiedTime: seo.og.modifiedTime } : {}),
       ...(seo.og.publishedTime ? { publishedTime: seo.og.publishedTime } : {}),
       images: seo.og.image

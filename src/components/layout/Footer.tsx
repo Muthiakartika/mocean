@@ -7,6 +7,7 @@ import styles from "./Footer.module.css";
 /** Site footer: logos, guide links, contact info, map and copyright. */
 export default function Footer() {
   const [row1, row2] = footerGuideLinks;
+  const postal = contact.postalAddress;
 
   return (
     <footer className={styles.footer}>
@@ -84,7 +85,16 @@ export default function Footer() {
                   <i aria-hidden="true" className="rt rt-location-dot" />
                 </span>
                 <span className={styles.text} style={{ paddingInlineStart: 0 }}>
-                  {contact.address}
+                  {/* Original design: its short line. Redesign: two lines with the district of the Google Business Profile
+                      (Poto Tano), linking to the Maps place; the full postal address is in the structured data. */}
+                  <span className={styles.addressShort}>{contact.address}</span>
+                  <address className={styles.addressFull}>
+                    <a href={contact.mapsUrl} target="_blank" rel="noopener">
+                      Pantai Moro, {postal.locality}
+                      <br />
+                      {postal.regency}, {postal.country}
+                    </a>
+                  </address>
                 </span>
               </li>
             </ul>

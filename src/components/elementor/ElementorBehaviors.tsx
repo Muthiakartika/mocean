@@ -62,6 +62,22 @@ export default function ElementorBehaviors() {
         return;
       }
 
+      // Post grid "Load More" (/news/): shows the posts written into the grid hidden (newsGrid.ts), then goes away,
+      // as the Essential Addons button did after the last page. Focus moves to the first new post.
+      const loadMore = target.closest<HTMLButtonElement>(".eael-load-more-button");
+      if (loadMore) {
+        event.preventDefault();
+        const widget = loadMore.closest(".elementor-widget") ?? document;
+        const posts = [...widget.querySelectorAll<HTMLElement>("[data-rd-more-post]")];
+        posts.forEach((post) => {
+          post.style.removeProperty("display");
+          post.removeAttribute("data-rd-more-post");
+        });
+        loadMore.closest<HTMLElement>(".eael-load-more-button-wrap")?.style.setProperty("display", "none");
+        posts[0]?.querySelector<HTMLAnchorElement>(".eael-grid-post-link")?.focus({ preventScroll: true });
+        return;
+      }
+
       // Lightbox
       const link = target.closest<HTMLAnchorElement>('a[data-elementor-open-lightbox="yes"]');
       if (link) {

@@ -1,0 +1,61 @@
+/* Neutral on purpose: it sits on top of all three worlds. */
+.bar {
+  position: fixed;
+  z-index: 50;
+  bottom: 16px;
+  /* Clear of the Next.js dev badge in the bottom-left corner. */
+  left: 68px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 6px 5px 14px;
+  border-radius: 999px;
+  background: rgba(20, 22, 26, 0.88);
+  color: #fff;
+  font: 600 13px/1 system-ui, sans-serif;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  margin-right: 6px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.link,
+.current {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.current {
+  background: #fff;
+  color: #14161a;
+}
+
+.link:focus-visible,
+.current:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  .title {
+    display: none;
+  }
+
+  .bar {
+    bottom: 12px;
+    left: 60px;
+    padding-left: 6px;
+  }
+}

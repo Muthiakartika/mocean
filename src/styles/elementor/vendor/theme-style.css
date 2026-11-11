@@ -36,18 +36,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
+:where(#mocean-page) :where(article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary) {
 	display: block;
 }
 audio,
@@ -573,13 +562,13 @@ body.home.blog .blog-img img {
 
 --------------------------------------------------------------*/
 
-.widget {
+#mocean-page .widget {
 	margin: 0 0 3em;
 }
 
 /* Make sure select elements fit in widgets. */
 
-.widget select {
+#mocean-page .widget select {
 	max-width: 100%;
 	width: 100%;
 	padding: 16px 8px

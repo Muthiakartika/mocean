@@ -185,7 +185,7 @@ export const faq = {
     {
       question: "How much does a room cost?",
       answer:
-        "Standard Rooms are IDR 1,690,000 to 2,100,000 a night and Deluxe Garden View Bungalows are IDR 2,200,000 to 2,750,000, depending on season. Rates cover two guests, breakfast, tax and service. Stays of three nights or more booked direct get a discount.",
+        "Standard Rooms are IDR 1,690,000 to 2,150,000 a night and Deluxe Garden View Bungalows are IDR 2,200,000 to 2,800,000, depending on season. Rates cover two guests, breakfast, tax and service. Stays of three nights or more booked direct get a discount.",
     },
     {
       question: "When is the best time to visit West Sumbawa?",
