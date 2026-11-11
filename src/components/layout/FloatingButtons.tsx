@@ -6,9 +6,8 @@ import styles from "./FloatingButtons.module.css";
 /**
  * Floating WhatsApp + Cloudbeds buttons (bottom-right on every page).
  *
- * The book button is the same markup Cloudbeds expects on the original site:
- * `<button class="cb-book-btn" data-be-url="...">`. The Cloudbeds "immersive"
- * script finds it and opens the booking overlay when it is clicked (see BookButton).
+ * The book button opens the Cloudbeds booking page in a new tab (see BookButton:
+ * Cloudbeds retired the "immersive" overlay the original site used).
  */
 export default function FloatingButtons() {
   return (
