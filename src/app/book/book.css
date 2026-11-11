@@ -1,0 +1,15 @@
+/*
+ * Page-level rules of /book/ that reach outside the booking app (CSS modules only allow local selectors).
+ */
+
+/* The Cloudbeds floating book button would open their engine on top of this one. */
+body:has(#booking-app) .cb-book-btn {
+  display: none !important;
+}
+
+/* Keep the floating WhatsApp button clear of the booking bar at the bottom of phones and tablets. */
+@media (max-width: 1024px) {
+  body:has(#booking-app) a[aria-label="WhatsApp"] {
+    transform: translateY(-64px);
+  }
+}
