@@ -109,7 +109,8 @@
 :global(html:not([data-design="original"])) .row {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  align-items: start;
+  /* The questions centred on the collage's height when the list is shorter (owner, 2026-11-11). */
+  align-items: center;
   gap: 48px;
 }
 

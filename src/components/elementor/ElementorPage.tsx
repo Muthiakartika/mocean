@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { Fragment } from "react";
+import ExtraContent from "@/components/shared/ExtraContent";
 import JsonLd from "@/components/shared/JsonLd";
 import ElementorBehaviors from "./ElementorBehaviors";
 import ElementorNode from "./ElementorNode";
@@ -68,6 +69,8 @@ export default function ElementorPage({ page }: { page: PageContent }) {
           </div>
         </div>
       </div>
+      {/* Planning facts and questions on thin pages (src/data/extra-content.ts). */}
+      <ExtraContent path={page.path} />
       {/* Course, dive-site and surf-spot pages: the other pages of their group (SEO internal links, relatedPages.ts). */}
       {related && <CardCarousel title={related.title} cards={related.cards} />}
       <ElementorBehaviors />

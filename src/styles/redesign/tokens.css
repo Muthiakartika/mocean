@@ -44,7 +44,7 @@
   --rd-section-max: 96px;
   --rd-section-max-mobile: 56px;
   --rd-text-inset: 10px; /* side padding of full-width text, the original left value */
-  --rd-header-mobile: 112px; /* height of the site header over the hero on phones */
+  --rd-header-mobile: 136px; /* height of the site header over the hero on phones (incl. the location line) */
 
   /* Shape and depth */
   --rd-r: 4px;

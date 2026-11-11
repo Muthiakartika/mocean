@@ -625,11 +625,12 @@ html:not([data-design="original"]) #mocean-page {
     }
   }
 
-  /* The row: the questions first, the collage beside them (below them on phones). */
+  /* The row: the questions first, the collage beside them (below them on phones). A short list of questions sits
+     in the middle of the collage's height instead of at its top (owner, 2026-11-11). */
   & .e-con:has(> .rd-faq-photos) {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    align-items: start;
+    align-items: center;
     gap: var(--rd-s7);
 
     & > :not(.rd-faq-photos) {

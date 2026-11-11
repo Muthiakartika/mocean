@@ -1,16 +1,37 @@
 import Link from "next/link";
 import Button from "@/components/shared/Button";
+import { WhatsappIcon } from "@/components/shared/icons";
 import { contact } from "@/data/contact";
 import HeaderScroll from "./HeaderScroll";
 import MainNav from "./MainNav";
 import styles from "./Header.module.css";
 
-/** Site header: logo, main menu (desktop dropdown / mobile off-canvas) and "Book Now". */
+/**
+ * Site header: a thin location line, then logo, main menu (desktop dropdown / mobile off-canvas) and "Book Now".
+ * The location line (redesign only, hidden with ?original) puts the resort's place and phone on every page, in the same
+ * words as the footer and the structured data (local search reads name, address and phone together). It folds away
+ * once the page scrolls, so the sticky header stays slim.
+ */
 export default function Header() {
   return (
     <header className={styles.header}>
       <HeaderScroll />
       <div className={styles.bar}>
+        <div className={styles.topline}>
+          <div className={styles.toplineInner}>
+            <a className={styles.toplineItem} href={contact.mapsUrl} target="_blank" rel="noopener">
+              <i aria-hidden="true" className={`rt rt-location-dot ${styles.toplineIcon}`} />
+              <span>
+                {contact.address}
+                <span className={styles.toplineNote}> · 30 min from Poto Tano ferry</span>
+              </span>
+            </a>
+            <a className={`${styles.toplineItem} ${styles.toplinePhone}`} href={contact.whatsappUrl} target="_blank" rel="noopener">
+              <WhatsappIcon className={styles.toplineIcon} />
+              <span>WhatsApp {contact.phoneDisplay}</span>
+            </a>
+          </div>
+        </div>
         <div className={styles.row}>
           <div className={styles.logoCol}>
             <Link href="/" className={styles.logoLink}>

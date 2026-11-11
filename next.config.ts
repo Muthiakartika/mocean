@@ -37,6 +37,10 @@ const nextConfig: NextConfig = {
       { source: "/page-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/post-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      // WordPress RSS feeds (Search Console still crawls e.g. /surf-retreat/feed/, 2026-11-11): back to the page / news.
+      { source: "/feed/", destination: "/news/", permanent: true },
+      { source: "/comments/feed/", destination: "/", permanent: true },
+      { source: "/:path+/feed/", destination: "/:path+/", permanent: true },
       // Old page URLs that the live WordPress site answers with a 301 (checked 2026-11-06). Google still shows some of
       // them (Search Console: /dive-trips/ 16 clicks at position 4 in 90 days) and some have backlinks (Ahrefs), so they
       // keep pointing at the same pages. 301 as on WordPress. Exact paths only: /surf-camp/surf-spots/lombok-2/ is a page.

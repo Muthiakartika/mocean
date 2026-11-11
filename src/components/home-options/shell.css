@@ -1,0 +1,13 @@
+/*
+ * Homepage design options (/home-a, /home-b, /home-c).
+ * Each option draws its own header and footer, so the site-wide ones are hidden
+ * on these routes. The floating WhatsApp / Cloudbeds buttons stay.
+ */
+body:has([data-home-option]) > header,
+body:has([data-home-option]) > footer {
+  display: none;
+}
+
+body:has([data-home-option="c"]) {
+  background: #0e0f10;
+}

@@ -11,7 +11,29 @@ export const contact = {
   cloudbedsWidgetScript: "https://us2.cloudbeds.com/widget/load/yPrE1K/immersive",
   whatsappUrl: "https://wa.me/6282144191647",
   phoneDisplay: "+62 821-4419-1647",
+  /** Same number for tel: links and structured data (E.164). */
+  phoneE164: "+6282144191647",
+  /** Short form, shown in the header strip and the footer. */
   address: "Pantai Moro, West Sumbawa, Indonesia",
+  /**
+   * Postal address as listed on the resort's Google Business Profile ("Mocean Beach Resort", checked 2026-11-11). Local
+   * search matches name, address and phone across the site, the profile and directories, so this one is used in the
+   * footer and the structured data.
+   */
+  postalAddress: {
+    street: "Jl. Tano Kertasari, Tua Nanga",
+    locality: "Poto Tano",
+    regency: "West Sumbawa",
+    region: "West Nusa Tenggara",
+    regionSchema: "Nusa Tenggara Barat",
+    postalCode: "84454",
+    country: "Indonesia",
+    countryCode: "ID",
+  },
+  /** Google Maps place of the resort (its Business Profile). */
+  mapsUrl: "https://maps.google.com/?cid=9781918641660082954",
+  /** Pin of the Business Profile. */
+  geo: { latitude: -8.6739397, longitude: 116.7670435 },
   facebookUrl: "https://www.facebook.com/MoceanDiveResort",
   instagramUrl: "https://www.instagram.com/moceanresort/",
   /** Google Maps embed shown in the footer ("We Are Here") and on several pages. */

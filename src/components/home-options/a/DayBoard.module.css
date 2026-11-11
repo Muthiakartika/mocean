@@ -1,0 +1,1419 @@
+/*
+ * Option A, "The day board". White enamel boards in aluminium frames on a cobalt wall,
+ * written up in felt pen. Blue and black marker for everything, red only for the
+ * circle around the WhatsApp button. One marker stroke width (--stroke) throughout.
+ */
+
+.root {
+  --wall: #2147b5;
+  --wall-deep: #1a3a9e;
+  --on-wall: #ffffff;
+  --on-wall-soft: rgba(255, 255, 255, 0.86);
+  --enamel: #f6f8f7;
+  --rule: #dbe7ef;
+  --paper: #ffffff;
+  --ink: #1b3ea6;
+  --ink-black: #1b1d20;
+  --ink-red: #d1352b;
+  --meta: #555b63;
+  --hairline: #dfe3e6;
+  --magnet: #f5c93a;
+  --cap: #33383c;
+  --stroke: 3px;
+  --gutter: 24px;
+  --hand: var(--font-a-hand), "Segoe Print", cursive;
+  --print: var(--font-a-print), "Arial Narrow", sans-serif;
+  --text: var(--font-a-text), system-ui, sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  background: var(--wall);
+  color: var(--ink-black);
+  font-family: var(--text);
+  font-size: 17px;
+  line-height: 1.55;
+  padding-bottom: 8px;
+}
+
+.root ::selection {
+  background: var(--magnet);
+  color: var(--ink-black);
+}
+
+.root a:focus-visible,
+.root button:focus-visible {
+  outline: 3px solid var(--ink-black);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.rail a:focus-visible,
+.footer a:focus-visible {
+  outline-color: var(--magnet);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* ---------- Top rail on the wall ---------- */
+
+.rail {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: min(100%, 1440px);
+  height: 76px;
+  margin: 0 auto 8px;
+  padding: 0 var(--gutter);
+}
+
+.logoLink {
+  display: block;
+  flex: none;
+}
+
+.logo {
+  display: block;
+  width: 84px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.navLink {
+  font: 700 16px/1 var(--print);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-wall);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 7px;
+  transition: text-decoration-color 140ms var(--ease);
+}
+
+.navLink:hover {
+  text-decoration-color: var(--magnet);
+}
+
+.railCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 800 15px/1 var(--print);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 6px 14px -6px rgba(5, 15, 60, 0.6);
+  transition: background-color 140ms var(--ease);
+}
+
+.railCta:hover {
+  background: #e7edfb;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex: none;
+}
+
+.iconSmall {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  flex: none;
+}
+
+/* ---------- Boards ---------- */
+
+.wallSection,
+.pair {
+  width: min(100%, 1440px);
+  margin: 0 auto 40px;
+  padding: 0 var(--gutter);
+  scroll-margin-top: 16px;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.pair .wallSection {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.pair .boardWrap,
+.pair .frame,
+.pair .surface {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.boardWrap {
+  position: relative;
+}
+
+.frame {
+  position: relative;
+  padding: 12px;
+  border-radius: 7px;
+  background:
+    linear-gradient(var(--cap), var(--cap)) top left / 26px 26px no-repeat,
+    linear-gradient(var(--cap), var(--cap)) top right / 26px 26px no-repeat,
+    linear-gradient(var(--cap), var(--cap)) bottom left / 26px 26px no-repeat,
+    linear-gradient(var(--cap), var(--cap)) bottom right / 26px 26px no-repeat,
+    linear-gradient(180deg, #f2f4f5 0%, #c2c8cb 36%, #e3e7e9 52%, #a6aeb2 100%);
+  box-shadow:
+    0 26px 50px -18px rgba(5, 15, 60, 0.6),
+    0 6px 14px -4px rgba(5, 15, 60, 0.35);
+}
+
+.surface {
+  position: relative;
+  border-radius: 2px;
+  background-color: var(--enamel);
+  background-image:
+    linear-gradient(var(--rule) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06), inset 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.tray {
+  position: relative;
+  height: 26px;
+  margin: -2px 14px 0;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, #e2e6e8 0%, #b1b8bc 55%, #8f989d 100%);
+  box-shadow: 0 12px 20px -8px rgba(5, 15, 60, 0.6);
+}
+
+.trayLabel {
+  position: absolute;
+  top: 50%;
+  left: 22px;
+  transform: translateY(-50%);
+  font: 700 11px/1 var(--print);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #353c41;
+}
+
+.markers {
+  position: absolute;
+  right: 48px;
+  bottom: 9px;
+  width: 250px;
+  height: auto;
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Photo prints and magnets */
+
+.figure {
+  margin: 0;
+}
+
+.print {
+  position: relative;
+  padding: 10px;
+  background: var(--paper);
+  transform: rotate(var(--tilt, 0deg));
+  box-shadow:
+    0 1px 2px rgba(10, 20, 60, 0.12),
+    0 16px 28px -12px rgba(10, 20, 60, 0.5);
+}
+
+.printImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--ratio, 3 / 2);
+  object-fit: cover;
+}
+
+.magnet {
+  position: absolute;
+  z-index: 2;
+  top: -11px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #fff5c6 0 10%, var(--magnet) 36%, #d4a113 80%, #b98b0c 100%);
+  box-shadow: 0 4px 7px rgba(20, 20, 40, 0.38);
+}
+
+.magnetLeft {
+  left: 18px;
+}
+
+.magnetRight {
+  right: 18px;
+}
+
+.caption {
+  margin-top: 12px;
+  padding-left: 6px;
+  font: 400 20px/1.3 var(--hand);
+  color: var(--ink);
+}
+
+/* Marker strokes */
+
+.underline,
+.arrowDown,
+.arrowRight,
+.arrowUp,
+.arrowSmall,
+.legArrow,
+.tick,
+.circle,
+.sketchInk {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: var(--stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.underline {
+  display: block;
+  width: min(280px, 70%);
+  height: 12px;
+  margin: 8px 0 26px;
+}
+
+.arrowRight,
+.arrowDown {
+  width: 46px;
+  height: 18px;
+  flex: none;
+  transition: transform 140ms var(--ease);
+}
+
+.arrowDown {
+  transform: rotate(90deg);
+}
+
+.arrowSmall {
+  width: 34px;
+  height: 14px;
+  flex: none;
+}
+
+/* ---------- Type on the board ---------- */
+
+.h1 {
+  margin: 0 0 18px;
+  font: 700 clamp(40px, 4.3vw, 66px) / 1.04 var(--hand);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.h2 {
+  margin: 0;
+  font: 700 clamp(32px, 2.9vw, 46px) / 1.08 var(--hand);
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.h3 {
+  margin: 0 0 14px;
+  font: 700 28px/1.1 var(--hand);
+  color: var(--ink);
+}
+
+.handLine {
+  max-width: 30ch;
+  margin: 0;
+  font: 400 clamp(21px, 1.75vw, 26px) / 1.3 var(--hand);
+  color: var(--ink-black);
+}
+
+.handNote {
+  max-width: 44ch;
+  margin: 0;
+  font: 400 21px/1.35 var(--hand);
+  color: var(--ink-black);
+}
+
+.bigHand {
+  margin: 24px 0;
+  font: 700 26px/1.25 var(--hand);
+  color: var(--ink-black);
+  text-wrap: balance;
+}
+
+.label {
+  display: inline-block;
+  padding: 5px 9px 4px;
+  border-radius: 2px;
+  background: var(--ink-black);
+  color: #fff;
+  font: 800 14px/1 var(--print);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Buttons and links */
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 40px;
+  margin-top: 30px;
+}
+
+.circled {
+  position: relative;
+  display: inline-block;
+  padding: 16px 26px;
+}
+
+.circle {
+  position: absolute;
+  inset: -4px -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 8px);
+  overflow: visible;
+  stroke: var(--ink-red);
+  pointer-events: none;
+}
+
+.btn,
+.btnQuiet {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 22px;
+  border-radius: 4px;
+  font: 800 17px/1 var(--print);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background-color 140ms var(--ease),
+    transform 140ms var(--ease);
+}
+
+.btn {
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 10px 20px -10px rgba(27, 62, 166, 0.9);
+}
+
+.btn:hover {
+  background: #142f86;
+}
+
+.btnQuiet {
+  border: var(--stroke) solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+}
+
+.btnQuiet:hover {
+  background: rgba(27, 62, 166, 0.07);
+}
+
+.btn:active,
+.btnQuiet:active {
+  transform: translateY(1px);
+}
+
+.handLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 700 23px/1.2 var(--hand);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.handLink:hover .arrowRight {
+  transform: translateX(5px);
+}
+
+.handLink:hover .arrowDown {
+  transform: rotate(90deg) translateX(5px);
+}
+
+.linkRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 36px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Board 1: the day ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  grid-template-areas:
+    "print text"
+    "day day";
+  align-items: center;
+  gap: 40px 64px;
+  min-height: calc(100svh - 76px - 8px - 24px - 24px - 26px);
+  padding: 44px 52px 30px;
+}
+
+.heroPrint {
+  grid-area: print;
+  padding: 8px 0 0 4px;
+}
+
+.heroText {
+  grid-area: text;
+}
+
+.day {
+  position: relative;
+  grid-area: day;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--stroke) solid var(--ink-black);
+}
+
+.dayCol {
+  position: relative;
+}
+
+.dayCol + .dayCol::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 6px;
+  left: 0;
+  width: var(--stroke);
+  border-radius: 2px;
+  background: var(--ink-black);
+}
+
+.dayLink {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  height: 100%;
+  padding: 18px 24px 10px;
+  text-decoration: none;
+  transition: background-color 140ms var(--ease);
+}
+
+.dayLink:hover {
+  background: rgba(27, 62, 166, 0.06);
+}
+
+.dayLine {
+  font: 400 22px/1.25 var(--hand);
+  color: var(--ink);
+}
+
+.dayNote {
+  font: 700 20px/1.2 var(--hand);
+  color: var(--ink-black);
+}
+
+/* The one authored motion: the red circle is drawn round the button. */
+@media (prefers-reduced-motion: no-preference) {
+  .heroText .circle path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 950ms var(--ease) 500ms forwards;
+  }
+
+  @supports (animation-timeline: view()) {
+    .close .circle path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw linear forwards;
+      animation-timeline: view();
+      animation-range: entry 40% cover 50%;
+    }
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ---------- Board 2: rooms ---------- */
+
+.rooms {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 48px 72px;
+  padding: 56px 56px 48px;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.tileBungalow,
+.tileStandard {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  border-radius: 4px;
+  color: #fff;
+  font: 800 14px/1 var(--print);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Six bungalows on one row, the four Standard Rooms on the next. */
+.tileBungalow {
+  grid-column: span 2;
+  background: var(--ink);
+}
+
+.tileStandard {
+  grid-column: span 2;
+  background: var(--ink-black);
+}
+
+.tileStandard:nth-child(7) {
+  grid-column: 1 / span 2;
+}
+
+.sheetWrap {
+  padding-top: 14px;
+}
+
+.sheet {
+  position: relative;
+  padding: 30px 30px 20px;
+  background: var(--paper);
+  transform: rotate(0.4deg);
+  box-shadow:
+    0 1px 2px rgba(10, 20, 60, 0.12),
+    0 18px 30px -14px rgba(10, 20, 60, 0.5);
+}
+
+.sheetTitle {
+  margin: 0 0 16px;
+  font: 800 24px/1 var(--print);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-black);
+}
+
+.rates {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.rates thead th {
+  padding: 0 0 10px;
+  border-bottom: 2px solid var(--ink-black);
+  font: 700 14px/1 var(--print);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--meta);
+  text-align: left;
+}
+
+.rates tbody th,
+.rates td {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hairline);
+  vertical-align: top;
+  text-align: left;
+}
+
+.rates .num {
+  padding-left: 18px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.rates td {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.roomName {
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.roomMeta {
+  display: block;
+  margin-top: 3px;
+  font-size: 14px;
+  color: var(--meta);
+}
+
+.sheetUnit {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--meta);
+}
+
+.sheetNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 50ch;
+  margin: 22px 0 0 8px;
+  font: 400 21px/1.35 var(--hand);
+  color: var(--ink);
+}
+
+.arrowUp {
+  width: 46px;
+  height: 18px;
+  flex: none;
+  margin-top: 4px;
+  transform: rotate(-60deg);
+}
+
+.printRow {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 44px;
+  padding-top: 8px;
+}
+
+.rooms > .handLink {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Boards 3 and 4: dive, surf ---------- */
+
+.dive,
+.surf {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 52px 52px 44px;
+}
+
+.ticks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: 400 21px/1.3 var(--hand);
+  color: var(--ink-black);
+}
+
+.ticks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tick {
+  width: 24px;
+  height: 21px;
+  flex: none;
+  margin-top: 2px;
+}
+
+.printPair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 32px;
+  margin: 10px 0 30px;
+  padding-top: 12px;
+}
+
+.dive > .handLink {
+  margin-top: auto;
+}
+
+.sketch {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin: -6px 0 6px;
+}
+
+.sketchDash {
+  stroke-dasharray: 0.1 11;
+}
+
+.sketchLabel {
+  font: 700 27px var(--hand);
+  fill: var(--ink);
+}
+
+.sketchLabelSmall {
+  font: 400 21px var(--hand);
+  fill: var(--ink-black);
+}
+
+.surf .figure {
+  margin: 26px 0 30px;
+  padding-top: 12px;
+}
+
+/* ---------- Board 5: eat, tours, reviews ---------- */
+
+.eat {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  grid-template-areas:
+    "text prints"
+    "tours slips";
+  gap: 56px 72px;
+  padding: 56px;
+}
+
+.eatText {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.eatText .handNote {
+  margin-bottom: 22px;
+}
+
+.eatPrints {
+  grid-area: prints;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  padding-top: 12px;
+}
+
+.tours {
+  grid-area: tours;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  grid-template-rows: auto 1fr;
+  gap: 0 32px;
+}
+
+.tours .h3 {
+  grid-column: 1 / -1;
+}
+
+.tourList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tourList li + li {
+  margin-top: 8px;
+}
+
+.tourLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font: 400 22px/1.3 var(--hand);
+  color: var(--ink-black);
+  text-decoration: none;
+}
+
+.tourLink:hover {
+  color: var(--ink);
+}
+
+.tours .figure {
+  padding-top: 12px;
+}
+
+.slips {
+  grid-area: slips;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 28px;
+}
+
+.slip {
+  position: relative;
+  margin: 12px 0 0;
+  padding: 26px 24px 20px;
+  background: var(--paper);
+  transform: rotate(var(--tilt, 0deg));
+  box-shadow:
+    0 1px 2px rgba(10, 20, 60, 0.12),
+    0 14px 24px -12px rgba(10, 20, 60, 0.45);
+}
+
+.tape {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 96px;
+  height: 26px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(236, 226, 190, 0.82);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.slipText {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-black);
+}
+
+.slipBy {
+  margin-top: 14px;
+  font: 700 13px/1 var(--print);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--meta);
+}
+
+/* ---------- Board 6: getting here ---------- */
+
+.routeBoard {
+  padding: 56px;
+}
+
+.route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  margin: 0 0 26px;
+  padding: 0;
+  list-style: none;
+}
+
+.stop {
+  padding: 10px 20px;
+  border: var(--stroke) solid var(--ink-black);
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  font: 700 25px/1.15 var(--hand);
+  color: var(--ink-black);
+}
+
+.stopHome {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: rgba(27, 62, 166, 0.07);
+}
+
+.leg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font: 400 20px/1.2 var(--hand);
+  color: var(--ink);
+}
+
+.legArrow {
+  width: 72px;
+  height: 22px;
+}
+
+.seasonList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 40px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+  font: 400 21px/1.35 var(--hand);
+  color: var(--ink-black);
+}
+
+.seasonList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.seasonList li::before {
+  content: "";
+  width: 16px;
+  height: var(--stroke);
+  border-radius: 2px;
+  background: var(--ink);
+  flex: none;
+}
+
+/* ---------- Close ---------- */
+
+.close {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 40px 60px;
+  text-align: center;
+}
+
+.closeTitle {
+  margin: 0 0 14px;
+  font: 700 clamp(38px, 4vw, 62px) / 1.05 var(--hand);
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.close .handLine {
+  max-width: 34ch;
+}
+
+.close .ctaRow {
+  justify-content: center;
+}
+
+.contactLine {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 32px;
+  margin: 30px 0 0;
+}
+
+/* ---------- Footer on the wall ---------- */
+
+.footer {
+  width: min(100%, 1440px);
+  margin: 16px auto 0;
+  /* Room on the right for the floating WhatsApp and booking buttons. */
+  padding: 24px calc(var(--gutter) + 84px) 32px var(--gutter);
+  color: var(--on-wall);
+}
+
+.footerMain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 48px;
+  padding-bottom: 26px;
+}
+
+.footerLogo {
+  display: block;
+  width: 116px;
+  height: auto;
+}
+
+.footerAddress {
+  margin: 0;
+  font: 700 15px/1.6 var(--print);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-wall-soft);
+}
+
+.padiPlate {
+  display: inline-flex;
+  padding: 10px 14px;
+  border-radius: 4px;
+  background: var(--paper);
+}
+
+.padi {
+  display: block;
+  width: 170px;
+  height: auto;
+}
+
+.footerBottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+}
+
+.footerNav a {
+  font: 700 15px/1 var(--print);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-wall);
+  text-decoration: none;
+}
+
+.footerNav a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--magnet);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+.social {
+  display: flex;
+  gap: 18px;
+}
+
+.social a {
+  display: inline-flex;
+  color: var(--on-wall);
+}
+
+.copyright {
+  margin: 0 0 0 auto;
+  font-size: 14px;
+  color: var(--on-wall-soft);
+}
+
+/* ---------- Narrower screens ---------- */
+
+@media (max-width: 1180px) {
+  .hero {
+    gap: 36px 44px;
+    padding: 36px 40px 28px;
+  }
+
+  .rooms,
+  .eat {
+    gap: 44px 48px;
+    padding: 48px 44px;
+  }
+
+  .dive,
+  .surf,
+  .routeBoard {
+    padding: 44px;
+  }
+
+  .ticks {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .pair {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .root {
+    --gutter: 12px;
+  }
+
+  .rail {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 14px 16px;
+    padding-top: 12px;
+    padding-bottom: 6px;
+  }
+
+  .logo {
+    width: 70px;
+  }
+
+  .railCta {
+    margin-left: auto;
+  }
+
+  .nav {
+    order: 3;
+    width: calc(100% + 2 * var(--gutter));
+    margin: 0 calc(-1 * var(--gutter));
+    padding: 6px var(--gutter) 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .navLink {
+    flex: none;
+    font-size: 15px;
+  }
+
+  .frame {
+    padding: 8px;
+    background-size:
+      18px 18px,
+      18px 18px,
+      18px 18px,
+      18px 18px,
+      auto;
+  }
+
+  .surface {
+    background-size: 36px 36px;
+  }
+
+  .tray {
+    height: 20px;
+    margin: -2px 10px 0;
+  }
+
+  .trayLabel {
+    display: none;
+  }
+
+  .markers {
+    right: 18px;
+    width: 170px;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "print"
+      "text"
+      "day";
+    gap: 30px;
+    min-height: 0;
+    padding: 28px 20px 18px;
+  }
+
+  .h1 {
+    font-size: clamp(34px, 8.6vw, 46px);
+  }
+
+  .ctaRow {
+    gap: 18px 28px;
+    margin-top: 24px;
+  }
+
+  .day {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dayCol:nth-child(odd)::before {
+    display: none;
+  }
+
+  .dayCol:nth-child(n + 3) {
+    border-top: var(--stroke) solid var(--ink-black);
+  }
+
+  .dayLink {
+    padding: 14px 14px 12px;
+  }
+
+  .dayLine {
+    font-size: 20px;
+  }
+
+  .rooms,
+  .eat {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: none;
+    gap: 36px;
+    padding: 36px 20px;
+  }
+
+  .eatText,
+  .eatPrints,
+  .tours,
+  .slips {
+    grid-area: auto;
+  }
+
+  .printRow {
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-auto-columns: 76%;
+    gap: 24px;
+    margin: 0 -20px;
+    padding: 14px 20px 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .printRow .figure {
+    scroll-snap-align: center;
+  }
+
+  .dive,
+  .surf,
+  .routeBoard {
+    padding: 36px 20px;
+  }
+
+  .slips {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .route {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .leg {
+    flex-direction: row;
+    gap: 10px;
+    padding-left: 18px;
+  }
+
+  .legArrow {
+    width: 40px;
+    transform: rotate(90deg);
+  }
+
+  .close {
+    padding: 48px 20px 44px;
+  }
+
+  .copyright {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .tiles {
+    gap: 6px;
+  }
+
+  .tileBungalow,
+  .tileStandard {
+    height: 38px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
+
+  .tileBungalow {
+    grid-column: span 4;
+  }
+
+  .tileStandard,
+  .tileStandard:nth-child(7) {
+    grid-column: span 3;
+  }
+
+  .sheet {
+    padding: 26px 18px 16px;
+  }
+
+  .rates thead {
+    display: none;
+  }
+
+  .rates tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 12px;
+  }
+
+  .rates tbody th {
+    grid-column: 1 / -1;
+    border: 0;
+    padding-bottom: 8px;
+  }
+
+  .rates .num {
+    padding: 0;
+    border: 0;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .rates td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    font: 700 12px/1 var(--print);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--meta);
+  }
+
+  .ticks {
+    font-size: 20px;
+  }
+
+  .printPair,
+  .eatPrints {
+    gap: 18px;
+  }
+
+  .bigHand {
+    font-size: 23px;
+  }
+
+  .tours {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .sketchLabel {
+    font-size: 34px;
+  }
+
+  .sketchLabelSmall {
+    font-size: 28px;
+  }
+}

@@ -147,6 +147,28 @@
   font-size: 17px;
 }
 
+/* Address: the original's short line; the two-line address with the district only in the redesign. */
+.addressFull {
+  display: none;
+}
+
+:global(html:not([data-design="original"])) .addressShort {
+  display: none;
+}
+
+:global(html:not([data-design="original"])) .addressFull {
+  display: block;
+  /* The theme CSS of the inner pages gives <address> a 1.5em bottom margin. */
+  margin: 0;
+  font-style: normal;
+}
+
+/* The contact links are flex rows; the address keeps its line breaks. */
+:global(html:not([data-design="original"])) .addressFull a {
+  display: inline;
+}
+
+
 /* Social icons (circles) */
 .social {
   display: flex;

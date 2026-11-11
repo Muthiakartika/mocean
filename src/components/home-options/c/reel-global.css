@@ -1,0 +1,8 @@
+/*
+ * Browser surfaces for homepage option C (page scrollbar), scoped to the page
+ * that carries data-home-option="c".
+ */
+html:has([data-home-option="c"]) {
+  color-scheme: dark;
+  scrollbar-color: #6e7377 #0e0f10;
+}

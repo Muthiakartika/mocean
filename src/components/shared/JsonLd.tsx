@@ -4,7 +4,7 @@ import { improveJsonLd } from "@/lib/structuredData";
 /** Outputs the page's structured data (JSON-LD): the original blocks, with the SEO fixes in structuredData.ts. */
 export default function JsonLd({ path }: { path: string }) {
   const { jsonLd, og } = getPageSeo(path);
-  const blocks = improveJsonLd(jsonLd, getPageSeo("/").og.image);
+  const blocks = improveJsonLd(jsonLd, path, getPageSeo("/").og.image);
   return (
     <>
       {/* Yoast also writes article:modified_time on "website" pages (the homepage); Next.js metadata only does on

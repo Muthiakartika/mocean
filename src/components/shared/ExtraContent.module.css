@@ -1,0 +1,303 @@
+/*
+ * Planning block under thin pages (ExtraContent.tsx), redesign only. Selectors carry #mocean-page so they win over the
+ * theme and redesign rules for h2/h3/p inside the page.
+ *   .plan     white fact cards on the sea band, each ending with pill link buttons (no inline text links, owner
+ *             2026-11-11)
+ *   .faqBand  the FAQ as on the other pages: centred title, question cards (Accordion "cards"), collage of three
+ *             curved photos (values from the homepage FAQ, FAQ.module.css, and waves-pages.css), on white (owner)
+ */
+:global(html[data-design="original"]) :is(.plan, .faqBand) {
+  display: none;
+}
+
+:global(#mocean-page) .plan {
+  padding: 88px 24px 96px;
+  background: var(--hm-sea, #eaf2fc);
+  font-family: var(--font-body);
+}
+
+/* Blog posts: white space between the post's rounded sea-blue panel and this sea-blue band, so they don't merge. */
+:global(#mocean-page.post-page) .plan {
+  margin-top: 72px;
+}
+
+:global(#mocean-page) .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+:global(#mocean-page) .kicker {
+  margin: 0 0 10px;
+  color: var(--color-teal, #00a8be);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+:global(#mocean-page) .title {
+  max-width: 760px;
+  margin: 0;
+  color: var(--color-primary, #111f90);
+  font-family: var(--font-body);
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+:global(#mocean-page) .intro {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: #3d4152;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+:global(#mocean-page) .cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+
+:global(#mocean-page) .card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 28px 26px;
+  border: 1px solid #d9dfea;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(14 21 48 / 0.05), 0 18px 36px -24px rgb(14 21 48 / 0.32);
+}
+
+:global(#mocean-page) .cardTitle {
+  margin: 0 0 12px;
+  color: var(--color-primary, #111f90);
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+:global(#mocean-page) .text {
+  margin: 0 0 12px;
+  color: #3d4152;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Label / value rows */
+:global(#mocean-page) .facts {
+  margin: 0 0 14px;
+}
+
+:global(#mocean-page) .fact {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgb(17 31 144 / 0.08);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+:global(#mocean-page) .fact:first-child {
+  padding-top: 0;
+}
+
+:global(#mocean-page) .fact dt {
+  color: #3d4152;
+  font-weight: 600;
+}
+
+:global(#mocean-page) .fact dd {
+  margin: 0;
+  color: var(--color-primary, #111f90);
+  text-align: right;
+}
+
+/* Link buttons at the foot of each card */
+:global(#mocean-page) .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+:global(#mocean-page) .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid rgb(17 31 144 / 0.16);
+  border-radius: 999px;
+  background: #f3f6fd;
+  color: var(--color-primary, #111f90);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+:global(#mocean-page) .chip svg {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+:global(#mocean-page) .chip:hover {
+  border-color: var(--color-primary, #111f90);
+  background: var(--color-primary, #111f90);
+  color: #fff;
+}
+
+:global(#mocean-page) .chip:hover svg {
+  transform: translateX(2px);
+}
+
+:global(#mocean-page) .chip:focus-visible {
+  outline: 2px solid var(--color-primary, #111f90);
+  outline-offset: 2px;
+}
+
+/* FAQ band */
+:global(#mocean-page) .faqBand {
+  padding: 96px 24px 110px;
+  background: #fff;
+  font-family: var(--font-body);
+}
+
+:global(#mocean-page) .faqTitle {
+  margin: 0 0 48px;
+  color: #0e1530;
+  font-family: var(--font-body);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+}
+
+:global(#mocean-page) .faqRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  /* A short list of questions sits in the middle of the collage's height (owner, 2026-11-11). */
+  align-items: center;
+  gap: 48px;
+}
+
+/* The theme styles h3 and p inside #mocean-page: the accordion keeps its own sizes. */
+:global(#mocean-page) .faqList h3 {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+:global(#mocean-page) .faqList p {
+  margin: 0;
+  color: #454a57;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+  text-align: left;
+}
+
+/* Two small photos stacked on the left, the tall one on the right (3 : 2), curved as the other FAQ collages. */
+:global(#mocean-page) .collage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 12px;
+  height: clamp(380px, 36vw, 520px);
+}
+
+:global(#mocean-page) .collage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--hm-r, 24px);
+}
+
+:global(#mocean-page) .collage .small:first-child {
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: 160px var(--hm-r, 24px) var(--hm-r, 24px) var(--hm-r, 24px);
+}
+
+:global(#mocean-page) .collage .small:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+  border-radius: var(--hm-r, 24px) var(--hm-r, 24px) var(--hm-r, 24px) 140px;
+}
+
+:global(#mocean-page) .collage .tall {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  border-radius: 50% 50% var(--hm-r, 24px) var(--hm-r, 24px) / 150px 150px var(--hm-r, 24px) var(--hm-r, 24px);
+}
+
+@media (max-width: 900px) {
+  :global(#mocean-page) :is(.cards, .faqRow) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  :global(#mocean-page) .faqRow {
+    gap: 32px;
+  }
+
+  :global(#mocean-page) .collage {
+    height: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  :global(#mocean-page) .plan {
+    padding: 56px 16px 64px;
+  }
+
+  :global(#mocean-page) .faqBand {
+    padding: 64px 16px 80px;
+  }
+
+  :global(#mocean-page) .faqTitle {
+    margin-bottom: 28px;
+    font-size: 30px;
+  }
+
+  :global(#mocean-page) .card {
+    padding: 22px 20px 20px;
+    border-radius: 20px;
+  }
+
+  :global(#mocean-page) .fact {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  :global(#mocean-page) .fact dd {
+    text-align: left;
+  }
+
+  :global(#mocean-page) .collage {
+    height: 300px;
+  }
+
+  :global(#mocean-page) .collage .small:first-child {
+    border-radius: 90px var(--hm-r, 18px) var(--hm-r, 18px) var(--hm-r, 18px);
+  }
+
+  :global(#mocean-page) .collage .small:nth-child(2) {
+    border-radius: var(--hm-r, 18px) var(--hm-r, 18px) var(--hm-r, 18px) 80px;
+  }
+
+  :global(#mocean-page) .collage .tall {
+    border-radius: 50% 50% var(--hm-r, 18px) var(--hm-r, 18px) / 90px 90px var(--hm-r, 18px) var(--hm-r, 18px);
+  }
+}

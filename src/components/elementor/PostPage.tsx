@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ExtraContent from "@/components/shared/ExtraContent";
 import JsonLd from "@/components/shared/JsonLd";
 import ElementorBehaviors from "./ElementorBehaviors";
 import ElementorNode from "./ElementorNode";
@@ -7,6 +8,7 @@ import HeroImage from "./HeroImage";
 import CardCarousel from "./CardCarousel";
 import { formatDate, postSummary, relatedPosts } from "./postIndex";
 import { responsiveImages } from "./responsiveImages";
+import { followInternalLinks } from "./internalLinks";
 import type { ElementorNode as Node } from "./types";
 import styles from "./PostPage.module.css";
 
@@ -113,7 +115,7 @@ export default function PostPage({ post }: { post: PostContent }) {
                         )}
                         <div className="single-content-full">
                           {/* Trusted HTML extracted from the client's own website. */}
-                          <div className="bs-desc" dangerouslySetInnerHTML={{ __html: responsiveImages(post.html) }} />
+                          <div className="bs-desc" dangerouslySetInnerHTML={{ __html: responsiveImages(followInternalLinks(post.html)) }} />
                         </div>
                         <div className="clear-fix" />
                       </article>
@@ -126,6 +128,8 @@ export default function PostPage({ post }: { post: PostContent }) {
         </div>
       </div>
 
+      {/* Planning facts and questions on thin posts (src/data/extra-content.ts). */}
+      <ExtraContent path={post.path} />
       {more.length > 0 && <CardCarousel title="Read Our Next Article" cards={more} />}
       <ElementorBehaviors />
     </div>
