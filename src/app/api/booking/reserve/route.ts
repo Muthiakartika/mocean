@@ -81,8 +81,18 @@ async function handle(body: ReservationRequest): Promise<ReservationResult> {
 
     const booked = await provider.reserve(body, availability, quote);
     const final = { ...quote, total: booked.total ?? quote.total, deposit: booked.deposit ?? quote.deposit };
-    return { ok: true, reservationId: booked.reservationId, source: provider.source, quote: final, guestEmail: body.guest.email.trim() };
+    return {
+      ok: true,
+      reservationId: booked.reservationId,
+      source: provider.source,
+      quote: final,
+      guestEmail: body.guest.email.trim(),
+      ...(booked.status ? { status: booked.status } : {}),
+      ...(booked.manageUrl ? { manageUrl: booked.manageUrl } : {}),
+    };
   } catch (error) {
+    // The room went to someone else, or its price moved, between the check above and the booking itself.
+    if (error instanceof QuoteError) return { ok: false, message: `${error.message} We've refreshed the rooms for you.`, stale: true };
     console.error("[booking] reservation failed:", error);
     return {
       ok: false,

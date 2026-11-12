@@ -1,5 +1,8 @@
 # Booking engine (/book/)
 
+> The same page can also run on the resort's own database instead of Cloudbeds: see `booking-native.md`
+> (`BOOKING_PROVIDER=native`). This document describes the Cloudbeds API version.
+
 The site's own booking page, in the site's design, working on the resort's Cloudbeds data through the official
 Cloudbeds API (v1.3). It replaces the look of Cloudbeds' hosted page (https://us2.cloudbeds.com/en/reservation/yPrE1K),
 not Cloudbeds itself: rooms, prices, availability and reservations stay in Cloudbeds.

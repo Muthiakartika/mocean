@@ -1,10 +1,15 @@
 import { cloudbedsProvider, cloudbedsConfigured } from "@/lib/cloudbeds/provider";
+import { databaseConfigured } from "@/lib/db";
 import { demoAvailability } from "./demo";
+import { nativeProvider } from "./native/provider";
 import type { Availability, BookingSource, Quote, ReservationRequest, StayQuery } from "./types";
 
 /**
  * Where /book/ gets rooms and makes reservations.
  *
+ *   BOOKING_PROVIDER=native -> the resort's own database (src/lib/booking/native/, docs/booking-native.md); needs
+ *                              DATABASE_URL, except in development where a local database is made on first use.
+ *                              Without a database it is "none" below, it never falls back to another provider.
  *   CLOUDBEDS_API_KEY set  -> Cloudbeds (src/lib/cloudbeds/)
  *   otherwise              -> demo data everywhere but the production site (development, Vercel previews), or
  *                             anywhere with BOOKING_DEMO=1
@@ -15,9 +20,14 @@ export type BookingProvider = {
   availability(query: StayQuery): Promise<Availability>;
   /**
    * Creates the reservation; `availability` and `quote` are the server's own fresh pricing of the request. May answer
-   * the provider's final total and deposit (Cloudbeds prices extra guests and applies its deposit policy).
+   * the provider's final total and deposit (Cloudbeds prices extra guests and applies its deposit policy), and whether
+   * the booking is still a request the resort has to confirm.
    */
-  reserve(request: ReservationRequest, availability: Availability, quote: Quote): Promise<{ reservationId: string; total?: number; deposit?: number }>;
+  reserve(
+    request: ReservationRequest,
+    availability: Availability,
+    quote: Quote,
+  ): Promise<{ reservationId: string; total?: number; deposit?: number; status?: "pending" | "confirmed"; manageUrl?: string }>;
 };
 
 const demoProvider: BookingProvider = {
@@ -27,6 +37,7 @@ const demoProvider: BookingProvider = {
 };
 
 export function bookingProvider(): BookingProvider | null {
+  if (process.env.BOOKING_PROVIDER?.trim().toLowerCase() === "native") return databaseConfigured() ? nativeProvider : null;
   if (cloudbedsConfigured()) return cloudbedsProvider;
   // The same test as isProduction in src/lib/metadata.ts.
   const productionSite = process.env.VERCEL_ENV === "production" || process.env.SITE_ENV === "production";

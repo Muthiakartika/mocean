@@ -52,7 +52,8 @@ export type AddOn = {
   price: number;
 };
 
-export type BookingSource = "cloudbeds" | "demo";
+/** Where the rooms and reservations live: Cloudbeds, the resort's own database (src/lib/booking/native/), or sample data. */
+export type BookingSource = "cloudbeds" | "native" | "demo";
 
 /** Answer of GET /api/booking/availability. */
 export type Availability = {
@@ -131,6 +132,10 @@ export type ReservationResult =
       source: BookingSource;
       quote: Quote;
       guestEmail: string;
+      /** "pending": a request the resort still has to confirm (own database only). Absent: nothing to wait for. */
+      status?: "pending" | "confirmed";
+      /** The guest's page for this booking, /book/manage/?code=..&t=.. (own database only). */
+      manageUrl?: string;
     }
   | {
       ok: false;

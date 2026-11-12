@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
     },
   },
 
+  // Database drivers stay outside the bundle (PGlite ships a WebAssembly file it loads from node_modules).
+  serverExternalPackages: ["@electric-sql/pglite", "postgres"],
+
   // Every URL on the original WordPress site ends with "/".
   trailingSlash: true,
   poweredByHeader: false,

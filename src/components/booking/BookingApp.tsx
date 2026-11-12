@@ -506,6 +506,9 @@ function Confirmation({
           We sent the details to <strong>{result.guestEmail}</strong>. Keep your booking number for any question about your stay.
         </p>
       )}
+      {result.status === "pending" && (
+        <p>This is a booking request until we confirm it. We will email you to confirm and to arrange the deposit.</p>
+      )}
       <dl className={styles.confirmFacts}>
         <div>
           <dt>Booking number</dt>
@@ -528,6 +531,11 @@ function Confirmation({
           <dd>{formatMoney(result.quote.deposit, currency)}</dd>
         </div>
       </dl>
+      {result.manageUrl && (
+        <p>
+          <a href={result.manageUrl}>See or cancel your booking, or write to us</a> (the link is also in your email).
+        </p>
+      )}
       <p>
         Questions or a pickup to arrange?{" "}
         <a href={whatsappUrl} target="_blank" rel="noopener">

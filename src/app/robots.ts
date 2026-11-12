@@ -26,9 +26,9 @@ export default function robots(): MetadataRoute.Robots {
   if (!isProduction) return { rules: { userAgent: "*", disallow: "/" } };
   return {
     rules: [
-      // The contact form endpoint answers POST only.
-      { userAgent: "*", allow: "/", disallow: "/api/" },
-      { userAgent: AI_CRAWLERS, allow: "/", disallow: "/api/" },
+      // The contact form endpoint answers POST only; /admin/ is the resort's staff login.
+      { userAgent: "*", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: AI_CRAWLERS, allow: "/", disallow: ["/api/", "/admin/"] },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
   };

@@ -30,6 +30,12 @@
   font: inherit;
 }
 
+/* A link that looks like the navy button keeps the button's white text. */
+.app a.primaryButton {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
