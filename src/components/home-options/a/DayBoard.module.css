@@ -822,9 +822,10 @@
 .eat {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  /* The tours list (left of the reviews) was taken out on 2026-11-13; its .tours rules stay for when it comes back. */
   grid-template-areas:
     "text prints"
-    "tours slips";
+    "slips slips";
   gap: 56px 72px;
   padding: 56px;
 }

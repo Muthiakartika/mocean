@@ -2,6 +2,10 @@
  * Every public URL of the original WordPress site (sitemap + REST API, audited 2026-10-31).
  * Paths are kept exactly as on the live site, including the trailing slash.
  * See docs/page-inventory.md.
+ *
+ * Taken out on 2026-11-13 (owner: no reliable local tour operator): /sumbawa-indonesia/ and the tour pages
+ * /sumbawa-indonesia-tour/agal-waterfall/, /rice-field-walk/, /danau-lebo/ and /kalela-waterfall/. They redirect to
+ * /things-to-do-in-sumbawa-indonesia/ (next.config.ts); docs/archive/local-tours/ keeps them for later.
  */
 export const allPaths = [
   "/",
@@ -24,7 +28,6 @@ export const allPaths = [
   "/fun-diving/",
   "/host-a-retreat-venue-for-rent-hire/",
   "/how-to-get-to-sumbawa/",
-  "/kalela-waterfall/",
   "/luxury-surf-resort/",
   "/manta-rays/",
   "/news/",
@@ -41,10 +44,6 @@ export const allPaths = [
   "/scuba-diving/rescue-diver/",
   "/seasonal-diving/",
   "/snorkeling/",
-  "/sumbawa-indonesia-tour/agal-waterfall/",
-  "/sumbawa-indonesia-tour/danau-lebo/",
-  "/sumbawa-indonesia-tour/rice-field-walk/",
-  "/sumbawa-indonesia/",
   "/surf-camp/surf-spots/lombok-2/",
   "/surf-lesson/",
   "/surf-retreat/",

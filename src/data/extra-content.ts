@@ -6,7 +6,7 @@
  *
  * No new claims: every fact, price and time is stated elsewhere on this site, and each line notes where:
  * rates and seasons /pricing/, rooms /accommodation/, shoreline and days /tropical-beach-resort/, massage
- * /couples-retreat/, restaurant /restaurant/, tours /sumbawa-indonesia/, surf /surf-trip/ /surf-lesson/
+ * /couples-retreat/, restaurant /restaurant/, surf /surf-trip/ /surf-lesson/
  * /surf-spots/sumbawa/, yoga /surf-retreat/, diving /fun-diving/ /manta-rays/ /pricing/ and the course pages,
  * transfers /pricing/ /travel-lombok-sumbawa/, venue /host-a-retreat-venue-for-rent-hire/.
  * Text has no inline links (owner, 2026-11-11): each card ends with link buttons ("links").
@@ -60,14 +60,8 @@ const ratesCard: ExtraCard = {
   ],
 };
 
-const tours =
-  "A half day at Kalela Waterfall with rice fields and a coconut grove (minimum two people), a full-day Agal Waterfall trek with river crossings, about four hours canoeing on Danau Lebo, or a rice field walk past sarong weavers and seaweed farms.";
-
-const tourLinks: [string, string][] = [
-  ["Kalela Waterfall", "/kalela-waterfall/"],
-  ["Agal Waterfall", "/sumbawa-indonesia-tour/agal-waterfall/"],
-  ["Danau Lebo", "/sumbawa-indonesia-tour/danau-lebo/"],
-];
+// The local tours (Kalela and Agal waterfalls, Danau Lebo, the rice field walk) were taken out of these cards on
+// 2026-11-13: the resort has no reliable local tour operator (docs/archive/local-tours/README.md).
 
 const massageAnswer =
   "There is no in-house spa, but a therapeutic massage can come to your bungalow if you book it in advance.";
@@ -96,11 +90,11 @@ export const extraContent: Record<string, ExtraContent> = {
       },
       {
         heading: "Explore together",
-        text: [
-          tours,
-          "Divers can join a boat dive to Ju-Ju’s Jackpot, where manta rays feed; first-timers can try Discover Scuba Diving.",
+        text: ["Divers can join a boat dive to Ju-Ju’s Jackpot, where manta rays feed; first-timers can try Discover Scuba Diving."],
+        links: [
+          ["Fun diving", "/fun-diving/"],
+          ["Discover Scuba", "/discover-scuba-diving/"],
         ],
-        links: [...tourLinks.slice(0, 2), ["Fun diving", "/fun-diving/"], ["Discover Scuba", "/discover-scuba-diving/"]],
       },
       ratesCard,
     ],
@@ -153,7 +147,6 @@ export const extraContent: Record<string, ExtraContent> = {
         ],
         links: [["Restaurant and menu", "/restaurant/"]],
       },
-      { heading: "Nature days", text: [tours], links: [...tourLinks, ["All tours", "/sumbawa-indonesia/"]] },
       ratesCard,
     ],
     faqTitle: "Wellness Retreat FAQ",
@@ -207,10 +200,9 @@ export const extraContent: Record<string, ExtraContent> = {
           ["Two-tank boat dive", "IDR 2,200,000, at most four divers per guide"],
           ["Guided boat snorkel trip", "IDR 676,500 per person; private boat for six or more"],
         ],
-        text: ["Plus PADI courses, waterfall and lake tours, and beach yoga."],
+        text: ["Plus PADI courses and beach yoga."],
         links: [
           ["PADI courses", "/scuba-diving/"],
-          ["Tours", "/sumbawa-indonesia/"],
           ["Surf lessons", "/surf-lesson/"],
         ],
       },

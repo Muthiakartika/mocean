@@ -59,16 +59,8 @@ export const mainMenu: MenuItem[] = [
       { label: "Coral Reefs", href: "/coral-reefs/" },
     ],
   },
-  {
-    label: "Tour & Activity",
-    href: "/sumbawa-indonesia/",
-    children: [
-      { label: "Agal Waterfall", href: "/sumbawa-indonesia-tour/agal-waterfall/" },
-      { label: "Rice Field Walk", href: "/sumbawa-indonesia-tour/rice-field-walk/" },
-      { label: "Danau Lebo Taliwang", href: "/sumbawa-indonesia-tour/danau-lebo/" },
-      { label: "Kalela Waterfall", href: "/kalela-waterfall/" },
-    ],
-  },
+  // "Tour & Activity" (the Sumbawa tours hub and four tour pages) was taken out on 2026-11-13: the resort has no
+  // reliable local tour operator. To bring it back: docs/archive/local-tours/README.md.
   { label: "Pricing", href: "/pricing/" },
   { label: "Contact", href: "/contact/" },
 ];
