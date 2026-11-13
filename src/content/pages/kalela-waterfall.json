@@ -73,13 +73,6 @@
          "classes": "elementor-element elementor-element-aed8698 elementor-widget elementor-widget-text-editor",
          "wrapped": true,
          "html": "<p><span style=\"font-weight: 400;\">Kalela Waterfall rewards a short, scenic trek with something special: a tosca-blue pool glowing beneath a stepped, cave-like cliff. Wander past rice fields and forest, cool off under a gentle natural shower, then dry off by a giant vine-draped tree. This easygoing half-day escape ends with a refreshing dip and photos you won’t stop scrolling through.</span></p>"
-        },
-        {
-         "type": "rt-button",
-         "id": "80a77de",
-         "classes": "elementor-element elementor-element-80a77de elementor-widget-mobile_extra__width-auto elementor-widget-mobile__width-auto elementor-widget elementor-widget-rt-button",
-         "wrapped": true,
-         "html": "<a class=\"theme-btn btn-style fill\" href=\"https://wa.me/6282144191647\" target=\"_blank\">\n<span>Book the Kalela Half-Day Trip</span>\n</a>"
         }
        ]
       }
@@ -405,13 +398,6 @@
          "classes": "elementor-element elementor-element-687b41d elementor-widget elementor-widget-text-editor",
          "wrapped": true,
          "html": "<p><span style=\"font-weight: 400;\">Getting to Kalela is part of the journey. If you’re coming all the way from Sumbawa Besar, expect roughly a three-hour drive covering around 130 kilometres. From Taliwang, you’re much closer, at about a 30 to 45-minute drive to the village, followed by the short trek in.</span></p><p><span style=\"font-weight: 400;\">Staying with us on the west coast puts you in the perfect position: from the Poto Tano and Tua Nanga area it’s an easy morning run over to Jereweh, and Kalela is only about 15 to 20 minutes from the well-loved Jelenga surf beach, so you can chase a waterfall and a sunset in the same day.</span></p>"
-        },
-        {
-         "type": "rt-button",
-         "id": "0078e42",
-         "classes": "elementor-element elementor-element-0078e42 elementor-widget-mobile_extra__width-auto elementor-widget-mobile__width-auto elementor-widget elementor-widget-rt-button",
-         "wrapped": true,
-         "html": "<a class=\"theme-btn btn-style fill\" href=\"https://wa.me/6282144191647\" target=\"_blank\">\n<span>Book the Kalela Half-Day Trip</span>\n</a>"
         }
        ]
       }
@@ -629,13 +615,6 @@
      "id": "8436907",
      "classes": "elementor-element elementor-element-8436907 e-con-full e-flex rt-default-class e-con e-child",
      "children": [
-      {
-       "type": "rt-button",
-       "id": "d0e7a03",
-       "classes": "elementor-element elementor-element-d0e7a03 elementor-widget elementor-widget-rt-button",
-       "wrapped": true,
-       "html": "<a class=\"theme-btn btn-style fill\" href=\"https://wa.me/6282144191647\" target=\"_blank\">\n<span>Book the Kalela Half-Day Trip</span>\n</a>"
-      },
       {
        "type": "rt-button",
        "id": "0cd1e5a",
