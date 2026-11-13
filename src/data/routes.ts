@@ -28,6 +28,7 @@ export const allPaths = [
   "/luxury-surf-resort/",
   "/manta-rays/",
   "/news/",
+  "/northern-rights-sumbawa/",
   "/pricing/",
   "/restaurant/",
   "/scar-reef/",

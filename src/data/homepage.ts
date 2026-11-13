@@ -46,9 +46,11 @@ export const diving = {
   sub: "Mocean",
   title: "Diving at Mocean, Built by Divers",
   paragraphs: [
-    "Designed by divers for divers, we offer a personalized dive experience. Our custom built boat offers ample room for guests and gear. The gear room is designed with individual storage lockers for dive equipment while the camera room offers individual work space for each underwater photographer. We offer equipment rental and PADI dive instruction with a purpose built pool for dive instruction.",
+    "Designed by divers for divers, we offer a personalized Sumbawa diving experience. Our custom built boat offers ample room for guests and gear. The gear room is designed with individual storage lockers for dive equipment while the camera room offers individual work space for each underwater photographer. We offer equipment rental and PADI dive instruction with a purpose built pool for dive instruction.",
     "Two-tank boat dives start at IDR 2,200,000, with no more than four divers per guide.",
   ],
+  /** SEO brief 2026-11-13: the "Built by Divers" block links the Sumbawa diving guide. */
+  link: { text: "Sumbawa diving", href: "/dive-sites/" },
   button: { label: "See Dive Prices", href: "/pricing/" },
   image: { src: img("2025/06/The_diving_5.jpg"), width: 1700, height: 1486 },
 };
@@ -71,7 +73,9 @@ export const activities = {
     {
       title: "Surf",
       image: img("2025/06/Surfing-new.jpg"),
-      text: "Mocean Dive Resort is also a surfer’s paradise, offering access to world-class waves and a peaceful, uncrowded surf experience for all skill levels.",
+      text: "Mocean Dive Resort is also a surfer’s paradise: Northern Rights breaks right in front of the resort, with world-class waves and a peaceful, uncrowded surf experience for all skill levels.",
+      /** Words of `text` linked to a guide (SEO brief 2026-11-13: the homepage "Surf" block links the Northern Rights guide). */
+      link: { text: "Northern Rights", href: "/northern-rights-sumbawa/" },
       hasDescription: true,
     },
     {

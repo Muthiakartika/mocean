@@ -870,7 +870,15 @@
     "mainEntity": [
      {
       "@type": "Question",
-      "name": "When is the best time to dive in West Sumbawa?",
+      "name": "Is Sumbawa good for diving?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. West Sumbawa has uncrowded reefs in the Coral Triangle, manta rays at Ju-Ju’s Jackpot, walls and drift dives on the outer reefs, and a house reef you can walk into from the beach. Most days ours is the only boat on the site."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "When is the best time to dive in Sumbawa?",
       "acceptedAnswer": {
        "@type": "Answer",
        "text": "April to October has the clearest water and the most stable weather. Our dive season runs from 1 April to 31 October."
@@ -881,7 +889,7 @@
       "name": "Can I see manta rays in Sumbawa?",
       "acceptedAnswer": {
        "@type": "Answer",
-       "text": "Yes. Manta rays chain-feed at Ju-Ju&#8217;s Jackpot, one of our West Sumbawa dive sites. They are wild animals, so sightings depend on conditions and are never guaranteed."
+       "text": "Yes. Manta rays chain-feed at Ju-Ju’s Jackpot, one of our West Sumbawa dive sites. They are wild animals, so sightings depend on conditions and are never guaranteed."
       }
      },
      {
@@ -906,6 +914,14 @@
       "acceptedAnswer": {
        "@type": "Answer",
        "text": "No more than four divers per guide, so every dive is small and personal."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the visibility like in Sumbawa?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "On average 10 to 15 metres, and best during the dry season from April to October."
       }
      }
     ]
@@ -1429,6 +1445,60 @@
        }
       ],
       "inLanguage": "en-US"
+     }
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "What makes Lombok’s dive sites unique compared to neighboring islands?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Lombok has volcanic landscapes and rich coral reefs. You can see turtles in the Gili Islands and hammerheads in Belongas Bay. Seahorse Bay is home to unique sea creatures like the “Shaun the Sheep” nudibranch. The warm waters (26–30°C March–November) add to the charm, along with the chance to experience Sasak culture."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "When is the best time for scuba diving in Lombok?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "The best time to dive in Lombok is from March to November. The dry season (June–September) offers the clearest waters (20–30m). This is also when hammerheads migrate to Belongas Bay, making it perfect for diving and PADI courses."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Are there snorkeling opportunities near Lombok’s dive sites?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes, there are great snorkeling spots near Lombok’s dive sites. The Gili Islands have shallow reefs that are perfect for snorkeling. You can see colorful fish and even sharks."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Can I combine diving in Lombok and Sumbawa?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. West Sumbawa is the next island east of Lombok. Take the ferry from Kayangan in east Lombok to Poto Tano (1.5 to 2 hours), and Mocean Beach Resort is about 30 minutes by car from the port."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is diving like in West Sumbawa?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Quiet and uncrowded. Mocean dives a walk-in house reef, the manta site Ju-Ju’s Jackpot, the reefs around Kenawa, sheltered bays for newer divers and outer reefs with walls and drift dives. Groups are no more than four divers per guide."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Is Mocean a PADI dive centre?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Yes. Mocean Beach Resort is a PADI dive centre offering Discover Scuba Diving and courses from Open Water to Rescue Diver, plus daily fun dives for certified divers."
+      }
      }
     ]
    }
@@ -7020,14 +7090,14 @@
   ]
  },
  "/surf-trip/": {
-  "title": "Sumbawa Surf Camp | Northern Rights Out Front at Mocean",
-  "description": "Surf camp in West Sumbawa with Northern Rights, Middle Reef and Dirty Hippies a short walk from your room. Boards, guides and lessons. Check dates now.",
+  "title": "Sumbawa Surf Trip | Northern Rights Out Front at Mocean",
+  "description": "Surf trip in West Sumbawa with Northern Rights, Middle Reef and Dirty Hippies a short walk from your room. Boards, guides and lessons. Check dates now.",
   "canonical": "https://moceanbeachresort.com/surf-trip/",
   "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   "og": {
    "type": "article",
-   "title": "Sumbawa Surf Camp | Northern Rights Out Front at Mocean",
-   "description": "Surf camp in West Sumbawa with Northern Rights, Middle Reef and Dirty Hippies a short walk from your room. Boards, guides and lessons. Check dates now.",
+   "title": "Sumbawa Surf Trip | Northern Rights Out Front at Mocean",
+   "description": "Surf trip in West Sumbawa with Northern Rights, Middle Reef and Dirty Hippies a short walk from your room. Boards, guides and lessons. Check dates now.",
    "url": "https://moceanbeachresort.com/surf-trip/",
    "siteName": "moceanbeachresort.com",
    "locale": "en_US",
@@ -7047,7 +7117,7 @@
       "@type": "WebPage",
       "@id": "https://moceanbeachresort.com/surf-trip/",
       "url": "https://moceanbeachresort.com/surf-trip/",
-      "name": "Sumbawa Surf Camp | Northern Rights Out Front at Mocean",
+      "name": "Sumbawa Surf Trip | Northern Rights Out Front at Mocean",
       "isPartOf": {
        "@id": "https://moceanbeachresort.com/#website"
       },
@@ -7060,7 +7130,7 @@
       "thumbnailUrl": "https://moceanbeachresort.com/images/uploads/2025/08/surf-trips-sq-1.jpg",
       "datePublished": "2025-08-15T01:42:28+00:00",
       "dateModified": "2026-10-29T04:48:46+00:00",
-      "description": "Surf camp in West Sumbawa with Northern Rights, Middle Reef and Dirty Hippies a short walk from your room. Boards, guides and lessons. Check dates now.",
+      "description": "Surf trip in West Sumbawa with Northern Rights, Middle Reef and Dirty Hippies a short walk from your room. Boards, guides and lessons. Check dates now.",
       "breadcrumb": {
        "@id": "https://moceanbeachresort.com/surf-trip/#breadcrumb"
       },
@@ -7130,7 +7200,7 @@
     "mainEntity": [
      {
       "@type": "Question",
-      "name": "Is the Sumbawa surf camp good for beginners?",
+      "name": "Is the Sumbawa surf trip good for beginners?",
       "acceptedAnswer": {
        "@type": "Answer",
        "text": "Yes. Beginners learn at Middle Reef, which has softer take-offs and mellow shoulders. Private lessons with a local coach cost IDR 1,000,000 per person, for up to two people."
@@ -7157,12 +7227,28 @@
       "name": "Can I rent a surfboard?",
       "acceptedAnswer": {
        "@type": "Answer",
-       "text": "Yes, boards are IDR 150,000 a day. Tell us your height, weight and level before you arrive and we&#8217;ll set one aside."
+       "text": "Yes, boards are IDR 150,000 a day. Tell us your height, weight and level before you arrive and we will set one aside."
       }
      },
      {
       "@type": "Question",
-      "name": "How is this different from a Bali surf camp?",
+      "name": "How many days should I book for a Sumbawa surf trip?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "At least four nights gives you several good sessions and a rest day. A week lets you add a day trip to Scar Reef when the swell is up."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How do I get to Mocean for a surf trip?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "The fastest way is to fly from Bali to Sumbawa Besar (SWQ), then drive about 2 hours 15 minutes. You can also fly to Lombok and take the ferry from Kayangan to Poto Tano, which is easier with boards. We can arrange a transfer."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "How is this different from a Bali surf trip?",
       "acceptedAnswer": {
        "@type": "Answer",
        "text": "Smaller crowds. West Sumbawa has a handful of resorts along the coast, so you share Northern Rights with a few people instead of a full line-up."
@@ -7747,6 +7833,209 @@
       "sameAs": [
        "http://moceanbeachresort.com"
       ]
+     }
+    ]
+   }
+  ]
+ },
+ "/northern-rights-sumbawa/": {
+  "title": "Northern Rights Sumbawa | Surf Guide, Tides & Where to Stay",
+  "description": "Northern Rights is a punchy right-hand reef break in West Sumbawa, right in front of Mocean Beach Resort. Best tide, season, skill level and how to surf it.",
+  "canonical": "https://moceanbeachresort.com/northern-rights-sumbawa/",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "og": {
+   "type": "article",
+   "title": "Northern Rights Sumbawa | Surf Guide, Tides & Where to Stay",
+   "description": "Northern Rights is a punchy right-hand reef break in West Sumbawa, right in front of Mocean Beach Resort. Best tide, season, skill level and how to surf it.",
+   "url": "https://moceanbeachresort.com/northern-rights-sumbawa/",
+   "siteName": "moceanbeachresort.com",
+   "locale": "en_US",
+   "image": "https://moceanbeachresort.com/images/uploads/2026/07/Northern-Rights-3-1024x895.jpg",
+   "imageWidth": "1024",
+   "imageHeight": "895",
+   "imageType": "image/jpeg",
+   "publishedTime": "2026-11-13T00:00:00+00:00",
+   "modifiedTime": "2026-11-13T00:00:00+00:00"
+  },
+  "twitterCard": "summary_large_image",
+  "jsonLd": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": "Article",
+      "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/#article",
+      "isPartOf": {
+       "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/"
+      },
+      "author": {
+       "name": "admin",
+       "@id": "https://moceanbeachresort.com/#/schema/person/02810983db408d13c24cf8b0064c7428"
+      },
+      "headline": "Northern Rights, West Sumbawa",
+      "datePublished": "2026-11-13T00:00:00+00:00",
+      "dateModified": "2026-11-13T00:00:00+00:00",
+      "mainEntityOfPage": {
+       "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/"
+      },
+      "image": {
+       "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/#primaryimage"
+      },
+      "thumbnailUrl": "https://moceanbeachresort.com/images/uploads/2026/07/Northern-Rights-3-1024x895.jpg",
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "WebPage",
+      "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/",
+      "url": "https://moceanbeachresort.com/northern-rights-sumbawa/",
+      "name": "Northern Rights Sumbawa | Surf Guide, Tides & Where to Stay",
+      "isPartOf": {
+       "@id": "https://moceanbeachresort.com/#website"
+      },
+      "primaryImageOfPage": {
+       "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/#primaryimage"
+      },
+      "image": {
+       "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/#primaryimage"
+      },
+      "thumbnailUrl": "https://moceanbeachresort.com/images/uploads/2026/07/Northern-Rights-3-1024x895.jpg",
+      "datePublished": "2026-11-13T00:00:00+00:00",
+      "dateModified": "2026-11-13T00:00:00+00:00",
+      "author": {
+       "@id": "https://moceanbeachresort.com/#/schema/person/02810983db408d13c24cf8b0064c7428"
+      },
+      "description": "Northern Rights is a punchy right-hand reef break in West Sumbawa, right in front of Mocean Beach Resort. Best tide, season, skill level and how to surf it.",
+      "breadcrumb": {
+       "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": [
+       {
+        "@type": "ReadAction",
+        "target": [
+         "https://moceanbeachresort.com/northern-rights-sumbawa/"
+        ]
+       }
+      ]
+     },
+     {
+      "@type": "ImageObject",
+      "inLanguage": "en-US",
+      "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/#primaryimage",
+      "url": "https://moceanbeachresort.com/images/uploads/2026/07/Northern-Rights-3-1024x895.jpg",
+      "contentUrl": "https://moceanbeachresort.com/images/uploads/2026/07/Northern-Rights-3-1024x895.jpg",
+      "width": 1024,
+      "height": 895,
+      "caption": "Surfer riding a big turquoise reef wave"
+     },
+     {
+      "@type": "BreadcrumbList",
+      "@id": "https://moceanbeachresort.com/northern-rights-sumbawa/#breadcrumb",
+      "itemListElement": [
+       {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://moceanbeachresort.com/"
+       },
+       {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Northern Rights, West Sumbawa"
+       }
+      ]
+     },
+     {
+      "@type": "WebSite",
+      "@id": "https://moceanbeachresort.com/#website",
+      "url": "https://moceanbeachresort.com/",
+      "name": "moceanbeachresort.com",
+      "description": "",
+      "potentialAction": [
+       {
+        "@type": "SearchAction",
+        "target": {
+         "@type": "EntryPoint",
+         "urlTemplate": "https://moceanbeachresort.com/?s={search_term_string}"
+        },
+        "query-input": {
+         "@type": "PropertyValueSpecification",
+         "valueRequired": true,
+         "valueName": "search_term_string"
+        }
+       }
+      ],
+      "inLanguage": "en-US"
+     },
+     {
+      "@type": "Person",
+      "@id": "https://moceanbeachresort.com/#/schema/person/02810983db408d13c24cf8b0064c7428",
+      "name": "admin",
+      "image": {
+       "@type": "ImageObject",
+       "inLanguage": "en-US",
+       "@id": "https://secure.gravatar.com/avatar/ca9449415b598a5c9397f5e7501b18e0a948bae7da0fbe337aca3a86050e0b80?s=96&d=mm&r=g",
+       "url": "https://secure.gravatar.com/avatar/ca9449415b598a5c9397f5e7501b18e0a948bae7da0fbe337aca3a86050e0b80?s=96&d=mm&r=g",
+       "contentUrl": "https://secure.gravatar.com/avatar/ca9449415b598a5c9397f5e7501b18e0a948bae7da0fbe337aca3a86050e0b80?s=96&d=mm&r=g",
+       "caption": "admin"
+      },
+      "sameAs": [
+       "http://moceanbeachresort.com"
+      ]
+     }
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "Where is Northern Rights in Sumbawa?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Northern Rights is on the west coast of Sumbawa, right in front of Mocean Beach Resort on Pantai Moro. Middle Reef is next to it and Dirty Hippies is about a 15-minute walk down the beach."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Is Northern Rights good for beginners?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "No. Northern Rights is a fast right with steep take-offs and rocks in the line-up, so it suits intermediate to advanced surfers. Beginners learn at Middle Reef next door, which has softer take-offs and mellow shoulders."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What is the best time of year to surf Northern Rights?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "April to October is the most consistent, with dry-season swell and offshore winds in the mornings. Waves still break the rest of the year, with fewer people in the water."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "What tide is best for Northern Rights?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Mid to high tide, when the lines stack up clean and the reef is better covered."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Is Northern Rights crowded?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Rarely. West Sumbawa has only a few resorts along the coast, so you usually share the wave with a handful of people."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "Where can I stay near Northern Rights?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Mocean Beach Resort is right in front of the break, with beachfront bungalows, garden-view rooms, a pool and an on-site restaurant. Rooms start from IDR 1,690,000 a night for two, with breakfast."
+      }
      }
     ]
    }
