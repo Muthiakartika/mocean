@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { property } from "@/config/property";
 import type { Guest } from "@/lib/booking/types";
 import { countries } from "./countries";
 import styles from "./Booking.module.css";
@@ -109,7 +110,7 @@ export default function GuestForm({ guest, errors, onChange, honeypot, onHoneypo
           {...aria("notes")}
           rows={4}
           maxLength={1000}
-          placeholder="Pickup from Poto Tano, dive or surf plans, dietary needs"
+          placeholder={property.copy.requestsPlaceholder}
           value={guest.notes ?? ""}
           onChange={set("notes")}
         />,

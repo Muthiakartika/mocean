@@ -3,7 +3,9 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { getDb } from "@/lib/db";
-import { checkGuestToken, managePath } from "@/lib/booking/native/guest-link";
+import { checkGuestToken, managePath, siteOrigin } from "@/lib/booking/native/guest-link";
+import { loadPaymentSettings } from "@/lib/booking/native/payment-settings";
+import { payOptions, startOnlinePayment } from "@/lib/booking/native/payments";
 import { sendCancelRequested, sendGuestCancelled, sendGuestMessage } from "@/lib/booking/native/emails";
 import { cancelByGuest, getReservation, requestCancellation } from "@/lib/booking/native/store";
 
@@ -80,6 +82,18 @@ export async function requestCancelAction(form: FormData) {
     if (detail) await sendCancelRequested(detail);
   }
   back(code, token, "done", "We received your cancellation request and will reply by email about your deposit.");
+}
+
+/** "Pay now": opens (or reuses) the Xendit payment page for what is due and sends the guest there. */
+export async function payOnlineAction(form: FormData) {
+  const { code, token } = await verified(form);
+  if (await tooMany("pay", 10, 15 * 60_000)) back(code, token, "error", "Too many tries. Wait a few minutes, or message us on WhatsApp.");
+  const db = await getDb();
+  if (!payOptions(await loadPaymentSettings(db)).online) back(code, token, "error", "Online payment isn't available right now. Please pay by bank transfer or message us.");
+  const page = `${siteOrigin()}/book/manage/?${new URLSearchParams({ code, t: token })}`;
+  const result = await startOnlinePayment(db, code, { success: `${page}&paid=1`, failure: `${page}&error=${encodeURIComponent("The payment was not completed. You can try again.")}` });
+  if (!result.ok) back(code, token, "error", result.message);
+  redirect(result.url);
 }
 
 export async function messageAction(form: FormData) {

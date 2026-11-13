@@ -1,8 +1,38 @@
-import { contact } from "@/data/contact";
+import { property } from "@/config/property";
 import { sendMail, resortRecipients } from "@/lib/mail";
 import { formatDay, formatMoney, nightsBetween } from "@/lib/booking/stay";
 import { manageUrl } from "./guest-link";
+import type { PaymentSettings } from "./payment-settings";
+import { amountToPay, payOptions, summarize } from "./payments";
 import type { ReservationDetail } from "./store";
+
+/**
+ * How to pay the deposit, for an email: the online page (the guest's booking page has the button) and/or the bank
+ * account. Nothing when no way to pay is set up, or nothing is due.
+ */
+function howToPay(detail: ReservationDetail, settings: PaymentSettings | undefined, lead: string): string[] {
+  if (!settings) return [];
+  const { reservation } = detail;
+  const summary = summarize(reservation, detail.payments);
+  if (summary.depositDue <= 0 || amountToPay(reservation, summary) <= 0) return [];
+  const options = payOptions(settings);
+  const online = options.online && Boolean(reservation.email);
+  if (!online && !options.bank) return [];
+  const lines = [`${lead} ${formatMoney(summary.depositDue)}.`];
+  if (online) lines.push(`Pay online on your booking page: ${manageUrl(reservation.code, reservation.email)}`);
+  if (options.bank) {
+    lines.push(
+      "",
+      online ? "Or by bank transfer:" : "By bank transfer:",
+      `Bank: ${settings.bankName}`,
+      `Account name: ${settings.bankAccountName}`,
+      `Account number: ${settings.bankAccountNumber}`,
+      `Reference: ${reservation.code}`,
+    );
+    if (settings.bankNote) lines.push(settings.bankNote);
+  }
+  return lines;
+}
 
 /**
  * The emails of the booking system: to the guest when a booking arrives, is confirmed or is cancelled, and to the resort
@@ -10,7 +40,8 @@ import type { ReservationDetail } from "./store";
  * (the admin lists every booking anyway), it is only logged.
  */
 
-const SIGN_OFF = `Mocean Beach Resort, West Sumbawa\nWhatsApp: ${contact.whatsappUrl}`;
+const NAME = property.name;
+const SIGN_OFF = `${NAME}, ${property.region}\nWhatsApp: ${property.whatsappUrl}`;
 
 function describe({ reservation, rooms, extras }: ReservationDetail) {
   const nights = nightsBetween(reservation.checkIn, reservation.checkOut);
@@ -53,23 +84,32 @@ function toResort(detail: ReservationDetail, subject: string, lines: string[]) {
   });
 }
 
-/** A booking from the website: a request awaiting confirmation, or already confirmed when auto-confirm is on. */
-export async function sendBookingReceived(detail: ReservationDetail, holdHours: number) {
+/**
+ * A booking from the website: a request awaiting confirmation, or already confirmed when auto-confirm is on. With a way
+ * to pay set up (admin > Payments), the request mail says how to pay the deposit that confirms it.
+ */
+export async function sendBookingReceived(detail: ReservationDetail, holdHours: number, payment?: PaymentSettings) {
   const { reservation } = detail;
   try {
     if (reservation.status === "confirmed") {
+      const pay = howToPay(detail, payment, "Please pay the deposit of");
       await toGuest(
         detail,
-        `Your booking ${reservation.code} is confirmed | Mocean Beach Resort`,
-        "Thank you for booking with Mocean Beach Resort. Your booking is confirmed.",
+        `Your booking ${reservation.code} is confirmed | ${NAME}`,
+        [`Thank you for booking with ${NAME}. Your booking is confirmed.`, ...(pay.length ? ["", ...pay] : [])].join("\n"),
         "Questions or a pickup to arrange? Reply to this email or message us on WhatsApp.",
       );
     } else {
+      const pay = howToPay(detail, payment, "To confirm it, please pay the deposit of");
       await toGuest(
         detail,
-        `We received your booking request ${reservation.code} | Mocean Beach Resort`,
-        `Thank you for booking with Mocean Beach Resort. We have your request and are holding your room for ${holdHours} hours while we confirm it.`,
-        "We will email you to confirm your booking and to arrange the deposit. Questions? Reply to this email or message us on WhatsApp.",
+        `We received your booking request ${reservation.code} | ${NAME}`,
+        [`Thank you for booking with ${NAME}. We have your request and are holding your room for ${holdHours} hours.`, ...(pay.length ? ["", ...pay] : [])].join(
+          "\n",
+        ),
+        pay.length
+          ? "We confirm your booking by email as soon as the deposit arrives. Questions? Reply to this email or message us on WhatsApp."
+          : "We will email you to confirm your booking and to arrange the deposit. Questions? Reply to this email or message us on WhatsApp.",
       );
     }
 
@@ -97,12 +137,14 @@ export async function sendBookingReceived(detail: ReservationDetail, holdHours: 
   }
 }
 
-export async function sendBookingConfirmed(detail: ReservationDetail): Promise<boolean> {
+/** Staff confirmed the booking. If the deposit is still open (and a way to pay is set up), the mail says how to pay. */
+export async function sendBookingConfirmed(detail: ReservationDetail, payment?: PaymentSettings): Promise<boolean> {
   try {
+    const pay = howToPay(detail, payment, "Please pay the deposit of");
     return await toGuest(
       detail,
-      `Your booking ${detail.reservation.code} is confirmed | Mocean Beach Resort`,
-      "Good news: your booking at Mocean Beach Resort is confirmed.",
+      `Your booking ${detail.reservation.code} is confirmed | ${NAME}`,
+      [`Good news: your booking at ${NAME} is confirmed.`, ...(pay.length ? ["", ...pay] : [])].join("\n"),
       "Questions or a pickup to arrange? Reply to this email or message us on WhatsApp.",
     );
   } catch (error) {
@@ -111,12 +153,48 @@ export async function sendBookingConfirmed(detail: ReservationDetail): Promise<b
   }
 }
 
+/**
+ * Money arrived: to the guest ("we received your payment", and "your booking is confirmed" when the payment just did
+ * that) and to the resort. `problem` tells the resort what it still has to do (e.g. the room went to someone else).
+ */
+export async function sendPaymentReceived(
+  detail: ReservationDetail,
+  payment: { amount: number; how: string; confirmed: boolean; problem?: string; notifyGuest?: boolean },
+): Promise<boolean> {
+  const { reservation } = detail;
+  const summary = summarize(reservation, detail.payments);
+  let sent = false;
+  try {
+    if (payment.notifyGuest !== false) {
+      const status = payment.confirmed ? " Your booking is confirmed." : reservation.status === "confirmed" ? " Your booking stays confirmed." : "";
+      sent = await toGuest(
+        detail,
+        `Payment received for booking ${reservation.code} | ${NAME}`,
+        [
+          `Thank you: we received your payment of ${formatMoney(payment.amount)}.${status}`,
+          summary.balance > 0 ? `Paid so far: ${formatMoney(summary.paid)}. Still to pay: ${formatMoney(summary.balance)}.` : "Your booking is paid in full.",
+        ].join("\n"),
+        "Questions or a pickup to arrange? Reply to this email or message us on WhatsApp.",
+      );
+    }
+    await toResort(detail, `Payment received ${reservation.code}: ${formatMoney(payment.amount)} (${payment.how})`, [
+      `${reservation.firstName} ${reservation.lastName} paid ${formatMoney(payment.amount)} (${payment.how}).`,
+      payment.confirmed ? "The booking was confirmed automatically." : "",
+      payment.problem ? `To do: ${payment.problem}` : "",
+      `Paid so far: ${formatMoney(summary.paid)} of ${formatMoney(reservation.total)}.`,
+    ].filter(Boolean));
+  } catch (error) {
+    console.error("[booking] payment emails failed:", error);
+  }
+  return sent;
+}
+
 export async function sendBookingCancelled(detail: ReservationDetail): Promise<boolean> {
   try {
     return await toGuest(
       detail,
-      `Your booking ${detail.reservation.code} was cancelled | Mocean Beach Resort`,
-      "Your booking at Mocean Beach Resort was cancelled.",
+      `Your booking ${detail.reservation.code} was cancelled | ${NAME}`,
+      `Your booking at ${NAME} was cancelled.`,
       "If this is a surprise, reply to this email or message us on WhatsApp.",
     );
   } catch (error) {
@@ -131,7 +209,7 @@ export async function sendGuestCancelled(detail: ReservationDetail) {
   try {
     await toGuest(
       detail,
-      `Your booking request ${reservation.code} is cancelled | Mocean Beach Resort`,
+      `Your booking request ${reservation.code} is cancelled | ${NAME}`,
       "As you asked, we cancelled your booking request. Nothing was charged.",
       "Changed your mind? Book again on our website or message us on WhatsApp.",
     );
@@ -153,7 +231,7 @@ export async function sendCancelRequested(detail: ReservationDetail) {
     ]);
     await toGuest(
       detail,
-      `We received your cancellation request for ${reservation.code} | Mocean Beach Resort`,
+      `We received your cancellation request for ${reservation.code} | ${NAME}`,
       "We received your request to cancel this booking. We will reply by email about the cancellation and your deposit.",
       "Questions? Reply to this email or message us on WhatsApp.",
     );

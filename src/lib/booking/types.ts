@@ -55,6 +55,9 @@ export type AddOn = {
 /** Where the rooms and reservations live: Cloudbeds, the resort's own database (src/lib/booking/native/), or sample data. */
 export type BookingSource = "cloudbeds" | "native" | "demo";
 
+/** How the deposit is worked out (own database only; without it, the first night of each room). */
+export type DepositPolicy = { mode: "first-night" | "full" } | { mode: "percent"; percent: number };
+
 /** Answer of GET /api/booking/availability. */
 export type Availability = {
   query: StayQuery;
@@ -68,6 +71,8 @@ export type Availability = {
   addedTaxRate?: number;
   /** "demo" while the site runs without Cloudbeds credentials: nothing is reserved. */
   source: BookingSource;
+  /** How much the guest pays to confirm (own database). Absent: the first night of each room. */
+  depositPolicy?: DepositPolicy;
 };
 
 /** A room the guest put in the stay. */
@@ -136,6 +141,8 @@ export type ReservationResult =
       status?: "pending" | "confirmed";
       /** The guest's page for this booking, /book/manage/?code=..&t=.. (own database only). */
       manageUrl?: string;
+      /** The guest can pay the deposit now: on their booking page online, and/or by bank transfer (own database only). */
+      payNow?: { online: boolean; bank: boolean };
     }
   | {
       ok: false;

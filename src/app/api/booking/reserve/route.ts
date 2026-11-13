@@ -89,6 +89,7 @@ async function handle(body: ReservationRequest): Promise<ReservationResult> {
       guestEmail: body.guest.email.trim(),
       ...(booked.status ? { status: booked.status } : {}),
       ...(booked.manageUrl ? { manageUrl: booked.manageUrl } : {}),
+      ...(booked.payNow ? { payNow: booked.payNow } : {}),
     };
   } catch (error) {
     // The room went to someone else, or its price moved, between the check above and the booking itself.

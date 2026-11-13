@@ -1,9 +1,36 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { freeUnits, nightlyRate, ratesForStay, seasonOn, stayDays, type SeasonRange } from "@/lib/booking/native/engine";
+import { todayIn } from "@/lib/booking/stay";
 
 const PRICES = { priceLow: 2_200_000, priceShoulder: 2_337_500, priceHigh: 2_800_000 };
 const RULES = { extendedStayMinNights: 3, extendedStayDiscountPct: 5 };
+
+describe("todayIn", () => {
+  it("is already tomorrow in a zone ahead of UTC once it is past midnight there", () => {
+    // Asia/Makassar is UTC+8 all year: midnight there is 16:00 UTC.
+    assert.equal(todayIn("Asia/Makassar", new Date("2026-11-12T15:59:59Z")), "2026-11-12");
+    assert.equal(todayIn("Asia/Makassar", new Date("2026-11-12T16:00:00Z")), "2026-11-13");
+  });
+
+  it("is still yesterday in a zone behind UTC", () => {
+    // Los Angeles is UTC-8 in November.
+    assert.equal(todayIn("America/Los_Angeles", new Date("2026-11-12T07:59:59Z")), "2026-11-11");
+    assert.equal(todayIn("America/Los_Angeles", new Date("2026-11-12T08:00:00Z")), "2026-11-12");
+  });
+
+  it("follows daylight saving time", () => {
+    // Amsterdam is UTC+1 in winter and UTC+2 in summer.
+    assert.equal(todayIn("Europe/Amsterdam", new Date("2026-01-15T22:59:59Z")), "2026-01-15");
+    assert.equal(todayIn("Europe/Amsterdam", new Date("2026-01-15T23:00:00Z")), "2026-01-16");
+    assert.equal(todayIn("Europe/Amsterdam", new Date("2026-07-15T21:59:59Z")), "2026-07-15");
+    assert.equal(todayIn("Europe/Amsterdam", new Date("2026-07-15T22:00:00Z")), "2026-07-16");
+  });
+
+  it("crosses the end of the year", () => {
+    assert.equal(todayIn("Asia/Makassar", new Date("2026-12-31T16:00:00Z")), "2027-01-01");
+  });
+});
 
 describe("stayDays", () => {
   it("lists the nights: check-in day up to, not including, check-out day", () => {

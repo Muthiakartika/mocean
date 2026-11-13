@@ -1,3 +1,4 @@
+import { property } from "@/config/property";
 import type { Availability, CartAddOn, CartRoom, Guest, Quote, QuoteLine, StayQuery } from "./types";
 
 /**
@@ -39,9 +40,26 @@ export function nightsBetween(checkIn: string, checkOut: string): number {
   return start && end ? Math.round((end.getTime() - start.getTime()) / DAY) : 0;
 }
 
-/** Today in West Sumbawa (WITA, UTC+8), so a late-evening search from Europe does not offer yesterday. */
+const dayFormats = new Map<string, Intl.DateTimeFormat>();
+
+/** The calendar day it is right now in a time zone ("2026-11-12"), whatever the clock of the server or the guest says. */
+export function todayIn(timeZone: string, now = new Date()): string {
+  let format = dayFormats.get(timeZone);
+  if (!format) {
+    format = new Intl.DateTimeFormat("en-US", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" });
+    dayFormats.set(timeZone, format);
+  }
+  const parts = format.formatToParts(now);
+  const part = (type: Intl.DateTimeFormatPartTypes) => parts.find((item) => item.type === type)?.value ?? "";
+  return `${part("year")}-${part("month")}-${part("day")}`;
+}
+
+/**
+ * Today at the property (its time zone is in src/config/property.ts), so a late-evening search from another continent
+ * does not offer yesterday.
+ */
 export function resortToday(now = new Date()): string {
-  return toDay(new Date(now.getTime() + 8 * 3_600_000));
+  return todayIn(property.timeZone, now);
 }
 
 /** "Thu, Dec 10, 2026" */
@@ -58,8 +76,11 @@ export function formatDay(day: string, options: Intl.DateTimeFormatOptions = {})
   }).format(date);
 }
 
-/** "IDR 2,200,000" (rupiah have no cents in practice; Cloudbeds' .40 splits of tax are rounded for display). */
-export function formatMoney(amount: number, currency = "IDR"): string {
+/**
+ * "IDR 2,200,000", in the property's currency unless another is given. Whole amounts only (rupiah have no cents in
+ * practice; Cloudbeds' .40 splits of tax are rounded for display).
+ */
+export function formatMoney(amount: number, currency: string = property.currency): string {
   return `${currency} ${new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(Math.round(amount))}`;
 }
 
@@ -147,6 +168,10 @@ export function buildQuote(availability: Availability, rooms: CartRoom[], addOns
   const prices = lines.reduce((sum, line) => sum + line.amount, 0);
   const net = prices / (1 + availability.includedTaxRate);
   const total = prices * (1 + (availability.addedTaxRate ?? 0));
+  // The property's own rule when it has one (a percentage, or everything); otherwise the first night of each room.
+  const policy = availability.depositPolicy;
+  if (policy?.mode === "full") deposit = total;
+  else if (policy?.mode === "percent") deposit = Math.round((total * Math.min(100, Math.max(0, policy.percent))) / 100);
   return { lines, net, taxes: total - net, total, deposit: Math.min(deposit, total) };
 }
 

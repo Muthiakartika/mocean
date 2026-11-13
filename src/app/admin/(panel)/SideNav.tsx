@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BlockIcon, BookingsIcon, CalendarIcon, ChartIcon, DashboardIcon, RatesIcon } from "../icons";
+import { BedIcon, BlockIcon, BookingsIcon, CalendarIcon, ChartIcon, DashboardIcon, GuideIcon, RatesIcon, WalletIcon } from "../icons";
 
 const ITEMS = [
   { href: "/admin/", label: "Today", Icon: DashboardIcon, exact: true },
@@ -10,7 +10,10 @@ const ITEMS = [
   { href: "/admin/calendar/", label: "Calendar", Icon: CalendarIcon },
   { href: "/admin/reports/", label: "Reports", Icon: ChartIcon },
   { href: "/admin/blocks/", label: "Block dates", Icon: BlockIcon },
-  { href: "/admin/rates/", label: "Rooms and rates", Icon: RatesIcon },
+  { href: "/admin/rates/", label: "Prices", Icon: RatesIcon },
+  { href: "/admin/rooms/", label: "Rooms", Icon: BedIcon },
+  { href: "/admin/payments/", label: "Payments", Icon: WalletIcon },
+  { href: "/admin/guide/", label: "Guide", Icon: GuideIcon },
 ];
 
 /** The admin menu; marks the section being viewed (a booking's page counts as Bookings). */

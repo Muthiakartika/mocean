@@ -19,6 +19,14 @@ function Svg({ className, children }: IconProps & { children: React.ReactNode })
   );
 }
 
+export const GuideIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M9.6 9.4a2.5 2.5 0 0 1 4.8 1c0 1.7-2.4 2.2-2.4 3.6" />
+    <path d="M12 17.2h.01" />
+  </Svg>
+);
+
 export const DashboardIcon = (props: IconProps) => (
   <Svg {...props}>
     <rect x="3.5" y="3.5" width="7" height="8" rx="2" />
@@ -130,5 +138,66 @@ export const AlertIcon = (props: IconProps) => (
   <Svg {...props}>
     <circle cx="12" cy="12" r="8.5" />
     <path d="M12 7.5v5.5M12 16.2v.3" />
+  </Svg>
+);
+
+export const ChevronDownIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="m6.5 9.5 5.5 5.5 5.5-5.5" />
+  </Svg>
+);
+
+export const UploadIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M12 15.5V4.5M7.5 9 12 4.5 16.5 9" />
+    <path d="M4.5 14.5v2.5a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3v-2.5" />
+  </Svg>
+);
+
+export const TrashIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M4.5 7h15M9.5 7V5.5a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5V7M6.5 7l.8 11.2a2 2 0 0 0 2 1.8h5.4a2 2 0 0 0 2-1.8L17.5 7" />
+  </Svg>
+);
+
+export const StarIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="m12 4.2 2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.6-4.8 2.6.9-5.4-3.9-3.8 5.4-.8Z" />
+  </Svg>
+);
+
+export const WalletIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M18.5 8.5V6.8a2.3 2.3 0 0 0-2.3-2.3H6.3a2.8 2.8 0 0 0 0 5.6" />
+    <rect x="3.5" y="8.5" width="17" height="11" rx="3" />
+    <path d="M16.2 14h.6" />
+  </Svg>
+);
+
+export const MailIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <rect x="3.5" y="5.5" width="17" height="13" rx="3" />
+    <path d="m4.6 8.2 7.4 5.3 7.4-5.3" />
+  </Svg>
+);
+
+export const LockIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <rect x="5" y="10.5" width="14" height="10" rx="3" />
+    <path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5M12 14.6v1.8" />
+  </Svg>
+);
+
+export const EyeIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M2.8 12S6.2 5.8 12 5.8 21.2 12 21.2 12 17.8 18.2 12 18.2 2.8 12 2.8 12Z" />
+    <circle cx="12" cy="12" r="2.8" />
+  </Svg>
+);
+
+export const EyeOffIcon = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M9.6 6.2A8.4 8.4 0 0 1 12 5.8c5.8 0 9.2 6.2 9.2 6.2a15.7 15.7 0 0 1-2.8 3.5M6.2 8A15.5 15.5 0 0 0 2.8 12s3.4 6.2 9.2 6.2a8.6 8.6 0 0 0 3.8-.9" />
+    <path d="M10 10.1a2.8 2.8 0 0 0 3.9 3.9M4 4l16 16" />
   </Svg>
 );

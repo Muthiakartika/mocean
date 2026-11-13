@@ -8,19 +8,30 @@ import { getDb } from "@/lib/db";
 import { adminUsers } from "@/lib/db/schema";
 import {
   addBlock,
+  addRoomPhoto,
   addSeasonRange,
+  copySeasonsToNextYear,
   createAddOn,
   listAddOns,
   listRoomTypes,
+  makeCoverPhoto,
   removeBlock,
+  removeRoomPhoto,
   removeSeasonRange,
   updateAddOn,
+  updateRoomPrices,
   updateRoomType,
 } from "@/lib/booking/native/admin-store";
-import { sendBookingCancelled, sendBookingConfirmed } from "@/lib/booking/native/emails";
+import { addSampleBookings, removeSampleBookings } from "@/lib/booking/native/samples";
+import { trialMode } from "@/lib/booking/native/trial";
+import { MAX_UPLOAD_BYTES, deleteMediaIfUnused, mediaUrl, saveMedia, sniffImage } from "@/lib/booking/native/media";
+import { loadPaymentSettings, savePaymentSettings, type DepositMode } from "@/lib/booking/native/payment-settings";
+import { METHOD_LABEL, deletePayment, recordPayment } from "@/lib/booking/native/payments";
+import type { PaymentMethod } from "@/lib/db/schema";
+import { sendBookingCancelled, sendBookingConfirmed, sendPaymentReceived } from "@/lib/booking/native/emails";
 import { saveSettings } from "@/lib/booking/native/settings";
 import { cancelReservation, confirmReservation, createReservation, getReservation, saveAdminNotes } from "@/lib/booking/native/store";
-import { QuoteError, addDays, nightsBetween, parseDay } from "@/lib/booking/stay";
+import { QuoteError, addDays, formatMoney, nightsBetween, parseDay } from "@/lib/booking/stay";
 
 /**
  * Everything the admin pages do. Each action checks the login itself (requireAdmin): a server action can be called
@@ -30,7 +41,9 @@ import { QuoteError, addDays, nightsBetween, parseDay } from "@/lib/booking/stay
  */
 
 const RATES = "/admin/rates/";
+const ROOMS = "/admin/rooms/";
 const BLOCKS = "/admin/blocks/";
+const GUIDE = "/admin/guide/";
 const reservationPath = (code: string) => `/admin/reservations/${encodeURIComponent(code)}/`;
 
 /** A function declaration (not a const), so TypeScript knows the code after a call to it is unreachable. */
@@ -46,6 +59,14 @@ function whole(form: FormData, name: string, min: number, max: number): number |
   if (raw === "") return null;
   const value = Number(raw);
   return Number.isInteger(value) && value >= min && value <= max ? value : null;
+}
+
+/** A whole amount typed with or without separators ("2,200,000", "2.200.000", "2 200 000"). */
+function money(form: FormData, name: string, max = 100_000_000): number | null {
+  const raw = text(form, name, 30).replace(/[^\d]/g, "");
+  if (raw === "") return null;
+  const value = Number(raw);
+  return Number.isSafeInteger(value) && value <= max ? value : null;
 }
 
 function decimal(form: FormData, name: string, min: number, max: number): number | null {
@@ -90,7 +111,7 @@ export async function confirmAction(form: FormData) {
   if (!result.ok) return back(reservationPath(code), "error", result.message);
   if (!result.changed) return back(reservationPath(code), "done", "This booking was already confirmed.");
   const detail = await getReservation(db, code);
-  const sent = detail ? await sendBookingConfirmed(detail) : false;
+  const sent = detail ? await sendBookingConfirmed(detail, await loadPaymentSettings(db)) : false;
   back(
     reservationPath(code),
     "done",
@@ -178,7 +199,7 @@ export async function createManualAction(form: FormData) {
   let note = "Booking saved.";
   if (created.status === "confirmed" && flag(form, "notify")) {
     const detail = await getReservation(db, created.code);
-    note = detail && (await sendBookingConfirmed(detail)) ? "Booking saved and the guest was emailed." : "Booking saved. No email went out.";
+    note = detail && (await sendBookingConfirmed(detail, await loadPaymentSettings(db))) ? "Booking saved and the guest was emailed." : "Booking saved. No email went out.";
   }
   back(reservationPath(created.code), "done", note);
 }
@@ -203,19 +224,88 @@ export async function removeBlockAction(form: FormData) {
   back(BLOCKS, "done", "Block removed. The rooms are for sale again.");
 }
 
+/** Back to Rooms with one room type opened and in view. */
+function backToRoom(id: string, kind: "done" | "error", message: string): never {
+  redirect(`${ROOMS}?${new URLSearchParams({ room: id, [kind]: message })}#room-${id}`);
+}
+
 export async function saveRoomTypeAction(form: FormData) {
   await requireAdmin();
   const id = text(form, "id", 40);
+  const name = text(form, "name", 120);
+  const description = text(form, "description", 2000);
+  const features = text(form, "features", 2000)
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .slice(0, 20);
   const units = whole(form, "units", 0, 100);
   const maxGuests = whole(form, "maxGuests", 1, 20);
-  const priceLow = whole(form, "priceLow", 0, 100_000_000);
-  const priceShoulder = whole(form, "priceShoulder", 0, 100_000_000);
-  const priceHigh = whole(form, "priceHigh", 0, 100_000_000);
-  if (units === null || !maxGuests || priceLow === null || priceShoulder === null || priceHigh === null) {
-    return back(RATES, "error", "Check the numbers for that room type: whole numbers only.");
+  if (!name) return backToRoom(id, "error", "The room type needs a name.");
+  if (units === null || !maxGuests) return backToRoom(id, "error", "Check the number of rooms and the most guests in one room.");
+  await updateRoomType(await getDb(), id, { name, description, features, units, maxGuests, active: flag(form, "active") });
+  backToRoom(id, "done", `${name} saved.`);
+}
+
+/** The whole price table of the Prices page at once: three prices per room type (low-<id>, shoulder-<id>, high-<id>). */
+export async function savePricesAction(form: FormData) {
+  await requireAdmin();
+  const db = await getDb();
+  const changes: { id: string; priceLow: number; priceShoulder: number; priceHigh: number }[] = [];
+  for (const type of await listRoomTypes(db)) {
+    if (!form.has(`low-${type.id}`)) continue;
+    const priceLow = money(form, `low-${type.id}`);
+    const priceShoulder = money(form, `shoulder-${type.id}`);
+    const priceHigh = money(form, `high-${type.id}`);
+    if (!priceLow || !priceShoulder || !priceHigh) return back(RATES, "error", `Enter all three prices for ${type.name}. Nothing was saved.`);
+    changes.push({ id: type.id, priceLow, priceShoulder, priceHigh });
   }
-  await updateRoomType(await getDb(), id, { units, maxGuests, priceLow, priceShoulder, priceHigh, active: flag(form, "active") });
-  back(RATES, "done", "Room type saved.");
+  for (const change of changes) await updateRoomPrices(db, change.id, change);
+  back(RATES, "done", "Prices saved. New searches on the booking page use them at once.");
+}
+
+/**
+ * Called from the browser (rates/photos.tsx) with a photo already shrunk there; answers instead of redirecting, so the
+ * page can upload several photos in a row.
+ */
+export async function uploadRoomPhotoAction(form: FormData): Promise<{ ok: boolean; message: string }> {
+  await requireAdmin();
+  const id = text(form, "roomTypeId", 40);
+  const file = form.get("photo");
+  if (!(file instanceof Blob) || file.size === 0) return { ok: false, message: "Choose a photo first." };
+  if (file.size > MAX_UPLOAD_BYTES) return { ok: false, message: "That photo is too large (4 MB at most)." };
+  const bytes = Buffer.from(await file.arrayBuffer());
+  const type = sniffImage(bytes);
+  if (!type) return { ok: false, message: "That file is not a JPEG, PNG or WebP photo." };
+  const db = await getDb();
+  const url = mediaUrl(await saveMedia(db, bytes, type));
+  if (!(await addRoomPhoto(db, id, url))) {
+    await deleteMediaIfUnused(db, url);
+    return { ok: false, message: "That room type no longer exists." };
+  }
+  return { ok: true, message: "Photo added." };
+}
+
+export async function removeRoomPhotoAction(form: FormData) {
+  await requireAdmin();
+  const id = text(form, "roomTypeId", 40);
+  const url = text(form, "url", 500);
+  const db = await getDb();
+  await removeRoomPhoto(db, id, url);
+  await deleteMediaIfUnused(db, url);
+  backToRoom(id, "done", "Photo removed.");
+}
+
+export async function coverRoomPhotoAction(form: FormData) {
+  await requireAdmin();
+  const id = text(form, "roomTypeId", 40);
+  await makeCoverPhoto(await getDb(), id, text(form, "url", 500));
+  backToRoom(id, "done", "Cover photo changed. Guests see it first on the booking page.");
+}
+
+/** Back to Prices, showing the year that was just changed. */
+function backToSeasons(year: string | null, kind: "done" | "error", message: string): never {
+  redirect(`${RATES}?${new URLSearchParams({ ...(year ? { year } : {}), [kind]: message })}#seasons`);
 }
 
 export async function addSeasonAction(form: FormData) {
@@ -223,17 +313,30 @@ export async function addSeasonAction(form: FormData) {
   const first = day(form, "from");
   const last = day(form, "until");
   const season = text(form, "season", 10);
-  if (season !== "shoulder" && season !== "high") return back(RATES, "error", "Choose shoulder or high season.");
-  if (!first || !last || last < first) return back(RATES, "error", "Choose the first and last day of the season (the last day can't be before the first).");
+  const shown = text(form, "year", 4) || null;
+  if (season !== "shoulder" && season !== "high") return backToSeasons(shown, "error", "Choose shoulder or high season.");
+  if (!first || !last || last < first) {
+    return backToSeasons(shown, "error", "Choose the first and last day of the season (the last day can't be before the first).");
+  }
   await addSeasonRange(await getDb(), { season, startsOn: first, endsOn: addDays(last, 1), label: text(form, "label", 60) });
-  back(RATES, "done", "Season dates added.");
+  backToSeasons(first.slice(0, 4), "done", "Season dates added.");
 }
 
 export async function removeSeasonAction(form: FormData) {
   await requireAdmin();
   const id = whole(form, "id", 1, 2_000_000_000);
   if (id) await removeSeasonRange(await getDb(), id);
-  back(RATES, "done", "Season dates removed.");
+  backToSeasons(text(form, "year", 4) || null, "done", "Season dates removed.");
+}
+
+export async function copySeasonsAction(form: FormData) {
+  await requireAdmin();
+  const year = whole(form, "year", 2000, 2100);
+  if (!year) return backToSeasons(null, "error", "Choose a year to copy.");
+  const result = await copySeasonsToNextYear(await getDb(), year);
+  if (!result.ok) return backToSeasons(String(year + 1), "error", result.message);
+  const ranges = `${result.copied} season range${result.copied === 1 ? "" : "s"}`;
+  backToSeasons(String(year + 1), "done", `${ranges} copied to ${year + 1}. Check the dates: holidays move from year to year.`);
 }
 
 export async function saveSettingsAction(form: FormData) {
@@ -255,18 +358,105 @@ export async function saveSettingsAction(form: FormData) {
 
 export async function saveAddOnAction(form: FormData) {
   await requireAdmin();
-  const price = whole(form, "price", 0, 100_000_000);
+  const price = money(form, "price");
   const name = text(form, "name", 100);
-  if (price === null || !name) return back(RATES, "error", "An extra needs a name and a price.");
+  if (price === null || !name) return back(ROOMS, "error", "An extra needs a name and a price.");
   await updateAddOn(await getDb(), text(form, "id", 60), { name, price, active: flag(form, "active") });
-  back(RATES, "done", "Extra saved.");
+  back(ROOMS, "done", "Extra saved.");
+}
+
+const PAYMENTS = "/admin/payments/";
+
+export async function savePaymentSettingsAction(form: FormData) {
+  await requireAdmin();
+  const section = text(form, "section", 20);
+  const db = await getDb();
+  if (section === "deposit") {
+    const mode = text(form, "depositMode", 20) as DepositMode;
+    if (!["first-night", "percent", "full"].includes(mode)) return back(PAYMENTS, "error", "Choose how the deposit is worked out.");
+    const percent = whole(form, "depositPercent", 1, 100);
+    if (mode === "percent" && percent === null) return back(PAYMENTS, "error", "Enter the deposit percentage, from 1 to 100.");
+    await savePaymentSettings(db, { depositMode: mode, ...(percent !== null ? { depositPercent: percent } : {}) });
+    return back(PAYMENTS, "done", "Deposit rule saved. It applies to new bookings.");
+  }
+  if (section === "bank") {
+    const enabled = flag(form, "bankEnabled");
+    const bankName = text(form, "bankName", 80);
+    const bankAccountName = text(form, "bankAccountName", 120);
+    const bankAccountNumber = text(form, "bankAccountNumber", 40);
+    if (enabled && (!bankName || !bankAccountName || !bankAccountNumber)) {
+      return back(PAYMENTS, "error", "To offer bank transfer, fill in the bank, the account name and the account number.");
+    }
+    await savePaymentSettings(db, { bankEnabled: enabled, bankName, bankAccountName, bankAccountNumber, bankNote: text(form, "bankNote", 300) });
+    return back(PAYMENTS, "done", enabled ? "Bank transfer details saved. Guests see them on their booking page and in emails." : "Bank transfer saved, switched off.");
+  }
+  if (section === "online") {
+    await savePaymentSettings(db, { onlineEnabled: flag(form, "onlineEnabled") });
+    return back(PAYMENTS, "done", flag(form, "onlineEnabled") ? "Online payment switched on." : "Online payment switched off.");
+  }
+  back(PAYMENTS, "error", "Nothing to save.");
+}
+
+/** Money staff received outside the website. Can confirm the booking and email the guest a receipt. */
+export async function recordPaymentAction(form: FormData) {
+  await requireAdmin();
+  const code = text(form, "code", 20);
+  const amount = money(form, "amount", 2_000_000_000);
+  const method = text(form, "method", 10) as PaymentMethod;
+  const paidOn = day(form, "paidOn");
+  if (!amount) return back(reservationPath(code), "error", "Enter the amount received.");
+  if (!["bank", "cash", "card", "other"].includes(method)) return back(reservationPath(code), "error", "Choose how the money came in.");
+  if (!paidOn) return back(reservationPath(code), "error", "Choose the day the money came in.");
+  const db = await getDb();
+  const result = await recordPayment(db, { code, amount, method: method as Exclude<PaymentMethod, "xendit">, paidOn, note: text(form, "note", 500) });
+  if (!result.ok) return back(reservationPath(code), "error", result.message);
+
+  let confirmed = false;
+  let problem = "";
+  if (flag(form, "confirm") && result.reservation.status === "pending") {
+    const change = await confirmReservation(db, code);
+    if (change.ok) confirmed = change.changed;
+    else problem = change.message;
+  }
+  let emailed = false;
+  if (flag(form, "notify")) {
+    const detail = await getReservation(db, code);
+    if (detail) emailed = await sendPaymentReceived(detail, { amount, how: METHOD_LABEL[method].toLowerCase(), confirmed, problem: problem || undefined });
+  }
+  const parts = [`${formatMoney(amount)} recorded.`, confirmed ? "The booking is confirmed." : "", problem ? `Not confirmed: ${problem}` : "", emailed ? "The guest was emailed." : ""];
+  back(reservationPath(code), problem ? "error" : "done", parts.filter(Boolean).join(" "));
+}
+
+export async function deletePaymentAction(form: FormData) {
+  await requireAdmin();
+  const code = text(form, "code", 20);
+  const id = whole(form, "id", 1, 2_000_000_000);
+  const removed = id ? await deletePayment(await getDb(), code, id) : false;
+  back(reservationPath(code), removed ? "done" : "error", removed ? "Payment removed." : "That payment could not be removed (online payments stay on record).");
 }
 
 export async function createAddOnAction(form: FormData) {
   await requireAdmin();
-  const price = whole(form, "price", 0, 100_000_000);
+  const price = money(form, "price");
   const name = text(form, "name", 100);
-  if (price === null || !name) return back(RATES, "error", "A new extra needs a name and a price.");
+  if (price === null || !name) return back(ROOMS, "error", "A new extra needs a name and a price.");
   await createAddOn(await getDb(), { name, price });
-  back(RATES, "done", "Extra added.");
+  back(ROOMS, "done", "Extra added.");
+}
+
+/** Trial version only: fills the system with sample bookings, or takes them out again. */
+export async function addSamplesAction() {
+  await requireAdmin();
+  if (!trialMode()) return back(GUIDE, "error", "Sample bookings are only for the trial version.");
+  const result = await addSampleBookings(await getDb());
+  if (result.already) return back(GUIDE, "error", `The ${result.already} sample bookings are already there. Remove them first to start again.`);
+  const skipped = result.skipped ? ` ${result.skipped} could not be added because their rooms were taken.` : "";
+  back(GUIDE, "done", `${result.added} sample bookings added.${skipped} Open Today, Bookings or Calendar to see them.`);
+}
+
+export async function removeSamplesAction() {
+  await requireAdmin();
+  if (!trialMode()) return back(GUIDE, "error", "Sample bookings are only for the trial version.");
+  const removed = await removeSampleBookings(await getDb());
+  back(GUIDE, "done", removed ? `${removed} sample bookings removed. Bookings you made yourself are still there.` : "There were no sample bookings to remove.");
 }

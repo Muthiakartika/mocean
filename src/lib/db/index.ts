@@ -1,29 +1,30 @@
 import path from "node:path";
 import { mkdir } from "node:fs/promises";
 import type { PgDatabase, PgQueryResultHKT } from "drizzle-orm/pg-core";
+import { property } from "@/config/property";
 import * as schema from "./schema";
 
 /**
  * The booking system's database.
  *
  *   DATABASE_URL set  -> that Postgres (Neon on Vercel). Create the tables once with `npm run db:setup`.
- *   not set           -> development only: a Postgres in a folder (node_modules/.cache/mocean-pglite, no install, no
- *                        account), created and filled with the starting data on first use. To start over, delete that
- *                        folder. Production without DATABASE_URL fails.
+ *   not set           -> development only: a Postgres in a folder (node_modules/.cache/<slug>-pglite, the slug from
+ *                        src/config/property.ts; no install, no account), created and filled with the starting data on
+ *                        first use. To start over, delete that folder. Production without DATABASE_URL fails.
  *
  * Everything else takes a `Db`, so tests pass an in-memory one.
  */
 export type Db = PgDatabase<PgQueryResultHKT, typeof schema>;
 
 /** The Postgres drivers load lazily, and the connection is shared across hot reloads in development. */
-const shared = globalThis as unknown as { __moceanDb?: Promise<Db> };
+const shared = globalThis as unknown as { __bookingDb?: Promise<Db> };
 
 export function getDb(): Promise<Db> {
-  shared.__moceanDb ??= open().catch((error) => {
-    delete shared.__moceanDb;
+  shared.__bookingDb ??= open().catch((error) => {
+    delete shared.__bookingDb;
     throw error;
   });
-  return shared.__moceanDb;
+  return shared.__bookingDb;
 }
 
 /** True when a database is available (DATABASE_URL, or any environment that is not production). */
@@ -52,7 +53,7 @@ async function openLocal(): Promise<Db> {
   ]);
   // Not inside the project folders: PGlite writes files on every query, and Turbopack's file watcher would take each
   // write for a source change and reload the page in a loop. node_modules is not watched.
-  const dir = path.join(process.cwd(), "node_modules", ".cache", "mocean-pglite");
+  const dir = path.join(process.cwd(), "node_modules", ".cache", `${property.slug}-pglite`);
   await mkdir(dir, { recursive: true });
   const db = drizzle(new PGlite(dir), { schema });
   await migrate(db, { migrationsFolder: path.join(process.cwd(), "drizzle") });

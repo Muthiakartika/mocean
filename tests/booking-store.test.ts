@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { before, describe, it } from "node:test";
+import { property } from "@/config/property";
 import type { Db } from "@/lib/db";
 import { blocks, reservations, seasonRanges } from "@/lib/db/schema";
 import { saveSettings } from "@/lib/booking/native/settings";
@@ -86,7 +87,7 @@ describe("createReservation", () => {
   it("holds the room: it disappears for those dates but not for back-to-back dates", async () => {
     const db = await testDb();
     const made = await createReservation(db, booking("dlx-queen"), NOW);
-    assert.match(made.code, /^MOC-[A-Z2-9]{6}$/);
+    assert.match(made.code, new RegExp(`^${property.bookingCodePrefix}-[A-Z2-9]{6}$`));
     assert.equal(made.status, "pending");
     assert.ok(!(await typeIds(db)).includes("dlx-queen"));
     assert.ok((await typeIds(db, { ...DEC, checkIn: "2026-12-13", checkOut: "2026-12-15" })).includes("dlx-queen"));

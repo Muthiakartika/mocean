@@ -1,3 +1,4 @@
+import { property } from "@/config/property";
 import { settings as settingsTable } from "@/lib/db/schema";
 import type { Db } from "@/lib/db";
 
@@ -18,17 +19,8 @@ export type NativeSettings = {
   autoConfirm: boolean;
 };
 
-/**
- * Tax rate and discount are what the Cloudbeds booking page showed on 2026-11-11 (22.1% inclusive; "Extended Stay -
- * Three Nights or More" 5% under the standard rate). The owner should confirm them.
- */
-export const SETTING_DEFAULTS: NativeSettings = {
-  includedTaxRate: 0.221,
-  extendedStayMinNights: 3,
-  extendedStayDiscountPct: 5,
-  pendingHoldHours: 24,
-  autoConfirm: false,
-};
+/** The property's starting values (src/config/property.ts). */
+export const SETTING_DEFAULTS: NativeSettings = { ...property.settingDefaults };
 
 export async function loadSettings(db: Db): Promise<NativeSettings> {
   const rows = await db.select().from(settingsTable);

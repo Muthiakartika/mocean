@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { property } from "@/config/property";
 import { formatDay, formatMoney, nightsBetween } from "@/lib/booking/stay";
 import { displayStatus, type ReservationListItem } from "@/lib/booking/native/store";
 import { AlertIcon, ArrowRightIcon, CheckIcon } from "./icons";
@@ -37,9 +38,16 @@ export function StatusBadge({ row }: { row: { status: "pending" | "confirmed" | 
 
 export const money = (amount: number) => formatMoney(amount);
 
-/** "12 Nov 2026, 14:30" in the resort's time zone (WITA), which is what the staff's clocks show. */
+/** A payment's state: paid, an online page still open, or never paid. */
+export function PaymentBadge({ status }: { status: "pending" | "paid" | "expired" | "failed" }) {
+  const label = { pending: "Waiting for payment", paid: "Paid", expired: "Expired", failed: "Failed" }[status];
+  const tone = status === "paid" ? "confirmed" : status === "pending" ? "pending" : "cancelled";
+  return <span className={`adm-badge adm-badge--${tone}`}>{label}</span>;
+}
+
+/** "12 Nov 2026, 14:30" in the property's time zone (src/config/property.ts), which is what the staff's clocks show. */
 export const resortTime = (date: Date) =>
-  new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Makassar", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }).format(date);
+  new Intl.DateTimeFormat("en-GB", { timeZone: property.timeZone, day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }).format(date);
 
 export function stayLabel(checkIn: string, checkOut: string) {
   const nights = nightsBetween(checkIn, checkOut);

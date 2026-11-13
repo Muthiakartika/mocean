@@ -1,6 +1,6 @@
 import { bookingProvider, rateLimited } from "@/lib/booking/server";
 import { checkQuery, queryFromParams } from "@/lib/booking/stay";
-import { contact } from "@/data/contact";
+import { property } from "@/config/property";
 
 /**
  * GET /api/booking/availability/?checkin=2026-12-10&checkout=2026-12-13&adults=2&children=0[&promo=CODE]
@@ -21,7 +21,7 @@ export async function GET(request: Request) {
   const provider = bookingProvider();
   if (!provider) {
     return Response.json(
-      { message: "Online booking on this page isn't available right now.", fallbackUrl: contact.cloudbedsUrl },
+      { message: "Online booking on this page isn't available right now.", fallbackUrl: property.fallbackBooking?.url },
       { status: 503 },
     );
   }
@@ -32,7 +32,7 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error("[booking] availability failed:", error);
     return Response.json(
-      { message: "We couldn't load the rooms just now. Please try again in a moment.", fallbackUrl: contact.cloudbedsUrl },
+      { message: "We couldn't load the rooms just now. Please try again in a moment.", fallbackUrl: property.fallbackBooking?.url },
       { status: 502 },
     );
   }

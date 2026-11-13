@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDb } from "@/lib/db";
+import { property } from "@/config/property";
+import { METHOD_LABEL, summarize } from "@/lib/booking/native/payments";
 import { displayStatus, getReservation } from "@/lib/booking/native/store";
-import { cancelAction, confirmAction, notesAction } from "../../../actions";
-import { Flash, StatusBadge, money, one, resortTime, stayLabel } from "../../../ui";
+import { resortToday } from "@/lib/booking/stay";
+import { cancelAction, confirmAction, deletePaymentAction, notesAction, recordPaymentAction } from "../../../actions";
+import MoneyInput from "../../../money-input";
+import { Flash, PaymentBadge, StatusBadge, money, one, resortTime, stayLabel } from "../../../ui";
 
 export default async function ReservationPage({
   params,
@@ -17,6 +21,8 @@ export default async function ReservationPage({
   if (!detail) notFound();
   const { reservation: r, rooms, extras } = detail;
   const status = displayStatus(r);
+  const pay = summarize(r, detail.payments);
+  const payState = pay.depositDue > 0 ? { tone: "pending", label: pay.paid > 0 ? "Deposit partly paid" : "Deposit not paid" } : pay.balance > 0 ? { tone: "confirmed", label: "Deposit paid" } : { tone: "confirmed", label: "Paid in full" };
 
   return (
     <>
@@ -112,6 +118,126 @@ export default async function ReservationPage({
           </dl>
         </section>
       </div>
+
+      <section className="adm-card" id="payments" aria-labelledby="payments-title">
+        <div className="adm-pay-head">
+          <h2 id="payments-title">Payments</h2>
+          {r.status !== "cancelled" && <span className={`adm-badge adm-badge--${payState.tone}`}>{payState.label}</span>}
+        </div>
+        <dl className="adm-pay-sum">
+          <div>
+            <dt>Total</dt>
+            <dd>{money(r.total)}</dd>
+          </div>
+          <div>
+            <dt>Deposit</dt>
+            <dd>{money(r.deposit)}</dd>
+          </div>
+          <div>
+            <dt>Paid</dt>
+            <dd>{money(pay.paid)}</dd>
+          </div>
+          <div>
+            <dt>Still to pay</dt>
+            <dd>{money(pay.balance)}</dd>
+          </div>
+        </dl>
+        {pay.openOnline && (
+          <p className="adm-muted adm-small">
+            The guest opened an online payment page for {money(pay.openOnline.amount)}
+            {pay.openOnline.expiresAt && <>, open until {resortTime(pay.openOnline.expiresAt)}</>}. It is recorded here by itself when paid.
+          </p>
+        )}
+
+        {detail.payments.length > 0 && (
+          <div className="adm-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>How</th>
+                  <th>Status</th>
+                  <th className="adm-num">Amount</th>
+                  <th />
+                </tr>
+              </thead>
+              <tbody>
+                {detail.payments.map((payment) => (
+                  <tr key={payment.id}>
+                    <td>{resortTime(payment.paidAt ?? payment.createdAt)}</td>
+                    <td>
+                      {METHOD_LABEL[payment.method]}
+                      {(payment.channel || payment.note) && <div className="adm-muted adm-small">{[payment.channel, payment.note].filter(Boolean).join(" · ")}</div>}
+                    </td>
+                    <td>
+                      <PaymentBadge status={payment.status} />
+                    </td>
+                    <td className="adm-num">{money(payment.amount)}</td>
+                    <td className="adm-num">
+                      {payment.method !== "xendit" && (
+                        <form action={deletePaymentAction}>
+                          <input type="hidden" name="code" value={r.code} />
+                          <input type="hidden" name="id" value={payment.id} />
+                          <button className="adm-btn adm-btn--quiet adm-btn--sm" type="submit" title="Remove a payment entered by mistake">
+                            Remove
+                          </button>
+                        </form>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {r.status !== "cancelled" && (
+          <details className="adm-record" open={pay.paid === 0 && status !== "expired"}>
+            <summary>Record a payment received</summary>
+            <form action={recordPaymentAction} className="adm-stack">
+              <input type="hidden" name="code" value={r.code} />
+              <div className="adm-fields">
+                <div>
+                  <label htmlFor="pay-amount">Amount received</label>
+                  <MoneyInput id="pay-amount" name="amount" defaultValue={pay.depositDue > 0 ? pay.depositDue : pay.balance || undefined} currency={property.currency} />
+                </div>
+                <div>
+                  <label htmlFor="pay-method">How</label>
+                  <select id="pay-method" name="method" defaultValue="bank">
+                    <option value="bank">Bank transfer</option>
+                    <option value="cash">Cash</option>
+                    <option value="card">Card at the resort</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="pay-day">Received on</label>
+                  <input id="pay-day" name="paidOn" type="date" defaultValue={resortToday()} required />
+                </div>
+                <div>
+                  <label htmlFor="pay-note">
+                    Note <span className="adm-label-hint">optional</span>
+                  </label>
+                  <input id="pay-note" name="note" type="text" maxLength={500} placeholder="e.g. transfer slip on WhatsApp" />
+                </div>
+              </div>
+              <div className="adm-actions">
+                {r.status === "pending" && (
+                  <label className="adm-check">
+                    <input type="checkbox" name="confirm" defaultChecked /> Confirm the booking
+                  </label>
+                )}
+                <label className="adm-check">
+                  <input type="checkbox" name="notify" defaultChecked={Boolean(r.email)} disabled={!r.email} /> Email the guest a receipt
+                </label>
+                <button className="adm-btn" type="submit">
+                  Record payment
+                </button>
+              </div>
+            </form>
+          </details>
+        )}
+      </section>
 
       <section className="adm-card">
         <h2>Rooms and extras</h2>

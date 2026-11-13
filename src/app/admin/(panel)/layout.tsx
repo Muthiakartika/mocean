@@ -1,12 +1,30 @@
 import Link from "next/link";
+import { property } from "@/config/property";
 import { requireAdmin } from "@/lib/admin/session";
 import { formatDay, resortToday } from "@/lib/booking/stay";
+import { trialInbox, trialMode } from "@/lib/booking/native/trial";
 import { logoutAction } from "../actions";
 import { LogoutIcon, PlusIcon, SearchIcon } from "../icons";
 import { Avatar } from "../ui";
 import SideNav from "./SideNav";
 
 export const dynamic = "force-dynamic";
+
+/** Trial version only (BOOKING_TRIAL=1): says that nothing here is real, where emails go, and where the sample bookings are. */
+function TrialBar() {
+  const inbox = trialInbox();
+  const live = property.fallbackBooking?.label ?? "the current booking page";
+  return (
+    <p className="adm-trial" role="note">
+      <span className="adm-trial-tag">Trial</span>
+      <span>
+        Try anything: bookings here are not real, and guests still book on {live}.{" "}
+        {inbox.length ? `Emails go only to ${inbox.join(", ")}.` : "No emails are sent."}
+      </span>
+      <Link href="/admin/guide/#practice">Sample bookings</Link>
+    </p>
+  );
+}
 
 /**
  * Every page behind the login: a navy sidebar (logo, menu, new booking, the signed-in user) beside the page, with a
@@ -15,13 +33,14 @@ export const dynamic = "force-dynamic";
 export default async function PanelLayout({ children }: { children: React.ReactNode }) {
   const admin = await requireAdmin();
   const today = resortToday();
+  const logo = property.images.logoWhite;
 
   return (
     <div className="adm-shell">
       <aside className="adm-side">
-        <Link href="/admin/" className="adm-logo" aria-label="Mocean admin, today">
+        <Link href="/admin/" className="adm-logo" aria-label={`${property.shortName} admin, today`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/uploads/2025/02/Mocean-FULL-Logo_White-1024x578.png" alt="" width={1024} height={578} />
+          <img src={logo.src} alt="" width={logo.width} height={logo.height} />
           <span>Admin</span>
         </Link>
 
@@ -50,6 +69,7 @@ export default async function PanelLayout({ children }: { children: React.ReactN
       </aside>
 
       <div className="adm-main">
+        {trialMode() && <TrialBar />}
         <div className="adm-topbar">
           <span className="adm-today">
             <span className="adm-today-dot" aria-hidden="true" />

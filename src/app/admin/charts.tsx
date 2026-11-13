@@ -1,7 +1,8 @@
 /**
  * Charts of the admin's Reports page, drawn as SVG/HTML on the server (no chart library). One series per chart in the
- * brand navy; months still ahead are hatched (booked so far, may grow) and named in the legend, so the difference is
- * never colour alone. Every bar shows its figures on hover or keyboard focus, and each chart has a table view.
+ * brand navy; months still ahead (booked so far, may grow) are a light navy with a navy top edge, named in the legend and
+ * in each bar's label, so the difference is never colour alone. Every bar shows its figures on hover or keyboard focus,
+ * and each chart has a table view.
  */
 
 export type MonthPoint = {
@@ -73,14 +74,7 @@ export function MonthBars({
           </li>
         </ul>
       )}
-      <svg viewBox={`0 0 ${W} ${H}`} className="adm-chart-svg" role="group" aria-label={title}>
-        <defs>
-          <pattern id={`hatch-${id}`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <rect width="6" height="6" className="adm-hatch-bg" />
-            <line x1="0" y1="0" x2="0" y2="6" className="adm-hatch-line" />
-          </pattern>
-        </defs>
-
+      <svg viewBox={`0 0 ${W} ${H}`} className="adm-chart-svg" role="group" aria-label={title} data-chart={id}>
         {ticks.map((tick) => (
           <g key={tick} className="adm-grid-line">
             <line x1={PAD.left} x2={W - PAD.right} y1={y(tick)} y2={y(tick)} />
@@ -110,12 +104,12 @@ export function MonthBars({
             <g key={point.label} className="adm-col" tabIndex={0} aria-label={`${point.label}: ${point.detail.join(", ")}${point.ahead ? " (booked so far)" : ""}`}>
               {/* Hit area: the whole column of the month, wider than the bar. */}
               <rect x={PAD.left + band * index} y={PAD.top} width={band} height={plotH} className="adm-col-hit" />
-              {/* Inline style: the stylesheet's navy fill would beat a fill attribute. */}
               <path
                 d={column(cx - barW / 2, barY, barW, PAD.top + plotH - barY)}
-                style={point.ahead ? { fill: `url(#hatch-${id})` } : undefined}
                 className={point.ahead ? "adm-col-bar adm-col-bar--ahead" : "adm-col-bar"}
               />
+              {/* Months ahead: a navy cap on the light bar marks how far the bookings reach so far. */}
+              {point.ahead && point.value > 0 && <rect x={cx - barW / 2} y={barY} width={barW} height={3} rx={1.5} className="adm-col-cap" />}
               <text x={cx} y={H - 10} textAnchor="middle" className="adm-col-label">
                 {point.short}
               </text>

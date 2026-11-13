@@ -2,6 +2,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 import { eq } from "drizzle-orm";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { property } from "@/config/property";
 import { getDb } from "@/lib/db";
 import { adminUsers } from "@/lib/db/schema";
 
@@ -13,7 +14,7 @@ import { adminUsers } from "@/lib/db/schema";
  * action, because actions can be called directly.
  */
 
-const COOKIE = "mocean_admin";
+const COOKIE = `${property.slug}_admin`;
 const LIFETIME_MS = 12 * 3_600_000;
 
 function secret(): string {

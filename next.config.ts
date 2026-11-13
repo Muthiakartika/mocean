@@ -23,6 +23,8 @@ const nextConfig: NextConfig = {
   experimental: {
     // CSS comes inside the HTML instead of three render-blocking requests (speed test 2026-11-05: ~480ms on phones).
     inlineCss: true,
+    // Room photos are uploaded through a server action (the admin shrinks them first; the action allows 4 MB).
+    serverActions: { bodySizeLimit: "5mb" },
   },
 
   images: {

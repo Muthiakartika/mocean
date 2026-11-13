@@ -1,43 +1,64 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
+import { property } from "@/config/property";
 import { getAdmin } from "@/lib/admin/session";
 import { loginAction } from "../actions";
+import { MailIcon } from "../icons";
 import { Flash, one } from "../ui";
+import { PasswordInput, SubmitButton } from "./fields";
 
 export const dynamic = "force-dynamic";
 
+/**
+ * Staff login, one rounded frame in two halves: the property's photo at the left (logo on top, one line at the bottom)
+ * and the sign-in form on white at the right (styles: "Login" in admin.css). Logins are made by the developer
+ * (`npm run admin:create`), so there is no sign-up and no password reset here; the last line of the form says who to ask.
+ */
 export default async function LoginPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   if (await getAdmin()) redirect("/admin/");
   const query = await searchParams;
+  const logo = property.images.logoWhite;
+  const photo = property.images.login ?? property.images.hero;
 
   return (
     <div className="adm-login">
-      <div className="adm-login-photo" aria-hidden="true">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="adm-login-logo" src="/images/uploads/2025/02/Mocean-FULL-Logo_White-1024x578.png" alt="" width={1024} height={578} />
-        <p>Bookings, rooms and prices of Mocean Beach Resort, in one place.</p>
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" focusable="false">
-          <path d="M0 44C180 84 360 92 560 64S900 4 1100 20s260 36 340 28V100H0Z" />
-          <path d="M0 70C200 40 380 30 600 56s380 40 580 20 200-24 260-18V100H0Z" />
-        </svg>
+      {/* The photo is set here, not in admin.css, because it belongs to the property (src/config/property.ts). */}
+      <div className="adm-login-photo" style={{ "--adm-login-photo": `url("${photo}")` } as React.CSSProperties}>
+        <div className="adm-login-brand">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="adm-login-logo" src={logo.src} alt={property.name} width={logo.width} height={logo.height} />
+          <span className="adm-login-tag">Admin</span>
+        </div>
+        <div className="adm-login-lead">
+          <p className="adm-login-headline">Every stay starts here</p>
+          <p className="adm-login-sub">Bookings, rooms and prices of {property.name}, in one place.</p>
+        </div>
       </div>
 
       <div className="adm-login-panel">
-        <h1>Sign in</h1>
-        <p className="adm-muted">Staff access to manage bookings, rooms and prices.</p>
-        <Flash error={one(query.error)} />
-        <form action={loginAction} className="adm-login-form">
-          <div>
-            <label htmlFor="email">Email</label>
-            <input id="email" name="email" type="email" autoComplete="username" required />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input id="password" name="password" type="password" autoComplete="current-password" required />
-          </div>
-          <button className="adm-btn adm-btn--block" type="submit">
-            Sign in
-          </button>
-        </form>
+        <Link className="adm-login-back" href="/">
+          Back to website
+        </Link>
+        <div className="adm-login-box">
+          <h1>Welcome back to {property.shortName}</h1>
+          <p className="adm-login-intro">Sign in to your staff account.</p>
+          <Flash error={one(query.error)} />
+          <form action={loginAction} className="adm-login-form">
+            <div>
+              <label htmlFor="email">Email address</label>
+              <div className="adm-login-field">
+                <MailIcon />
+                <input id="email" name="email" type="email" autoComplete="username" placeholder="Enter your email" required />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="password">Password</label>
+              <PasswordInput />
+            </div>
+            <SubmitButton />
+          </form>
+          <p className="adm-login-help">Forgot your password? Ask your website developer to reset it.</p>
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Wave from "@/components/home/Wave";
+import { property } from "@/config/property";
 import {
   QuoteError,
   buildQuote,
@@ -21,6 +22,7 @@ import GuestForm from "./GuestForm";
 import RoomCard from "./RoomCard";
 import StaySummary from "./StaySummary";
 import { GuestPicker } from "./Stepper";
+import TrialNote from "./TrialNote";
 import styles from "./Booking.module.css";
 
 type Step = "rooms" | "extras" | "details" | "done";
@@ -31,15 +33,12 @@ const STEPS_ID = "booking-steps";
 
 const STEP_LABELS: Record<Step, string> = { rooms: "Rooms", extras: "Extras", details: "Your details", done: "Confirmed" };
 
-type Props = {
-  /** Cloudbeds' own booking page, offered when the site's engine cannot answer. */
-  fallbackUrl: string;
-  whatsappUrl: string;
-};
+/** What the page says about the property (name, WhatsApp, photo, another place to book): src/config/property.ts. */
+const { whatsappUrl, fallbackBooking } = property;
 
 type SavedState = { query: StayQuery; cart: CartRoom[]; extras: Record<string, number>; guest: Guest };
 
-const STORAGE_KEY = "mocean-booking";
+const STORAGE_KEY = `${property.slug}-booking`;
 const EMPTY_GUEST: Guest = { firstName: "", lastName: "", email: "", phone: "", country: "", zip: "", arrivalTime: "", notes: "" };
 
 const sameQuery = (a: StayQuery, b: StayQuery) =>
@@ -55,7 +54,8 @@ function newRequestId() {
  * again and creates the reservation. The search lives in the URL (?checkin=2026-12-10&checkout=2026-12-13&adults=2,
  * the same parameters as the Cloudbeds page), so the site can link straight to a search.
  */
-export default function BookingApp({ fallbackUrl, whatsappUrl }: Props) {
+/** `trial`: the trial version of the booking system (BOOKING_TRIAL=1), which says so under the title. */
+export default function BookingApp({ trial = false }: { trial?: boolean }) {
   const [form, setForm] = useState<StayQuery>({ checkIn: "", checkOut: "", adults: 2, children: 0 });
   const [promoOpen, setPromoOpen] = useState(false);
   const [availability, setAvailability] = useState<Availability | null>(null);
@@ -245,10 +245,13 @@ export default function BookingApp({ fallbackUrl, whatsappUrl }: Props) {
   return (
     <div className={styles.app} id="booking-app">
       <section className={styles.hero}>
-        <Image className={styles.heroImage} src="/images/uploads/2025/09/Beach-Resort-Header.jpg" alt="" fill priority sizes="100vw" />
+        <Image className={styles.heroImage} src={property.images.hero} alt="" fill priority sizes="100vw" />
         <div className={styles.heroInner}>
           <h1 className={styles.title}>Book your stay</h1>
-          <p className={styles.lead}>Mocean Beach Resort, Pantai Moro, West Sumbawa</p>
+          <p className={styles.lead}>
+            {property.name}, {property.locationLine}
+          </p>
+          {trial && <TrialNote />}
         </div>
         <Wave edge="bottom" className={styles.heroWave} />
       </section>
@@ -324,7 +327,16 @@ export default function BookingApp({ fallbackUrl, whatsappUrl }: Props) {
               <p>{searchError}</p>
               {!loading && availability === null && form.checkIn && (
                 <p>
-                  You can also book on <a href={fallbackUrl} rel="nofollow">our Cloudbeds page</a> or{" "}
+                  You can also{" "}
+                  {fallbackBooking && (
+                    <>
+                      book on{" "}
+                      <a href={fallbackBooking.url} rel="nofollow">
+                        {fallbackBooking.label}
+                      </a>{" "}
+                      or{" "}
+                    </>
+                  )}
                   <a href={whatsappUrl} target="_blank" rel="noopener">
                     message us on WhatsApp
                   </a>
@@ -337,7 +349,10 @@ export default function BookingApp({ fallbackUrl, whatsappUrl }: Props) {
           {!availability && !loading && !searchError && (
             <div className={styles.empty}>
               <h2 className={styles.stepTitle}>Choose your dates</h2>
-              <p>Pick check-in and check-out above to see which rooms are free and what they cost. Booking direct for three nights or more gets a discount.</p>
+              <p>
+                Pick check-in and check-out above to see which rooms are free and what they cost.
+                {property.copy.searchHint && ` ${property.copy.searchHint}`}
+              </p>
             </div>
           )}
 
@@ -488,7 +503,7 @@ function Confirmation({
   availability: Availability | null;
   whatsappUrl: string;
 }) {
-  const currency = availability?.currency ?? "IDR";
+  const currency = availability?.currency ?? property.currency;
   return (
     <div className={styles.confirmation}>
       <span className={styles.confirmIcon} aria-hidden="true">
@@ -506,9 +521,15 @@ function Confirmation({
           We sent the details to <strong>{result.guestEmail}</strong>. Keep your booking number for any question about your stay.
         </p>
       )}
-      {result.status === "pending" && (
-        <p>This is a booking request until we confirm it. We will email you to confirm and to arrange the deposit.</p>
-      )}
+      {result.status === "pending" &&
+        (result.payNow && result.manageUrl ? (
+          <p>
+            This is a booking request until the deposit is paid.{" "}
+            <a href={result.manageUrl}>{result.payNow.online ? "Pay the deposit now" : "See how to pay the deposit"}</a>; the details are in your email too.
+          </p>
+        ) : (
+          <p>This is a booking request until we confirm it. We will email you to confirm and to arrange the deposit.</p>
+        ))}
       <dl className={styles.confirmFacts}>
         <div>
           <dt>Booking number</dt>
@@ -533,7 +554,7 @@ function Confirmation({
       </dl>
       {result.manageUrl && (
         <p>
-          <a href={result.manageUrl}>See or cancel your booking, or write to us</a> (the link is also in your email).
+          <a href={result.manageUrl}>See, pay or cancel your booking, or write to us</a> (the link is also in your email).
         </p>
       )}
       <p>

@@ -3,6 +3,7 @@ import { getDb } from "@/lib/db";
 import { listSeasonRanges } from "@/lib/booking/native/admin-store";
 import { calendarUsage, displayStatus, listCancelRequests, listReservations } from "@/lib/booking/native/store";
 import { addDays, resortToday } from "@/lib/booking/stay";
+import { trialMode } from "@/lib/booking/native/trial";
 import { AlertIcon, ArrivalIcon, ArrowRightIcon, BedIcon, CheckIcon, DepartureIcon, HourglassIcon, PlusIcon } from "../icons";
 import { GuestList, ReservationTable, Ring } from "../ui";
 
@@ -36,7 +37,7 @@ export default async function Dashboard() {
       ok: seasons.length > 0,
       done: "Season dates are set.",
       todo: "No season dates are set, so every night is priced as low season.",
-      fix: "/admin/rates/",
+      fix: "/admin/rates/#seasons",
       fixText: "Set season dates",
     },
     {
@@ -51,7 +52,7 @@ export default async function Dashboard() {
     },
     {
       ok: Boolean(process.env.DATABASE_URL),
-      done: "This is the real database.",
+      done: trialMode() ? "This is the trial's own database: what you do here does not reach the live site." : "This is the real database.",
       todo: "This is a local test database (DATABASE_URL is not set). Bookings made here are not real.",
     },
   ];

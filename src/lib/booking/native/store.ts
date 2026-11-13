@@ -1,21 +1,25 @@
 import { randomInt } from "node:crypto";
 import { and, asc, desc, eq, gt, gte, ilike, inArray, lt, or } from "drizzle-orm";
+import { property } from "@/config/property";
 import type { Db } from "@/lib/db";
 import {
   addOns,
   blocks,
+  payments,
   reservationAddOns,
   reservationRooms,
   reservations,
   roomTypes,
   seasonRanges,
+  type PaymentRow,
   type ReservationRoomRow,
   type ReservationRow,
   type ReservationStatus,
 } from "@/lib/db/schema";
 import { QuoteError, buildQuote } from "@/lib/booking/stay";
 import type { Availability, CartAddOn, CartRoom, RoomOffer, StayQuery } from "@/lib/booking/types";
-import { freeUnits, nightlyRate, ratesForStay, stayDays, usedOn, type Hold } from "./engine";
+import { assignLanes, freeUnits, nightlyRate, ratesForStay, stayDays, usedOn, type Hold } from "./engine";
+import { depositPolicy, loadPaymentSettings } from "./payment-settings";
 import { loadSettings } from "./settings";
 
 /**
@@ -99,11 +103,12 @@ export async function loadAvailability(db: Db, query: StayQuery, now = new Date(
   return {
     query,
     nights: days.length,
-    currency: "IDR",
+    currency: property.currency,
     rooms,
     addOns: stay.extras.map((extra) => ({ id: extra.id, name: extra.name, description: extra.description || undefined, price: extra.price })),
     includedTaxRate: stay.settings.includedTaxRate,
     source: "native",
+    depositPolicy: depositPolicy(await loadPaymentSettings(db)),
   };
 }
 
@@ -158,7 +163,7 @@ const CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
 
 async function newCode(db: Db): Promise<string> {
   for (let attempt = 0; attempt < 8; attempt++) {
-    const code = `MOC-${Array.from({ length: 6 }, () => CODE_ALPHABET[randomInt(CODE_ALPHABET.length)]).join("")}`;
+    const code = `${property.bookingCodePrefix}-${Array.from({ length: 6 }, () => CODE_ALPHABET[randomInt(CODE_ALPHABET.length)]).join("")}`;
     const [taken] = await db.select({ id: reservations.id }).from(reservations).where(eq(reservations.code, code)).limit(1);
     if (!taken) return code;
   }
@@ -274,12 +279,14 @@ export type ReservationDetail = {
   reservation: ReservationRow;
   rooms: (ReservationRoomRow & { roomName: string })[];
   extras: { name: string; quantity: number; unitPrice: number }[];
+  /** Money received and online payment pages, oldest first (src/lib/booking/native/payments.ts). */
+  payments: PaymentRow[];
 };
 
 export async function getReservation(db: Db, code: string): Promise<ReservationDetail | null> {
   const [reservation] = await db.select().from(reservations).where(eq(reservations.code, code.trim().toUpperCase())).limit(1);
   if (!reservation) return null;
-  const [rooms, extras] = await Promise.all([
+  const [rooms, extras, paymentRows] = await Promise.all([
     db
       .select({ room: reservationRooms, roomName: roomTypes.name })
       .from(reservationRooms)
@@ -291,8 +298,9 @@ export async function getReservation(db: Db, code: string): Promise<ReservationD
       .from(reservationAddOns)
       .where(eq(reservationAddOns.reservationId, reservation.id))
       .orderBy(asc(reservationAddOns.id)),
+    db.select().from(payments).where(eq(payments.reservationId, reservation.id)).orderBy(asc(payments.createdAt), asc(payments.id)),
   ]);
-  return { reservation, rooms: rooms.map(({ room, roomName }) => ({ ...room, roomName })), extras };
+  return { reservation, rooms: rooms.map(({ room, roomName }) => ({ ...room, roomName })), extras, payments: paymentRows };
 }
 
 export type ReservationFilter = {
@@ -427,6 +435,79 @@ export async function saveAdminNotes(db: Db, code: string, notes: string) {
     .update(reservations)
     .set({ adminNotes: notes.trim().slice(0, 2000) })
     .where(eq(reservations.code, code.trim().toUpperCase()));
+}
+
+export type CalendarStay = {
+  kind: "stay";
+  code: string;
+  guest: string;
+  /** "pending": a request staff have not answered yet. */
+  status: "pending" | "confirmed";
+  cancelRequested: boolean;
+  guests: number;
+  startsOn: string;
+  endsOn: string;
+};
+export type CalendarBlock = { kind: "block"; id: number; reason: string; startsOn: string; endsOn: string };
+export type CalendarLane = { overflow: boolean; items: (CalendarStay | CalendarBlock)[] };
+export type CalendarBoard = { days: string[]; types: { id: string; name: string; units: number; active: boolean; lanes: CalendarLane[] }[] };
+
+/**
+ * The admin calendar: per room type, one row per room with the stays and blocks on it, for the nights `from` up to (not
+ * including) `to`. Only what holds rooms is shown: confirmed stays, requests still waiting, and blocks. Rows are drawn
+ * by assignLanes (engine.ts); they are not room numbers.
+ */
+export async function calendarLanes(db: Db, from: string, to: string, now = new Date()): Promise<CalendarBoard> {
+  const [types, blockRows, roomRows] = await Promise.all([
+    db.select().from(roomTypes).orderBy(asc(roomTypes.sort), asc(roomTypes.name)),
+    db.select().from(blocks).where(and(lt(blocks.startsOn, to), gt(blocks.endsOn, from))),
+    db
+      .select({
+        roomTypeId: reservationRooms.roomTypeId,
+        adults: reservationRooms.adults,
+        children: reservationRooms.children,
+        code: reservations.code,
+        firstName: reservations.firstName,
+        lastName: reservations.lastName,
+        status: reservations.status,
+        expiresAt: reservations.expiresAt,
+        cancelRequestedAt: reservations.cancelRequestedAt,
+        startsOn: reservations.checkIn,
+        endsOn: reservations.checkOut,
+      })
+      .from(reservationRooms)
+      .innerJoin(reservations, eq(reservationRooms.reservationId, reservations.id))
+      .where(and(lt(reservations.checkIn, to), gt(reservations.checkOut, from), inArray(reservations.status, ["pending", "confirmed"]))),
+  ]);
+
+  return {
+    days: stayDays(from, to),
+    types: types.map((type) => {
+      const items: (CalendarStay | CalendarBlock)[] = [];
+      for (const row of roomRows) {
+        if (row.roomTypeId !== type.id || !holdsRooms(row, now)) continue;
+        items.push({
+          kind: "stay",
+          code: row.code,
+          guest: `${row.firstName} ${row.lastName}`.trim(),
+          status: row.status === "confirmed" ? "confirmed" : "pending",
+          cancelRequested: Boolean(row.cancelRequestedAt),
+          guests: row.adults + row.children,
+          startsOn: row.startsOn,
+          endsOn: row.endsOn,
+        });
+      }
+      for (const block of blockRows) {
+        if (block.roomTypeId !== type.id) continue;
+        // A block of several rooms takes one row per room.
+        for (let n = 0; n < block.units; n++) {
+          items.push({ kind: "block", id: block.id, reason: block.reason, startsOn: block.startsOn, endsOn: block.endsOn });
+        }
+      }
+      const lanes = assignLanes(type.units, items).map((laneItems, index) => ({ overflow: index >= type.units, items: laneItems }));
+      return { id: type.id, name: type.name, units: type.units, active: type.active, lanes };
+    }),
+  };
 }
 
 export type DayUsage = { day: string; booked: number; blocked: number; free: number };

@@ -4,9 +4,10 @@ The resort's own booking system: rooms, prices, availability and reservations li
 manage them in `/admin/`. It plugs into the same `/book/` page as the Cloudbeds version (see `booking-engine.md`)
 through the `BookingProvider` interface (`src/lib/booking/server.ts`); the guest-facing pages are unchanged.
 
-Status (2026-11-12): built and tested on a local database. Not yet connected to a real Postgres, no real email sent,
-the site's "Book Now" buttons still open Cloudbeds. Cloudbeds stays the source of truth for the calendar until the
-owner approves the switch (see "Going live").
+Status (2026-11-13): built and tested on a local database. Not yet connected to a real Postgres, no real email sent,
+the site's "Book Now" buttons still open Cloudbeds. The owner keeps Cloudbeds as the booking engine until its paid year
+ends (around March/April 2027) and may try this system beside it first (see "Trial version"); Cloudbeds stays the source
+of truth for the calendar until the owner approves the switch (see "Going live").
 
 ## What it does
 
@@ -41,14 +42,94 @@ owner approves the switch (see "Going live").
 booking value, average stay, room nights booked; charts of guests (with the monthly average), booking value and
 occupancy per month; room nights per room type; where guests come from; the same figures as a table. Only **confirmed**
 bookings count. Guests and value count in the month the guests arrive, room nights in the month they are slept. Months
-still ahead are hatched: what is booked so far. Booking value is what the bookings are worth, not money received (the
-site takes no payments yet). Code: `src/lib/booking/native/reports.ts`, `src/app/admin/charts.tsx`.
+still ahead are a light navy with a navy top edge: what is booked so far. Booking value is what the bookings are worth,
+not money received (that is on Payments). Code: `src/lib/booking/native/reports.ts`, `src/app/admin/charts.tsx`.
+
+## Calendar (2026-11-13)
+
+`/admin/calendar/`: who stays where. One row per room of each type, each stay a bar with the guest's name from the
+check-in night to the last night before check-out, like the Cloudbeds calendar; two or four weeks, Earlier / Today /
+Later, or a date. Navy: confirmed. Amber: a request waiting for staff. Grey: blocked. A red mark: the guest asked to
+cancel. A bar opens its booking. The rows ("Room 1, 2…") are drawn by `assignLanes` (`engine.ts`): the system counts
+rooms per type and does not assign a room to a stay, so they are not room numbers. Code: `calendarLanes` in `store.ts`.
+
+## Prices and seasons (2026-11-13)
+
+`/admin/rates/` ("Prices" in the menu), made for the owner, who sets prices by season:
+
+- **Price per night**: one table, a row per room type and a column per season (low, shoulder, high), saved at once
+  (`savePricesAction`). Amounts can be typed with or without separators.
+- **Seasons in a year**: a bar of the whole year coloured by season (`seasonRuns` in `engine.ts`), the nights per season,
+  the high and shoulder ranges of that year (add, remove), and Earlier / Later years. "Copy 2026's dates to 2027" copies
+  the ranges that start in a year to the same dates a year later (`copySeasonsToNextYear` in `admin-store.ts`), only
+  while the next year has none; holidays that move (Easter, Lunar New Year) are then adjusted by hand.
+- Long-stay discount, tax inside the prices, holding time, auto-confirm (unchanged).
+
+## Room photos and details (2026-11-13)
+
+`/admin/rooms/` ("Rooms"): each room type opens to its photos (add several at once, make one the cover, remove), name,
+description, features (one per line), number of rooms and most guests; the extras (transfers) are below. Prices are on
+`/admin/rates/`. Photos are shrunk in the browser (long side 1920px, JPEG) and stored in the database (`media` table),
+served at `/media/<id>/` with a one-year cache (`src/app/media/[id]/route.ts`, `src/lib/booking/native/media.ts`). The
+server checks the file's first bytes (JPEG, PNG or WebP only) and allows 4 MB; Next's server action limit is set to 5 MB
+in `next.config.ts`. An uploaded photo is deleted when no room shows it any more; the site's own images never are.
+
+## Payments (2026-11-13)
+
+`/admin/payments/` (code: `src/lib/booking/native/payment-settings.ts`, `payments.ts`, `src/lib/payments/xendit.ts`):
+
+- **Deposit rule**: the first night of each room (as before), a percentage of the total, or the whole stay. It is part of
+  the price the booking page shows and the server checks (`depositPolicy` in the availability, `buildQuote`); bookings
+  already made keep their deposit.
+- **Bank transfer**: bank, account name and number, a note. Shown on the guest's booking page and in the emails, with
+  the booking number as the reference. Staff record the transfer on the booking (Payments > Record a payment received),
+  which can confirm the booking and email the guest a receipt. A payment entered by mistake can be removed.
+- **Online (Xendit)**: with `XENDIT_SECRET_KEY` and `XENDIT_CALLBACK_TOKEN` set and the switch on, the guest's booking
+  page has "Pay online": it opens a Xendit payment page (an Invoice) for what is due, reused if pressed twice. Xendit
+  calls `/api/payments/xendit/` when it is paid or expires; the call must carry the verification token, and a "paid"
+  call is believed only after the invoice is read back from Xendit's API. The payment is then recorded once and a
+  waiting request is confirmed (if its room is still free; otherwise the resort is emailed what to do).
+- Emails: the request mail and the confirmation say how to pay the deposit when a way is set up; a receipt goes to the
+  guest and a notice to the resort when money comes in.
+
+Not confirmed, try before going live: the JSON field names come from Xendit's official Node SDK because Xendit's own
+invoice reference pages did not load; the unit of `invoice_duration` is taken as seconds (the SDK's example). Make a
+test payment with a test key from start to end (the page, paying, the callback, the booking confirmed, the emails).
+Not built: refunds (done in Xendit's dashboard or by transfer, then noted on the booking), card details kept by the
+site (never: Xendit's page takes them), several currencies.
+
+## Guide for staff (2026-11-13)
+
+`/admin/guide/` ("Guide"): the everyday jobs in a few steps each (prices by season, answering a request, a booking from
+WhatsApp, recording a payment, the calendar, blocking rooms, a guest asking to cancel, room photos), each with a link to
+its page. Its words follow the buttons and headings of those pages: change them together.
+
+## Trial version (2026-11-13)
+
+The owner keeps Cloudbeds as the booking engine until its paid year ends (around March/April 2027) and may run this
+system beside it to try it. A trial deployment runs with two more variables (`src/lib/booking/native/trial.ts`):
+
+- `BOOKING_TRIAL=1`: the admin shows a "Trial" line (bookings here are not real, guests still book on Cloudbeds, where
+  emails go); `/book/` and `/book/manage/` say "Trial version" under the title with a link to the Cloudbeds page; the
+  Guide starts with **sample bookings**.
+- `BOOKING_TRIAL_EMAIL`: every email the system writes goes only there, its subject starting "[Trial]" and its first
+  line naming who would have received it (`sendMail` in `src/lib/mail.ts`). Not set: no email is sent at all.
+
+Sample bookings (`src/lib/booking/native/samples.ts`, buttons on the Guide, trial only): fifteen made-up guests at
+example.com addresses around today, made through the normal booking code with the current prices: past stays (for
+Reports), guests in the resort, arriving and leaving today, two requests waiting, a confirmed booking whose guest asks to
+cancel, a cancelled booking, an expired request, bookings entered by staff, payments, and one block. They are marked by
+a request id starting with `sample-` (the block by its reason), and "Remove sample bookings" deletes exactly those with
+their payments; bookings, prices, seasons and rooms entered by hand stay. A sample whose room is already taken is skipped.
+
+Set the trial up as its own deployment with its **own database** (never the live one), and never set `BOOKING_TRIAL` on the
+live site. On Vercel: the variables of the branch's Preview environment (Settings > Environment Variables, Preview, the
+branch), and a Neon database of its own. The "Book Now" buttons of the site are not changed by any of this.
 
 ## Not built (on purpose, decide with the owner)
 
-- **Online payment.** A booking is a request; staff arrange the deposit by email/WhatsApp. Planned as a separate module with
-  a provider switch (Xendit or Midtrans for IDR, Stripe if it is open to the company, or manual). Nothing in the
-  tables needs to change for it except a `payments` table.
+- **Refunds and payment reports.** Money in is recorded per booking and listed on Payments; refunds are made outside
+  the site.
 - **OTA sync (Booking.com, Expedia, Airbnb, Agoda).** This system cannot connect to them directly: Booking.com and
   Expedia only open their connection APIs to certified connectivity partners (channel managers and PMS vendors; Booking.com
   has reportedly paused onboarding of new partners, Expedia decides eligibility case by case). Researched on 2026-11-12
@@ -129,8 +210,10 @@ run `npm run db:setup` against each database.
 
 | Part | File |
 |---|---|
+| What the system knows about this property (name, currency, time zone, booking number prefix, texts, starting settings) | `src/config/property.ts` |
+| Starting rooms and extras of this property | `src/config/property-rooms.ts` |
 | Tables | `src/lib/db/schema.ts`, SQL in `drizzle/` |
-| Database connection (Postgres or local PGlite), starting data | `src/lib/db/index.ts`, `seed.ts`, `dev-admin.ts` |
+| Database connection (Postgres or local PGlite), putting in the starting data | `src/lib/db/index.ts`, `seed.ts`, `dev-admin.ts` |
 | Rules: nights, seasons, prices, free rooms (pure, no database) | `src/lib/booking/native/engine.ts` |
 | Queries and writes: availability, create/confirm/cancel, lists, calendar | `src/lib/booking/native/store.ts` |
 | Settings with defaults | `src/lib/booking/native/settings.ts` |
@@ -140,6 +223,33 @@ run `npm run db:setup` against each database.
 | Admin pages and actions | `src/app/admin/` (`actions.ts` holds every action; each one checks the login) |
 | Scripts | `scripts/db-setup.ts`, `scripts/admin-create.ts` |
 | Tests | `tests/` |
+
+## Using it for another property (2026-11-13)
+
+The booking code no longer names this property. What it says or assumes about Mocean is in two files, and those are
+what change for another property:
+
+- `src/config/property.ts`: name, region, currency, time zone, booking number prefix (`MOC`), WhatsApp link, the other
+  place to book (Cloudbeds), logo and photo, example texts in the forms, starting settings (tax, long-stay discount,
+  holding time). The `PropertyConfig` type in that file documents every value.
+- `src/config/property-rooms.ts`: the room types and extras an empty database starts with.
+
+Not done yet. Before the code can move to its own folder or package and serve several sites, these still tie it here:
+
+- **Design.** `/book/` and `/book/manage/` use this site's Waves styles and wave shape (`src/styles/redesign/`,
+  `src/components/home/Wave`, `Booking.module.css`) and sit inside the site's header and footer. The admin's colours
+  are fixed in `src/app/admin/admin.css`.
+- **One property per database.** No table has a property column: every property needs its own database and its own
+  deployment. One shared service for many properties is a different, larger design.
+- **Whole-amount currencies only.** Prices are stored and shown without cents (fine for IDR, not for USD or EUR).
+- **Wording.** English only, and the texts say "resort" (emails, admin).
+- **Cloudbeds parts.** `src/lib/cloudbeds/`, the sample rooms in `src/lib/booking/demo.ts` (copied from Mocean's
+  Cloudbeds page) and the demo-mode texts in `BookingApp.tsx`.
+- **Tests** take their rooms, unit counts and prices from `property-rooms.ts` (`tests/booking-store.test.ts`); a shared
+  package needs its own test data.
+- **Small things.** `property.ts` reads the WhatsApp and Cloudbeds links from the site's `src/data/contact.ts`. The
+  local test login (`DEV_ADMIN` in `src/lib/db/dev-admin.ts`) keeps its Mocean name so existing local databases still
+  open.
 
 ## Known limits
 

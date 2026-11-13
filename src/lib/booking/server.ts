@@ -27,7 +27,14 @@ export type BookingProvider = {
     request: ReservationRequest,
     availability: Availability,
     quote: Quote,
-  ): Promise<{ reservationId: string; total?: number; deposit?: number; status?: "pending" | "confirmed"; manageUrl?: string }>;
+  ): Promise<{
+    reservationId: string;
+    total?: number;
+    deposit?: number;
+    status?: "pending" | "confirmed";
+    manageUrl?: string;
+    payNow?: { online: boolean; bank: boolean };
+  }>;
 };
 
 const demoProvider: BookingProvider = {

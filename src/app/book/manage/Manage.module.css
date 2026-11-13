@@ -198,6 +198,69 @@ span.muted {
   accent-color: var(--hm-navy);
 }
 
+/* Paying the deposit: the amount large, then the online button and/or the bank account. */
+.pay {
+  border-color: rgb(17 31 144 / 0.18);
+}
+
+.payAmount {
+  color: var(--rd-ink);
+  font-size: 30px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.card p.payAmount {
+  margin: -4px 0 18px;
+}
+
+.pay .form {
+  gap: 10px;
+}
+
+.bank {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rd-line);
+}
+
+.card p.bankLead {
+  margin-bottom: 10px;
+  color: var(--rd-ink);
+  font-weight: 600;
+}
+
+.bank dl {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.bank dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bank dt {
+  color: var(--rd-meta);
+  font-size: 14px;
+}
+
+.bank dd {
+  margin: 0;
+  color: var(--rd-ink);
+  font-weight: 600;
+  text-align: right;
+}
+
+.copyable {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  user-select: all;
+}
+
 .done,
 .error {
   margin: 0 0 18px;

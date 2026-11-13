@@ -1,4 +1,11 @@
-import { index, integer, jsonb, pgTable, serial, text, timestamp, uuid, boolean, date } from "drizzle-orm/pg-core";
+import { index, integer, jsonb, pgTable, serial, text, timestamp, uuid, boolean, date, customType } from "drizzle-orm/pg-core";
+
+/** Raw bytes (Postgres `bytea`). postgres.js reads them as a Buffer, PGlite as a Uint8Array: both become a Buffer. */
+const bytea = customType<{ data: Buffer; driverData: Uint8Array }>({
+  dataType: () => "bytea",
+  fromDriver: (value) => Buffer.from(value),
+  toDriver: (value) => value,
+});
 
 /**
  * Tables of the resort's own booking system (src/lib/booking/native/).
@@ -163,7 +170,56 @@ export const adminUsers = pgTable("admin_users", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
+/**
+ * Photos uploaded in the admin (room types). Kept in the database so they work on any host without a file store; the
+ * admin shrinks them in the browser before upload (long side 1920px, JPEG), so each is a few hundred KB. Served by
+ * src/app/media/[id]/route.ts at /media/<id>/, the address stored in room_types.photos.
+ */
+export const media = pgTable("media", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  contentType: text("content_type").notNull(),
+  bytes: bytea("bytes").notNull(),
+  size: integer("size").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+export type PaymentMethod = "bank" | "cash" | "card" | "xendit" | "other";
+/** pending: an online payment page is open and not paid yet. paid: money received. expired / failed: never paid. */
+export type PaymentStatus = "pending" | "paid" | "expired" | "failed";
+
+/**
+ * Money received for a reservation, or asked for online (src/lib/booking/native/payments.ts). Staff record bank
+ * transfers and cash in the admin; a Xendit payment page is a row here from the moment it is opened, and becomes "paid"
+ * when Xendit reports it.
+ */
+export const payments = pgTable(
+  "payments",
+  {
+    id: serial("id").primaryKey(),
+    reservationId: uuid("reservation_id")
+      .notNull()
+      .references(() => reservations.id, { onDelete: "cascade" }),
+    amount: integer("amount").notNull(),
+    method: text("method").$type<PaymentMethod>().notNull(),
+    status: text("status").$type<PaymentStatus>().notNull().default("paid"),
+    /** Our id sent to the payment provider (Xendit external_id). */
+    reference: text("reference").unique(),
+    /** The provider's id (Xendit invoice id). */
+    providerId: text("provider_id"),
+    /** The provider's payment page. */
+    checkoutUrl: text("checkout_url"),
+    /** How the guest paid, as the provider reports it (e.g. "BANK_TRANSFER"). */
+    channel: text("channel").notNull().default(""),
+    expiresAt: timestamp("expires_at", { withTimezone: true }),
+    paidAt: timestamp("paid_at", { withTimezone: true }),
+    note: text("note").notNull().default(""),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [index("payments_reservation_idx").on(table.reservationId)],
+);
+
 export type RoomType = typeof roomTypes.$inferSelect;
+export type PaymentRow = typeof payments.$inferSelect;
 export type SeasonRangeRow = typeof seasonRanges.$inferSelect;
 export type BlockRow = typeof blocks.$inferSelect;
 export type AddOnRow = typeof addOns.$inferSelect;
