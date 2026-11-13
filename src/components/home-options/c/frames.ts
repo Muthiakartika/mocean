@@ -72,8 +72,14 @@ export const reelFrames: ReelFrame[] = [
     text: "Northern Rights breaks right in front of the resort, with Middle Reef and Dirty Hippies a short walk down the beach.",
     edge: ["Northern Rights", "In front of the resort", "May to October: most consistent surf"],
   },
-  // A last frame on the local tours ("Trek to Agal Waterfall") was taken out on 2026-11-13: the resort has no reliable
-  // local tour operator (docs/archive/local-tours/README.md).
+  {
+    id: "tours",
+    image: img("2025/06/agal-wf-gallery-2.jpg"),
+    alt: "Agal Waterfall falling between mossy boulders",
+    title: "Trek to Agal Waterfall",
+    text: "Tour the local coconut plantations and seaweed farms, or just walk the beach.",
+    edge: ["Agal Waterfall", "Rice field walk", "Danau Lebo"],
+  },
 ];
 
 /** The three frames on the strip in the first viewport (the middle one is in the gate). */

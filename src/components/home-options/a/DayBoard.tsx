@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EnvelopeIcon, FacebookIcon, InstagramIcon, WhatsappIcon } from "@/components/shared/icons";
 import { contact } from "@/data/contact";
-import { accommodation, bookingCta, diving, faq, resortIntro, restaurant, roomRates, testimonials } from "@/data/homepage";
+import { accommodation, activities, bookingCta, diving, faq, resortIntro, restaurant, roomRates, testimonials } from "@/data/homepage";
 import { hand, print, text } from "./fonts";
 import styles from "./DayBoard.module.css";
 
@@ -47,6 +47,13 @@ const day = [
 ];
 
 const diveKit = ["Custom-built boat", "Individual gear lockers", "Camera room", "Equipment rental", "PADI instruction", "Purpose-built training pool"];
+
+const tours = [
+  { label: "Agal Waterfall", href: "/sumbawa-indonesia-tour/agal-waterfall/" },
+  { label: "Rice Field Walk", href: "/sumbawa-indonesia-tour/rice-field-walk/" },
+  { label: "Danau Lebo Taliwang", href: "/sumbawa-indonesia-tour/danau-lebo/" },
+  { label: "Kalela Waterfall", href: "/kalela-waterfall/" },
+];
 
 /** "High Season Price: 2,800,000 IDR" → ["High", "2,800,000"] */
 function splitPrice(line: string) {
@@ -282,7 +289,7 @@ export default function DayBoard() {
         </section>
       </div>
 
-      {/* Board 5: the restaurant and two reviews taped to the board (the tours list was taken out on 2026-11-13) */}
+      {/* Board 5: the restaurant, the tours and two reviews taped to the board */}
       <section id="eat" className={styles.wallSection} aria-labelledby="a-eat">
         <Board>
           <div className={styles.eat}>
@@ -303,6 +310,23 @@ export default function DayBoard() {
               </figure>
               <figure className={styles.figure}>
                 <Print photo={photos.food} ratio="4 / 3" tilt={1.3} sizes="(max-width: 900px) 44vw, 22vw" />
+              </figure>
+            </div>
+
+            <div className={styles.tours}>
+              <h3 className={styles.h3}>{activities.title}</h3>
+              <ul className={styles.tourList}>
+                {tours.map((t) => (
+                  <li key={t.href}>
+                    <Link href={t.href} className={styles.tourLink}>
+                      <MarkerArrow className={styles.arrowSmall} />
+                      {t.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <figure className={styles.figure}>
+                <Print photo={photos.kalela} ratio="4 / 3" tilt={0.6} sizes="(max-width: 900px) 60vw, 18vw" />
               </figure>
             </div>
 
@@ -414,6 +438,7 @@ export default function DayBoard() {
           <nav aria-label="Guides" className={styles.footerNav}>
             <Link href="/dive-sites/">Dive Sites</Link>
             <Link href="/surf-spots/">Surf Spots</Link>
+            <Link href="/sumbawa-indonesia/">Tour & Activity</Link>
             <Link href="/news/">News</Link>
           </nav>
           <div className={styles.social}>

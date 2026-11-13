@@ -9,6 +9,7 @@ export default function DivingSection() {
       sub={content.sub}
       title={content.title}
       paragraphs={content.paragraphs}
+      link={content.link}
       button={content.button}
       image={content.image}
       band

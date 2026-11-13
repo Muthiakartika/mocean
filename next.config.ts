@@ -63,21 +63,15 @@ const nextConfig: NextConfig = {
           ["/surf-camp/surf-spots/lombok/", "/surf-spots/lombok/"],
           ["/surf-camp/surf-spots/nusa-lembongan/", "/surf-spots/nusa-lembongan/"],
           ["/surf-spots/scar-reef/", "/scar-reef/"],
+          ["/sumbawa-indonesia-tour/", "/sumbawa-indonesia/"],
+          ["/sumbawa-indonesia-tour/danau-lebo-taliwang/", "/sumbawa-indonesia-tour/danau-lebo/"],
+          ["/sumbawa-indonesia-tour/kalela-waterfall/", "/kalela-waterfall/"],
           ["/travel-lombok-bali-sumbawa/", "/travel-lombok-sumbawa/"],
           ["/accommodation/tropical-beach-resort/", "/tropical-beach-resort/"],
           // On WordPress this page now redirects too (it used to be a copy with a canonical to the beach resort page).
           ["/luxury-surf-resort/", "/tropical-beach-resort/"],
         ] as const
       ).map(([source, destination]) => ({ source, destination, statusCode: 301 as const })),
-      // The local tour pages were taken out on 2026-11-13 (owner: no reliable local tour operator; archived in
-      // docs/archive/local-tours/). Their URLs, and the older WordPress ones that led to them, go to the Sumbawa guide,
-      // which still describes the waterfalls and the lake. Remove these lines when the pages come back.
-      ...[
-        "/sumbawa-indonesia/",
-        "/sumbawa-indonesia-tour/",
-        "/sumbawa-indonesia-tour/:path*",
-        "/kalela-waterfall/",
-      ].map((source) => ({ source, destination: "/things-to-do-in-sumbawa-indonesia/", statusCode: 301 as const })),
     ];
   },
 

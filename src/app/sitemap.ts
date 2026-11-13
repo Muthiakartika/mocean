@@ -4,8 +4,7 @@ import { allPaths, notInSitemap } from "@/data/routes";
 import { getPageSeo } from "@/lib/metadata";
 
 /**
- * /sitemap.xml — the URLs of the original Yoast sitemap (page + post sitemaps), less the local tour pages taken out on
- * 2026-11-13 (src/data/routes.ts).
+ * /sitemap.xml — the same 55 URLs as the original Yoast sitemap (page + post sitemaps).
  * Old Yoast/WordPress sitemap URLs redirect here (next.config.ts).
  */
 export default function sitemap(): MetadataRoute.Sitemap {

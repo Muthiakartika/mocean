@@ -27,6 +27,21 @@ export const seoOverrides: Record<string, { title: string; description: string }
     description:
       "Mocean sits in the Coral Triangle, with coral gardens minutes from shore in West Sumbawa. Guided reef dives and calm snorkeling for every level.",
   },
+  "/surf-trip/": {
+    title: "Sumbawa Surf Trip | Northern Rights Out Front at Mocean",
+    description:
+      "Sumbawa surf trip at Mocean Beach Resort. Surf Northern Rights, Middle Reef and Dirty Hippies from your room, with lessons, board rental and swell-planned days.",
+  },
+  "/dive-sites/": {
+    title: "Sumbawa Diving | West Sumbawa Dive Sites, Season & Prices",
+    description:
+      "Sumbawa diving with Mocean Beach Resort: manta rays at Ju-Ju's Jackpot, the house reef and Kenawa. Season April to October, max four divers per guide.",
+  },
+  "/snorkeling/": {
+    title: "Snorkeling Sumbawa | House Reef & Boat Trips at Mocean Resort",
+    description:
+      "Snorkeling Sumbawa from Mocean Beach Resort: walk in to the house reef or join a guided boat trip to the outer reefs. Turtles, rays and coral, from IDR 676,500.",
+  },
   "/dive-resort/": {
     title: "Dive Resort in Sumbawa | Max 4 Divers per Guide at Mocean",
     description:

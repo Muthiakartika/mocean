@@ -11,8 +11,8 @@ export const dynamic = "force-static";
 const sections: { title: string; paths: string[] }[] = [
   { title: "Stay", paths: ["/", "/tropical-beach-resort/", "/accommodation/", "/pricing/", "/restaurant/", "/couples-retreat/", "/wellness-retreat/", "/surf-retreat/", "/host-a-retreat-venue-for-rent-hire/"] },
   { title: "Diving", paths: ["/fun-diving/", "/dive-resort/", "/scuba-diving/", "/discover-scuba-diving/", "/scuba-diving/padi-open-water/", "/scuba-diving/padi-advanced-open-water/", "/scuba-diving/rescue-diver/", "/snorkeling/", "/manta-rays/", "/coral-reefs/", "/seasonal-diving/", "/dive-sites/"] },
-  { title: "Surfing", paths: ["/surf-trip/", "/surf-lesson/", "/surf-spots/sumbawa/", "/scar-reef/"] },
-  { title: "Explore West Sumbawa", paths: ["/things-to-do-in-sumbawa-indonesia/"] },
+  { title: "Surfing", paths: ["/surf-trip/", "/surf-lesson/", "/surf-spots/sumbawa/", "/scar-reef/", "/northern-rights-sumbawa/"] },
+  { title: "Explore West Sumbawa", paths: ["/things-to-do-in-sumbawa-indonesia/", "/sumbawa-indonesia/", "/sumbawa-indonesia-tour/agal-waterfall/", "/kalela-waterfall/", "/sumbawa-indonesia-tour/danau-lebo/", "/sumbawa-indonesia-tour/rice-field-walk/"] },
   { title: "Plan the trip", paths: ["/how-to-get-to-sumbawa/", "/travel-lombok-sumbawa/", "/contact/"] },
 ];
 

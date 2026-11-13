@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FadeInUp from "@/components/shared/FadeInUp";
+import LinkedText from "@/components/shared/LinkedText";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { activities as content } from "@/data/homepage";
 import styles from "./Activities.module.css";
@@ -44,7 +45,7 @@ export default function Activities() {
                   </div>
                 </div>
                 <div className={`widget ${styles.boxText}`}>
-                  <span>{box.text}</span>
+                  <span><LinkedText text={box.text} link={"link" in box ? box.link : undefined} /></span>
                 </div>
               </div>
             ))}

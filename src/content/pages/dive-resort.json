@@ -50,7 +50,7 @@
          "id": "c0c2708",
          "classes": "elementor-element elementor-element-c0c2708 elementor-widget elementor-widget-text-editor",
          "wrapped": true,
-         "html": "<p>Mocean Beach Resort offers unforgettable diving in pristine, unexplored waters and is the perfect launch point for divers exploring Indonesia. With expert guides and just four certified divers per group, each dive trip becomes a chance to uncover hidden underwater gems. Encounter manta rays, reef sharks, and eagle rays on the dive sites while enjoying the comfort of a boutique dive trip (Indonesia) experience. Whether you’re planning short dive trips or extended Indonesia dive trips, our diver-designed center is equipped with private lockers, a spacious wet area, and an air-conditioned camera room to support comfort and gear care.</p>"
+         "html": "<p>Mocean Beach Resort offers unforgettable diving in pristine, unexplored waters and is the perfect launch point for divers exploring Indonesia. With expert guides and just four certified divers per group, each dive trip becomes a chance to uncover hidden underwater gems. Encounter manta rays, reef sharks, and eagle rays on our <a href=\"/dive-sites/\">Sumbawa diving</a> sites while enjoying the comfort of a boutique dive trip (Indonesia) experience. Whether you’re planning short dive trips or extended Indonesia dive trips, our diver-designed center is equipped with private lockers, a spacious wet area, and an air-conditioned camera room to support comfort and gear care.</p>"
         },
         {
          "type": "icon-list",
